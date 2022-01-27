@@ -159,7 +159,7 @@ const Login: NextPage = () => {
                         <Label htmlFor='password'>
                           Password
                           <Link href='/auth/reset'>
-                            <a>Forgot your password?</a>
+                            <a>Forgot <span>your</span> password?</a>
                           </Link>
                         </Label>
                         <Input

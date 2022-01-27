@@ -4,6 +4,10 @@
   border-radius: var(--border-radius-lg);
   margin: 0 0 .5rem 0;
 
+  @include breakpoint-sm {
+    border-radius: var(--border-radius-md);
+  }
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -22,6 +26,7 @@
 
     .icon {
       color: var(--mauve-700);
+      margin-left: 1rem;
     }
 
     span {

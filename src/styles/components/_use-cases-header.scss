@@ -34,6 +34,11 @@
     .button {
       display: inline-block;
       margin: 0 0 2rem 0;
+      text-align: center;
+
+      @include breakpoint-sm {
+        width: 100%;
+      }
     }
 
     .check {
