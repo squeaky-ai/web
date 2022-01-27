@@ -17,7 +17,7 @@ const InternalServerError: NextPage = () => (
         <h2>500</h2>
         <p>A internal server error has occurred.</p>
         <Link href='/'>
-          <a className='button primary-app'>
+          <a className='button primary'>
             Back to home
           </a>
         </Link>

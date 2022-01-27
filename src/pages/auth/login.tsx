@@ -173,7 +173,7 @@ const Login: NextPage = () => {
                         />
                         <span className='validation'>{errors.password}</span>
 
-                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid) || exceeded} className='primary-app'>
+                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid) || exceeded} className='primary'>
                           Log in
                         </Button>
                       </form>
@@ -190,7 +190,7 @@ const Login: NextPage = () => {
                     className='reconfirm-message'
                   />
 
-                  <DelayedButton delay={10} initialDelayed={false} className='primary-app' onClick={resendConfirmation}>
+                  <DelayedButton delay={10} initialDelayed={false} className='primary' onClick={resendConfirmation}>
                     Resend Verfication Email
                   </DelayedButton>
                 </>

@@ -105,7 +105,7 @@ const Reset: NextPage = () => {
                         />
                         <span className='validation'>{errors.email}</span>
 
-                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary-app'>
+                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary'>
                           Reset Password
                         </Button>
                       </form>
@@ -119,7 +119,7 @@ const Reset: NextPage = () => {
                   <Icon name='checkbox-circle-line' />
                   <h4>Check Your Email</h4>
                   <p>If you have an existing Squeaky account you will receive password reset instructions at the email address <b>{email}</b>.</p>
-                  <DelayedButton delay={10} initialDelayed={false} className='secondary-app' onClick={() => resetPassword(email)}>
+                  <DelayedButton delay={10} initialDelayed={false} className='secondary' onClick={() => resetPassword(email)}>
                     Resend Password
                   </DelayedButton>
                 </div>
@@ -169,7 +169,7 @@ const Reset: NextPage = () => {
 
                         <Password password={values.password} />
 
-                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary-app'>
+                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary'>
                           Reset Password
                         </Button>
                       </form>
@@ -185,7 +185,7 @@ const Reset: NextPage = () => {
                   </div>
                   <h4>Password Reset Successfully</h4>
                   <Link href='/auth/login'>
-                    <a className='button primary-app'>Go To Login Page</a>
+                    <a className='button primary'>Go To Login Page</a>
                   </Link>
                 </div>
               )}

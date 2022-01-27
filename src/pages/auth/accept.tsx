@@ -149,7 +149,7 @@ const Accept: NextPage = () => {
                         </Checkbox>
                         <span className='validation'>{errors.terms}</span>
 
-                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary-app'>
+                        <Button  type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary'>
                           Sign Up
                         </Button>
                       </form>

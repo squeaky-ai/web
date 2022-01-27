@@ -119,7 +119,7 @@ const Signup: NextPage = () => {
                         </Checkbox>
                         <span className='validation'>{errors.terms}</span>
 
-                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary-app'>
+                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary'>
                           Continue
                         </Button>
                       </form>
@@ -174,7 +174,7 @@ const Signup: NextPage = () => {
 
                         <Password password={values.password} />
 
-                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary-app'>
+                        <Button type='submit' disabled={isSubmitting || !(dirty && isValid)} className='primary'>
                           Sign up
                         </Button>
                       </form>
@@ -187,9 +187,9 @@ const Signup: NextPage = () => {
                 <div className='email-taken'>
                   <Message type='info' message={`A user with the email address ${email || ''} already exists. Please choose from the options below.`} />
                   <Link href='/auth/login'>
-                    <a className='button primary-app'>Go To Login Page</a>
+                    <a className='button primary'>Go To Login Page</a>
                   </Link>
-                  <Button className='secondary-app' onClick={() => setPageView(PageView.EMAIL)}>
+                  <Button className='secondary' onClick={() => setPageView(PageView.EMAIL)}>
                     Sign Up With A Different Email
                   </Button>
                 </div>
@@ -202,7 +202,7 @@ const Signup: NextPage = () => {
                   </div>
                   <h4>Sign Up Complete</h4>
                   <p>To log in to your account, please open the verification email sent to <b>{email}</b> and click the link provided.</p>
-                  <DelayedButton delay={10} initialDelayed={false} className='secondary-app' onClick={resendConfirmation}>
+                  <DelayedButton delay={10} initialDelayed={false} className='secondary' onClick={resendConfirmation}>
                     Resend Verification Email
                   </DelayedButton>
                 </div>
