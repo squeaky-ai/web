@@ -8,20 +8,3 @@ export const USER_INVITATION_QUERY = gql`
     }
   }
 `;
-
-export const GET_COMMUNICATION_QUERY = gql`
-  query UserCommunication{
-    user {
-      id
-      communication {
-        id
-        onboardingEmail
-        weeklyReviewEmail
-        monthlyReviewEmail
-        productUpdatesEmail
-        marketingAndSpecialOffersEmail
-        knowledgeSharingEmail
-      }
-    }
-  }
-`;
