@@ -48,12 +48,12 @@ const Home: NextPage = () => {
         </Container>
         <div className='features'>
           <p>
-            <Icon name='shield-check-line' />
-            GDPR &amp; CCPA complaint
+            <Icon name='bank-card-2-line' />
+            No credit card required
           </p>
           <p>
-            <Icon name='star-line' />
-            All plans include our 4 core products
+            <Icon name='shield-check-line' />
+            GDPR &amp; CCPA complaint
           </p>
           <p>
             <Icon name='code-s-slash-line' />

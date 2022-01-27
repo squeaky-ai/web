@@ -10,11 +10,18 @@ interface Props {
 export const HeaderButtons: FC<Props> = ({ user }) => (
   <>
     {user && (
-      <Link href='/app/sites'>
-        <a className='button primary'>
-          Go To App
-        </a>
-      </Link>
+      <>
+        <Link href='/book-demo'>
+          <a className='button primary'>
+            Book a demo
+          </a>
+        </Link>
+        <Link href='/app/sites'>
+          <a className='button secondary'>
+            Go To App
+          </a>
+        </Link>
+      </>
     )}
 
     {!user && (

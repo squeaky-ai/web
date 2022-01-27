@@ -30,10 +30,8 @@ export const Header: FC = () => {
   const themeOverride = themeOverrides[router.route];
   const useLightLogo = ['blue', 'mauve'].includes(themeOverride) && !scrolled && !subMenuOpen;
 
-  const toggleSubMenuOpen = (subMenu: SubMenu) => {
-    return () => {
-      setSubMenuOpen(subMenuOpen => subMenuOpen === subMenu ? null : subMenu);
-    };
+  const handleOpen = (subMenu: SubMenu) => {
+    return () => setSubMenuOpen(subMenu);
   };
 
   const handleScroll = throttle(() => {
@@ -65,7 +63,7 @@ export const Header: FC = () => {
         <HeaderMenuLarge
           user={user}
           subMenuOpen={subMenuOpen}
-          toggleSubMenuOpen={toggleSubMenuOpen}
+          handleOpen={handleOpen}
         />
 
         <HeaderMenuSmall
@@ -73,7 +71,7 @@ export const Header: FC = () => {
           open={open}
           setOpen={setOpen}
           subMenuOpen={subMenuOpen}
-          toggleSubMenuOpen={toggleSubMenuOpen}
+          handleOpen={handleOpen}
         />
       </Container>
     </div>

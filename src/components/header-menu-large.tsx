@@ -17,19 +17,21 @@ const { publicRuntimeConfig } = getConfig();
 interface Props {
   user: User;
   subMenuOpen: SubMenu;
-  toggleSubMenuOpen: (subMenu: SubMenu) => VoidFunction;
+  handleOpen: (subMenu: SubMenu) => VoidFunction;
 }
 
-export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, toggleSubMenuOpen }) => {
+export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) => {
   const router = useRouter();
+
+  const handleClose = () => handleOpen(null)();
 
   return (
     <menu className='large'>
-      <HeaderMenu link='Use Cases' active={router.route.startsWith('/use-cases')} open={subMenuOpen === 'use-cases'} toggleOpen={toggleSubMenuOpen('use-cases')}>
+      <HeaderMenu link='Use Cases' active={router.route.startsWith('/use-cases')} open={subMenuOpen === 'use-cases'} handleOpen={handleOpen('use-cases')} handleClose={handleClose}>
         <HeaderUseCases />
       </HeaderMenu>
 
-      <HeaderMenu link='Product' active={false} open={subMenuOpen === 'product'} toggleOpen={toggleSubMenuOpen('product')}>
+      <HeaderMenu link='Product' active={false} open={subMenuOpen === 'product'} handleOpen={handleOpen('product')} handleClose={handleClose}>
         <HeaderProduct />
       </HeaderMenu>
 
@@ -39,7 +41,7 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, toggleSubMenuOpe
         </a>
       </Link>
 
-      <HeaderDropdown link='More' active={false} open={subMenuOpen === 'more'} toggleOpen={toggleSubMenuOpen('more')}>
+      <HeaderDropdown link='More' active={false} open={subMenuOpen === 'more'} handleOpen={handleOpen('more')} handleClose={handleClose}>
         <Link href='/about-us'>
           <a className='button'>
             About Us

@@ -18,7 +18,7 @@
     border: none;
     display: flex;
     font-size: 18px;
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-block);
     justify-content: space-between;
     line-height: 32px;
     padding: 1rem 1.5rem;
@@ -58,10 +58,6 @@
   }
 
   &.open {
-    .heading {
-      font-weight: var(--font-weight-block);
-    }  
-
     .body {
       display: block;
 

@@ -65,8 +65,7 @@
         padding: 3rem 2rem 2rem 2rem;
 
         .features {
-          p:first-of-type,
-          p:last-of-type {
+          p:not(:first-of-type) {
             display: none;
           }
 

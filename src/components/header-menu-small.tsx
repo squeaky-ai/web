@@ -16,10 +16,12 @@ interface Props {
   open: boolean;
   subMenuOpen: SubMenu;
   setOpen: (open: boolean) => void;
-  toggleSubMenuOpen: (subMenu: SubMenu) => VoidFunction;
+  handleOpen: (subMenu: SubMenu) => VoidFunction;
 }
 
-export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, toggleSubMenuOpen }) => {
+export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, handleOpen }) => {
+
+  const toggleSubMenuOpen = (subMenu: SubMenu) => handleOpen(subMenuOpen === subMenu ? null : subMenu);
 
   return (
     <menu className='small'>

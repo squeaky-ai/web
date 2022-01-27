@@ -10,20 +10,20 @@ interface Props {
   open: boolean;
   active: boolean;
   children: React.ReactNode;
-  toggleOpen: VoidFunction;
+  handleOpen: VoidFunction;
+  handleClose: VoidFunction;
 }
 
-export const HeaderMenu: FC<Props> = ({ link, open, active, children, toggleOpen }) => {
-
+export const HeaderMenu: FC<Props> = ({ link, open, active, children, handleOpen, handleClose }) => {
   return (
     <>
-      <Button className={classnames('link menu', { active, open })} onClick={toggleOpen}>
+      <Button className={classnames('link menu', { active, open })} onMouseEnter={handleOpen}>
         <span>{link}</span>
         <Icon name='arrow-drop-down-line' className='arrow' />
       </Button>
 
       {open && (
-        <div className='header-menu'>
+        <div className='header-menu' onMouseLeave={handleClose}>
           <Container className='lg centered'>
             {children}
           </Container>

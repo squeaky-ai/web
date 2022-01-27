@@ -283,7 +283,7 @@
   }
 
   .products {
-    margin: 0 auto;
+    margin: 0 auto 1.5rem auto;
 
     .container {
       align-items: flex-start;
@@ -374,6 +374,7 @@
   }
 
   .product {
+    margin: 0 auto .5rem auto;
     width: 100%;
 
     .container {

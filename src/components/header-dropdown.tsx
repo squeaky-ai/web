@@ -9,18 +9,19 @@ interface Props {
   open: boolean;
   active: boolean;
   children: React.ReactNode;
-  toggleOpen: VoidFunction;
+  handleOpen: VoidFunction;
+  handleClose: VoidFunction;
 }
 
-export const HeaderDropdown: FC<Props> = ({ link, open, active, children, toggleOpen }) => (
+export const HeaderDropdown: FC<Props> = ({ link, open, active, children, handleOpen, handleClose }) => (
   <div className='dropdown'>
-    <Button className={classnames('link', { active, open })} onClick={toggleOpen}>
+    <Button className={classnames('link', { active, open })} onMouseEnter={handleOpen}>
       <span>{link}</span>
       <Icon name='arrow-drop-down-line' className='arrow' />
     </Button>
 
     {open && (
-      <div className='header-dropdown'>
+      <div className='header-dropdown' onMouseLeave={handleClose}>
         {children}
       </div>
     )}
