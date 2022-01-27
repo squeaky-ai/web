@@ -8,12 +8,10 @@
     position: relative;
 
     &:before {
-      background: url('../../../public/peach-dash.svg');
-      background-position: top left;
-      background-repeat: repeat;
+      border: 2px dashed var(--peach-500);
+      border-spacing: 4px;
       content: '';
       display: block;
-      height: 2px;
       left: 0;
       position: absolute;
       top: 1.75rem;
@@ -21,13 +19,11 @@
     }
 
     &:first-of-type:before {
-      background-position: top right;
       left: 50%;
       width: calc(50% + 3rem);
     }
 
     &:last-of-type:before {
-      background-position: top right;
       left: -3rem;
       width: calc(50% + 3rem);
     }
@@ -73,21 +69,21 @@
       &:before {
         height: 100%;
         left: 1.75rem;
-        width: 2px;
+        width: auto;
       }
 
       &:first-of-type:before {
         height: 100%;
         left: 1.75rem;
         top: 3rem;
-        width: 2px;
+        width: auto;
       }
   
       &:last-of-type:before {
         height: 3rem;
         left: 1.75rem;
         top: -2rem;
-        width: 2px;
+        width: auto;
       }
     }
 
