@@ -147,6 +147,7 @@
     }
 
     @include breakpoint-sm {
+      height: calc(100% - 5rem);
       top: 5rem;
 
       .actions {

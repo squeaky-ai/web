@@ -6,6 +6,10 @@
   position: sticky;
   text-align: center;
 
+  @include breakpoint-sm {
+    padding: 3rem 2rem;
+  }
+
   h1 {
     margin: 0 2rem 2rem 2rem;
   }
@@ -26,7 +30,7 @@
   background: var(--peach-200);
   justify-content: center;
   position: sticky;
-  top: 6rem;
+  top: 5rem;
 
   .item {
     background: none;
@@ -41,6 +45,14 @@
     &.active,
     &:hover {
       border-color: var(--mauve-700);
+    }
+  }
+
+  @include breakpoint-sm {
+    flex-direction: column;
+
+    .item {
+      padding: .5rem 1rem;
     }
   }
 }
