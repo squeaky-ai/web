@@ -1,0 +1,80 @@
+.tab-header {
+  border-bottom: 1px solid var(--gray-150);
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint-md {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  li {
+    flex-shrink: 0;
+    list-style: none;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .button {
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    display: flex;
+    font-weight: var(--font-weight-bold);
+    margin: 0 1.5rem 0 0;
+    padding: 0 0 1rem 0;
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      background: var(--blue-500);
+      bottom: -1px;
+      content: ' ';
+      display: none;
+      height: 2px;
+      position: absolute;
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      outline-offset: 3px;
+
+      &::after {
+        display: block;
+      }
+    }
+
+    &.active {
+      color: var(--body-color);
+
+      &::after {
+        display: block;
+      }
+
+      i {
+        color: var(--blue-500);
+      }
+    }
+
+    i {
+      color: var(--gray-150);
+      display: block;
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-normal);
+      margin-right: .5rem;
+    }
+  }
+}
+
+.tab-body {
+  padding: 1.5rem 0;
+
+  &:not(.active) {
+    display: none;
+  }
+}

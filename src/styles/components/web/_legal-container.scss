@@ -1,0 +1,67 @@
+.legal-container {
+  padding: 4rem 0;
+
+  @include breakpoint-md {
+    padding: 4rem 2rem;
+  }
+
+  h2 {
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  .last-updated {
+    margin: 0 0 4rem 0;
+    text-align: center;
+  }
+
+  p, ol {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+    margin: 2rem 0;
+  }
+
+  ol {
+    margin: 0;
+    padding: 1rem 0 1rem 1.25rem;
+  }
+
+  li {
+    margin-bottom: 2rem;
+
+    &.tight {
+      margin-bottom: .5rem;
+    }
+  }
+
+  .consent-card {
+    background: var(--gray-100);
+    border-radius: var(--border-radius-lg);
+    font-size: 16px;
+    line-height: 20px;
+    padding: 2rem;
+  }
+
+  .compliance {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 2rem 0;
+
+    .logo {
+      align-items: center;
+      display: flex;
+      height: 7.25rem;
+      justify-content: center;
+      margin: 0 0 1.5rem 0;
+      padding: 0 1rem;
+    }
+  }
+}

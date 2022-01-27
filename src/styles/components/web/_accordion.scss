@@ -1,0 +1,68 @@
+.accordion {
+  background: var(--peach-100);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  margin: 0 0 .5rem 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .heading {
+    align-items: center;
+    background: none;
+    border: none;
+    display: flex;
+    font-size: 18px;
+    font-weight: var(--font-weight-normal);
+    justify-content: space-between;
+    line-height: 32px;
+    padding: 1rem 1.5rem;
+    width: 100%;
+
+    .icon {
+      color: var(--mauve-700);
+    }
+
+    span {
+      text-align: left;
+    }
+
+    @include breakpoint-sm {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  .body {
+    display: none;
+    padding: 0 1.5rem 1rem 1.5rem;
+
+    a {
+      color: var(--mauve-700);
+    }
+
+    ol {
+      margin: 0;
+      padding: 1rem 0 0 1.25rem;
+
+      li {
+        margin-bottom: .5rem;
+      }
+    }
+  }
+
+  &.open {
+    .heading {
+      font-weight: var(--font-weight-block);
+    }  
+
+    .body {
+      display: block;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

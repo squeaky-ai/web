@@ -1,0 +1,141 @@
+.page.customer-success {
+  section {
+    &.understand {
+      background-color: var(--peach-400);
+      background-image: url('../../../../public/backgrounds/use-cases-11.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 3rem 8rem 3rem;
+
+      .tagline {
+        h2 {
+          color: var(--gray-blue-800);
+          margin: 0 0 2rem 0;
+        }
+
+        p {
+          color: var(--gray-blue-700);
+          margin: 0 0 3rem 0;
+        }
+      }
+
+      .carousel {
+        .indicator {
+          .button {
+            background: var(--mauve-400);
+  
+            &.active {
+              background: var(--peach-200);
+            }
+          }
+        }
+      }
+
+      h3 {
+        color: var(--gray-blue-800);
+        margin: 4rem 0;
+        padding: 0 0 1rem 0;
+        position: relative;
+
+        &:after {
+          background: var(--mauve-700);
+          bottom: 0;
+          content: ' ';
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          width: 18rem;
+        }
+      }
+
+      .four-icon-grid {
+        .icon {
+          color: var(--mauve-700);
+        }
+
+        h4 {
+          color: var(--gray-blue-800);
+        }
+
+        p {
+          color: var(--gray-blue-700);
+        }
+      }
+    }
+
+    &.testimonial {
+      background-color: var(--white);
+      background-image: url('../../../../public/backgrounds/use-cases-12.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 10rem 3rem 6rem 3rem;
+
+      h3 {
+        color: var(--gray-blue-700);
+      }
+
+      .large {
+        color: var(--mauve-700);
+
+        b {
+          color: var(--gray-blue-800);
+        }
+      }
+
+      .image .shadow {
+        background: var(--gray-blue-700);
+      }
+    }
+
+    &.detect {
+      background-color: var(--gray-blue-50);
+      background-image: url('../../../../public/backgrounds/use-cases-13.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 3rem 6rem 3rem;
+
+      .tagline {
+        margin: 0 auto 6rem auto;
+        text-align: center;
+        padding: 0 3rem;
+
+        h2 {
+          margin: 0 0 2rem 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .side-by-side {
+        h3 {
+          color: var(--gray-blue-800);
+        }
+
+        p {
+          color: var(--gray-blue-700);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 12rem 2rem 6rem 2rem;
+
+        .tagline {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &.get-started {
+      background-color: var(--gray-blue-700);
+      padding: 6rem;
+
+      @include breakpoint-md {
+        display: none;
+      }
+    }
+  }
+}

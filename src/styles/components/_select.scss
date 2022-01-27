@@ -1,0 +1,60 @@
+.select {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-md);
+  color: var(--body-color);
+  height: 40px;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+  width: 100%;
+
+  &:focus-within {
+    border-color: var(--blue-500);
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;  
+    color: var(--body-color);
+    height: 38px;
+    outline: none;
+    padding: .35rem .75rem;
+    width: 100%;
+  }
+
+  option {
+    background: var(--white);
+    color: var(--body-color);
+  }
+
+  i {
+    display: flex;
+    height: 2rem;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    pointer-events: none;
+    position: absolute;
+    right: .25rem;
+    top: .15rem;
+    width: 2rem;
+  }
+
+  & + .validation {
+    color: var(--rose-500);
+    font-size: 13px;
+    line-height: 20px;
+    display: none;
+    margin: .5rem 0 1.5rem;
+  }
+
+  &.invalid {
+    border-color: var(--rose-500);
+    margin-bottom: 0;
+
+    & + .validation {
+      display: block;
+    }
+  }
+}

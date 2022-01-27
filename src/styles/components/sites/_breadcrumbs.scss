@@ -1,0 +1,28 @@
+.breadcrumbs {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  line-height: 20px;
+  margin: 2rem 0 1.5rem 0;
+
+  span {
+    color: var(--gray-300);
+    display: inline-block;
+    margin: 0 .5rem;
+  }
+
+  p {
+    color: var(--gray-500);
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  a {
+    color: var(--blue-500);
+  }
+
+  a, p, span {
+    flex-shrink: 0;
+  }
+}

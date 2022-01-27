@@ -1,0 +1,25 @@
+.page-size {
+  align-items: center;
+  display: flex;
+
+  .label {
+    flex-shrink: 0;
+    margin: 0 1rem 0 0;
+  }
+
+  .select {
+    flex-shrink: 0;
+    height: 32px;
+    margin: 0;
+    width: 90px;
+
+    select {
+      height: 30px;
+      line-height: 20px;
+    }
+
+    i {
+      top: -.25rem;
+    }
+  }
+}

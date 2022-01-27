@@ -1,0 +1,14 @@
+.label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  a {
+    font-weight: var(--font-weight-normal);
+  }
+
+  & + .extra {
+    margin-bottom: .75rem;
+  }
+}

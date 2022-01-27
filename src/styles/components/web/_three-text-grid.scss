@@ -1,0 +1,39 @@
+.three-text-grid {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  h4 {
+    color: var(--white);
+    margin: 0 0 2rem 0;
+    padding: 0 0 1rem 0;
+    position: relative;
+
+    &:after {
+      background: var(--yellow-500);
+      bottom: 0;
+      content: ' ';
+      display: block;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 4rem;
+    }
+  }
+
+  p {
+    color: var(--peach-200);
+    margin: 0 0 1.5rem 0;
+  }
+
+  a {
+    color: var(--yellow-500);
+    font-size: 18px;
+    line-height: 32px;
+    text-decoration: underline;
+  }
+
+  @include breakpoint-sm {
+    grid-template-columns: 1fr;
+  }
+}

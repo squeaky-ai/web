@@ -1,0 +1,50 @@
+.currencies {
+  display: inline-block;
+  position: relative;
+
+  .button {
+    align-items: center;
+    background: var(--peach-200);
+    border: none;
+    border-radius: var(--border-radius-xl);
+    display: inline-flex;
+    font-weight: var(--font-weight-normal);
+    padding: .5rem 1rem;
+
+    b {
+      margin-right: .25rem;
+    }
+
+    .arrow {
+      color: var(--mauve-700);
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      margin: 0 0 0 .25rem;
+    }
+
+    &:hover {
+      background: var(--peach-300);
+    }
+  }
+
+  &.open {
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .options {
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    .button {
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+}

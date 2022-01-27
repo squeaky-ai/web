@@ -1,0 +1,13 @@
+html, body {
+  background: var(--gray-50);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px dashed var(--body-color);
+}

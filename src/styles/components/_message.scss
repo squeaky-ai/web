@@ -1,0 +1,86 @@
+.message {
+  background: var(--white);
+  border: 2px solid var(--blue-500);
+  border-left-width: 6px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding: .75rem 1rem;
+  text-align: left;
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  i {
+    color: var(--blue-500);
+    display: block;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+  }
+
+  &.error {
+    border-color: var(--rose-500);
+
+    i {
+      color: var(--rose-500);
+    }
+  }
+
+  &.warning {
+    border-color: var(--orange-500);
+
+    i {
+      color: var(--orange-500);
+    }
+  }
+
+  &.success {
+    border-color: var(--green-500);
+
+    i {
+      color: var(--green-500);
+    }
+  }
+
+  &.dismissable {
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+
+    i {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .close {
+      background: none;
+      border: none;
+      right: 1rem;
+      position: absolute;
+      top: 1rem;
+    }
+
+    p {
+      i {
+        font-size: 1.25rem;
+        vertical-align: middle;
+      }
+
+      &:first-of-type {
+        align-items: center;
+        display: flex;
+
+        i {
+          margin-right: .5rem;
+        }
+      }
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}

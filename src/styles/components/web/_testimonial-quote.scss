@@ -1,0 +1,122 @@
+.testimonial-quote {
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  .image {
+    flex-shrink: 0;
+    margin: 0 6rem 0 0;
+    position: relative;
+    width: 20rem;
+
+    .img {
+      background: var(--white);
+      font-size: 0;
+      height: 18.5rem;
+      position: relative;
+      width: 18.5rem;
+      z-index: 0;
+    }
+
+    .shadow {
+      background: var(--gray-blue-300);
+      content: ' ';
+      display: block;
+      height: 18.5rem;
+      left: 1.5rem;
+      position: absolute;
+      top: 1.5rem;
+      width: 18.5rem;
+    }
+  }
+
+  &.circular {
+    .image {
+      .img {
+        border-radius: var(--border-radius-o);
+        overflow: hidden;
+      }
+    }
+
+    .shadow {
+      display: none;
+    }
+  }
+
+  &.flip {
+    flex-direction: row-reverse;
+
+    .image {
+      margin: 0 0 0 6rem;
+    }
+  }
+
+  h3 {
+    color: var(--white);
+    margin: 0 0 2rem 0;
+  }
+
+  p {
+    color: var(--gray-blue-200);
+    margin: 0;
+
+    b {
+      color: var(--white);
+    }
+
+
+    @include breakpoint-sm {
+      margin: 3rem 0 0 4rem;
+    }
+  }
+
+  @include breakpoint-md {
+    .image {
+      margin: 0 3rem 0 0;
+      width: 15rem;
+
+      .img,
+      .shadow {
+        height: 14rem;
+        width: 14rem;
+      }
+    }
+  }
+
+
+  @include breakpoint-sm {
+    flex-direction: column-reverse;
+
+    h4 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .image {
+      bottom: -.5rem;
+      height: 3rem;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      width: 3rem;
+
+      .img {
+        height: 2.75rem;
+        width: 2.75rem;
+      }
+
+      .shadow {
+        height: 2.75rem;
+        left: .25rem;
+        top: .25rem;
+        width: 2.75rem;
+      }
+    }
+
+    &.flip {
+      .image {
+        margin: 0;
+      }
+    }
+  }
+}

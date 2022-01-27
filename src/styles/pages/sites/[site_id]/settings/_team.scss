@@ -1,0 +1,75 @@
+.page.sites.team {
+  .title {
+    align-items: center;
+    display: flex;
+    margin: 0 0 2rem 0;
+  }
+
+  .table {
+    .row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .role {
+      .select {
+        margin: 0;
+      }
+    }
+  
+    .options {
+      overflow: visible;
+      text-overflow: clip;
+
+      .button {
+        background: none;
+        border: none;
+        font-size: 13px;
+        font-weight: var(--font-weight-normal);
+        line-height: 20px;
+        padding: 0;
+        text-decoration: underline;
+  
+        &.positive {
+          color: var(--blue-500);
+        }
+  
+        &.negative {
+          color: var(--rose-500);
+        }
+  
+        & + .button {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .invite-member {
+    display: inline-block;
+    margin: 2rem 0;
+  }
+
+  .roles {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+
+    @include breakpoint-md {
+      grid-template-columns: 1fr;
+    }
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--gray-blue-700);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1.25rem;
+    }
+  }
+}

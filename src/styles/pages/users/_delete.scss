@@ -1,0 +1,50 @@
+.page.users.delete {
+  flex: 1;
+
+  .title {
+    margin: 2rem 0;
+  }
+
+  .back-to-account {
+    display: block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .delete-list {
+    padding: 0 0 0 1rem;
+  }
+
+  .delete-account {
+    margin-top: 2rem;
+  }
+
+  .deleted-overaly {
+    align-items: center;
+    background: var(--gray-100);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+
+    .container {
+      text-align: center;
+
+      h2 {
+        margin: 3.75rem 0 2rem 0;
+      }
+
+      p {
+        margin: 0 0 2rem 0;
+      }
+    }
+  }
+}

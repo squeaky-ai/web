@@ -1,0 +1,114 @@
+.web.pricing {
+  section {
+    overflow: hidden;
+
+    &.hero {
+      background-color: var(--peach-100);
+      background-image: url('../../../public/backgrounds/pricing-1.svg');
+      background-position: bottom 15rem left;
+      background-repeat: repeat-x;
+      padding: 8rem 5rem;
+      position: relative;
+      text-align: center;
+
+      h1 {
+        margin: 0 0 2rem 0;
+      }
+
+      & > p {
+        padding: 0 2rem;
+      }
+
+      .calculator {
+        margin: 5rem auto 0 auto;
+      }
+
+      &:after {
+        background: var(--peach-200);
+        bottom: 0;
+        content: ' ';
+        display: block;
+        height: 15rem;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      @include breakpoint-sm {
+        padding: 3rem 0;
+
+        .container:not(.calculator) {
+          padding: 0 2rem;
+        }
+      }
+    }
+
+    &.plan {
+      background-color: var(--mauve-700);
+      background-image: url('../../../public/backgrounds/pricing-2.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 10rem 5rem;
+
+      h3 {
+        color: var(--white);
+        margin: 0 0 6rem 0;
+        position: relative;
+
+        &:after {
+          background: var(--rose-500);
+          content: ' ';
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          top: calc(100% + 1rem);
+          width: 17.5rem;
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 8rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 8rem 2rem;
+      }
+    }
+
+    &.testimonial {
+      background-color: var(--gray-blue-800);
+      background-image: url('../../../public/backgrounds/pricing-3.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 10rem 5rem;
+
+      @include breakpoint-md {
+        padding: 6rem 2rem 10rem 2rem;
+      }
+
+
+      @include breakpoint-sm {
+        padding: 2rem 2rem 8rem 2rem;
+      }
+    }
+
+    &.faq {
+      background-color: var(--peach-200);
+      padding: 4rem 5rem 6rem 5rem;
+
+      h2 {
+        margin: 0 0 3rem 0;
+        text-align: center;
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 6rem 2rem;
+      }
+    }
+  }
+}

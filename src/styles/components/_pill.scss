@@ -1,0 +1,52 @@
+.pill {
+  border: 1px solid var(--gray-150);
+  border-radius: var(--border-radius-lg);
+  color: var(--gray-500);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  line-height: 20px;
+  padding: .2rem .5rem;
+  text-align: center;
+
+  @include breakpoint-md {
+    padding: .1rem .4rem;
+  }
+
+  &.primary {
+    background: var(--blue-50);
+    border-color: var(--blue-50);
+    color: var(--blue-500);
+  }
+
+  &.secondary {
+    background: var(--gray-100);
+    border-color: var(--gray-100);
+  }
+
+  &.tertiary {
+    background: var(--rose-50);
+    border-color: var(--rose-50);
+    color: var(--rose-500);
+  }
+
+  &.small {
+    font-size: 10px;
+    line-height: 13px;
+    padding: .1rem .5rem;
+  }
+
+  &.large {
+    font-size: 16px;
+    line-height: 20px;
+    padding: .3rem 1rem;
+
+    @include breakpoint-md {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  &.squared {
+    border-radius: var(--border-radius-sm);
+  }
+}

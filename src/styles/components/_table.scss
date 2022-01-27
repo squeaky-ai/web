@@ -1,0 +1,109 @@
+.table {
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  font-size: 13px;
+  line-height: 20px;
+  width: 100%;
+
+  @include breakpoint-md {
+    background: none;
+    border: none;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .row {
+    align-items: center;
+    background: var(--white);
+    border-color: var(--gray-100) transparent transparent transparent;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--gray-blue-700);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 4rem;
+    padding: 0 .5rem;
+    text-decoration: none;
+
+    @include breakpoint-md {
+      border: none;
+      border-radius:  var(--border-radius-md);
+      box-shadow: var(--box-shadow-md);
+      display: flex;
+      height: 6rem;
+      margin-bottom: .5rem;
+    }
+
+    .cell {
+      overflow: hidden;
+      padding: 0 1rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .tooltip > .button {
+      font-size: 13px;
+
+      &:not(.link) {
+        color: var(--gray-blue-700);
+      }
+    }
+
+    .primary {
+      color: var(--blue-500);
+      text-decoration: underline;
+    }
+
+    .checkbox {
+      margin: 0;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    }
+
+    &.head {
+      border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+      border-top: none;
+
+      @include breakpoint-md {
+        display: none;
+      }
+
+      &:hover {
+        background: transparent;
+      }
+
+      .cell {
+        color: var(--body-color);
+        font-weight: var(--font-weight-bold);
+
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+    }
+
+    &.fluid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  @for $i from 1 through 15 {
+    &.hide-cell-#{$i} {
+      .row {
+        .cell:nth-of-type(#{$i}) {
+          display: none;
+        }
+      }
+    }
+  }
+}

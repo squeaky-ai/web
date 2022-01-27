@@ -1,0 +1,174 @@
+html, body {
+  color: var(--body-color);
+  font-family: 'Poppins', sans-serif;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: var(--font-weight-block);
+  line-height: 72px;
+
+  @include breakpoint-md {
+    font-size: 48px;
+    line-height: 64px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  line-height: 64px;
+
+  @include breakpoint-md {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  line-height: 48px;
+
+  @include breakpoint-md {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  line-height: 32px;
+
+  @include breakpoint-md {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: var(--font-weight-block);
+  line-height: 24px;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: var(--font-weight-block);
+  line-height: 24px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: var(--font-weight-normal);
+  line-height: 24px;
+  margin: 0 0 1.5rem 0;
+
+  &.large {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 0 2rem 0;
+
+    @include breakpoint-md {
+      a {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &.small {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+a {
+  color: var(--blue-500);
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+b {
+  font-weight: var(--font-weight-block);
+}
+
+ul {
+  li {
+    @include breakpoint-md {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
+
+code, pre {
+  color: var(--gray-blue-800);
+  font-family: 'Monaco', 'Consolas' 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.button {
+  font: inherit;
+  font-size: 16px;
+  font-weight: var(--font-weight-block);
+  line-height: 24px;
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.label {
+  font-size: 16px;
+  font-weight: var(--font-weight-block);
+  line-height: 24px;
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.input,
+.textarea {
+  font: inherit;
+  font-size: 16px;
+  font-weight: var(--font-weight-normal);
+  line-height: 24px;
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &::placeholder {
+    color: var(--gray-500);
+    font-style: italic;
+  }
+}
+
+.select select {
+  font: inherit;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include breakpoint-md {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

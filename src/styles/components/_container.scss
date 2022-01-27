@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+
+  &.xsm {
+    max-width: 400px;
+  }
+
+  &.sm {
+    max-width: 560px;
+  }
+
+  &.sm-md {
+    max-width: 606px;
+  }
+
+  &.md {
+    max-width: 720px;
+  }
+
+  &.md-lg {
+    max-width: 960px;
+  }
+
+  &.lg {
+    max-width: 1260px;
+  }
+
+  &.xl {
+    max-width: 106rem;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+}
