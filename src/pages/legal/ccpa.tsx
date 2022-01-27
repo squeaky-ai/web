@@ -55,6 +55,9 @@ const Ccpa: NextPage = () => (
         <p><b>Squeaky</b></p>
         <p>We want to process as little personal information as possible when you use our website or service, that&apos;s why we&apos;ve chosen Squeaky for our web analytics. Squeaky doesn&apos;t use cookies and complies fully with the GDPR, and CCPA data privacy regulations - ensuring all usage is tracked anonymously unless otherwise defined or requested. Whilst using this privacy-friendly website analytics software, your IP address is briefly processed for screening purposes and never stored. As per the CCPA, your personal information is no identifiable without your express consent. You can read more about this on Squeaky website.</p>
         <p>The purpose of us using this software is to understand our website traffic in the most privacy-friendly way possible so that we can continually improve our website and business. The lawful basis as per the GDPR is &quot;f); where our legitimate interests are to improve our website and business continually.&quot; As per the explanation, no personal data is stored over time.</p>
+        <p><b>Address</b>: Squeaky B.V., Debussystraat 43, 2324KH Leiden, The Netherlands</p>
+        <p><b>Usage data</b>: locale, device width and height, browser width and height, referrer, useragent, timezone, session start and end time, click coordinates, clicked elements, scroll position, mouse position, page views, user feedback (if submitted).</p>
+        <p><b>Data storage</b>: AWS eu-west-1 region (The Repblic of Ireland).</p>
         <p>To learn more about Squeaky, you can visit <a href='https://squeaky.ai/legal/gdpr' target='_blank' rel='noreferrer'>https://squeaky.ai/legal/gdpr</a>.</p>
       </div>
 

@@ -50,8 +50,8 @@ const PrivacyPolicy: NextPage = () => (
       </ol>
       <p>If you have a user account then we may use your Personal Data to contact you with onboarding emails, newsletters, marketing or other promotional materials and information. However, you may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by visit your user account preferences (we&apos;ve made it extremely easy!)</p>
       <p><b>Usage Data</b></p>
-      <p>We may also collect information that your browser sends whenever you visit our Service or when you access Service by or through a mobile device (“<b>Usage Data</b>”).</p>
-      <p>This Usage Data may include information such as your computer&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+      <p>We may also collect information that your browser sends whenever you visit our Service or when you access Service by or through a mobile device (&quot;<b>Usage Data</b>&quot;).</p>
+      <p>This Usage Data may include information such as locale, device width and height, browser width and height, referrer, useragent, timezone, session start and end time, click coordinates, clicked elements, scroll position, mouse position, page views, user feedback (if submitted), and other diagnostic data.</p>
       <p>When you access Service with a mobile device, this Usage Data may include information such as the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browser you use, unique device identifiers and other diagnostic data.</p>
       <p><b>Tracking Cookies Data</b></p>
       <p>We never use cookies when helping you to track your own visitors, but we do use one simple, anonymous cookie on our Squeaky web app, and this it to allow us to validate your user session i.e. so we know whether you are logged in or not.</p>
@@ -157,7 +157,14 @@ const PrivacyPolicy: NextPage = () => (
 
       <h4>18. Contact Us</h4>
       <p>If you have any questions about this Privacy Policy, please contact us:</p>
-      <p>By email: <a href='mailto:hello@squeaky.ai'>hello@squeaky.ai</a>.</p>
+      <p><b>By email</b>: <a href='mailto:hello@squeaky.ai'>hello@squeaky.ai</a>.</p>
+      <p>
+        <b>By post</b>:<br />
+        Squeaky B.V.<br />
+        Debussystraat 43<br />
+        2324KH Leiden<br />
+        The Netherlands
+      </p>
     </LegalContainer>
   </>
 );

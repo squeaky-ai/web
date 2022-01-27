@@ -57,6 +57,15 @@ const Gdpr: NextPage = () => (
         <p>To learn more about Squeaky, you can visit <a href='https://squeaky.ai/legal/gdpr' target='_blank' rel='noreferrer'>https://squeaky.ai/legal/gdpr</a>.</p>
       </div>
 
+      <h4>Additional information</h4>
+      <p>Depending on your business, you may also wish to include the following information in your Terms of Service or Privacy Policy when mentioning your use of Squeaky:</p>
+
+      <div className='consent-card'>
+        <p><b>Address</b>: Squeaky B.V., Debussystraat 43, 2324KH Leiden, The Netherlands</p>
+        <p><b>Usage data</b>: locale, device width and height, browser width and height, referrer, useragent, timezone, session start and end time, click coordinates, clicked elements, scroll position, mouse position, page views, user feedback (if submitted).</p>
+        <p><b>Data storage</b>: AWS eu-west-1 region (The Repblic of Ireland).</p>
+      </div>
+
       <h4>Does Squeaky use any first, or third-party cookies?</h4>
       <p>Although this is not GDPR specific, you can rest assured that Squeaky does not use any cookie-based tracking when helping our customer&apos;s analyse visitors/visits to their website or web app.</p>
 
