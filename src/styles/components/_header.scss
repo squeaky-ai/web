@@ -12,6 +12,10 @@
   width: 100%;
   z-index: 2;
 
+  @include breakpoint-sm {
+    height: 5rem;
+  }
+
   &.scrolled {
     background: var(--white);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -38,7 +42,7 @@
 
   .logo {
     display: block;
-    transform: translate(0, .35rem);
+    transform: translateY(.75rem);
   }
 
   menu {

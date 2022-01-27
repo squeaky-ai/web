@@ -7,9 +7,9 @@ import { Logo } from 'components/logo';
 import { Container } from 'components/container';
 import { HeaderMenuLarge } from 'components/header-menu-large';
 import { HeaderMenuSmall } from 'components/header-menu-small';
+import { useUser } from 'hooks/use-user';
 import { useRouter } from 'next/router';
 import type { SubMenu } from 'types/common';
-import type { User } from 'types/graphql';
 
 type ThemeOverrides = Record<string, 'blue' | 'mauve'>;
 
@@ -21,7 +21,7 @@ const themeOverrides: ThemeOverrides = {
 export const Header: FC = () => {
   const router = useRouter();
 
-  const user: User = null; // TODO
+  const { user } = useUser();
 
   const [open, setOpen] = React.useState<boolean>(false);
   const [scrolled, setScrolled] = React.useState<boolean>(false);
