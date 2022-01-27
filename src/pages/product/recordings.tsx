@@ -1,9 +1,8 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const ProductRecordings: NextPage<ServerSideProps> = () => (
+const ProductRecordings: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Product - Recordings</title> 
@@ -12,4 +11,3 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
 );
 
 export default ProductRecordings;
-export { getServerSideProps };

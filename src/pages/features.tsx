@@ -8,7 +8,6 @@ import { Container } from 'components/container';
 import { PageTitle, PageTitleNav } from 'components/page-title';
 import { Cta } from 'components/cta';
 import { Icon } from 'components/icon';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 type Tab = 'privacy' | 'dashboard' | 'visitors' | 'recordings' | 'analytics' | 'feedback' | 'heatmaps' | 'team' | 'ease-of-use';
 
@@ -53,7 +52,7 @@ const tabs: Tabs = [
   },
 ];
 
-const Features: NextPage<ServerSideProps> = () => {
+const Features: NextPage = () => {
   const [tab, setTab] = React.useState<Tab>('privacy');
 
   const handleTabClick = (tab: Tab) => () => {
@@ -489,4 +488,3 @@ const Features: NextPage<ServerSideProps> = () => {
 };
 
 export default Features;
-export { getServerSideProps };

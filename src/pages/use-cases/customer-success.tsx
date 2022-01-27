@@ -12,11 +12,10 @@ import { Screen } from 'components/screen';
 import { Cta } from 'components/cta';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-3.png';
 
-const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
+const UseCasesCustomerSuccess: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Use Cases - Customer Success</title> 
@@ -155,4 +154,3 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
 );
 
 export default UseCasesCustomerSuccess;
-export { getServerSideProps };

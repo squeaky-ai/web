@@ -19,11 +19,10 @@ import { TestimonialQuote } from 'components/testimonial-quote';
 import { ThreeImageGrid, ThreeImageGridItem } from 'components/three-image-grid';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Steps, StepItem } from 'components/steps';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const { publicRuntimeConfig } = getConfig();
 
-const Home: NextPage<ServerSideProps> = () => {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -293,4 +292,3 @@ const Home: NextPage<ServerSideProps> = () => {
 };
 
 export default Home;
-export { getServerSideProps };

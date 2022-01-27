@@ -8,9 +8,8 @@ import { Container } from 'components/container';
 import { Code } from 'components/code';
 import { Main } from 'components/main';
 import { Tabs } from 'components/tabs';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const Developers: NextPage<ServerSideProps> = () => {
+const Developers: NextPage = () => {
   React.useEffect(() => {
     document.querySelectorAll('pre code').forEach((element) => {
       hljs.highlightElement(element as HTMLElement);
@@ -245,4 +244,3 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 };
 
 export default Developers;
-export { getServerSideProps };

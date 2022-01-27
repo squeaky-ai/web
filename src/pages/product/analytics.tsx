@@ -1,9 +1,8 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const ProductAnalytics: NextPage<ServerSideProps> = () => (
+const ProductAnalytics: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Product - Analytics</title> 
@@ -12,4 +11,4 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
 );
 
 export default ProductAnalytics;
-export { getServerSideProps };
+

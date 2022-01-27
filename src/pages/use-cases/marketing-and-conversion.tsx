@@ -12,11 +12,10 @@ import { SideBySide } from 'components/side-by-side';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-2.png';
 
-const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
+const UseCasesMarketingAndConversion: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Use Cases - Marketing &amp; Conversion</title> 
@@ -164,4 +163,3 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
 );
 
 export default UseCasesMarketingAndConversion;
-export { getServerSideProps };

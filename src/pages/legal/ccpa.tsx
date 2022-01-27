@@ -5,10 +5,9 @@ import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { Divider } from 'components/divider';
 
-const Ccpa: NextPage<ServerSideProps> = () => (
+const Ccpa: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Legal - CCPA</title> 
@@ -75,4 +74,3 @@ const Ccpa: NextPage<ServerSideProps> = () => (
 );
 
 export default Ccpa;
-export { getServerSideProps };

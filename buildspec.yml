@@ -24,8 +24,8 @@ phases:
 
   post_build:
     commands:
-      - aws ecs update-service --cluster squeaky --service web2 --force-new-deployment
-      - aws ecs wait services-stable --cluster squeaky --services web2
+      - aws ecs update-service --cluster squeaky --service web --force-new-deployment
+      - aws ecs wait services-stable --cluster squeaky --services web
 
 cache:
   paths:

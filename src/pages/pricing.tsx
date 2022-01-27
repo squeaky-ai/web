@@ -10,10 +10,9 @@ import { TestimonialQuote } from 'components/testimonial-quote';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { Currency } from 'types/common';
 
-const Pricing: NextPage<ServerSideProps> = () => {
+const Pricing: NextPage = () => {
   const [currency, setCurrency] = React.useState<Currency>(CURRENCIES[0]);
 
   return (
@@ -162,4 +161,3 @@ const Pricing: NextPage<ServerSideProps> = () => {
 };
 
 export default Pricing;
-export { getServerSideProps };

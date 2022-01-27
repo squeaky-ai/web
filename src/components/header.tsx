@@ -8,12 +8,8 @@ import { Container } from 'components/container';
 import { HeaderMenuLarge } from 'components/header-menu-large';
 import { HeaderMenuSmall } from 'components/header-menu-small';
 import { useRouter } from 'next/router';
-import type { User } from 'types/graphql';
 import type { SubMenu } from 'types/common';
-
-interface Props {
-  user: User;
-}
+import type { User } from 'types/graphql';
 
 type ThemeOverrides = Record<string, 'blue' | 'mauve'>;
 
@@ -22,8 +18,10 @@ const themeOverrides: ThemeOverrides = {
   '/use-cases/customer-success': 'mauve',
 };
 
-export const Header: FC<Props> = ({ user }) => {
+export const Header: FC = () => {
   const router = useRouter();
+
+  const user: User = null; // TODO
 
   const [open, setOpen] = React.useState<boolean>(false);
   const [scrolled, setScrolled] = React.useState<boolean>(false);

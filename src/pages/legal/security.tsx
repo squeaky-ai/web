@@ -6,13 +6,12 @@ import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 import isoLogo from '../../../public/compliance/iso.png';
 import pciDssLogo from '../../../public/compliance/pci-dss.png';
 import socLogo from '../../../public/compliance/soc.png';
 
-const Security: NextPage<ServerSideProps> = () => (
+const Security: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Legal - Security</title> 
@@ -80,4 +79,3 @@ const Security: NextPage<ServerSideProps> = () => (
 );
 
 export default Security;
-export { getServerSideProps };

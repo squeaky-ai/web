@@ -13,7 +13,6 @@ import { Input } from 'components/input';
 import { Button, DelayedButton } from 'components/button';
 import { Message } from 'components/message';
 import { login, confirmAccount, reconfirmAccount } from 'lib/api/auth';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
 
@@ -27,7 +26,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Password is required')
 });
 
-const Login: NextPage<ServerSideProps> = () => {
+const Login: NextPage = () => {
   const router = useRouter();
   const toasts = useToasts();
   const [email, setEmail] = React.useState<string>('');
@@ -209,4 +208,3 @@ const Login: NextPage<ServerSideProps> = () => {
 };
 
 export default Login;
-export { getServerSideProps };

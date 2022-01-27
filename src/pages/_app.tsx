@@ -11,7 +11,7 @@ import '../styles/main.scss';
 const App: FC<AppProps> = ({ Component, pageProps }) => (
   <ApolloProvider client={client}>
     <ToastProvider>
-      <Page {...pageProps}>
+      <Page>
         <Component {...pageProps} />
       </Page>
     </ToastProvider>

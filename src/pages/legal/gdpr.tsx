@@ -7,9 +7,8 @@ import { LegalMessage } from 'components/legal-message';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const Gdpr: NextPage<ServerSideProps> = () => (
+const Gdpr: NextPage = () => (
   <>
     <Head>
       <title>Squeaky - Legal - GDPR</title> 
@@ -97,4 +96,3 @@ const Gdpr: NextPage<ServerSideProps> = () => (
 );
 
 export default Gdpr;
-export { getServerSideProps };
