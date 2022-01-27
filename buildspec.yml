@@ -13,19 +13,19 @@ phases:
   build:
     commands:
       # Build and push the docker image
-      - docker build -t web:latest .
-      - docker tag web:latest "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web:latest"
-      - docker push "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web:latest"
+      - docker build -t web2:latest .
+      - docker tag web2:latest "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web2:latest"
+      - docker push "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web2:latest"
       # Extract the .next directory and publish it to S3
-      - CID=$(docker create web)
+      - CID=$(docker create web2)
       - docker cp ${CID}:/app/.next/static /tmp/
       - docker rm ${CID}
       - aws s3 sync /tmp/static s3://cdn.squeaky.ai/_next/static --delete
 
   post_build:
     commands:
-      - aws ecs update-service --cluster squeaky --service web --force-new-deployment
-      - aws ecs wait services-stable --cluster squeaky --services web
+      - aws ecs update-service --cluster squeaky --service web2 --force-new-deployment
+      - aws ecs wait services-stable --cluster squeaky --services web2
 
 cache:
   paths:
