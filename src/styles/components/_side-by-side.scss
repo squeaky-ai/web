@@ -94,4 +94,13 @@
     }
   }
 
+  @include breakpoint-md {
+    .link {
+      width: 100%;
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
 }

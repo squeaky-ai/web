@@ -39,7 +39,6 @@ class Document extends NextDocument {
         <body>
           <Main />
           <NextScript />
-          <div id='portal-root' />
         </body>
       </Html>
     );

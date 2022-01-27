@@ -127,7 +127,8 @@
 
 
     @include breakpoint-sm {
-      & > .primary {
+      & > .primary,
+      & > .secondary {
         display: none;
       }
     }
