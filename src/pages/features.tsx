@@ -5,8 +5,8 @@ import classnames from 'classnames';
 import { debounce, findLast } from 'lodash';
 import { Button } from 'components/button';
 import { Container } from 'components/container';
-import { PageTitle, PageTitleNav } from 'components/web/page-title';
-import { Cta } from 'components/web/cta';
+import { PageTitle, PageTitleNav } from 'components/page-title';
+import { Cta } from 'components/cta';
 import { Icon } from 'components/icon';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 

@@ -1,15 +1,10 @@
 .card {
   background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-xl);
   padding: 2rem;
 
   @include breakpoint-md {
     padding: 1.5rem;
-  }
-
-  &.web {
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--box-shadow-xl);
   }
 }

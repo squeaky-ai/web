@@ -2,9 +2,9 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { PageTitle } from 'components/web/page-title';
-import { LegalNav } from 'components/web/legal-nav';
-import { LegalContainer } from 'components/web/legal-container';
+import { PageTitle } from 'components/page-title';
+import { LegalNav } from 'components/legal-nav';
+import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const PrivacyPolicy: NextPage<ServerSideProps> = () => (

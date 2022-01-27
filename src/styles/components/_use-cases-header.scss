@@ -1,0 +1,169 @@
+.use-cases-header {
+  background: var(--peach-100);
+  padding: 8rem 0 0 0;
+
+  @include breakpoint-sm {
+    padding: 4rem 0 0 0;
+  }
+
+  .hero {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 3rem 6rem 3rem;
+
+    .subtitle {
+      color: var(--gray-blue-400);
+      font-size: 13px;
+      font-weight: var(--font-weight-block);
+      line-height: 8px;
+      margin: 0 0 1.5rem 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 2rem 0;
+    }
+
+    .large {
+      color: var(--gray-blue-700);
+      margin: 0 0 2rem 0;
+      max-width: 30rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 0 0 2rem 0;
+    }
+
+    .check {
+      align-items: center;
+      color: var(--gray-blue-400);
+      display: flex;
+
+      .icon {
+        color: var(--mauve-700);
+        margin: 0 .25rem 0 0;
+      }
+    }
+
+    .image {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include breakpoint-sm {
+      grid-template-columns: 1fr;
+      padding: 0 2rem 6rem 2rem;
+    }
+  }
+
+  .stats {
+    background-color: var(--peach-400);
+    background-image: url('../../../public/backgrounds/use-cases-1.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 11rem 3rem 6rem 3rem;
+
+    .container {
+      display: grid;
+      grid-gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+
+      @include breakpoint-sm {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h2 {
+      color: var(--mauve-700);
+      font-weight: var(--font-weight-block);
+      margin: 0 0 2rem 0;
+    }
+
+    p {
+      color: var(--gray-blue-700);
+      font-weight: var(--font-weight-block);
+      margin: 0;
+
+      a {
+        color: var(--mauve-700);
+      }
+    }
+  }
+
+  &.blue {
+    background: var(--gray-blue-700);
+
+    .hero {
+      .subtitle {
+        color: var(--light-blue-300);
+      }
+
+      h1 {
+        color: var(--white);
+      }
+
+      .large {
+        color: var(--gray-blue-50);
+      }
+
+      .check {
+        color: var(--peach-100);
+
+        .icon {
+          color: var(--yellow-500);
+        }
+      }
+    }
+
+    .stats {
+      background-color: var(--gray-blue-50);
+      background-image: url('../../../public/backgrounds/use-cases-2.svg');
+
+      h2 {
+        color: var(--gray-blue-500);
+      }
+
+      p {
+        a {
+          color: var(--marine-blue-700);
+        }
+      }
+    }
+  }
+
+  &.mauve {
+    background: var(--mauve-700);
+
+    .hero {
+      .subtitle {
+        color: var(--peach-200);
+      }
+
+      h1 {
+        color: var(--white);
+      }
+
+      .large {
+        color: var(--peach-100);
+      }
+
+      .check {
+        color: var(--peach-100);
+
+        .icon {
+          color: var(--yellow-500);
+        }
+      }
+    }
+
+    .stats {
+      background-color: var(--peach-200);
+      background-image: url('../../../public/backgrounds/use-cases-3.svg');
+    }
+  }
+}

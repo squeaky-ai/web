@@ -7,18 +7,18 @@ import { Icon } from 'components/icon';
 import { Container } from 'components/container';
 import { Divider } from 'components/divider';
 import { Illustration } from 'components/illustration';
-import { Carousel, CarouselItem } from 'components/web/carousel';
-import { TagGroup, TagGroupItem } from 'components/web/tag-group';
-import { SideBySide } from 'components/web/side-by-side';
-import { Screen } from 'components/web/screen';
-import { Screenshot } from 'components/web/screenshots';
+import { Carousel, CarouselItem } from 'components/carousel';
+import { TagGroup, TagGroupItem } from 'components/tag-group';
+import { SideBySide } from 'components/side-by-side';
+import { Screen } from 'components/screen';
+import { Screenshot } from 'components/screenshots';
 import { Card } from 'components/card';
 import { Platform } from 'components/platform';
-import { Cta } from 'components/web/cta';
-import { TestimonialQuote } from 'components/web/testimonial-quote';
-import { ThreeImageGrid, ThreeImageGridItem } from 'components/web/three-image-grid';
-import { ThreeTextGrid, ThreeTextGridItem } from 'components/web/three-text-grid';
-import { Steps, StepItem } from 'components/web/steps';
+import { Cta } from 'components/cta';
+import { TestimonialQuote } from 'components/testimonial-quote';
+import { ThreeImageGrid, ThreeImageGridItem } from 'components/three-image-grid';
+import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
+import { Steps, StepItem } from 'components/steps';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const { publicRuntimeConfig } = getConfig();
@@ -262,7 +262,7 @@ const Home: NextPage<ServerSideProps> = () => {
               <a target='_blank' rel='noreferrer'>See Installation Guides</a>
             </Link>
           </div>
-          <Card className='web'>
+          <Card>
             <div>
               <Platform platform='wordpress' height={64} width={64} />
             </div>

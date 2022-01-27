@@ -3,10 +3,10 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import { Divider } from 'components/divider';
-import { LegalMessage } from 'components/web/legal-message';
-import { PageTitle } from 'components/web/page-title';
-import { LegalNav } from 'components/web/legal-nav';
-import { LegalContainer } from 'components/web/legal-container';
+import { LegalMessage } from 'components/legal-message';
+import { PageTitle } from 'components/page-title';
+import { LegalNav } from 'components/legal-nav';
+import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const Gdpr: NextPage<ServerSideProps> = () => (

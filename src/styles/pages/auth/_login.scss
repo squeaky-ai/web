@@ -10,6 +10,11 @@
   padding: 4rem;
   width: 100vw;
 
+  .header,
+  .footer {
+    display: none;
+  }
+
   @include breakpoint-md {
     background-image: none;
     display: block;
