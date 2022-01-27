@@ -87,7 +87,7 @@
       background-image: url('../../../public/backgrounds/home-1.svg'), url('../../../public/backgrounds/home-2.svg');
       background-position: top 8rem left, bottom left;
       background-repeat: repeat-x;
-      padding: 0 5rem 12rem 5rem;
+      padding: 0 5rem 10rem 5rem;
       position: relative;
 
       &:before {
@@ -114,7 +114,7 @@
         }
 
         .divider {
-          margin: 5rem 0;
+          margin: 4rem 0;
         }
       }
 
@@ -139,7 +139,7 @@
       background-image: url('../../../public/backgrounds/home-3.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
-      padding: 6rem 5rem 12rem 5rem;
+      padding: 4rem 5rem 11rem 4rem;
 
       h3 {
         color: var(--gray-blue-800);
@@ -179,6 +179,10 @@
         color: var(--gray-blue-200);
         margin: 0 0 3rem 0;
         text-align: center;
+
+        b {
+          color: var(--white);
+        }
       }
 
       @include breakpoint-md {

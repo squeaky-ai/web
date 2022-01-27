@@ -1,14 +1,13 @@
 .carousel {
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 2rem 0;
   width: 100%;
 
   .slide {
     align-items: flex-start;
     display: flex;
     justify-content: flex-start;
-    margin: 0 0 4rem 0;
+    margin: 0 0 3rem 0;
     transition: transform .3s ease-in-out;
     white-space: nowrap;
 
@@ -20,6 +19,10 @@
       margin: 0 1rem;
       overflow: hidden;
       width: calc(100% - 2rem);
+
+      @include breakpoint-sm {
+        border-radius: var(--border-radius-md);
+      }
     }
   }
 

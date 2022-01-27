@@ -25,7 +25,7 @@ export const HeaderButtons: FC<Props> = ({ user }) => (
           </a>
         </Link>
 
-        <Link href='/auth/signup'>
+        <Link href='/auth/login'>
           <a className='button secondary'>
             Log In
           </a>
