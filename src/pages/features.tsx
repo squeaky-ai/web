@@ -106,7 +106,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Privacy</h3>
-            <p className='large'>At Squeaky, privacy is not just a buzzword, it&apos;s a core feature of our offering. We&apos;re private by default, and offer a full range of options to help you protect your customer&apos;s data.</p>
+            <p>At Squeaky, privacy is not just a buzzword, it&apos;s a core feature of our offering. We&apos;re private by default, and offer a full range of options to help you protect your customer&apos;s data.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -137,7 +137,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Dashboard</h3>
-            <p className='large'>Landing in a data-driven app can be confusing. That`&apos;s why we pull some of the key datapoints onto the first page of our application, helping you get to the information that matters the moment you arrive.</p>
+            <p>Landing in a data-driven app can be confusing. That`&apos;s why we pull some of the key datapoints onto the first page of our application, helping you get to the information that matters the moment you arrive.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -163,7 +163,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Visitors</h3>
-            <p className='large'>One of the best ways to make sense of your user data is to view it on a per-visitor basis. Our privacy-first profiles group recordings and analytics data per-visitor, so you can see exactly what their experience has been.</p>
+            <p>One of the best ways to make sense of your user data is to view it on a per-visitor basis. Our privacy-first profiles group recordings and analytics data per-visitor, so you can see exactly what their experience has been.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -209,7 +209,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Recordings</h3>
-            <p className='large'>Understanding what your users have been up to has never been easier, thanks to our seemless session recording and playback.</p>
+            <p>Understanding what your users have been up to has never been easier, thanks to our seemless session recording and playback.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -280,7 +280,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Analytics</h3>
-            <p className='large'>Our analytics tool turns your data into actionable insights, enabling you to quickly understand the trends and behaviours that matter most to your business.</p>
+            <p>Our analytics tool turns your data into actionable insights, enabling you to quickly understand the trends and behaviours that matter most to your business.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -341,7 +341,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Feedback</h3>
-            <p className='large'>We offer industry standard feedback surveys to help you enrich your visitor data by pairing it with direct feedback.</p>
+            <p>We offer industry standard feedback surveys to help you enrich your visitor data by pairing it with direct feedback.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -377,7 +377,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Heatmaps</h3>
-            <p className='large'>Use aggregated user interaction data to better understand the performance of your site, what areas of your interface are being interacted with most, and which content matters.</p>
+            <p>Use aggregated user interaction data to better understand the performance of your site, what areas of your interface are being interacted with most, and which content matters.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -413,7 +413,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Team</h3>
-            <p className='large'>At Squeaky we believe that every member of the your team should care about the experience of your customers, so we&apos;ve created a flexible team management system to enable anyone and everyone to be involved.</p>
+            <p>At Squeaky we believe that every member of the your team should care about the experience of your customers, so we&apos;ve created a flexible team management system to enable anyone and everyone to be involved.</p>
           </Container>
           <div className='items'>
             <div className='item'>
@@ -454,7 +454,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Ease of use</h3>
-            <p className='large'>We&apos;ve paired our incredible array of features with a world class user experience, offering effortless access to insights that can fundamentally change your business.</p>
+            <p>We&apos;ve paired our incredible array of features with a world class user experience, offering effortless access to insights that can fundamentally change your business.</p>
           </Container>
           <div className='items'>
             <div className='item'>

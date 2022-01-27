@@ -16,7 +16,7 @@ const Submitted: FC<Pick<Props, 'submittedTitle' | 'submittedMessage'>> = ({ sub
   <div className='submitted'>
     <Icon name='information-line' />
     <h4>{submittedTitle}</h4>
-    <p className='large'>{submittedMessage}</p>
+    <p>{submittedMessage}</p>
   </div>
 );
 

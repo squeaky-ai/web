@@ -17,7 +17,7 @@ const NotFound: NextPage = () => (
         <h2>404</h2>
         <p>The page you are looking for cannot be found.</p>
         <Link href='/'>
-          <a className='button primary-web'>
+          <a className='button primary'>
             Back to home
           </a>
         </Link>

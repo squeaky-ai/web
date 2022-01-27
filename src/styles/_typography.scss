@@ -63,98 +63,47 @@ h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: var(--font-weight-normal);
-  line-height: 24px;
-  margin: 0 0 1.5rem 0;
-
-  &.large {
-    font-size: 18px;
-    line-height: 32px;
-    margin: 0 0 2rem 0;
-
-    @include breakpoint-md {
-      a {
-        font-size: 18px;
-        line-height: 32px;
-      }
-    }
-  }
-
-  &.small {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
+  line-height: 32px;
+  margin: 0 0 2rem 0;
 }
 
 a {
   color: var(--blue-500);
-
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
 }
 
 b {
   font-weight: var(--font-weight-block);
 }
 
-ul {
-  li {
-    @include breakpoint-md {
-      font-size: 13px;
-      line-height: 20px;
-    }
-  }
-}
-
 code, pre {
   color: var(--gray-blue-800);
   font-family: 'Monaco', 'Consolas' 'Courier New', monospace;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 32px;
 }
 
 .button {
   font: inherit;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: var(--font-weight-block);
-  line-height: 24px;
-
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
+  line-height: 32px;
 }
 
 .label {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: var(--font-weight-block);
-  line-height: 24px;
-
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
+  line-height: 32px;
 }
 
 .input,
 .textarea {
   font: inherit;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: var(--font-weight-normal);
-  line-height: 24px;
+  line-height: 32px;
 
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
 
   &::placeholder {
     color: var(--gray-500);
@@ -164,11 +113,6 @@ code, pre {
 
 .select select {
   font: inherit;
-  font-size: 16px;
-  line-height: 24px;
-
-  @include breakpoint-md {
-    font-size: 13px;
-    line-height: 20px;
-  }
+  font-size: 18px;
+  line-height: 32px;
 }

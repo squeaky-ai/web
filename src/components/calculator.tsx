@@ -50,11 +50,11 @@ export const Calculator: FC<Props> = ({ currency }) => {
           <>
             <div className='calc'>
               <h3>Calculate Your Price</h3>
-              <p className='large'>
+              <p>
                 Simple pricing for powerful functionality - Just select the number of <a href='#'>visits</a> you want to capture per month to discover which plan is right for you:
               </p>
               <div className='slider-label'>
-                <p className='large' style={getCalculatorStyle()}>
+                <p style={getCalculatorStyle()}>
                   <Icon name='group-line' />
                   <b>{recordingsPerMonthLimit(plans, plan)}</b> visits per month
                 </p>
@@ -101,7 +101,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
                   <li><Icon name='check-line' />Self-hosting options</li>
                 </ul>
                 <Link href='#'>
-                  <a className='button primary-web'>
+                  <a className='button primary'>
                     Talk To Sales
                   </a>
                 </Link>
@@ -114,7 +114,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
                <h1>{currency.symbol}{monthlyPrice(plans, plan)}</h1>
                <p className='duration'>per month</p>
                <Link href='/auth/signup'>
-                 <a className='button primary-web'>
+                 <a className='button primary'>
                    Get Started Free
                  </a>
                </Link>

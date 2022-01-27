@@ -21,6 +21,6 @@ export const StepItem: FC<ChildProps> = ({ title, body, position }) => (
   <div className='step-item'>
     <h3>{position}</h3>
     <h4>{title}</h4>
-    <p className='large'>{body}</p>
+    <p>{body}</p>
   </div>
 );

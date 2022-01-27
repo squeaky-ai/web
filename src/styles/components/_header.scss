@@ -51,7 +51,9 @@
 
     .link {
       color: var(--gray-blue-700);
+      font-size: 16px;
       font-weight: var(--font-weight-block);
+      line-height: 24px;
       margin: 0 2rem 0 0;
       text-decoration: none;
 
@@ -81,6 +83,11 @@
       }
     }
 
+    .button {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
     .dropdown .link {
       align-items: center;
       display: flex;
@@ -91,7 +98,7 @@
       }
     }
 
-    .secondary-web {
+    .secondary {
       margin-left: 1rem;
     }
 
@@ -120,7 +127,7 @@
 
 
     @include breakpoint-sm {
-      & > .primary-web {
+      & > .primary {
         display: none;
       }
     }
@@ -186,7 +193,7 @@
       .actions {
         flex-direction: column;
 
-        .secondary-web {
+        .secondary {
           margin: 1rem 0 0 0;
         }
       }
@@ -201,9 +208,7 @@
       background: none;
       border: none;
       display: flex;
-      font-size: 18px;
       justify-content: space-between;
-      line-height: 32px;      
       padding: 1rem 2rem;
       width: 100%;
 
@@ -253,7 +258,7 @@
     position: absolute;
     top: calc(100% + 1rem);
 
-    .button:not(.tertiary-web) {
+    .button:not(.tertiary) {
       align-items: center;
       border-radius: var(--border-radius-md);
       color: var(--gray-blue-500);
@@ -268,7 +273,7 @@
       }
     }
 
-    .tertiary-web {
+    .tertiary {
       display: flex;
       justify-content: center;
       margin: 1rem;
@@ -463,6 +468,8 @@
         p {
           align-items: center;
           display: flex;
+          font-size: 16px;
+          line-height: 24px;
           margin: 0;
 
           .icon {
@@ -500,7 +507,7 @@
 
     menu {
       .link,
-      .secondary-web {
+      .secondary {
         color: var(--white);
       }
     }
@@ -511,7 +518,7 @@
 
     menu {
       .link,
-      .secondary-web {
+      .secondary {
         color: var(--white);
       }
     }

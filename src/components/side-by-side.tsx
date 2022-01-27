@@ -23,10 +23,10 @@ export const SideBySide: FC<Props> = ({ title, subtitle, body, linkHref, linkTex
     <div className='content'>
       {subtitle ? <h6>{subtitle}</h6> : null}
       <h3>{title}</h3>
-      <p className='large'>{body}</p>
+      <p>{body}</p>
       <div className={classnames('link', { hidden: !linkText })}>
         <Link href={linkHref || '#'}>
-          <a className={`button ${buttonType || 'primary'}-web`}>
+          <a className={`button ${buttonType || 'primary'}`}>
             {linkText}
           </a>
         </Link>

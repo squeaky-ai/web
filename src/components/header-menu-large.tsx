@@ -24,7 +24,7 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, toggleSubMenuOpe
   const router = useRouter();
 
   return (
-    <menu className='large'>
+    <menu>
       <HeaderMenu link='Use Cases' active={router.route.startsWith('/use-cases')} open={subMenuOpen === 'use-cases'} toggleOpen={toggleSubMenuOpen('use-cases')}>
         <HeaderUseCases />
       </HeaderMenu>
@@ -62,7 +62,7 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, toggleSubMenuOpe
         </Link>
 
         <Link href='/book-demo'>
-          <a className='button tertiary-web'>
+          <a className='button tertiary'>
             Book Demo
           </a>
         </Link>

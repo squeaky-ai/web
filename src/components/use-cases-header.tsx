@@ -25,9 +25,9 @@ export const UseCasesHeader: FC<ParentProps> = ({ title, subtitle, body, stats, 
       <div className='details'>
         <p className='subtitle'>{subtitle}</p>
         <h1>{title}</h1>
-        <p className='large'>{body}</p>
+        <p>{body}</p>
         <Link href='/auth/signup'>
-          <a className='button primary-web'>
+          <a className='button primary'>
           Get Started
           </a>
         </Link>
@@ -51,6 +51,6 @@ export const UseCasesHeader: FC<ParentProps> = ({ title, subtitle, body, stats, 
 export const UseCasesHeaderStats: FC<ChildProps> = ({ stat, body }) => (
   <div className='stat'>
     <h2>{stat}</h2>
-    <p className='large'>{body}</p>
+    <p>{body}</p>
   </div>
 );

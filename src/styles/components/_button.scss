@@ -18,72 +18,6 @@
     outline-offset: 2px;
   }
 
-  &.primary-app {
-    background: var(--blue-500);
-    border: 1px solid var(--blue-500);
-    border-radius: var(--border-radius-md);
-    color: var(--white);
-    height: 40px;
-    margin: 0;
-    padding: .34rem .75rem;
-
-    &:hover {
-      background: var(--blue-300);
-    }
-
-    &:active {
-      background: var(--blue-700);
-      border-color: var(--blue-700);
-    }
-  }
-
-  &.secondary-app {
-    background: var(--white);
-    border: 1px solid var(--blue-500);
-    border-radius: var(--border-radius-md);
-    color: var(--gray-blue-800);
-    height: 40px;
-    margin: 0;
-    padding: .34rem 1rem;
-
-    &:hover,
-    &:active {
-      background: var(--blue-500);
-      color: var(--white);
-    }
-  }
-
-  &.tertiary-app {
-    background: var(--white);
-    border: 1px solid var(--rose-500);
-    border-radius: var(--border-radius-md);
-    color: var(--gray-blue-800);
-    height: 40px;
-    margin: 0;
-    padding: .34rem 1rem;
-
-    &:hover,
-    &:active {
-      background: var(--rose-500);
-      color: var(--white);
-    }
-  }
-
-  &.quaternary-app {
-    background: var(--gray-100);
-    border: 1px solid var(--gray-100);
-    border-radius: var(--border-radius-md);
-    color: var(--gray-blue-800);
-    height: 40px;
-    margin: 0;
-    padding: .34rem 1rem;
-
-    &:hover,
-    &:active {
-      border-color: var(--gray-200);
-    }
-  }
-
   &.blank {
     background: var(--white);
     border: 1px solid var(--gray-200);
@@ -130,7 +64,7 @@
     }
   }
 
-  &.primary-web {
+  &.primary {
     background: var(--yellow-500);
     border: 2px solid var(--yellow-500);
     border-radius: var(--border-radius-xl);
@@ -142,7 +76,7 @@
     }
   }
 
-  &.secondary-web {
+  &.secondary {
     background: transparent;
     border: 2px solid var(--yellow-500);
     border-radius: var(--border-radius-xl);
@@ -154,7 +88,7 @@
     }
   }
 
-  &.tertiary-web {
+  &.tertiary {
     background: transparent;
     border: 2px solid var(--gray-blue-200);
     border-radius: var(--border-radius-xl);

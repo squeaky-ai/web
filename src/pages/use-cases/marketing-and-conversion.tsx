@@ -50,7 +50,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>For marketing &amp; conversion teams seeking the full picture</h2>
-          <p className='large'>Sure, Squeaky&apos;s got the numbers, but we also offer rich context too. Thanks to Squeaky, when your customers aren&apos;t converting, you can quickly reveal the the most high-value opportunities for improvement.</p>
+          <p>Sure, Squeaky&apos;s got the numbers, but we also offer rich context too. Thanks to Squeaky, when your customers aren&apos;t converting, you can quickly reveal the the most high-value opportunities for improvement.</p>
         </Container>
 
         <Carousel>
@@ -113,7 +113,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
       <Container className='centered lg'>
         <Container className='md centered tagline'>
           <h2>Let deep understanding of your audience drive your marketing forward</h2>
-          <p className='large'>Squeaky&apos;s full featured customer experience platform will help you to drive new experiments and validate your ideas faster than ever.</p>
+          <p>Squeaky&apos;s full featured customer experience platform will help you to drive new experiments and validate your ideas faster than ever.</p>
         </Container>
 
         <SideBySide 

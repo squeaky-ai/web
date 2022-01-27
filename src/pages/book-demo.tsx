@@ -44,7 +44,7 @@ const BookDemo: NextPage<ServerSideProps> = () => {
         aside={
           <>
             <h3>Demo request form</h3>
-            <p className='large'>Demos last approximately 30 minutes, and here&apos;s what we&apos;ll cover:</p>
+            <p>Demos last approximately 30 minutes, and here&apos;s what we&apos;ll cover:</p>
             <p>
               <ul>
                 <li><Icon name='check-line' />How customer experience analytics can help your business.</li>
@@ -162,7 +162,7 @@ const BookDemo: NextPage<ServerSideProps> = () => {
                 />
                 <span className='validation'>{errors.message}</span>
 
-                <Button type='submit' className='primary-web' disabled={isSubmitting} >
+                <Button type='submit' className='primary' disabled={isSubmitting} >
                   Submit Demo Request
                 </Button>
               </form>

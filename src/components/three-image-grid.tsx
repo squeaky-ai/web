@@ -25,7 +25,7 @@ export const ThreeImageGridItem: FC<ChildProps> = ({ image, title, body, link })
       {image}
     </div>
     <h4>{title}</h4>
-    <p className='large'>{body}</p>
+    <p>{body}</p>
     <Link href={link}>
       <a>Learn More</a>
     </Link>

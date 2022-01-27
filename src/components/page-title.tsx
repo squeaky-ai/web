@@ -15,7 +15,7 @@ export const PageTitle: FC<ParentProps> = ({ title, subtitle, nav }) => (
   <>
     <div className='page-title'>
       <h1>{title}</h1>
-      <p className='large'>{subtitle}</p>
+      <p>{subtitle}</p>
     </div>
     {nav}
   </>

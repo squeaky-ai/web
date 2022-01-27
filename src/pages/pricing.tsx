@@ -25,7 +25,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
       <section className='hero'>
         <Container className='centered sm-md'>
           <h1>Unleash your data</h1>
-          <p className='large'>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b> and <b>heatmap</b> data.</p>
+          <p>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b> and <b>heatmap</b> data.</p>
           <Currencies selected={currency} setSelected={setCurrency} />
         </Container>
         <Calculator currency={currency} />

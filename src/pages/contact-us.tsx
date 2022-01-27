@@ -41,8 +41,8 @@ const ContactUs: NextPage<ServerSideProps> = () => {
         aside={
           <>
             <h3>Contact us</h3>
-            <p className='large'>For all enquiries please contact our team using the form provided, or via the email address <a href='mailto:hello@squeaky.ai'>hello@squeaky.ai</a>.</p>
-            <p className='large'>
+            <p>For all enquiries please contact our team using the form provided, or via the email address <a href='mailto:hello@squeaky.ai'>hello@squeaky.ai</a>.</p>
+            <p>
               <b>Office</b><br />
               Squeaky B.V.<br />
               Debussystraat 43<br />
@@ -138,7 +138,7 @@ const ContactUs: NextPage<ServerSideProps> = () => {
               />
               <span className='validation'>{errors.message}</span>
 
-              <Button type='submit' className='primary-web' disabled={isSubmitting} >
+              <Button type='submit' className='primary' disabled={isSubmitting} >
                 Submit
               </Button>
             </form>

@@ -50,7 +50,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>It&apos;s never been easier to understand your customers</h2>
-          <p className='large'>With Squeaky, when your customers get in touch with a problem you could see exactly what happened, meaning you&apos;ll provide faster and personalised support.</p>
+          <p>With Squeaky, when your customers get in touch with a problem you could see exactly what happened, meaning you&apos;ll provide faster and personalised support.</p>
         </Container>
 
         <Carousel>
@@ -112,7 +112,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
       <Container className='centered lg'>
         <Container className='md centered tagline'>
           <h2>Detect and diagnose customer problems in new ways.</h2>
-          <p className='large'>Squeaky offers you brand new tools that will let you understand and address the pain points of your customers faster, and more effectively, than ever.</p>
+          <p>Squeaky offers you brand new tools that will let you understand and address the pain points of your customers faster, and more effectively, than ever.</p>
         </Container>
 
         <SideBySide 

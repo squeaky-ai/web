@@ -33,15 +33,15 @@ const Home: NextPage<ServerSideProps> = () => {
       <section className='hero'>
         <Container className='centered md'>
           <h1>The privacy-first customer experience platform</h1>
-          <p className='large'>Create high-value digital experiences by understanding exactly how visitors are using your service or product, without compromising their privacy.</p>
+          <p>Create high-value digital experiences by understanding exactly how visitors are using your service or product, without compromising their privacy.</p>
           <div className='actions'>
             <Link href='/auth/signup'>
-              <a className='button primary-web'>
+              <a className='button primary'>
                 Get Started
               </a>
             </Link>
             <Link href='/book-demo'>
-              <a className='button secondary-web'>
+              <a className='button secondary'>
               Book Demo
               </a>
             </Link>
@@ -66,19 +66,19 @@ const Home: NextPage<ServerSideProps> = () => {
       <section className='solutions'>
         <Carousel>
           <CarouselItem>
-            <Screenshot screen='sentiment' width={1080} height={750} alt='Screenshot of the Squeaky sentiment page' />
+            <Screenshot screen='sentiment' width={1088} height={750} alt='Screenshot of the Squeaky sentiment page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='analytics' width={1080} height={750} alt='Screenshot of the Squeaky analytics page' />
+            <Screenshot screen='analytics' width={1088} height={750} alt='Screenshot of the Squeaky analytics page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='nps' width={1080} height={750} alt='Screenshot of the Squeaky NPS page' />
+            <Screenshot screen='nps' width={1088} height={750} alt='Screenshot of the Squeaky NPS page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='session' width={1080} height={750} alt='Screenshot of the Squeaky session page' />
+            <Screenshot screen='session' width={1088} height={750} alt='Screenshot of the Squeaky session page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='recordings' width={1080} height={750} alt='Screenshot of the Squeaky recordings page' />
+            <Screenshot screen='recordings' width={1088} height={750} alt='Screenshot of the Squeaky recordings page' />
           </CarouselItem>
         </Carousel>
 
@@ -149,7 +149,7 @@ const Home: NextPage<ServerSideProps> = () => {
       <section className='showcase'>
         <Container className='centered sm-md'>
           <h2>Elevate your customers&apos; digital experience</h2>
-          <p className='subheading large'>Squeaky <b>puts data at the heart</b> of how you understand and improve your customer experience.</p>
+          <p className='subheading'>Squeaky <b>puts data at the heart</b> of how you understand and improve your customer experience.</p>
         </Container>
 
         <Container className='centered lg'>
@@ -194,7 +194,7 @@ const Home: NextPage<ServerSideProps> = () => {
         <Container className='centered lg'>
           <div className='understanding-grid'>
             <h2>Understand your visitors without invading their privacy</h2>
-            <p className='large'>You don&apos;t have to covertly collect mountains of data on each of your visitors to generate meaningful insights. Our product proves it, by offering world-class customer insights whilst meeting the highest standards in data privacy.</p>
+            <p>You don&apos;t have to covertly collect mountains of data on each of your visitors to generate meaningful insights. Our product proves it, by offering world-class customer insights whilst meeting the highest standards in data privacy.</p>
             <div className='image'>
               <Illustration illustration='illustration-19' width={598} height={395} />
             </div>
@@ -245,7 +245,7 @@ const Home: NextPage<ServerSideProps> = () => {
           </Steps>
 
           <Link href='/auth/signup'>
-            <a className='button primary-web'>
+            <a className='button primary'>
               Get Started Free
             </a>
           </Link>
@@ -257,7 +257,7 @@ const Home: NextPage<ServerSideProps> = () => {
         <Container className='centered lg'>
           <div>
             <h3>Compatible with the platforms you&apos;re already using</h3>
-            <p className='large'>We&apos;ve got installation guides to get you up and running in no time, no matter whether you&apos;re using a CMS, or if you&apos;ve hand-coded your website or web app from scratch.</p>
+            <p>We&apos;ve got installation guides to get you up and running in no time, no matter whether you&apos;re using a CMS, or if you&apos;ve hand-coded your website or web app from scratch.</p>
             <Link href={publicRuntimeConfig.helpCenterTrackingCodeUrl}>
               <a target='_blank' rel='noreferrer'>See Installation Guides</a>
             </Link>

@@ -14,7 +14,7 @@ export const Cta: FC<Props> = ({ title, type }) => (
     <Container className='centered md'>
       {title}
       <Link href='/auth/signup'>
-        <a className='button primary-web'>
+        <a className='button primary'>
           Get Started Free
         </a>
       </Link>

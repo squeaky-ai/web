@@ -11,7 +11,7 @@ export const HeaderButtons: FC<Props> = ({ user }) => (
   <>
     {user && (
       <Link href='/app/sites'>
-        <a className='button primary-web'>
+        <a className='button primary'>
           Go To App
         </a>
       </Link>
@@ -20,13 +20,13 @@ export const HeaderButtons: FC<Props> = ({ user }) => (
     {!user && (
       <>
         <Link href='/auth/signup'>
-          <a className='button primary-web'>
+          <a className='button primary'>
             Get Started Free
           </a>
         </Link>
 
         <Link href='/auth/signup'>
-          <a className='button secondary-web'>
+          <a className='button secondary'>
             Log In
           </a>
         </Link>

@@ -49,7 +49,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>The customer experience tool with no missing pieces</h2>
-          <p className='large'>Too many solutions leave product and design professionals wanting more. By combining recordings, analytics, customer profiles, user feedback and analytics in one tool, you&apos;ll get everything you need in on tool.</p>
+          <p>Too many solutions leave product and design professionals wanting more. By combining recordings, analytics, customer profiles, user feedback and analytics in one tool, you&apos;ll get everything you need in on tool.</p>
         </Container>
 
         <Carousel>
@@ -111,7 +111,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
       <Container className='centered lg'>
         <Container className='md centered tagline'>
           <h2>Understand, design and build with confidence</h2>
-          <p className='large'>Inform your roadmap and designs with real insight into how people are using your product. First hand knowledge of your customer experience guarantees better, more informed decision making.</p>
+          <p>Inform your roadmap and designs with real insight into how people are using your product. First hand knowledge of your customer experience guarantees better, more informed decision making.</p>
         </Container>
 
         <SideBySide 

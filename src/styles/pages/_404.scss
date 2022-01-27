@@ -20,21 +20,4 @@
       text-align: center;
     }
   }
-
-  #app-sidebar {
-    display: none;
-  }
-
-  &.app {
-    background: transparent;
-
-    .error-state {
-      height: 100vh;
-    }
-
-    .header,
-    .footer {
-      display: none;
-    }
-  }
 }

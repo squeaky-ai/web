@@ -21,7 +21,7 @@ export const ThreeTextGrid: FC<ParentProps> = ({ children }) => (
 export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link }) => (
   <div className='item'>
     <h4>{title}</h4>
-    <p className='large'>{body}</p>
+    <p>{body}</p>
     <Link href={link}>
       <a>Learn More</a>
     </Link>
