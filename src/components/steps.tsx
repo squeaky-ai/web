@@ -13,7 +13,10 @@ interface ChildProps {
 
 export const Steps: FC<ParentProps> = ({ children }) => (
   <div className='steps'>
-    {children}
+    <div className='items'>
+      {children}
+    </div>
+    <div className='dashes' />
   </div>
 );
 

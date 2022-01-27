@@ -1,32 +1,33 @@
 .steps {
-  display: grid;
-  grid-gap: 3rem;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+
+  .items {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .step-item {
     text-align: center;
     position: relative;
+    z-index: 1;
 
-    &:before {
-      border: 2px dashed var(--peach-500);
-      border-spacing: 4px;
-      content: '';
-      display: block;
-      left: 0;
-      position: absolute;
-      top: 1.75rem;
-      width: 100%;
+    &:first-of-type {
+      background-image: linear-gradient(90deg, #742a40 50%, rgba(116, 42, 64, 0) 50%);
     }
 
-    &:first-of-type:before {
-      left: 50%;
-      width: calc(50% + 3rem);
+    &:last-of-type {
+      background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, #742a40 50%);
     }
+  }
 
-    &:last-of-type:before {
-      left: -3rem;
-      width: calc(50% + 3rem);
-    }
+  .dashes {
+    border: 2px dashed var(--peach-500);
+    left: 0;
+    position: absolute;
+    top: 1.75rem;
+    width: 100%;
+    z-index: 0;
   }
 
   h3 {
@@ -59,32 +60,29 @@
   }
 
   @include breakpoint-sm {
-    grid-template-columns: 1fr;
+    .items {
+      grid-template-columns: 1fr;
+    }
 
     .step-item {
       text-align: left;
       padding: .5rem 0 0 5rem;
-      position: relative;
 
-      &:before {
-        height: 100%;
-        left: 1.75rem;
-        width: auto;
-      }
-
-      &:first-of-type:before {
-        height: 100%;
-        left: 1.75rem;
-        top: 3rem;
-        width: auto;
+      &:first-of-type {
+        background-image: none;
       }
   
-      &:last-of-type:before {
-        height: 3rem;
-        left: 1.75rem;
-        top: -2rem;
-        width: auto;
+      &:last-of-type {
+        background-color: var(--mauve-700);
+        background-image: none;
       }
+    }
+
+    .dashes {
+      left: 1.75rem;
+      height: 100%;
+      top: 0;
+      width: auto;
     }
 
     h3 {
