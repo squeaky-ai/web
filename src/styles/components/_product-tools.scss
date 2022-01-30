@@ -1,0 +1,64 @@
+.product-tools {
+  .tools-grid {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-areas: 'title image'
+                         'content image';
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0 0 4rem 0;
+
+    h2 {
+      color: var(--gray-blue-800);
+      grid-area: title;
+      margin: 0 0 3rem 0;
+    }
+
+    p {
+      color: var(--gray-blue-700);
+      grid-area: content;
+      margin: 0;
+    }
+
+    .image {
+      grid-area: image;
+    }
+  }
+
+  .three-text-grid {
+    h4 {
+      color: var(--gray-blue-800);
+
+      &::after {
+        background: var(--marine-blue-700);
+      }
+    }
+
+    p {
+      color: var(--gray-blue-700);
+    }
+
+    a {
+      color: var(--gray-blue-800);
+    }
+  }
+
+  @include breakpoint-md {
+    .tools-grid {
+      grid-template-areas: 'title image'
+                           'content content';
+    }
+  }
+
+  @include breakpoint-sm {
+    .tools-grid {
+      grid-template-areas: 'image'
+                          'title'
+                          'content';
+      grid-template-columns: 1fr;
+
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+}

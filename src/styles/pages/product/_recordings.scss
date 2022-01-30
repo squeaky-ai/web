@@ -1,3 +1,138 @@
 .page.recordings {
+  section {
+    &.glance {
+      background-color: var(--gray-blue-800);
+      background-image: url('../../../../public/backgrounds/squiggle-blue.svg');
+      background-repeat: repeat-y;
+      padding: 8rem 4rem;
 
+      h2 {
+        color: var(--peach-50);
+        margin: 0 0 8rem 0;
+        text-align: center;
+      }
+
+      .items {
+        .item {
+          &.show {
+            background: var(--gray-blue-600);
+          }
+
+          .button {
+            .icon {
+              color: var(--gray-blue-50);
+            }
+          }
+        }
+      }
+    }
+
+    &.testimonial {
+      background-color: var(--mauve-700);
+      background-image: url('../../../../public/backgrounds/product-4.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 10rem 3rem 6rem 3rem;
+
+      .shadow {
+        background: var(--mauve-400);
+      }
+    }
+
+    &.full-picture {
+      background-color: var(--peach-200);
+      background-image: url('../../../../public/backgrounds/product-5.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 4rem;
+
+      h2 {
+        margin: 0 0 6rem 0;
+        position: relative;
+
+        &:after {
+          background: var(--mauve-700);
+          content: ' ';
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          top: calc(100% + 1rem);
+          width: 25%;
+        }
+      }
+
+      .features-grid {
+        .icon {
+          color: var(--mauve-700);
+        }
+      }
+
+      .features-banner {
+        background: var(--mauve-700);
+        margin: 6rem 0;
+      }
+    }
+
+    &.tools {
+      background-color: var(--white);
+      background-image: url('../../../../public/backgrounds/product-6.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 10rem 5rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem 10rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 8rem 2rem;
+      }
+    }
+
+    &.easy {
+      background-color: var(--gray-blue-700);
+      padding: 6rem 5rem;
+
+
+      h3 {
+        background: var(--white);
+      }
+
+      .subheading {
+        color: var(--gray-blue-200);
+      }
+
+      .dashes {
+        border-color: var(--gray-blue-50);
+      }
+
+      .step-item {
+        &:first-of-type {
+          background-image: linear-gradient(90deg, var(--gray-blue-700) 50%, rgba(116, 42, 64, 0) 50%);
+        }
+
+        &:last-of-type {
+          background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, var(--gray-blue-700) 50%);
+        }
+      }
+    }
+
+    &.compatibility {
+      background-color: var(--gray-blue-50);
+      padding: 8rem 5rem;
+
+      a {
+        color: var(--marine-blue-700);
+      }
+
+      @include breakpoint-md {
+        padding: 8rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+      }
+    }
+  }
 }
