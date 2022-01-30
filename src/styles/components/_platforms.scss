@@ -1,0 +1,51 @@
+.platforms {
+  display: grid;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  h3 {
+    margin: 0 0 2rem 0;
+  }
+
+  p {
+    color: var(--gray-blue-700);
+    margin: 0 0 2rem 0;
+  }
+
+  a {
+    color: var(--mauve-700);
+    font-weight: var(--font-weight-block);
+    margin: 0;
+  }
+
+  .card {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 6rem;
+
+    div {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @include breakpoint-md {
+    .card {
+      padding: 2rem;
+    }
+  }
+  
+  @include breakpoint-sm {
+    grid-gap: 3rem;
+    grid-template-columns: 1fr;
+  
+    .card {
+      div {
+        min-height: 5rem;
+      }
+    }
+  }
+  
+}

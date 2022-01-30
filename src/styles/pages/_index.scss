@@ -250,100 +250,21 @@
       }
     }
 
-    &.up-and-running {
+    &.easy {
       background-color: var(--mauve-700);
       padding: 6rem 5rem;
-      text-align: center;
-
-      h2 {
-        color: var(--white);
-        margin: 0 0 2rem 0;
-      }
-
-      .subheading {
-        color: var(--peach-200);
-        margin: 0 0 5rem 0;
-      }
-
-      .steps {
-        margin: 0 0 5rem 0;
-      }
-
-      @include breakpoint-md {
-        padding: 6rem 3rem;
-      }
-
-      @include breakpoint-sm {
-        padding: 4rem 2rem;
-
-        .button {
-          display: block;
-          width: 100%;
-        }
-      }
     }
 
     &.compatibility {
       background-color: var(--peach-200);
       padding: 8rem 5rem;
 
-      .container {
-        display: grid;
-        grid-gap: 6rem;
-        grid-template-columns: repeat(2, 1fr);
-
-        h3 {
-          margin: 0 0 2rem 0;
-        }
-
-        p {
-          color: var(--gray-blue-700);
-          margin: 0 0 2rem 0;
-        }
-
-        a {
-          color: var(--mauve-700);
-          font-weight: var(--font-weight-block);
-          margin: 0;
-        }
-
-        .card {
-          display: grid;
-          grid-gap: 2rem;
-          grid-template-columns: repeat(3, 1fr);
-          padding: 3rem 6rem;
-
-          div {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-          }
-        }
-      }
-
       @include breakpoint-md {
         padding: 8rem 3rem;
-        
-        .container {
-          .card {
-            padding: 2rem;
-          }
-        }
       }
 
       @include breakpoint-sm {
         padding: 4rem 2rem;
-
-        .container {
-          grid-gap: 3rem;
-          grid-template-columns: 1fr;
-
-          .card {
-            div {
-              min-height: 5rem;
-            }
-          }
-        }
       }
     }
 

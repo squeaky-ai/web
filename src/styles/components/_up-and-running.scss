@@ -1,0 +1,30 @@
+.up-and-running {
+  text-align: center;
+
+  h2 {
+    color: var(--white);
+    margin: 0 0 2rem 0;
+  }
+
+  .subheading {
+    color: var(--peach-200);
+    margin: 0 0 5rem 0;
+  }
+
+  .steps {
+    margin: 0 0 5rem 0;
+  }
+
+  @include breakpoint-md {
+    padding: 6rem 3rem;
+  }
+
+  @include breakpoint-sm {
+    padding: 4rem 2rem;
+
+    .button {
+      display: block;
+      width: 100%;
+    }
+  }
+}

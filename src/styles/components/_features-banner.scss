@@ -1,0 +1,13 @@
+.features-banner {
+  align-items: center;
+  background: var(--gray-blue-800);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+
+  p {
+    color: var(--white);
+    margin: 0 2rem 0 0;
+  }
+}

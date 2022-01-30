@@ -2,7 +2,6 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import getConfig from 'next/config';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
 import { Divider } from 'components/divider';
@@ -12,15 +11,12 @@ import { TagGroup, TagGroupItem } from 'components/tag-group';
 import { SideBySide } from 'components/side-by-side';
 import { Screen } from 'components/screen';
 import { Screenshot } from 'components/screenshots';
-import { Card } from 'components/card';
-import { Platform } from 'components/platform';
 import { Cta } from 'components/cta';
+import { UpAndRunning } from 'components/up-and-running';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { ThreeImageGrid, ThreeImageGridItem } from 'components/three-image-grid';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
-import { Steps, StepItem } from 'components/steps';
-
-const { publicRuntimeConfig } = getConfig();
+import { Platforms } from 'components/platforms';
 
 const Home: NextPage = () => {
   return (
@@ -218,70 +214,12 @@ const Home: NextPage = () => {
         </Container>
       </section>
 
-      <section className='up-and-running'>
-        <Container className='centered lg'>
-          <Container className='centered sm'>
-            <h2>It&apos;s easy to get up and running in minutes</h2>
-            <p className='subheading'>In the time it&apos;s taken you to read this page you could have already started collecting valuable insights, it&apos;s</p>
-          </Container>
-
-          <Steps>
-            <StepItem
-              title='Sign up'
-              body={<>Create your <Link href='/auth/signup'><a>free account</a></Link> and add your website or app.</>}
-              position={1}
-            />
-            <StepItem
-              title='Install tracking code'
-              body='Install our privacy-first tracking code on your website.'
-              position={2}
-            />
-            <StepItem
-              title='Analyse your data'
-              body='Use your recordings and data to improve your site or app.'
-              position={3}
-            />
-          </Steps>
-
-          <Link href='/auth/signup'>
-            <a className='button primary'>
-              Get Started Free
-            </a>
-          </Link>
-        </Container>
+      <section className='easy'>
+        <UpAndRunning />
       </section>
 
-
       <section className='compatibility'>
-        <Container className='centered lg'>
-          <div>
-            <h3>Compatible with the platforms you&apos;re already using</h3>
-            <p>We&apos;ve got installation guides to get you up and running in no time, no matter whether you&apos;re using a CMS, or if you&apos;ve hand-coded your website or web app from scratch.</p>
-            <Link href={publicRuntimeConfig.helpCenterTrackingCodeUrl}>
-              <a target='_blank' rel='noreferrer'>See Installation Guides</a>
-            </Link>
-          </div>
-          <Card>
-            <div>
-              <Platform platform='wordpress' height={64} width={64} />
-            </div>
-            <div>
-              <Platform platform='shopify' height={64} width={64} />
-            </div>
-            <div>
-              <Platform platform='wix' height={64} width={64} />
-            </div>
-            <div>
-              <Platform platform='drupal' height={64} width={64} />
-            </div>
-            <div>
-              <Platform platform='magento' height={64} width={64} />
-            </div>
-            <div>
-              <Platform platform='webflow' height={64} width={64} />
-            </div>
-          </Card>
-        </Container>
+        <Platforms />
       </section>
 
       <section className='get-started'>
