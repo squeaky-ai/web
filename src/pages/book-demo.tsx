@@ -140,12 +140,12 @@ const BookDemo: NextPage = () => {
 
                 <Label htmlFor='traffic'>Monthly traffic <i>(to your website or app)</i></Label>
                 <Select name='traffic' onChange={handleChange} invalid={touched.traffic && !!errors.traffic}>
-                  <Option value='500'>500 - 5,000 visits</Option>
+                  <Option value='500'>0 - 5,000 visits</Option>
                   <Option value='5000'>5,000 - 25,000 visits</Option>
                   <Option value='25000'>25,000 - 50,000 visits</Option>
-                  <Option value='50000'>50,000 - 100,000</Option>
+                  <Option value='50000'>50,000 - 100,000 visits</Option>
                   <Option value='100000'>100,000 - 250,000 visits</Option>
-                  <Option value='250000'>More than 250,000 visits</Option>
+                  <Option value='250000'>250,000+ visits</Option>
                 </Select>
                 <span className='validation'>{errors.traffic}</span>
 

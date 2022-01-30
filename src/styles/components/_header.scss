@@ -509,6 +509,12 @@
   &.blue:not(.scrolled):not(.sub-menu-open) {
     background: var(--gray-blue-700);
 
+    .hamburger {
+      .icon {
+        color: var(--white);
+      }
+    }
+
     menu {
       .link,
       .secondary {
@@ -519,6 +525,12 @@
 
   &.mauve:not(.scrolled):not(.sub-menu-open) {
     background: var(--mauve-700);
+
+    .hamburger {
+      .icon {
+        color: var(--white);
+      }
+    }
 
     menu {
       .link,

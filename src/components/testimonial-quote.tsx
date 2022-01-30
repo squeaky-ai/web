@@ -47,7 +47,12 @@ export const TestimonialQuote: FC<Props> = ({ quote, by, at, circular, flip, per
     </div>
     <div className='info'>
       <h3>{quote}</h3>
-      <p><b>{by}</b> {at}</p>
+      <div className='bottom'>
+        <div className='img'>
+          <Img person={person} />
+        </div>
+        <p><b>{by}</b> {at}</p>
+      </div>
     </div>
   </div>
 );
