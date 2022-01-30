@@ -23,6 +23,14 @@
     flex-shrink: 0;
     width: 30rem;
 
+    .image {
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--box-shadow-xl);
+      display: none;
+      font-size: 0;
+      overflow: hidden;
+    }
+
     .item {
       padding: 2rem;
 
@@ -67,6 +75,41 @@
 
         .body {
           display: block;
+        }
+      }
+    }
+  }
+
+  @include breakpoint-md {
+    .images {
+      display: none;
+    }
+
+    .items {
+      width: 100%;
+
+      .image {
+        display: block;
+      }
+
+      .item {
+        margin: 0 0 3rem 0;
+        padding: 0;
+
+        .button {
+          margin: 2rem 0;
+
+          .icon:last-of-type {
+            display: none;
+          }
+        }
+
+        .body {
+          display: block;
+        }
+
+        &.show {
+          background: none;
         }
       }
     }

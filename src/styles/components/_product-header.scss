@@ -53,4 +53,38 @@
       margin: 0 .5rem 0 0;
     }
   }
+
+  @include breakpoint-md {
+    padding: 6rem 3rem;
+  }
+
+  @include breakpoint-sm {
+    padding: 4rem 2rem;
+
+    .actions {
+      flex-direction: column;
+
+      .button {
+        text-align: center;
+        width: 100%;
+
+        &:first-of-type {
+          margin: 0 0 1rem 0;
+        }
+      }
+    }
+
+    & + .features {
+      flex-direction: column;
+      padding: 1rem;
+
+      p {
+        margin: 0 0 1rem 0;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+    }
+  }
 }

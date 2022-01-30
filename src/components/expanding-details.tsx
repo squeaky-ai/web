@@ -31,6 +31,9 @@ export const ExpandingDetails: FC<Props> = ({ items }) => {
       <div className='items'>
         {items.map((item, index) => (
           <div key={item.title} className={classnames('item', { show: index === active })}>
+            <div className='image'>
+              {item.image}
+            </div>
             <Button onClick={() => setActive(index)}>
               <Icon name={item.icon} />
               <span>{item.title}</span>

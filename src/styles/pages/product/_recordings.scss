@@ -25,6 +25,31 @@
           }
         }
       }
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+
+        h2 {
+          margin: 0 0 6rem 0;
+        }
+      }
+
+      @include breakpoint-sm {
+        background-image: none;
+        padding: 4rem 2rem;
+
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+
+        .items {
+          .item {
+            &.show {
+              background: none;
+            }
+          }
+        }
+      }
     }
 
     &.testimonial {
@@ -36,6 +61,10 @@
 
       .shadow {
         background: var(--mauve-400);
+      }
+
+      @include breakpoint-sm {
+        padding: 8rem 2rem 6rem 2rem;
       }
     }
 
@@ -71,6 +100,10 @@
       .features-banner {
         background: var(--mauve-700);
         margin: 6rem 0;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
       }
     }
 
@@ -114,6 +147,25 @@
 
         &:last-of-type {
           background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, var(--gray-blue-700) 50%);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+
+        .step-item {
+          &:first-of-type {
+            background-image: none;
+          }
+      
+          &:last-of-type {
+            background-color: var(--gray-blue-700);
+            background-image: none;
+          }
         }
       }
     }
