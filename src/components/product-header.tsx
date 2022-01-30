@@ -13,7 +13,7 @@ interface Props {
 export const ProductHeader: FC<Props> = ({ title, subtitle, body }) => (
   <>
     <div className='product-header'>
-      <Container className='lg centered'>
+      <Container className='lg centered background'>
         <Container className='sm-md'>
           <h6>{subtitle}</h6>
           <h1>{title}</h1>

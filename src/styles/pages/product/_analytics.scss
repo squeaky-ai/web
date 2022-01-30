@@ -1,4 +1,16 @@
 .page.analytics {
+  .product-header {
+    .background {
+      background-image: url('../../../../public/illustrations/illustration-5.svg');
+    }
+
+    @include breakpoint-md {
+      .background {
+        background-image: none;
+      }
+    }
+  }
+
   section {
     &.glance {
       background-color: var(--mauve-800);

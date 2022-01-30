@@ -1,4 +1,16 @@
 .page.recordings {
+  .product-header {
+    .background {
+      background-image: url('../../../../public/illustrations/illustration-4.svg');
+    }
+
+    @include breakpoint-md {
+      .background {
+        background-image: none;
+      }
+    }
+  }
+
   section {
     &.glance {
       background-color: var(--gray-blue-800);
