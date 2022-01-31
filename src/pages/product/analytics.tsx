@@ -12,8 +12,9 @@ import { UpAndRunning } from 'components/up-and-running';
 import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { ProductTools } from 'components/product-tools';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const ProductAnalytics: NextPage = () => (
+const ProductAnalytics: NextPage<ServerSideProps> = () => (
   <>
     <Head>
       <title>Squeaky - Product - Analytics</title> 
@@ -154,4 +155,5 @@ const ProductAnalytics: NextPage = () => (
 );
 
 export default ProductAnalytics;
+export { getServerSideProps };
 

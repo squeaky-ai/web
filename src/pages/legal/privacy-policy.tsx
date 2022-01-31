@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const PrivacyPolicy: NextPage = () => (
+const PrivacyPolicy: NextPage<ServerSideProps> = () => (
   <>
     <Head>
       <title>Squeaky - Legal - Privacy Policy</title> 
@@ -170,3 +171,4 @@ const PrivacyPolicy: NextPage = () => (
 );
 
 export default PrivacyPolicy;
+export { getServerSideProps };

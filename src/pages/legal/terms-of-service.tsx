@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const LegalTerms: NextPage = () => (
+const LegalTerms: NextPage<ServerSideProps> = () => (
   <>
     <Head>
       <title>Squeaky - Legal - Terms Of Service</title> 
@@ -161,3 +162,4 @@ const LegalTerms: NextPage = () => (
 );
 
 export default LegalTerms;
+export { getServerSideProps };

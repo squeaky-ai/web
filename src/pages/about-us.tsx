@@ -1,8 +1,9 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const AboutUs: NextPage = () => (
+const AboutUs: NextPage<ServerSideProps> = () => (
   <>
     <Head>
       <title>Squeaky - About Us</title> 
@@ -11,3 +12,4 @@ const AboutUs: NextPage = () => (
 );
 
 export default AboutUs;
+export { getServerSideProps };

@@ -11,6 +11,7 @@ import { Label } from 'components/label';
 import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
 import { contactForm } from 'lib/api/graphql';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -20,7 +21,7 @@ const ContactSchema = Yup.object().shape({
   message: Yup.string().required('Message is required'),
 });
 
-const ContactUs: NextPage = () => {
+const ContactUs: NextPage<ServerSideProps> = () => {
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
@@ -152,3 +153,4 @@ const ContactUs: NextPage = () => {
 };
 
 export default ContactUs;
+export { getServerSideProps };

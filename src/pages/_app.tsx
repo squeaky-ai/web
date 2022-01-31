@@ -13,7 +13,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
   <ApolloProvider client={client}>
     <ToastProvider>
       <UserProvider>
-        <Page>
+        <Page {...pageProps}>
           <Component {...pageProps} />
         </Page>
       </UserProvider>

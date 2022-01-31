@@ -15,6 +15,7 @@ import { Message } from 'components/message';
 import { login, confirmAccount, reconfirmAccount } from 'lib/api/auth';
 import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 enum PageView {
   LOGIN,
@@ -26,7 +27,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Password is required')
 });
 
-const Login: NextPage = () => {
+const Login: NextPage<ServerSideProps> = () => {
   const router = useRouter();
   const toasts = useToasts();
   const [email, setEmail] = React.useState<string>('');
@@ -208,3 +209,4 @@ const Login: NextPage = () => {
 };
 
 export default Login;
+export { getServerSideProps };

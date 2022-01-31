@@ -4,8 +4,14 @@ import classnames from 'classnames';
 import { Header } from 'components/header';
 import { Footer } from 'components/footer';
 import { useRouter } from 'next/router';
+import type { User } from 'types/graphql';
 
-export const Page: FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+  user: User;
+}
+
+export const Page: FC<Props> = ({ children, user }) => {
   const router = useRouter();
 
   const slug = router.route
@@ -27,7 +33,7 @@ export const Page: FC = ({ children }) => {
 
   return (
     <div className={classnames('page', ...slug)}>
-      <Header />
+      <Header user={user} />
       {children}
       <Footer />
     </div>

@@ -17,14 +17,16 @@ import { Spinner } from 'components/spinner';
 import { Logo } from 'components/logo';
 import { PASSWORD_REGEX } from 'data/users/constants';
 import { userInvitation, teamInviteAccept } from 'lib/api/graphql';
+import { signout } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const AcceptSchema = Yup.object().shape({
   password: Yup.string().matches(PASSWORD_REGEX, 'Password must match the criteria defined below').required('Password is required'),
   terms: Yup.boolean().oneOf([true], 'You must agree to the terms')
 });
 
-const Accept: NextPage = () => {
+const Accept: NextPage<ServerSideProps> = ({ user }) => {
   const toast = useToasts();
   const router = useRouter();
   const [email, setEmail] = React.useState<string>(null);
@@ -38,6 +40,12 @@ const Accept: NextPage = () => {
 
           const invitation = await userInvitation(router.query.token as string);
 
+          if (user && user.email !== invitation.email) {
+            // If they are already logged in to a different account
+            // then they need to be logged out first
+            await signout();
+          }
+
           if (invitation.hasPending) {
             // New users need to finish off creating their account
             setEmail(invitation.email);
@@ -49,7 +57,9 @@ const Accept: NextPage = () => {
 
               toast.add({ type: 'success', body: 'Invitation accepted' });
 
-              return await router.push('/auth/login');
+              return user
+                ? await router.push('/sites')
+                : await router.push('/auth/login');
             }
           }
         } catch(error) {
@@ -166,3 +176,4 @@ const Accept: NextPage = () => {
 };
 
 export default Accept;
+export { getServerSideProps };

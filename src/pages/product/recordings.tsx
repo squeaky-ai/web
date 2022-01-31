@@ -12,8 +12,9 @@ import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { UpAndRunning } from 'components/up-and-running';
 import { ProductTools } from 'components/product-tools';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-const ProductRecordings: NextPage = () => (
+const ProductRecordings: NextPage<ServerSideProps> = () => (
   <>
     <Head>
       <title>Squeaky - Product - Recordings</title> 
@@ -164,3 +165,4 @@ const ProductRecordings: NextPage = () => (
 );
 
 export default ProductRecordings;
+export { getServerSideProps };

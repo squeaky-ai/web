@@ -15,6 +15,7 @@ import { Button, DelayedButton } from 'components/button';
 import { Password } from 'components/password';
 import { PASSWORD_REGEX } from 'data/users/constants';
 import { resetPassword, changePassword } from 'lib/api/auth';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const ResetSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email address').required('Email is required')
@@ -31,7 +32,7 @@ enum PageView {
   COMPLETE
 }
 
-const Reset: NextPage = () => {
+const Reset: NextPage<ServerSideProps> = () => {
   const router = useRouter();
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
   const [email, setEmail] = React.useState<string>(null);
@@ -198,3 +199,4 @@ const Reset: NextPage = () => {
 };
 
 export default Reset;
+export { getServerSideProps };

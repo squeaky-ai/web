@@ -19,6 +19,7 @@ import { Password } from 'components/password';
 import { PASSWORD_REGEX } from 'data/users/constants';
 import { signup, reconfirmAccount } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 enum PageView {
   EMAIL,
@@ -42,7 +43,7 @@ const PasswordSchema = Yup.object().shape({
   password: Yup.string().matches(PASSWORD_REGEX, 'Password must match the criteria defined below').required('Password is required')
 });
 
-const Signup: NextPage = () => {
+const Signup: NextPage<ServerSideProps> = () => {
   const toasts = useToasts();
   const router = useRouter();
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
@@ -234,3 +235,4 @@ const Signup: NextPage = () => {
 };
 
 export default Signup;
+export { getServerSideProps };

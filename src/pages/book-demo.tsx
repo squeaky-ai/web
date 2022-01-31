@@ -12,6 +12,7 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
 import { bookDemoForm } from 'lib/api/graphql';
+import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const BookDemoSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -23,7 +24,7 @@ const BookDemoSchema = Yup.object().shape({
   message: Yup.string().required('Reason for demo is required'),
 });
 
-const BookDemo: NextPage = () => {
+const BookDemo: NextPage<ServerSideProps> = () => {
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
@@ -176,3 +177,4 @@ const BookDemo: NextPage = () => {
 };
 
 export default BookDemo;
+export { getServerSideProps };
