@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./out s3://squeaky.ai/ --delete
-      - aws cloudfront create-invalidation --distribution-id 	E33C9U0CJ86R7L
+      - aws cloudfront create-invalidation --distribution-id E33C9U0CJ86R7L --paths /*
 
 cache:
   paths:
