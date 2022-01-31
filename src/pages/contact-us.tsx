@@ -10,6 +10,7 @@ import { Input } from 'components/input';
 import { Label } from 'components/label';
 import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
+import { contactForm } from 'lib/api/graphql';
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -58,9 +59,10 @@ const ContactUs: NextPage = () => {
             enableReinitialize
             onSubmit={(values, { setSubmitting }) => {
               (async () => {
+                await contactForm(values);
+  
                 setSubmitting(false);
                 setSubmitted(true);
-                console.log(values);
               })();
             }}
           >

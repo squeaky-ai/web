@@ -2,6 +2,8 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { UsersInvitation, TeamInviteAcceptInput, Team } from 'types/graphql';
 import { USER_INVITATION_QUERY } from 'data/users/queries';
 import { TEAM_INVITE_ACCEPT_MUTATION } from 'data/teams/mutations';
+import { BOOK_DEMO_MUTATION, CONTACT_MUTATION } from 'data/contact/mutations';
+import { BookDemoInput, ContactInput } from 'types/contact';
 
 export const cache = new InMemoryCache();
 
@@ -27,4 +29,18 @@ export const teamInviteAccept = async (input: TeamInviteAcceptInput): Promise<Te
   });
 
   return data.teamInviteCancel;
+};
+
+export const contactForm = async (input: ContactInput): Promise<void> => {
+  await client.mutate({
+    mutation: CONTACT_MUTATION,
+    variables: input
+  });
+};
+
+export const bookDemoForm = async (input: BookDemoInput): Promise<void> => {
+  await client.mutate({
+    mutation: BOOK_DEMO_MUTATION,
+    variables: input
+  });
 };

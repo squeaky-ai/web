@@ -11,6 +11,7 @@ import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
+import { bookDemoForm } from 'lib/api/graphql';
 
 const BookDemoSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -60,9 +61,10 @@ const BookDemo: NextPage = () => {
             enableReinitialize
             onSubmit={(values, { setSubmitting }) => {
               (async () => {
+                await bookDemoForm(values);
+
                 setSubmitting(false);
                 setSubmitted(true);
-                console.log(values);
               })();
             }}
           >
