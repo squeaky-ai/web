@@ -2,13 +2,8 @@ const { API_HOST, NODE_ENV } = process.env;
 
 const IS_DEV = NODE_ENV !== 'production';
 
-// In production we point to the squeaky.ai/api but in
-// development we use a local running instance
-const API_HOST_NAME = API_HOST || 'http://localhost:4000';
+const API_HOST_NAME = IS_DEV ? 'http://localhost:4000' : 'https://app.squeaky.ai';
 
-// All of the meta tags in _document.tsx need to point to the
-// correct host as it will be no good having localhost in
-// production!
 const WEB_HOST_NAME = IS_DEV ? 'http://localhost:3000' : 'https://squeaky.ai';
 
 module.exports = {
