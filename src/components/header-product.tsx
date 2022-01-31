@@ -56,14 +56,14 @@ export const HeaderProduct: FC = () => {
             GDPR &amp; CCPA complaint
           </p>
           <div className='banner-left'>
-            <Image src={bannerLeft} width={32} height={36} alt='illustraion to present text as a banner' />
+            <Image src={bannerLeft} width={32} height={36} alt='illustraion to present text as a banner' unoptimized priority />
           </div>
           <p className='banner'>
             <Icon name='star-line' />
             All plans include our 4 core products
           </p>
           <div className='banner-right'>
-            <Image src={bannerRight} width={32} height={36} alt='illustraion to present text as a banner' />
+            <Image src={bannerRight} width={32} height={36} alt='illustraion to present text as a banner' unoptimized priority />
           </div>
           <p>
             <Icon name='code-s-slash-line' />

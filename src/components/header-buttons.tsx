@@ -16,11 +16,9 @@ export const HeaderButtons: FC<Props> = ({ user }) => (
             Book a demo
           </a>
         </Link>
-        <Link href='/app/sites'>
-          <a className='button secondary'>
-            Go To App
-          </a>
-        </Link>
+        <a href='/app/sites' className='button secondary'>
+          Go To App
+        </a>
       </>
     )}
 

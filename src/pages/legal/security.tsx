@@ -54,19 +54,19 @@ const Security: NextPage<ServerSideProps> = () => (
       <div className='compliance'>
         <div>
           <div className='logo'>
-            <Image src={pciDssLogo} alt='PCI DSS Logo' />
+            <Image src={pciDssLogo} alt='PCI DSS Logo' unoptimized priority />
           </div>
           <p>Payments in Squeaky are PCI-compliant as we use Stripe&apos;s hosted payment fields that us a PCI DSS validated server</p>
         </div>
         <div>
           <div className='logo'>
-            <Image src={isoLogo} alt='ISO Logo' />
+            <Image src={isoLogo} alt='ISO Logo' unoptimized priority />
           </div>
           <p>Our infrastructure is hosted on AWS, which is an ISO27001 certified service.</p>
         </div>
         <div>
           <div className='logo'>
-            <Image src={socLogo} alt='SOC Logo' />
+            <Image src={socLogo} alt='SOC Logo' unoptimized priority />
           </div>
           <p>Our infrastructure is hosted on AWS, which is an SOC2 certified service.</p>
         </div>

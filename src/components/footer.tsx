@@ -22,17 +22,17 @@ export const Footer: FC = () => (
         <p className='small'><b>Follow us</b></p>
         <div className='social'>
           <Link href='#'>
-            <a>
+            <a aria-label='Twitter'>
               <Icon name='twitter-fill' />
             </a>
           </Link>
           <Link href='#'>
-            <a>
+            <a aria-label='Facebook'>
               <Icon name='facebook-fill' />
             </a>
           </Link>
           <Link href='#'>
-            <a>
+            <a aria-label='LinkedIn'>
               <Icon name='linkedin-fill' />
             </a>
           </Link>

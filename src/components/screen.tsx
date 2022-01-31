@@ -68,5 +68,5 @@ const getScreenSrc = (screen: ScreenType) => {
 };
 
 export const Screen: FC<Props> = ({ screen, ...props }) => (
-  <Image src={getScreenSrc(screen)} {...props} alt='Screenshot from inside the app' unoptimized />
+  <Image src={getScreenSrc(screen)} {...props} alt='Screenshot from inside the app' unoptimized priority />
 );

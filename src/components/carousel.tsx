@@ -39,7 +39,8 @@ export const Carousel: FC<Props> = ({ children }) => {
           <Button 
             key={i}
             onClick={() => setIndex(i)} 
-            className={classnames({ active: i === index })} 
+            className={classnames({ active: i === index })}
+            aria-label={`Carousel position ${i}`}
           />
         ))}
       </div>

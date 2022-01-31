@@ -119,7 +119,8 @@ const Login: NextPage<ServerSideProps> = () => {
 
                         if (!error) {
                           clear();
-                          return await router.push('/app/sites');
+                          location.href = '/app/sites';
+                          return;
                         }
 
                         if (/confirm your email/.test(error.error)) {

@@ -83,17 +83,17 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
           </div>
           <div className='social'>
             <Link href='#'>
-              <a>
+              <a aria-label='Twitter'>
                 <Icon name='twitter-fill' />
               </a>
             </Link>
             <Link href='#'>
-              <a>
+              <a aria-label='Facebook'>
                 <Icon name='facebook-fill' />
               </a>
             </Link>
             <Link href='#'>
-              <a>
+              <a aria-label='LinkedIn'>
                 <Icon name='linkedin-fill' />
               </a>
             </Link>

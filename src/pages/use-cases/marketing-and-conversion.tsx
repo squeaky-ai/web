@@ -26,7 +26,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
       subtitle='For Marketing &amp; conversion'
       title='Qualify &amp; convert more leads'
       body='Segment and analyse your traffic to understand which vistors are converting and why.'
-      image={<Image src={useCasesHeaderImage} alt='image showing marketers' />}
+      image={<Image src={useCasesHeaderImage} alt='image showing marketers' unoptimized priority />}
       stats={
         <>
           <UseCasesHeaderStats

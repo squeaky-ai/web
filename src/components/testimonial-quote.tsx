@@ -23,15 +23,15 @@ type Person = 'matt' | 'yassine' | 'steve'  | 'steven' | 'nathan';
 const Img: FC<Pick<Props, 'person'>> = (props) => {
   switch(props.person) {
     case 'matt':
-      return <Image src={matt} height={296} width={296} alt='Image of Matt, the person who gave the testimonial' />;
+      return <Image src={matt} height={296} width={296} alt='Image of Matt, the person who gave the testimonial' unoptimized priority />;
     case 'yassine':
-      return <Image src={yassine} height={296} width={296} alt='Image of Yassine, the person who gave the testimonial' />;
+      return <Image src={yassine} height={296} width={296} alt='Image of Yassine, the person who gave the testimonial' unoptimized priority />;
     case 'steve':
-      return <Image src={steve} height={296} width={296} alt='Image of Steve, the person who gave the testimonial' />;
+      return <Image src={steve} height={296} width={296} alt='Image of Steve, the person who gave the testimonial' unoptimized priority />;
     case 'steven':
-      return <Image src={steven} height={296} width={296} alt='Image of Steven, the person who gave the testimonial' />;
+      return <Image src={steven} height={296} width={296} alt='Image of Steven, the person who gave the testimonial' unoptimized priority />;
     case 'nathan':
-      return <Image src={nathan} height={296} width={296} alt='Image of Nathan, the person who gave the testimonial' />;
+      return <Image src={nathan} height={296} width={296} alt='Image of Nathan, the person who gave the testimonial' unoptimized priority />;
     default:
       return null;
   }

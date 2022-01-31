@@ -26,7 +26,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
       subtitle='For Product &amp; UX Teams'
       title='Build better customer experiences'
       body='Use context-rich customer insights to make better product and design decisions for your business.'
-      image={<Image src={useCasesHeaderImage} alt='Image showing product and UX teams' />}
+      image={<Image src={useCasesHeaderImage} alt='Image showing product and UX teams' unoptimized priority />}
       stats={
         <>
           <UseCasesHeaderStats

@@ -26,7 +26,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
       subtitle='For customer success teams'
       title='Follow in your customers&apos; footsteps'
       body='Solve customer problems faster by combining feedback tools with session recording and playback.'
-      image={<Image src={useCasesHeaderImage} alt='image showing customers succeeding' />}
+      image={<Image src={useCasesHeaderImage} alt='image showing customers succeeding' unoptimized priority />}
       stats={
         <>
           <UseCasesHeaderStats

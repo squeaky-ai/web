@@ -97,5 +97,5 @@ const getIllustrationSrc = (illustration: IllustrationType) => {
 };
 
 export const Illustration: FC<Props> = ({ illustration, ...props }) => {
-  return <Image src={getIllustrationSrc(illustration)} {...props} alt='Illustration' unoptimized />;
+  return <Image src={getIllustrationSrc(illustration)} {...props} alt='Illustration' unoptimized priority />;
 };
