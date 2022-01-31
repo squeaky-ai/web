@@ -55,13 +55,10 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
 
         <Carousel>
           <CarouselItem>
-            <Screenshot screen='sentiment' width={1440} height={1024} alt='Screenshot of the Squeaky sentiment page' />
-          </CarouselItem>
-          <CarouselItem>
-            <Screenshot screen='analytics' width={1440} height={1024} alt='Screenshot of the Squeaky analytics page' />
-          </CarouselItem>
-          <CarouselItem>
             <Screenshot screen='nps' width={1440} height={1024} alt='Screenshot of the Squeaky NPS page' />
+          </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='sentiment' width={1440} height={1024} alt='Screenshot of the Squeaky sentiment page' />
           </CarouselItem>
           <CarouselItem>
             <Screenshot screen='session' width={1440} height={1024} alt='Screenshot of the Squeaky session page' />

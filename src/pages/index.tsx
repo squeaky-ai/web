@@ -62,7 +62,10 @@ const Home: NextPage<ServerSideProps> = () => {
       <section className='solutions'>
         <Carousel>
           <CarouselItem>
-            <Screenshot screen='sentiment' alt='Screenshot of the Squeaky sentiment page' />
+            <Screenshot screen='dashboard' alt='Screenshot of the Squeaky dashboard page' />
+          </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='session' alt='Screenshot of the Squeaky session page' />
           </CarouselItem>
           <CarouselItem>
             <Screenshot screen='analytics' alt='Screenshot of the Squeaky analytics page' />
@@ -71,10 +74,7 @@ const Home: NextPage<ServerSideProps> = () => {
             <Screenshot screen='nps' alt='Screenshot of the Squeaky NPS page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='session' alt='Screenshot of the Squeaky session page' />
-          </CarouselItem>
-          <CarouselItem>
-            <Screenshot screen='recordings' alt='Screenshot of the Squeaky recordings page' />
+            <Screenshot screen='heatmaps' alt='Screenshot of the Squeaky heatmaps page' />
           </CarouselItem>
         </Carousel>
 
