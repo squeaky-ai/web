@@ -1,4 +1,4 @@
-const { API_HOST, NODE_ENV } = process.env;
+const { NODE_ENV } = process.env;
 
 const IS_DEV = NODE_ENV !== 'production';
 
