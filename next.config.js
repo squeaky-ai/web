@@ -19,12 +19,12 @@ module.exports = {
     helpCenterTrackingCodeUrl: 'https://squeaky.notion.site/Install-your-tracking-code-6ab27212bb5c434196f494ac43349b72',
   },
   async rewrites() {
-    return IS_DEV ? [
+    return [
       {
         source: '/api/:slug*',
-        destination: 'http://localhost:4000/api/:slug*',
+        destination: `${API_HOST_NAME}/api/:slug*`,
         basePath: false,
       }
-    ] : [];
+    ]
   }
 };
