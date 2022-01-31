@@ -1,8 +1,12 @@
 import React from 'react';
 import type { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
+
+import bannerLeft from '../../public/banner-left.svg';
+import bannerRight from '../../public/banner-right.svg';
 
 export const HeaderProduct: FC = () => {
   return (
@@ -52,14 +56,14 @@ export const HeaderProduct: FC = () => {
             GDPR &amp; CCPA complaint
           </p>
           <div className='banner-left'>
-            <img src='/banner-left.svg' width={32} height={36} alt='illustraion to present text as a banner' />
+            <Image src={bannerLeft} width={32} height={36} alt='illustraion to present text as a banner' />
           </div>
           <p className='banner'>
             <Icon name='star-line' />
             All plans include our 4 core products
           </p>
           <div className='banner-right'>
-            <img src='/banner-right.svg' width={32} height={36} alt='illustraion to present text as a banner' />
+            <Image src={bannerRight} width={32} height={36} alt='illustraion to present text as a banner' />
           </div>
           <p>
             <Icon name='code-s-slash-line' />

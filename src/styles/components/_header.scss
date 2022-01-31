@@ -324,8 +324,8 @@
         &.product {
           animation: fade-in .3s ease-in-out forwards;
           animation-delay: 0ms;
-          background-color: var(--peach-400);
-          background-image: url('/pricing/product.svg');
+          background-color: #fdc4a0; // TODO
+          background-image: url('../../../public/pricing/product.svg');
           background-position: top 2rem left;
           border: 2px solid var(--peach-500);
           opacity: 0;
@@ -338,8 +338,8 @@
         &.marketing {
           animation: fade-in .3s ease-in-out forwards;
           animation-delay: 50ms;
-          background-color: var(--gray-blue-500);
-          background-image: url('/pricing/marketing.svg');
+          background-color: #234977; // TODO
+          background-image: url('../../../public/pricing/marketing.svg');
           background-position: top left;
           border: 2px solid var(--gray-blue-700);
           opacity: 0;
@@ -356,8 +356,8 @@
         &.customer {
           animation: fade-in .3s ease-in-out forwards;
           animation-delay: 100ms;
-          background-color: var(--mauve-500);
-          background-image: url('/pricing/customer.svg');
+          background-color: #a14259; // TODO
+          background-image: url('../../../public/pricing/customer.svg');
           background-position: top left;
           border: 2px solid var(--mauve-700);
           opacity: 0;

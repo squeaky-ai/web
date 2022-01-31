@@ -66,7 +66,7 @@
 
   .stats {
     background-color: var(--peach-400);
-    background-image: url('/backgrounds/use-cases-1.svg');
+    background-image: url('../../../public/backgrounds/use-cases-1.svg');
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -127,7 +127,7 @@
 
     .stats {
       background-color: var(--gray-blue-50);
-      background-image: url('/backgrounds/use-cases-2.svg');
+      background-image: url('../../../public/backgrounds/use-cases-2.svg');
 
       h2 {
         color: var(--gray-blue-500);
@@ -168,7 +168,7 @@
 
     .stats {
       background-color: var(--peach-200);
-      background-image: url('/backgrounds/use-cases-3.svg');
+      background-image: url('../../../public/backgrounds/use-cases-3.svg');
     }
   }
 }

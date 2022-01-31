@@ -1,10 +1,15 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
+
+import isoLogo from '../../../public/compliance/iso.png';
+import pciDssLogo from '../../../public/compliance/pci-dss.png';
+import socLogo from '../../../public/compliance/soc.png';
 
 const Security: NextPage = () => (
   <>
@@ -48,19 +53,19 @@ const Security: NextPage = () => (
       <div className='compliance'>
         <div>
           <div className='logo'>
-            <img src='/compliance/pci-dss.png' alt='PCI DSS Logo' />
+            <Image src={pciDssLogo} alt='PCI DSS Logo' />
           </div>
           <p>Payments in Squeaky are PCI-compliant as we use Stripe&apos;s hosted payment fields that us a PCI DSS validated server</p>
         </div>
         <div>
           <div className='logo'>
-            <img src='/compliance/iso.png' alt='ISO Logo' />
+            <Image src={isoLogo} alt='ISO Logo' />
           </div>
           <p>Our infrastructure is hosted on AWS, which is an ISO27001 certified service.</p>
         </div>
         <div>
           <div className='logo'>
-            <img src='/compliance/soc.png' alt='SOC Logo' />
+            <Image src={socLogo} alt='SOC Logo' />
           </div>
           <p>Our infrastructure is hosted on AWS, which is an SOC2 certified service.</p>
         </div>

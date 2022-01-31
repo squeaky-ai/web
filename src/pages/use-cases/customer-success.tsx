@@ -2,6 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from 'components/container';
 import { Carousel, CarouselItem } from 'components/carousel';
 import { Screenshot } from 'components/screenshots';
@@ -11,6 +12,8 @@ import { Screen } from 'components/screen';
 import { Cta } from 'components/cta';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
+
+import useCasesHeaderImage from '../../../public/use-cases/use-case-3.png';
 
 const UseCasesCustomerSuccess: NextPage = () => (
   <>
@@ -22,7 +25,7 @@ const UseCasesCustomerSuccess: NextPage = () => (
       subtitle='For customer success teams'
       title='Follow in your customers&apos; footsteps'
       body='Solve customer problems faster by combining feedback tools with session recording and playback.'
-      image={<img src='/use-cases/use-case-3.png' alt='image showing customers succeeding' />}
+      image={<Image src={useCasesHeaderImage} alt='image showing customers succeeding' />}
       stats={
         <>
           <UseCasesHeaderStats
@@ -51,19 +54,19 @@ const UseCasesCustomerSuccess: NextPage = () => (
 
         <Carousel>
           <CarouselItem>
-            <Screenshot screen='sentiment' alt='Screenshot of the Squeaky sentiment page' />
+            <Screenshot screen='sentiment' width={1440} height={1024} alt='Screenshot of the Squeaky sentiment page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='analytics' alt='Screenshot of the Squeaky analytics page' />
+            <Screenshot screen='analytics' width={1440} height={1024} alt='Screenshot of the Squeaky analytics page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='nps' alt='Screenshot of the Squeaky NPS page' />
+            <Screenshot screen='nps' width={1440} height={1024} alt='Screenshot of the Squeaky NPS page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='session' alt='Screenshot of the Squeaky session page' />
+            <Screenshot screen='session' width={1440} height={1024} alt='Screenshot of the Squeaky session page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='recordings' alt='Screenshot of the Squeaky recordings page' />
+            <Screenshot screen='recordings' width={1440} height={1024} alt='Screenshot of the Squeaky recordings page' />
           </CarouselItem>
         </Carousel>
 

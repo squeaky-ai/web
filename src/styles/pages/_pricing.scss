@@ -4,7 +4,7 @@
 
     &.hero {
       background-color: var(--peach-100);
-      background-image: url('/backgrounds/pricing-1.svg');
+      background-image: url('../../../public/backgrounds/pricing-1.svg');
       background-position: bottom 15rem left;
       background-repeat: repeat-x;
       padding: 8rem 5rem;
@@ -45,7 +45,7 @@
 
     &.plan {
       background-color: var(--mauve-700);
-      background-image: url('/backgrounds/pricing-2.svg');
+      background-image: url('../../../public/backgrounds/pricing-2.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 5rem 10rem 5rem;
@@ -78,7 +78,7 @@
 
     &.testimonial {
       background-color: var(--gray-blue-800);
-      background-image: url('/backgrounds/pricing-3.svg');
+      background-image: url('../../../public/backgrounds/pricing-3.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 5rem 10rem 5rem;
