@@ -19,6 +19,7 @@ const WEB_HOST_NAME = IS_DEV ? 'http://localhost:3000' : 'https://squeaky.ai';
 module.exports = {
   assetPrefix: ASSET_PREFIX,
   publicRuntimeConfig: {
+    dev: IS_DEV,
     apiHost: API_HOST_NAME,
     webHost: WEB_HOST_NAME,
     helpCenterUrl: 'https://squeaky.notion.site/Squeaky-Help-Centre-fc049a1822b94b7a8df362811c534d4b',

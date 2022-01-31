@@ -10,6 +10,10 @@ class Document extends NextDocument {
     }
   }
 
+  private get isDev() {
+    return this.props.__NEXT_DATA__.runtimeConfig.dev || true;
+  }
+
   render(): JSX.Element {
     return (
       <Html lang='en'>
@@ -35,6 +39,18 @@ class Document extends NextDocument {
           <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
           <link rel='icon' type='image/x-icon' href='/favicon.ico' />
           <link rel='manifest' href='/site.webmanifest' />
+          <script dangerouslySetInnerHTML={{ __html: this.isDev ? '' : `
+            <!-- Squeaky Tracking Code for https://squeaky.ai -->
+            <script>
+              (function(s,q,e,a,u,k,y){
+                s._sqSettings={site_id:'2918cf0f-42aa-499d-a4da-d362bd1011ed'};
+                u=q.getElementsByTagName('head')[0];
+                k=q.createElement('script');
+                k.src=e+s._sqSettings.site_id;
+                u.appendChild(k);
+              })(window,document,'https://cdn.squeaky.ai/g/0.4.0/script.js?');
+            </script>
+          `}} />
         </Head>
         <body>
           <Main />
