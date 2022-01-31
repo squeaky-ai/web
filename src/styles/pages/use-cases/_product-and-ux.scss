@@ -2,7 +2,7 @@
   section {
     &.plan {
       background-color: var(--mauve-700);
-      background-image: url('../../../../public/backgrounds/use-cases-4.svg');
+      background-image: url('/backgrounds/use-cases-4.svg');
       background-position: top left;
       background-repeat: repeat-x;
       padding: 12rem 3rem 8rem 3rem;
@@ -52,7 +52,7 @@
 
     &.testimonial {
       background-color: var(--gray-blue-800);
-      background-image: url('../../../../public/backgrounds/use-cases-5.svg');
+      background-image: url('/backgrounds/use-cases-5.svg');
       background-position: top left;
       background-repeat: repeat-x;
       padding: 10rem 3rem 6rem 3rem;
@@ -60,7 +60,7 @@
 
     &.understand {
       background-color: var(--gray-blue-50);
-      background-image:  url('../../../../public/backgrounds/use-cases-6.svg');
+      background-image:  url('/backgrounds/use-cases-6.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 3rem 10rem 3rem;
@@ -101,7 +101,7 @@
 
     &.get-started {
       background-color: var(--white);
-      background-image:  url('../../../../public/backgrounds/use-cases-7.svg');
+      background-image:  url('/backgrounds/use-cases-7.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 0 0 8rem 0;

@@ -23,6 +23,11 @@
       @include breakpoint-sm {
         border-radius: var(--border-radius-md);
       }
+
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
 

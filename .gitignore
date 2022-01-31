@@ -3,5 +3,6 @@
 build
 node_modules
 tsconfig.tsbuildinfo
+out
 yarn-error.log
 .DS_Store

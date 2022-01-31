@@ -1,7 +1,7 @@
 .page.analytics {
   .product-header {
     .background {
-      background-image: url('../../../../public/illustrations/illustration-5.svg');
+      background-image: url('/illustrations/illustration-5.svg');
     }
 
     @include breakpoint-md {
@@ -14,7 +14,7 @@
   section {
     &.glance {
       background-color: var(--mauve-800);
-      background-image: url('../../../../public/backgrounds/squiggle-mauve.svg');
+      background-image: url('/backgrounds/squiggle-mauve.svg');
       background-repeat: no-repeat;
       padding: 8rem 4rem;
 
@@ -44,7 +44,7 @@
 
     &.testimonial {
       background-color: var(--gray-blue-800);
-      background-image: url('../../../../public/backgrounds/product-1.svg');
+      background-image: url('/backgrounds/product-1.svg');
       background-position: top left;
       background-repeat: repeat-x;
       padding: 10rem 3rem 6rem 3rem;
@@ -56,7 +56,7 @@
 
     &.metrics {
       background-color: var(--gray-blue-50);
-      background-image: url('../../../../public/backgrounds/product-2.svg');
+      background-image: url('/backgrounds/product-2.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 4rem;
@@ -94,7 +94,7 @@
 
     &.tools {
       background-color: var(--white);
-      background-image: url('../../../../public/backgrounds/product-3.svg');
+      background-image: url('/backgrounds/product-3.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 5rem 10rem 5rem;

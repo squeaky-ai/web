@@ -83,7 +83,7 @@
 
     &.solutions {
       background-color: var(--white);
-      background-image: url('../../../public/backgrounds/home-1.svg'), url('../../../public/backgrounds/home-2.svg');
+      background-image: url('/backgrounds/home-1.svg'), url('/backgrounds/home-2.svg');
       background-position: top 8rem left, bottom left;
       background-repeat: repeat-x;
       padding: 0 5rem 10rem 5rem;
@@ -135,7 +135,7 @@
 
     &.testimonial {
       background-color: var(--gray-blue-50);
-      background-image: url('../../../public/backgrounds/home-3.svg');
+      background-image: url('/backgrounds/home-3.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 4rem 5rem 11rem 4rem;
@@ -163,7 +163,7 @@
 
     &.showcase {
       background-color: var(--gray-blue-800);
-      background-image: url('../../../public/backgrounds/home-4.svg');
+      background-image: url('/backgrounds/home-4.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 5rem 10rem 5rem;
@@ -195,7 +195,7 @@
 
     &.understanding {
       background-color: var(--mauve-800);
-      background-image: url('../../../public/backgrounds/home-5.svg');
+      background-image: url('/backgrounds/home-5.svg');
       background-position: bottom left;
       background-repeat: repeat-x;
       padding: 6rem 5rem 10rem 5rem;

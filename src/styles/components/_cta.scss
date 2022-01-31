@@ -1,7 +1,7 @@
 .cta {
   &.cross {
     background-color: var(--mauve-700);
-    background-image: url('../../../public/backgrounds/cta-crosses.svg');
+    background-image: url('/backgrounds/cta-crosses.svg');
     border: 2rem solid var(--mauve-700);
     padding: 6rem 0;
     text-align: center;
@@ -18,7 +18,7 @@
 
   &.squiggle {
     background-color: var(--gray-blue-800);
-    background-image: url('../../../public/backgrounds/cta-squiggles.svg');
+    background-image: url('/backgrounds/cta-squiggles.svg');
     border-radius: var(--border-radius-lg);
     padding: 6rem 0;
     text-align: center;
