@@ -16,7 +16,7 @@ export const HeaderButtons: FC<Props> = ({ user }) => (
             Book a demo
           </a>
         </Link>
-        <Link href='/app/sites'>
+        <Link href='https://app.squeaky.ai'>
           <a className='button secondary'>
             Go To App
           </a>

@@ -118,7 +118,8 @@ const Login: NextPage = () => {
 
                         if (!error) {
                           clear();
-                          return await router.push('/app/sites');
+                          location.href = 'https://app.squeaky.ai/sites';
+                          return;
                         }
 
                         if (/confirm your email/.test(error.error)) {
