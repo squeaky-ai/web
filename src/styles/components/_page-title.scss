@@ -30,7 +30,7 @@
   background: var(--peach-200);
   justify-content: center;
   position: sticky;
-  top: 5rem;
+  top: 6rem;
 
   .item {
     background: none;
@@ -50,6 +50,7 @@
 
   @include breakpoint-sm {
     flex-direction: column;
+    top: 5rem;
 
     .item {
       padding: .5rem 1rem;

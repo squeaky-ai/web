@@ -52,11 +52,6 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
             Help centre
           </a>
         </Link>
-        <Link href='/legal/privacy-policy'>
-          <a className='button'>
-            Privacy &amp; security
-          </a>
-        </Link>
         <Link href='/contact-us'>
           <a className='button'>
             Contact Us

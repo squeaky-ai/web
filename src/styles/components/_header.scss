@@ -60,6 +60,7 @@
       line-height: 24px;
       margin: 0 2rem 0 0;
       text-decoration: none;
+      white-space: nowrap;
 
       span {
         border-bottom: 2px solid transparent;
@@ -90,11 +91,17 @@
     .dropdown .link {
       align-items: center;
       display: flex;
+      white-space: nowrap;
 
       .arrow {
         font-size: 20px;
         margin: 0 0 0 .25rem;
       }
+    }
+
+    .primary,
+    .secondary {
+      white-space: nowrap;
     }
 
     .secondary {
@@ -274,6 +281,10 @@
         background: var(--peach-50);
         color: var(--mauve-800);
       }
+    }
+
+    .button {
+      white-space: nowrap;
     }
 
     .tertiary {

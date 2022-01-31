@@ -71,9 +71,6 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <Link href={publicRuntimeConfig.helpCenterUrl}>
               <a target='_blank' rel='noreferrer'>Help centre</a>
             </Link>
-            <Link href='/legal/privacy-policy'>
-              <a>Privacy &amp; security</a>
-            </Link>
             <Link href='/contact-us'>
               <a>Contact us</a>
             </Link>
