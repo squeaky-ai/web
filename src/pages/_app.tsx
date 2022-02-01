@@ -5,37 +5,20 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from 'lib/api/graphql';
 import { ToastProvider } from 'components/toast';
 import { Page } from 'components/page';
+import { User } from 'components/user';
 
 import '../styles/main.scss';
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const delayedVisitorCheck = () => setTimeout(() => {
-    if (window.squeaky && pageProps.user) {
-      const { id, firstName, lastName, email, superuser, createdAt } = pageProps.user;
-
-      window.squeaky.identify(id, {
-        'First name': firstName,
-        'Last name': lastName,
-        'Email': email,
-        'Superuser': superuser,
-        'Created': createdAt,
-      });
-    }
-  }, 1000);
-
-  React.useEffect(() => {
-    delayedVisitorCheck();
-  }, []);
-
-  return (
-    <ApolloProvider client={client}>
-      <ToastProvider>
+const App: FC<AppProps> = ({ Component, pageProps }) => (
+  <ApolloProvider client={client}>
+    <ToastProvider>
+      <User {...pageProps}>
         <Page {...pageProps}>
           <Component {...pageProps} />
         </Page>
-      </ToastProvider>
-    </ApolloProvider>
-  );
-};
+      </User>
+    </ToastProvider>
+  </ApolloProvider>
+);
 
 export default App;
