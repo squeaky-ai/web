@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
+import { Screen } from 'components/screen';
 import { Screenshot } from 'components/screenshots';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FeaturesGrid, FeaturesGridItem } from 'components/features-grid';
@@ -44,20 +45,21 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
             {
               icon: 'line-chart-line',
               title: 'Powerful playback',
-              body: 'Get precise data on visitor numbers, page views, and session statistics for any timeframe you need.',
-              image: <Screenshot screen='analytics' width={738} height={525} />
+              body: 'Learn from your visitors by watching recordings of their visits. We provide rich meta data on their visit and you can add annotate and tags recordings too.',
+              image: <Screenshot screen='session-1' width={738} height={525} />
             },
             {
               icon: 'sound-module-line',
               title: 'Advanced filtering',
-              body: 'Identify where your visitors are coming from, what they\'re interested in, and the context of their visit.',
-              image: <Screenshot screen='session' width={738} height={525} />
+              body: 'Reduce noise by using advanced filters to segment your recordings and surface only those relevant to the task at hand. ',
+              image: <Screenshot screen='recordings-1' width={738} height={525} />
             },
             {
               icon: 'ghost-line',
               title: 'Private by design',
-              body: 'We don\'t use cookies or IP address tracking, and we provide tools that help you avoid collecting any personal data on your users.',
-              image: <Screenshot screen='recordings' width={738} height={525} />
+              body: 'We provide tools that help you avoid collecting any personal data on your users, even in session recordings.  We also never use cookies or IP address tracking.',
+              image: <Screen screen='privacy-1' width={640} height={390} />,
+              shadowless: true
             }
           ]}
         />

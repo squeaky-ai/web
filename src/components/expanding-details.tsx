@@ -13,6 +13,7 @@ interface ExpandingDetailItem {
   title: string;
   body: string;
   image: React.ReactNode;
+  shadowless?: boolean;
 }
 
 export const ExpandingDetails: FC<Props> = ({ items }) => {
@@ -22,7 +23,7 @@ export const ExpandingDetails: FC<Props> = ({ items }) => {
     <div className='expanding-details'>
       <div className='images'>
         {items.map((item, index) => (
-          <div key={item.title} className={classnames('image', { show: index === active })}>
+          <div key={item.title} className={classnames('image', { show: index === active, shadowless: item.shadowless })}>
             {item.image}
           </div>
         ))}
@@ -31,7 +32,7 @@ export const ExpandingDetails: FC<Props> = ({ items }) => {
       <div className='items'>
         {items.map((item, index) => (
           <div key={item.title} className={classnames('item', { show: index === active })}>
-            <div className='image'>
+            <div className={classnames('image', { shadowless: item.shadowless })}>
               {item.image}
             </div>
             <Button onClick={() => setActive(index)}>

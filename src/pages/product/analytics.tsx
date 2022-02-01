@@ -5,6 +5,7 @@ import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
 import { Screenshot } from 'components/screenshots';
+import { Screen } from 'components/screen';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FeaturesGrid, FeaturesGridItem } from 'components/features-grid';
 import { FeaturesBanner } from 'components/features-banner';
@@ -45,19 +46,20 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
               icon: 'line-chart-line',
               title: 'Understand traffic & trends',
               body: 'Get precise data on visitor numbers, page views, and session statistics for any timeframe you need.',
-              image: <Screenshot screen='analytics' width={738} height={525} />
+              image: <Screenshot screen='analytics-1' width={738} height={525} />
             },
             {
               icon: 'group-line',
               title: 'Know your audience',
               body: 'Identify where your visitors are coming from, what they\'re interested in, and the context of their visit.',
-              image: <Screenshot screen='session' width={738} height={525} />
+              image: <Screenshot screen='analytics-2' width={738} height={525} />
             },
             {
               icon: 'ghost-line',
               title: 'Private by design',
               body: 'We don\'t use cookies or IP address tracking, and we provide tools that help you avoid collecting any personal data on your users.',
-              image: <Screenshot screen='recordings' width={738} height={525} />
+              image: <Screen screen='privacy-1' width={640} height={390} />,
+              shadowless: true
             }
           ]}
         />

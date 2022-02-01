@@ -2,7 +2,10 @@
   display: flex;
 
   .images {
+    align-items: center;
+    display: flex;
     flex: 1;
+    justify-content: center;
     margin: 0 3rem 0 0;
 
     .image {
@@ -15,6 +18,10 @@
 
       &.show {
         display: block;
+      }
+
+      &.shadowless {
+        box-shadow: none;
       }
     }
   }
@@ -29,6 +36,10 @@
       display: none;
       font-size: 0;
       overflow: hidden;
+
+      &.shadowless {
+        box-shadow: none;
+      }
     }
 
     .item {
