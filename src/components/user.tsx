@@ -26,6 +26,7 @@ export const User: FC<Props> = ({ children, user }) => (
         })(window,document,'https://cdn.squeaky.ai/g/0.4.0/script.js?');
       `}}
       onLoad={() => {
+        console.log(user, window.squeaky);
         if (user && window.squeaky) {
           const { id, firstName, lastName, email, superuser, createdAt } = user;
 
