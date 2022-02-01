@@ -1,5 +1,4 @@
 import React from 'react';
-import Script from 'next/script';
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 
 class Document extends NextDocument {
@@ -9,10 +8,6 @@ class Document extends NextDocument {
     } catch {
       return 'https://squeaky.ai'
     }
-  }
-
-  private get isDev() {
-    return this.props.__NEXT_DATA__.runtimeConfig.dev || false;
   }
 
   public render(): JSX.Element {
@@ -40,20 +35,6 @@ class Document extends NextDocument {
           <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
           <link rel='icon' type='image/x-icon' href='/favicon.ico' />
           <link rel='manifest' href='/site.webmanifest' />
-          <Script 
-            dangerouslySetInnerHTML={{ __html: this.isDev ? '' : `
-              (function(s,q,e,a,u,k,y){
-                s._sqSettings={site_id:'2918cf0f-42aa-499d-a4da-d362bd1011ed'};
-                u=q.getElementsByTagName('head')[0];
-                k=q.createElement('script');
-                k.src=e+s._sqSettings.site_id;
-                u.appendChild(k);
-              })(window,document,'https://cdn.squeaky.ai/g/0.4.0/script.js?');
-            `}}
-            onLoad={() => {
-              console.log('Squeaky loaded', this.props.__NEXT_DATA__.props.user);
-            }}
-          />
         </Head>
         <body>
           <Main />
