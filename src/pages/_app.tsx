@@ -9,7 +9,7 @@ import { Page } from 'components/page';
 import '../styles/main.scss';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
-  React.useEffect(() => {
+  const delayedVisitorCheck = () => setTimeout(() => {
     if (window.squeaky && pageProps.user) {
       const { id, firstName, lastName, email, superuser, createdAt } = pageProps.user;
 
@@ -21,6 +21,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         'Created': createdAt,
       });
     }
+  }, 1000);
+
+  React.useEffect(() => {
+    delayedVisitorCheck();
   }, []);
 
   return (
