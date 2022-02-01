@@ -18,6 +18,7 @@ const WEB_HOST_NAME = IS_DEV ? 'http://localhost:3000' : 'https://squeaky.ai';
 
 module.exports = {
   assetPrefix: ASSET_PREFIX,
+  crossOrigin: 'anonymous',
   publicRuntimeConfig: {
     dev: IS_DEV,
     apiHost: API_HOST_NAME,
