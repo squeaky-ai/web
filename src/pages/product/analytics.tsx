@@ -79,7 +79,7 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
 
     <section className='metrics'>
       <Container className='centered lg'>
-        <h2>The metrics that matter most</h2>
+        <h3>The metrics that matter most</h3>
 
         <FeaturesGrid>
           <FeaturesGridItem
