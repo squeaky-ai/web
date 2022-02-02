@@ -41,6 +41,7 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
         <h2>Recordings at a glance</h2>
 
         <ExpandingDetails
+          flip
           items={[
             {
               icon: 'line-chart-line',

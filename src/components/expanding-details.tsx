@@ -5,6 +5,7 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 
 interface Props {
+  flip?: boolean;
   items: ExpandingDetailItem[];
 }
 
@@ -16,11 +17,11 @@ interface ExpandingDetailItem {
   shadowless?: boolean;
 }
 
-export const ExpandingDetails: FC<Props> = ({ items }) => {
+export const ExpandingDetails: FC<Props> = ({ flip, items }) => {
   const [active, setActive] = React.useState<number>(0);
 
   return (
-    <div className='expanding-details'>
+    <div className={classnames('expanding-details', { flip })}>
       <div className='images'>
         {items.map((item, index) => (
           <div key={item.title} className={classnames('image', { show: index === active, shadowless: item.shadowless })}>

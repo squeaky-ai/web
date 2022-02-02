@@ -369,6 +369,11 @@ const Features: NextPage<ServerSideProps> = () => {
               title='Analysis'
               body='Use detailed charts and analysis to detect trends in your customer feedback that you can use to determine targeted improvements to their experience.'
             />
+            <FeaturesGridItem
+              icon='sound-module-line'
+              title='Filtering'
+              body='Apply feedback filters throughout the Squeaky application so you can easily focus on visitors and recordings with feedback.'
+            />
           </FeaturesGrid>
         </Container>
       </section>

@@ -56,7 +56,7 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
             },
             {
               icon: 'ghost-line',
-              title: 'Private by design',
+              title: 'Put privacy first',
               body: 'We don\'t use cookies or IP address tracking, and we provide tools that help you avoid collecting any personal data on your users.',
               image: <Screen screen='privacy-1' width={640} height={390} />,
               shadowless: true
