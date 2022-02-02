@@ -13,25 +13,27 @@ interface Props {
 export const ProductHeader: FC<Props> = ({ title, subtitle, body }) => (
   <>
     <div className='product-header'>
-      <Container className='lg centered background'>
-        <Container className='sm-md'>
-          <h6>{subtitle}</h6>
-          <h1>{title}</h1>
-          <p>{body}</p>
-          <div className='actions'>
-            <Link href='/auth/signup'>
-              <a className='button primary'>
-                Get Started
-              </a>
-            </Link>
-            <Link href='/book-demo'>
-              <a className='button secondary'>
-                Book Demo
-              </a>
-            </Link>
-          </div>
+      <div className='egg'>
+        <Container className='lg centered background'>
+          <Container className='sm-md'>
+            <h6>{subtitle}</h6>
+            <h1>{title}</h1>
+            <p>{body}</p>
+            <div className='actions'>
+              <Link href='/auth/signup'>
+                <a className='button primary'>
+                  Get Started
+                </a>
+              </Link>
+              <Link href='/book-demo'>
+                <a className='button secondary'>
+                  Book Demo
+                </a>
+              </Link>
+            </div>
+          </Container>
         </Container>
-      </Container>
+      </div>
     </div>
     <div className='features'>
       <p>

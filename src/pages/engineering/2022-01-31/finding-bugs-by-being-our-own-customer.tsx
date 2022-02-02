@@ -20,7 +20,7 @@ const FindingBugsByBeingOurOwnCustomer: NextPage<ServerSideProps> = () => {
       </Head>
 
       <Container className='md-lg centered blog'>
-        <p className='date'>2022-01-31</p>
+        <p className='date'>Engineering / 2022-01-31</p>
         <h1>Finding Bugs By Being Our Own Customer</h1>
 
         <p>We use Squeaky on Squeaky as way to find bugs in our own software (as well as a way of getting analytics data anonymously).</p>
