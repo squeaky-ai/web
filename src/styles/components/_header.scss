@@ -250,9 +250,12 @@
   }
 
   .header-menu {
+    animation: header-menu-show 0s forwards;
+    animation-delay: .25s;
     background: var(--peach-100);
     box-shadow: 0 1.5rem 1.5rem -1.5rem rgba(0, 0, 0, 0.1);
     left: 0;
+    opacity: 0;
     padding: 1.5rem 0;
     position: absolute;
     top: 6rem;
@@ -260,10 +263,13 @@
   }
 
   .header-dropdown {
+    animation: header-menu-show 0s forwards;
+    animation-delay: .25s;
     background: var(--white);
     box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
     border-radius: var(--border-radius-md);
     left: -1rem;
+    opacity: 0;
     padding: .5rem;
     position: absolute;
     top: calc(100% + 1rem);
@@ -308,6 +314,7 @@
         background-repeat: no-repeat;
         background-size: 100%;
         border-radius: var(--border-radius-lg);
+        box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -316,10 +323,10 @@
         min-height: 22.5rem;
         padding: 1.5rem;
         text-decoration: none;
-        transition: transform .3s ease-in-out;
+        transition: transform .2s ease-in-out;
 
         &:hover {
-          transform: translate(0, -.5rem);
+          transform: translate(0, -.25rem);
         }
 
         h5 {
@@ -406,10 +413,10 @@
           box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
           padding: 1.5rem;
           text-decoration: none;
-          transition: transform .3s ease-in-out;
+          transition: transform .2s ease-in-out;
 
           &:hover {
-            transform: translate(0, -.5rem);
+            transform: translate(0, -.25rem);
           }
 
           h5 {
@@ -559,4 +566,9 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes header-menu-show {
+  from { opacity: 0 }
+  to { opacity: 1 }
 }

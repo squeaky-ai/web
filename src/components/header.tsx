@@ -25,6 +25,8 @@ const themeOverrides: ThemeOverrides = {
 export const Header: FC<Props> = ({ user }) => {
   const router = useRouter();
 
+  const ref = React.useRef<HTMLDivElement>(null);
+
   const [open, setOpen] = React.useState<boolean>(false);
   const [scrolled, setScrolled] = React.useState<boolean>(false);
   const [subMenuOpen, setSubMenuOpen] = React.useState<SubMenu>(null);
@@ -40,10 +42,20 @@ export const Header: FC<Props> = ({ user }) => {
     setScrolled(window.scrollY !== 0);
   }, 100);
 
+  const handleClick = (event: MouseEvent) => {
+    const element = event.target as HTMLElement;
+
+    if (ref.current && !ref.current.contains(element)) {
+      setSubMenuOpen(null);
+    }
+  };
+
   React.useEffect(() => {
+    window.addEventListener('click', handleClick);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
+      window.removeEventListener('click', handleClick, true);
       window.removeEventListener('scroll', handleScroll, true);
     }
   }, []);
@@ -54,7 +66,7 @@ export const Header: FC<Props> = ({ user }) => {
   }, [router.route]);
 
   return (
-    <div className={classnames('header', themeOverride, { scrolled, open, 'sub-menu-open': subMenuOpen })}>
+    <div ref={ref} className={classnames('header', themeOverride, { scrolled, open, 'sub-menu-open': subMenuOpen })}>
       <Container className='lg centered'>
         <Link href='/'>
           <a className='logo'>
