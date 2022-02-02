@@ -21,7 +21,7 @@ const Home: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky</title>
+        <title>Squeaky | The privacy-first customer experience platform</title>
       </Head>
 
       <section className='hero'>
