@@ -101,31 +101,6 @@ const Home: NextPage<ServerSideProps> = () => {
               link='/use-cases/customer-success'
             />
           </ThreeImageGrid>
-
-          <Divider />
-
-          <TagGroup>
-            <TagGroupItem
-              icon='window-line'
-              text='SaaS'
-            />
-            <TagGroupItem
-              icon='shopping-cart-2-line'
-              text='eCommerce'
-            />
-            <TagGroupItem
-              icon='rocket-2-line'
-              text='Startups'
-            />
-            <TagGroupItem
-              icon='building-line'
-              text='SMB&apos;s'
-            />
-            <TagGroupItem
-              icon='hand-heart-line'
-              text='Non-profits'
-            />
-          </TagGroup>
         </Container>
       </section>
 
