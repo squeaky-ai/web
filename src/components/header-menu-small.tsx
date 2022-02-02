@@ -82,13 +82,13 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <HeaderButtons user={user} />
           </div>
           <div className='social'>
-            <Link href='#'>
-              <a aria-label='Twitter'>
+            <Link href='https://twitter.com/squeakyai'>
+              <a aria-label='Twitter' target='_blank' rel='noreferrer'>
                 <Icon name='twitter-fill' />
               </a>
             </Link>
-            <Link href='#'>
-              <a aria-label='Facebook'>
+            <Link href='https://www.facebook.com/SqueakyAI'>
+              <a aria-label='Facebook' target='_blank' rel='noreferrer'>
                 <Icon name='facebook-fill' />
               </a>
             </Link>

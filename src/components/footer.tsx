@@ -21,13 +21,13 @@ export const Footer: FC = () => (
         <p className='tagline'>Squeaky helps businesses to understand how visitors are using their website or web app, without invading their privacy.</p>
         <p className='small'><b>Follow us</b></p>
         <div className='social'>
-          <Link href='#'>
-            <a aria-label='Twitter'>
+          <Link href='https://twitter.com/squeakyai'>
+            <a aria-label='Twitter' target='_blank' rel='noreferrer'>
               <Icon name='twitter-fill' />
             </a>
           </Link>
-          <Link href='#'>
-            <a aria-label='Facebook'>
+          <Link href='https://www.facebook.com/SqueakyAI'>
+            <a aria-label='Facebook' target='_blank' rel='noreferrer'>
               <Icon name='facebook-fill' />
             </a>
           </Link>
