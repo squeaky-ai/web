@@ -22,6 +22,10 @@
         .item {
           &.show {
             background: var(--gray-blue-100);
+
+            @include breakpoint-sm {
+              background: transparent;
+            }
           }
 
           .body {

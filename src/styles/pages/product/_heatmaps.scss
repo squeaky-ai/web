@@ -35,6 +35,10 @@
         .item {
           &.show {
             background: var(--peach-300);
+
+            @include breakpoint-sm {
+              background: transparent;
+            }
           }
 
           .body {
