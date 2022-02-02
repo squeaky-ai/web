@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FC } from 'react';
 import classnames from 'classnames';
+import { debounce } from 'lodash';
 import { range } from 'lodash';
 import { Button } from 'components/button';
 
@@ -13,6 +14,8 @@ let timer: NodeJS.Timeout;
 export const Carousel: FC<Props> = ({ children }) => {
   const [index, setIndex] = React.useState<number>(0);
 
+  let initialSwipeX: number = null;
+
   const count = React.Children.count(children);
 
   const auto = () => setTimeout(() => {
@@ -20,7 +23,26 @@ export const Carousel: FC<Props> = ({ children }) => {
     auto();
   }, 5000);
 
+  const onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    initialSwipeX = event.touches[0].clientX;
+  };
+  
+  const onTouchMove = debounce((event: React.TouchEvent<HTMLDivElement>) => {
+    if (initialSwipeX === null) {
+      return;
+    }
+
+    const currentSwipeX = event.touches[0].clientX;
+    const diffX = initialSwipeX - currentSwipeX;
+
+    setIndex(index => diffX > 0 ? index + 1 : index - 1);
+
+    initialSwipeX = null;
+  }, 100);
+
   React.useEffect(() => {
+    clearTimeout(timer);
+
     timer = auto();
 
     return () => {
@@ -30,7 +52,7 @@ export const Carousel: FC<Props> = ({ children }) => {
   }, []);
 
   return (
-    <div className='carousel'>
+    <div className='carousel' onTouchStart={onTouchStart} onTouchMove={onTouchMove}>
       <div className='slide' style={{ transform: `translateX(-${index * 100}%)` }}>
         {children}
       </div>
