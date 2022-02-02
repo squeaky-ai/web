@@ -10,7 +10,7 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 const LegalTerms: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Legal - Terms Of Service</title> 
+      <title>Squeaky | Terms Of Service</title> 
     </Head>
     
     <PageTitle

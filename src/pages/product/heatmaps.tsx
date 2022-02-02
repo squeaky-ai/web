@@ -17,7 +17,7 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 const ProductHeatmaps: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Product - Heatmaps</title> 
+      <title>Squeaky | Heatmaps</title> 
     </Head>
 
     <ProductHeader

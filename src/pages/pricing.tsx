@@ -19,7 +19,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky - Pricing</title> 
+        <title>Squeaky | Pricing</title> 
       </Head>
 
       <section className='hero'>

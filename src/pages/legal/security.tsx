@@ -15,7 +15,7 @@ import socLogo from '../../../public/compliance/soc.png';
 const Security: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Legal - Security</title> 
+      <title>Squeaky | Security</title> 
     </Head>
 
     <PageTitle

@@ -12,7 +12,7 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 const Gdpr: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Legal - GDPR</title> 
+      <title>Squeaky | GDPR</title> 
     </Head>
 
     <PageTitle

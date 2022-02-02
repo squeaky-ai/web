@@ -16,7 +16,7 @@ const FindingBugsByBeingOurOwnCustomer: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky - Engineering - (2022-01-31) Finding Bugs By Being Our Own Customer</title>
+        <title>Squeaky | Finding Bugs By Being Our Own Customer</title>
       </Head>
 
       <Container className='md-lg centered blog'>

@@ -11,7 +11,7 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 const Ccpa: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Legal - CCPA</title> 
+      <title>Squeaky | CCPA</title> 
     </Head>
 
     <PageTitle

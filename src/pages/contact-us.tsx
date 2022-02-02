@@ -27,7 +27,7 @@ const ContactUs: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky - Contact Us</title> 
+        <title>Squeaky | Contact Us</title> 
       </Head>
 
       <PageTitle

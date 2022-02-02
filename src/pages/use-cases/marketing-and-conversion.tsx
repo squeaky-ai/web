@@ -19,7 +19,7 @@ import useCasesHeaderImage from '../../../public/use-cases/use-case-2.png';
 const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Use Cases - Marketing &amp; Conversion</title> 
+      <title>Squeaky | Marketing &amp; Conversion</title> 
     </Head>
 
     <UseCasesHeader

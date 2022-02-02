@@ -10,7 +10,7 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 const PrivacyPolicy: NextPage<ServerSideProps> = () => (
   <>
     <Head>
-      <title>Squeaky - Legal - Privacy Policy</title> 
+      <title>Squeaky | Privacy Policy</title> 
     </Head>
 
     <PageTitle

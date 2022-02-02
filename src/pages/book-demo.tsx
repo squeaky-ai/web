@@ -30,7 +30,7 @@ const BookDemo: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky - Book Demo</title> 
+        <title>Squeaky | Book Demo</title> 
       </Head>
 
       <PageTitle

@@ -85,7 +85,7 @@ const Features: NextPage<ServerSideProps> = () => {
   return (
     <>
       <Head>
-        <title>Squeaky - Features</title> 
+        <title>Squeaky | Features</title> 
       </Head>
 
       <PageTitle
