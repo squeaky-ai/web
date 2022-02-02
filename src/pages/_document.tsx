@@ -11,7 +11,7 @@ class Document extends NextDocument {
   }
 
   private get url() {
-    return this.props.__NEXT_DATA__.page;
+    return `${this.host}${this.props.__NEXT_DATA__.page}`;
   }
 
   public render(): JSX.Element {
