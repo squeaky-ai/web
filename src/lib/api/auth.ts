@@ -34,7 +34,7 @@ export const session = async <T>(cookie: string): Promise<T> => {
     });
     return response.data;
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return null;
   }
 };
@@ -43,7 +43,7 @@ export const signout = async (): Promise<void> => {
   try {
     await axios.delete('/api/auth/sign_out.json');
   } catch(error: any) {
-    console.error(error.response);
+    console.error(error.code, error.response);
     return null;
   }
 };
@@ -53,7 +53,7 @@ export const login = async (input: LoginInput): Promise<Response<any>> => {
     const response = await axios.post('/api/auth/sign_in.json', { user: input });
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -63,7 +63,7 @@ export const signup = async (input: SignupInput): Promise<Response<any>> => {
     const response = await axios.post('/api/auth/sign_up.json', { user: input });
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -73,7 +73,7 @@ export const resetPassword = async(email: string): Promise<Response<any>> => {
     const response = await axios.post('/api/auth/reset_password.json', { user: { email } });
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -83,7 +83,7 @@ export const changePassword = async(input: ChangePasswordInput): Promise<Respons
     const response = await axios.put('/api/auth/change_password.json', { user: input });
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -93,7 +93,7 @@ export const reconfirm = async (email: string): Promise<Response<any>> => {
     const response = await axios.post('/api/auth/reset_password.json', { user: { email }});
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -103,7 +103,7 @@ export const confirmAccount = async (token: string): Promise<Response<User>> => 
     const response = await axios.get<User>(`/api/auth/confirm.json?confirmation_token=${token}`);
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
@@ -113,7 +113,7 @@ export const reconfirmAccount = async (email: string): Promise<Response<any>> =>
     const response = await axios.post('/api/auth/confirm.json', { user: { email } });
     return { body: response.data };
   } catch(error: any) {
-    console.error(error.response.status, error.response.data);
+    console.error(error.code, error.response);
     return { error: error.response.data };
   }
 };
