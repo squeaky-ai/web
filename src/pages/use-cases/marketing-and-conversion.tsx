@@ -147,7 +147,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
           title='Learn from your customers without invading their privacy'
           body='We&apos;ve build build Squeaky as a privacy-first product from day one, meaning you can gather vital insights whilst keeping your customers data anonymised, and your company compliant.'
           linkText=''
-          linkHref=''
+          linkHref='/'
           image={<Screen screen='privacy-2' />}
           flip
         />

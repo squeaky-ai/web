@@ -100,7 +100,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
                   <li><Icon name='check-line' />Audit Trail</li>
                   <li><Icon name='check-line' />Self-hosting options</li>
                 </ul>
-                <Link href='#'>
+                <Link href='/contact-us'>
                   <a className='button primary'>
                     Talk To Sales
                   </a>

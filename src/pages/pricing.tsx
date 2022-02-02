@@ -122,7 +122,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
             title='Are you GDPR and CCPA compliant?'
             body={
               <>
-                <p>Yes of course, please visit our <Link href='#'><a>Legal &amp; Compliance page</a></Link> to learn more.</p>
+                <p>Yes of course, please visit our <Link href='/legal/gdpr'><a>Legal &amp; Compliance page</a></Link> to learn more.</p>
               </>
             }
           />

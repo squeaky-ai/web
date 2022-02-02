@@ -31,8 +31,8 @@ export const Footer: FC = () => (
               <Icon name='facebook-fill' />
             </a>
           </Link>
-          <Link href='#'>
-            <a aria-label='LinkedIn'>
+          <Link href='https://www.linkedin.com/company/squeakyai'>
+            <a aria-label='LinkedIn' target='_blank' rel='noreferrer'>
               <Icon name='linkedin-fill' />
             </a>
           </Link>
