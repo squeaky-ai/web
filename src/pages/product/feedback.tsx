@@ -42,22 +42,22 @@ const ProductFeedback: NextPage<ServerSideProps> = () => (
         <ExpandingDetails
           items={[
             {
-              icon: 'hand-heart-line',
+              icon: 'hand-heart-line', 
               title: 'NPS®',
               body: 'Using NPS® feedback from your customers will help you to better understand how the quality of your product and customer support are helping to drive the growth of your business.',
-              image: <Screenshot screen='nps-1' width={738} height={525} />
-            },
+              image: <Screenshot screen='nps-2' width={738} height={525} />
+            }, 
             {
               icon: 'emotion-happy-line',
               title: 'Sentiment surveys',
               body: 'Often the best feedback is collected unprompted. Our Sentiment Survey provides you with a straightforward and relatable way to let your customers tell you how they\'re feeling.',
-              image: <Screenshot screen='sentiment-1' width={738} height={525} />
+              image: <Screenshot screen='sentiment-2' width={738} height={525} />
             },
             {
               icon: 'line-chart-line',
               title: 'Easy analysis',
               body: 'Get precise data on how your customer feedback changes over time, so you can measure the improvements you\'re making to your product or service.',
-              image: <Screenshot screen='analytics-1' width={738} height={525} />,
+              image: <Screenshot screen='nps-1' width={738} height={525} />,
               shadowless: true
             },
             {

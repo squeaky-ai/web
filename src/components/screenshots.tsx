@@ -7,9 +7,14 @@ import analytics1 from '../../public/screenshots/analytics-1.jpg';
 import analytics2 from '../../public/screenshots/analytics-2.jpg';
 import dashboard1 from '../../public/screenshots/dashboard-1.jpg';
 import heatmaps1 from '../../public/screenshots/heatmaps-1.jpg';
+import heatmaps2 from '../../public/screenshots/heatmaps-2.jpg';
+import heatmaps3 from '../../public/screenshots/heatmaps-3.jpg';
+import heatmaps4 from '../../public/screenshots/heatmaps-4.jpg';
 import nps1 from '../../public/screenshots/nps-1.jpg';
+import nps2 from '../../public/screenshots/nps-2.jpg';
 import recordings1 from '../../public/screenshots/recordings-1.jpg';
 import sentiment1 from '../../public/screenshots/sentiment-1.jpg';
+import sentiment2 from '../../public/screenshots/sentiment-2.jpg';
 import session1 from '../../public/screenshots/session-1.jpg';
 
 type ScreenshotType = 
@@ -17,8 +22,13 @@ type ScreenshotType =
   'analytics-2' |
   'dashboard-1' |
   'heatmaps-1' |
+  'heatmaps-2' |
+  'heatmaps-3' |
+  'heatmaps-4' |
   'nps-1' |
+  'nps-2' |
   'sentiment-1' |
+  'sentiment-2' |
   'session-1' | 
   'recordings-1';
 
@@ -36,10 +46,20 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return dashboard1;
     case 'heatmaps-1':
       return heatmaps1;
+    case 'heatmaps-2':
+      return heatmaps2;
+    case 'heatmaps-3':
+      return heatmaps3;
+    case 'heatmaps-4':
+      return heatmaps4;
     case 'nps-1':
       return nps1;
+    case 'nps-2':
+      return nps2;
     case 'sentiment-1':
       return sentiment1;
+    case 'sentiment-2':
+      return sentiment2;
     case 'session-1':
       return session1;
     case 'recordings-1':

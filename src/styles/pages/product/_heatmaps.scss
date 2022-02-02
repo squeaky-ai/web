@@ -1,3 +1,246 @@
 .page.heatmaps {
+  .product-header {
+    .background {
+      background-image: url('../../../../public/illustrations/illustration-21.svg');
+    }
 
+    @include breakpoint-md {
+      .background {
+        background-image: none;
+      }
+    }
+
+    & + .features {
+      background: var(--mauve-700);
+
+      .icon {
+        color: var(--yellow-500);
+      }
+
+      p {
+        color: var(--white);
+      }
+    }
+  }
+
+  section {
+    &.glance {
+      background-color: var(--peach-400);
+      background-image: url('../../../../public/backgrounds/squiggle-peach.svg');
+      background-position: top right;
+      background-repeat: no-repeat;
+      padding: 8rem 4rem;
+
+      .items {
+        .item {
+          &.show {
+            background: var(--peach-300);
+          }
+
+          .body {
+            p {
+              color: var(--gray-blue-600);
+            }
+          }
+        }
+
+        .button {
+          color: var(--gray-blue-800);
+
+          .icon {
+            &:first-of-type {
+              color: var(--rose-500);
+            }
+
+            &:last-of-type {
+              color: var(--gray-blue-800);
+            }
+          }
+        }
+      }
+
+      h2 {
+        color: var(--gray-blue-800);
+        margin: 0 0 8rem 0;
+        text-align: center;
+      }
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+
+        h2 {
+          margin: 0 0 6rem 0;
+        }
+      }
+
+      @include breakpoint-sm {
+        background-image: none;
+        padding: 4rem 2rem;
+
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+      }
+    }
+
+    &.testimonial {
+      background-color: var(--mauve-700);
+      background-image: url('../../../../public/backgrounds/product-10.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 10rem 3rem 6rem 3rem;
+
+      .shadow {
+        background: var(--mauve-400);
+      }
+
+      p {
+        color: var(--peach-100);
+      }
+
+      @include breakpoint-sm {
+        padding: 8rem 2rem 6rem 2rem;
+      }
+    }
+
+    &.features {
+      background-color: var(--gray-blue-800);
+      background-image: url('../../../../public/backgrounds/product-11.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 4rem;
+
+      h3 {
+        color: var(--white);
+        margin: 0 0 1rem 0;
+        position: relative;
+
+        & + p {
+          color: var(--gray-blue-200);
+          margin: 0 0 4rem 0;
+          max-width: 45rem;
+        }
+      }
+
+      .features-grid {
+        .icon {
+          color: var(--yellow-500);
+        }
+        
+        p {
+          color: var(--peach-100);
+
+          b {
+            color: var(--white);
+          }
+        }
+      }
+
+      .features-banner {
+        background: var(--gray-blue-50);
+        margin: 6rem 0;
+
+        p { 
+          color: var(--gray-blue-800);
+        }
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+      }
+    }
+
+    &.tools {
+      background-color: var(--white);
+      background-image: url('../../../../public/backgrounds/product-12.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 10rem 5rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem 10rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 8rem 2rem;
+      }
+    }
+
+    &.easy {
+      background-color: var(--mauve-700);
+      padding: 6rem 5rem;
+
+
+      h3 {
+        background: var(--white);
+      }
+
+      .subheading {
+        color: var(--peach-100);
+      }
+
+      .dashes {
+        border-color: var(--peach-500);
+      }
+
+      .step-item {
+        h3 {
+          background: var(--peach-400);
+        }
+
+        &:first-of-type {
+          background-image: linear-gradient(90deg, var(--mauve-700) 50%, rgba(116, 42, 64, 0) 50%);
+        }
+
+        &:last-of-type {
+          background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, var(--mauve-700) 50%);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+
+        .step-item {
+          &:first-of-type {
+            background-image: none;
+          }
+      
+          &:last-of-type {
+            background-color: var(--mauve-700);
+            background-image: none;
+          }
+        }
+      }
+    }
+
+    &.compatibility {
+      background-color: var(--peach-200);
+      padding: 8rem 5rem;
+
+      a {
+        color: var(--marine-blue-700);
+      }
+
+      @include breakpoint-md {
+        padding: 8rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+      }
+    }
+
+    &.get-started {
+      background-color: var(--gray-blue-700);
+      padding: 6rem 6rem 0 6rem;
+
+      @include breakpoint-md {
+        display: none;
+      }
+    }
+  }
 }
