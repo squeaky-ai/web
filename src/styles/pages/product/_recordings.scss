@@ -79,6 +79,10 @@
         background: var(--mauve-400);
       }
 
+      p {
+        color: var(--peach-100);
+      }
+
       @include breakpoint-sm {
         padding: 8rem 2rem 6rem 2rem;
       }
