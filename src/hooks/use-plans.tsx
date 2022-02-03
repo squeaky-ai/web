@@ -13,7 +13,11 @@ const QUERY = gql`
     plans {
       name
       maxMonthlyRecordings
-      monthlyPrice
+      monthlyPrice {
+        GBP
+        EUR
+        USD
+      }
     }
   }
 `;
@@ -26,6 +30,6 @@ export const usePlans = (): UsePlans => {
   return {
     loading,
     error: !!error,
-    plans: sortBy(plans, 'monthlyPrice'),
+    plans: sortBy(plans, p => p.monthlyPrice?.USD),
   };
 };

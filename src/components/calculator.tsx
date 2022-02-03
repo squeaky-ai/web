@@ -111,7 +111,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
               <div className='plan'>
                <h4>Light Plan</h4>
                <p className='limit'>{plan === plans.length ? 'more than' : 'up to'} {recordingsPerMonthLimit(plans, plan)} visits per month</p>
-               <h1>{currency.symbol}{monthlyPrice(plans, plan)}</h1>
+               <h1>{currency.symbol}{monthlyPrice(plans, plan, currency.name)}</h1>
                <p className='duration'>per month</p>
                <Link href='/auth/signup'>
                  <a className='button primary'>

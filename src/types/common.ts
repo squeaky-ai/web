@@ -1,3 +1,5 @@
+import type { PlanMonthlyPrice } from 'types/graphql';
+
 export type ValueOf<T> = T[keyof T];
 
 declare global {
@@ -13,7 +15,7 @@ interface Squeaky {
 }
 
 export type Currency = { 
-  name: string; 
+  name: keyof PlanMonthlyPrice; 
   symbol: string 
 };
 
