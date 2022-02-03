@@ -20,39 +20,42 @@ interface Props {
 
 type Person = 'matt' | 'yassine' | 'steve'  | 'steven' | 'nathan';
 
-const Img: FC<Pick<Props, 'person'>> = (props) => {
-  switch(props.person) {
+const imageSrc = (person: Props['person']) => {
+  switch(person) {
     case 'matt':
-      return <Image src={matt} height={296} width={296} alt='Image of Matt, the person who gave the testimonial' unoptimized priority />;
+      return matt;
     case 'yassine':
-      return <Image src={yassine} height={296} width={296} alt='Image of Yassine, the person who gave the testimonial' unoptimized priority />;
+      return yassine;
     case 'steve':
-      return <Image src={steve} height={296} width={296} alt='Image of Steve, the person who gave the testimonial' unoptimized priority />;
+      return steve;
     case 'steven':
-      return <Image src={steven} height={296} width={296} alt='Image of Steven, the person who gave the testimonial' unoptimized priority />;
+      return steven;
     case 'nathan':
-      return <Image src={nathan} height={296} width={296} alt='Image of Nathan, the person who gave the testimonial' unoptimized priority />;
-    default:
-      return null;
+      return nathan;
   }
 };
 
-export const TestimonialQuote: FC<Props> = ({ quote, by, at, circular, flip, person }) => (
-  <div className={classnames('testimonial-quote', { circular, flip })}>
-    <div className='image'>
-      <div className='shadow' />
-      <div className='img'>
-        <Img person={person} />
-      </div>
-    </div>
-    <div className='info'>
-      <h3>{quote}</h3>
-      <div className='bottom'>
+export const TestimonialQuote: FC<Props> = ({ quote, by, at, circular, flip, person }) => {
+  const alt = `Image of ${by}, ${at}`;
+  const src = imageSrc(person);
+
+  return (
+    <div className={classnames('testimonial-quote', { circular, flip })}>
+      <div className='image'>
+        <div className='shadow' />
         <div className='img'>
-          <Img person={person} />
+          <Image src={src} height={296} width={296} alt={alt} unoptimized priority />;
         </div>
-        <p><b>{by}</b> {at}</p>
+      </div>
+      <div className='info'>
+        <h3>{quote}</h3>
+        <div className='bottom'>
+          <div className='img'>
+            <Image src={src} height={296} width={296} alt={alt} unoptimized priority />;
+          </div>
+          <p><b>{by}</b> {at}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
