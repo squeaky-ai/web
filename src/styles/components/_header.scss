@@ -172,12 +172,12 @@
       .social {
         align-items: center;
         display: flex;
-        justify-content: center;
-        padding: 1rem 0 0 0;
+        justify-content: space-between;
+        padding: 1rem 2rem 0 2rem;
 
         a {
           align-items: center;
-          background: var(--gray-100);
+          background: var(--gray-blue-400);
           border-radius: var(--border-radius-o);
           color: var(--gray-500);
           display: flex;
@@ -188,12 +188,20 @@
           text-decoration: none;
           width: 3rem;
 
+          .icon {
+            color: var(--light-blue-300);
+          }
+
           &:last-of-type {
             margin-right: 0;
           }
 
           &:hover {
-            background: var(--gray-150);
+            background: var(--light-blue-300);
+
+            .icon {
+              color: var(--gray-blue-500);
+            }
           }
         }
       }
