@@ -118,6 +118,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
           linkText='Discover Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-2' />}
+          buttonType='secondary-marine'
           flip
         />
         <SideBySide 
@@ -126,11 +127,13 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
           linkText='Explore Recordings'
           linkHref='/product/recordings'
           image={<Screen screen='session-2' />}
+          buttonType='secondary-marine'
         />
         <SideBySide 
           title='Quantify the behaviour of your customers'
           body='Whether it&apos;s spotting trends in customer feedback, or aggregating user interactions in heatmaps, Squeaky lets data do the talking for you.'
           image={<Screen screen='heatmaps-4' />}
+          buttonType='secondary-marine'
           linkText='Learn About Analytics'
           linkHref='/product/analytics'
           flip
@@ -138,6 +141,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
         <SideBySide 
           title='Learn from your customers without invading their privacy'
           body='We&apos;ve build build Squeaky as a privacy-first product from day one, meaning you can gather vital insights whilst keeping your customers data anonymised, and your company compliant.'
+          buttonType='secondary-marine'
           linkText=''
           linkHref='/'
           image={<Screen screen='privacy-1' />}

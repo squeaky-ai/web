@@ -88,6 +88,18 @@
     }
   }
 
+  &.secondary-marine {
+    background: transparent;
+    border: 2px solid var(--marine-blue-700);
+    border-radius: var(--border-radius-xl);
+    color: var(--gray-blue-800);
+    padding: .34rem 1.25rem;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
   &.tertiary {
     background: transparent;
     border: 2px solid var(--gray-blue-200);

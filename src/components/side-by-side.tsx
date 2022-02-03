@@ -11,7 +11,7 @@ interface Props {
   linkHref: string;
   linkText: string;
   flip?: boolean;
-  buttonType?: 'primary' | 'secondary';
+  buttonType?: 'primary' | 'secondary' | 'secondary-marine';
 }
 
 export const SideBySide: FC<Props> = ({ title, subtitle, body, linkHref, linkText, image, flip, buttonType }) => (
