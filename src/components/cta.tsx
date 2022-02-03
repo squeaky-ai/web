@@ -6,7 +6,7 @@ import { Container } from 'components/container';
 
 interface Props {
   title: React.ReactNode;
-  type: 'cross' | 'squiggle' | 'blank';
+  type: 'cross-mauve' | 'cross-white' | 'squiggle';
 }
 
 export const Cta: FC<Props> = ({ title, type }) => (

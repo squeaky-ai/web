@@ -156,7 +156,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
     </section>
 
     <section className='get-started'>
-      <Cta type='blank' title={<h3>Get started in minutes. Your team will thank you.</h3>} />
+      <Cta type='cross-white' title={<h2>Get started in minutes. Your team will thank you.</h2>} />
     </section>
   </>
 );

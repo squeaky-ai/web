@@ -155,7 +155,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
       </section>
 
       <section className='insight'>
-        <Cta type='cross' title={<h2>Give your business the insights it deserves</h2>} />
+        <Cta type='cross-mauve' title={<h2>Give your business the insights it deserves</h2>} />
       </section>
     </>
   );
