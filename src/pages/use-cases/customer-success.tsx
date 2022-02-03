@@ -50,7 +50,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>It&apos;s never been easier to understand your customers</h2>
-          <p>With Squeaky, when your customers get in touch with a problem you could see exactly what happened, meaning you&apos;ll provide faster and personalised support.</p>
+          <p>With Squeaky, when your customers get in touch with a problem you could see exactly what happened, meaning you&apos;ll provide faster and more personalised support.</p>
         </Container>
 
         <Carousel>
