@@ -33,6 +33,7 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
           </ul>
         </>
       }
+      image='heatmaps'
     /> 
 
     <section className='glance'>

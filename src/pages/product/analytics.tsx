@@ -34,6 +34,7 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
           </ul>
         </>
       }
+      image='analytics'
     />
     
     <section className='glance'>

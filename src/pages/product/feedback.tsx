@@ -33,6 +33,7 @@ const ProductFeedback: NextPage<ServerSideProps> = () => (
           </ul>
         </>
       }
+      image='feedback'
     />
 
     <section className='glance'>

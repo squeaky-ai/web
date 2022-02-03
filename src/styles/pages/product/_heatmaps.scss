@@ -1,15 +1,5 @@
 .page.heatmaps {
   .product-header {
-    .background {
-      background-image: url('../../../../public/illustrations/illustration-21.svg');
-    }
-
-    @include breakpoint-md {
-      .background {
-        background-image: none;
-      }
-    }
-
     & + .features {
       background: var(--mauve-700);
 

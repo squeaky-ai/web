@@ -1,21 +1,41 @@
 import React from 'react';
 import type { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
+
+import analyticsImage from '../../public/illustrations/illustration-5.svg';
+import feedbackImage from '../../public/illustrations/illustration-6.svg';
+import heatmapsImage from '../../public/illustrations/illustration-21.svg';
+import recordingsImage from '../../public/illustrations/illustration-4.svg';
 
 interface Props {
   title: string;
   subtitle: string;
   body: React.ReactNode;
+  image: 'analytics' | 'feedback' | 'heatmaps' | 'recordings';
 }
 
-export const ProductHeader: FC<Props> = ({ title, subtitle, body }) => (
+const imageSrc = (image: Props['image']) => {
+  switch(image) {
+    case 'analytics':
+      return analyticsImage;
+    case 'feedback':
+      return feedbackImage;
+    case 'heatmaps':
+      return heatmapsImage;
+    case 'recordings':
+      return recordingsImage;
+  }
+}
+
+export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
   <>
     <div className='product-header'>
       <div className='egg'>
-        <Container className='lg centered background'>
-          <Container className='sm-md'>
+        <Container className='lg centered'>
+          <div className='info'>
             <h6>{subtitle}</h6>
             <h1>{title}</h1>
             <p>{body}</p>
@@ -31,7 +51,10 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body }) => (
                 </a>
               </Link>
             </div>
-          </Container>
+          </div>
+          <div className='image'>
+            <Image src={imageSrc(image)} width={600} height={400} />
+          </div>
         </Container>
       </div>
     </div>

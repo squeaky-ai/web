@@ -34,6 +34,7 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
           </ul>
         </>
       }
+      image='recordings'
     />
 
     <section className='glance'>

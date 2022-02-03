@@ -1,16 +1,4 @@
 .page.feedback {
-  .product-header {
-    .background {
-      background-image: url('../../../../public/illustrations/illustration-6.svg');
-    }
-
-    @include breakpoint-md {
-      .background {
-        background-image: none;
-      }
-    }
-  }
-
   section {
     &.glance {
       background-color: var(--gray-blue-50);
