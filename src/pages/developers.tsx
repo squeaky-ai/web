@@ -24,7 +24,7 @@ const Developers: NextPage<ServerSideProps> = () => {
       </Head>
 
       <PageTitle
-          title='Developers'
+        title='Developers'
         subtitle={<>Last Updated: <b>September 1st 2021</b></>}
       />
 

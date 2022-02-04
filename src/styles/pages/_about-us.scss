@@ -1,3 +1,153 @@
 .page.about-us {  
+  .page-title {
+    background-color: var(--mauve-700);
 
+    h1 {
+      color: var(--white);
+    }
+
+    p {
+      color: var(--peach-100);
+    }
+  }
+
+  section {
+    &.mission {
+      background-color: var(--peach-400);
+      background-image: url('../../../public/backgrounds/about-1.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 10rem 3rem;
+
+      @include breakpoint-sm {
+        padding: 6rem 2rem;
+      }
+
+      .container {
+        display: grid;
+        grid-gap: 6rem;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include breakpoint-sm {
+          grid-gap: 3rem;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .text {
+        h2 {
+          margin: 0 0 2rem 0;
+        }
+
+        a {
+          color: var(--mauve-700);
+          font-weight: var(--font-weight-block);
+        }
+
+        p {
+          color: var(--gray-blue-700);
+        }
+      }
+
+      .image {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &.founders {
+      background-color: var(--peach-200);
+      background-image: url('../../../public/backgrounds/about-2.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 10rem 2rem;
+
+      @include breakpoint-sm {
+        padding: 6rem 3rem;
+      }
+
+      h2 {
+        margin: 0 0 2rem 0;
+        text-align: center;
+      }
+
+      p {
+        margin: 0 0 2rem 0;
+        text-align: center;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+
+      .people {
+        display: flex;
+        justify-content: space-between;
+        margin: 6rem auto 0 auto;
+
+        @include breakpoint-sm {
+          flex-direction: column;
+        }
+
+        .person {
+          width: 360px;
+
+          &:first-of-type {
+            margin-right: 3rem;
+          }
+
+          @include breakpoint-sm {
+            width: 100%;
+          }
+
+          .image {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 0 0 2rem 0;
+          }
+
+          h3 {
+            align-items: center;
+            display: flex;
+            margin: 0 0 .5rem 0;
+
+            a {
+              align-items: center;
+              background: var(--peach-400);
+              border-radius: var(--border-radius-o);
+              display: flex;
+              height: 2rem;
+              justify-content: center;
+              margin: 0 0 0 1rem;
+              text-decoration: none;
+              width: 2rem;
+
+              &:hover {
+                background: var(--peach-300);
+              }
+
+              .icon {
+                color: var(--white);
+                font-size: 1rem;
+              }
+            }
+          }
+
+          h6 {
+            color: var(--mauve-800);
+            margin: 0 0 2rem 0;
+            text-transform: uppercase;
+          }
+
+          p {
+            color: var(--gray-blue-700);
+            margin: 0;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
 }

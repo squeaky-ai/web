@@ -53,7 +53,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
             </div>
           </div>
           <div className='image'>
-            <Image src={imageSrc(image)} width={600} height={400} />
+            <Image src={imageSrc(image)} width={600} height={400} alt={`Illustration of ${image}`} />
           </div>
         </Container>
       </div>

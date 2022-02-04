@@ -6,16 +6,20 @@ import { Container } from 'components/container';
 
 interface Props {
   title: React.ReactNode;
+  subtitle?: React.ReactNode;
   type: 'cross-mauve' | 'cross-white' | 'squiggle';
+  buttonText?: string;
+  buttonLink?: string;
 }
 
-export const Cta: FC<Props> = ({ title, type }) => (
+export const Cta: FC<Props> = ({ title, subtitle, type, buttonText, buttonLink }) => (
   <div className={classnames('cta', type)}>
     <Container className='centered md'>
       {title}
-      <Link href='/auth/signup'>
+      {subtitle}
+      <Link href={buttonLink || '/auth/signup'}>
         <a className='button primary'>
-          Get Started Free
+          {buttonText || 'Get Started Free'}
         </a>
       </Link>
     </Container>

@@ -20,6 +20,7 @@ type ThemeOverrides = Record<string, 'blue' | 'mauve'>;
 const themeOverrides: ThemeOverrides = {
   '/use-cases/marketing-and-conversion': 'blue',
   '/use-cases/customer-success': 'mauve',
+  '/about-us': 'mauve',
 };
 
 export const Header: FC<Props> = ({ user }) => {
