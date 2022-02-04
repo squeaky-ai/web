@@ -801,16 +801,22 @@ export type Page = {
 export type Plan = {
   __typename?: 'Plan';
   maxMonthlyRecordings?: Maybe<Scalars['Int']>;
-  monthlyPrice?: Maybe<PlanMonthlyPrice>;
   name: Scalars['String'];
+  pricing?: Maybe<Array<PlanPrice>>;
 };
 
-export type PlanMonthlyPrice = {
-  __typename?: 'PlanMonthlyPrice';
-  EUR: Scalars['Int'];
-  GBP: Scalars['Int'];
-  USD: Scalars['Int'];
+export type PlanPrice = {
+  __typename?: 'PlanPrice';
+  amount: Scalars['Int'];
+  currency: PlansCurrency;
+  id: Scalars['String'];
 };
+
+export enum PlansCurrency {
+  Eur = 'EUR',
+  Gbp = 'GBP',
+  Usd = 'USD'
+}
 
 export type Query = {
   __typename?: 'Query';

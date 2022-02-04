@@ -1,4 +1,3 @@
-import { sortBy } from 'lodash';
 import { gql, useQuery } from '@apollo/client';
 import type { Plan } from 'types/graphql';
 
@@ -13,10 +12,10 @@ const QUERY = gql`
     plans {
       name
       maxMonthlyRecordings
-      monthlyPrice {
-        GBP
-        EUR
-        USD
+      pricing {
+        id
+        currency
+        amount
       }
     }
   }
@@ -30,6 +29,6 @@ export const usePlans = (): UsePlans => {
   return {
     loading,
     error: !!error,
-    plans: sortBy(plans, p => p.monthlyPrice?.USD),
+    plans,
   };
 };

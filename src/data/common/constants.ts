@@ -1,3 +1,4 @@
+import { PlansCurrency } from 'types/graphql';
 import type { Currency } from 'types/common';
 
 export const MM_SS_REGEX = /\d\d:\d\d/;
@@ -8,15 +9,15 @@ export const HEX_REGEX = /#.{6}/;
 
 export const CURRENCIES: Currency[] = [
   {
-    name: 'EUR', 
+    name: PlansCurrency.Eur, 
     symbol: '€',
   },
   {
-    name: 'GBP',
+    name: PlansCurrency.Gbp,
     symbol: '£'
   },
   {
-    name: 'USD',
+    name: PlansCurrency.Usd,
     symbol: '$',
   },
 ];

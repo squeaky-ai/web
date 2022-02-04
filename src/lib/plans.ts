@@ -1,4 +1,4 @@
-import type { Plan, PlanMonthlyPrice } from 'types/graphql';
+import type { Plan, PlansCurrency } from 'types/graphql';
 
 export const recordingsPerMonthLimit = (plans: Plan[], plan: number) => {
   const match = plans[plan - 1];
@@ -10,14 +10,14 @@ export const recordingsPerMonthLimit = (plans: Plan[], plan: number) => {
   return match.maxMonthlyRecordings.toLocaleString();
 };
 
-export const monthlyPrice = (plans: Plan[], plan: number, currency: keyof PlanMonthlyPrice) => {
+export const monthlyPrice = (plans: Plan[], plan: number, currency: PlansCurrency) => {
   const match = plans[plan - 1];
 
   if (plans.length === plan) {
     return 'Ask';
   }
 
-  return match?.monthlyPrice?.[currency];
+  return match.pricing?.find(p => p.currency === currency)?.amount || 0;
 };
 
 export const formatShortRecordingCount = (count: number) => {
