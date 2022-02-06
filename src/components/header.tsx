@@ -33,7 +33,7 @@ export const Header: FC<Props> = ({ user }) => {
   const [subMenuOpen, setSubMenuOpen] = React.useState<SubMenu>(null);
 
   const themeOverride = themeOverrides[router.route];
-  const useLightLogo = ['blue', 'mauve'].includes(themeOverride) && !scrolled && !subMenuOpen;
+  const useLightLogo = ['blue', 'mauve'].includes(themeOverride) && !scrolled && !subMenuOpen && !open;
 
   const handleOpen = (subMenu: SubMenu) => {
     return () => setSubMenuOpen(subMenu);

@@ -532,7 +532,7 @@
     }
   }
 
-  &.blue:not(.scrolled):not(.sub-menu-open) {
+  &.blue:not(.scrolled):not(.sub-menu-open):not(.open) {
     background: var(--gray-blue-700);
 
     .hamburger {
@@ -549,7 +549,7 @@
     }
   }
 
-  &.mauve:not(.scrolled):not(.sub-menu-open) {
+  &.mauve:not(.scrolled):not(.sub-menu-open):not(.open) {
     background: var(--mauve-700);
 
     .hamburger {
