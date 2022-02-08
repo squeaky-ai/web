@@ -25,6 +25,9 @@ class Document extends NextDocument {
           <meta name='keywords' content='Web, Analytics, Recordings, Visitors' />
           <meta name='theme-color' content='#FFF5EB' />
 
+          {/* TODO: Delete */}
+          <meta name='ahrefs-site-verification' content='4ab46532f5ca328773b891e0df42f34475fb429916b57684a416f5a3e57e652e' />
+
           {/* Open Graph / Facebook */}
           <meta property='og:type' content='website' />
           <meta property='og:title' content='Squeaky.ai | The privacy-first customer experience platform' />
