@@ -36,7 +36,7 @@ export const User: FC<Props> = ({ children, user }) => {
     <>
       <Script 
         id='squeaky-script'
-        strategy='beforeInteractive'
+        strategy='afterInteractive'
         dangerouslySetInnerHTML={{ __html: dev ? '' : `
           (function(s,q,e,a,u,k,y){
             s._sqSettings={site_id:'2918cf0f-42aa-499d-a4da-d362bd1011ed'};
