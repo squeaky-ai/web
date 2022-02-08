@@ -53,7 +53,7 @@ export const HeaderProduct: FC = () => {
         <div className='info'>
           <p>
             <Icon name='shield-check-line' />
-            GDPR &amp; CCPA complaint
+            GDPR &amp; CCPA compliant
           </p>
           <div className='banner-left'>
             <Image src={bannerLeft} width={32} height={36} alt='illustraion to present text as a banner' unoptimized priority />

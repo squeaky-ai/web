@@ -8,7 +8,7 @@ export const UpAndRunning: FC = () => (
   <Container className='centered lg up-and-running'>
     <Container className='centered sm'>
       <h2>It&apos;s easy to get up and running in minutes</h2>
-      <p className='subheading'>In the time it&apos;s taken you to read this page you could have already started collecting valuable insights, it&apos;s</p>
+      <p className='subheading'>In the time it&apos;s taken you to read this page you could have already started collecting valuable insights.</p>
     </Container>
 
     <Steps>

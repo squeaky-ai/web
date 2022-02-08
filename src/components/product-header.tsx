@@ -65,7 +65,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
       </p>
       <p>
         <Icon name='shield-check-line' />
-        GDPR &amp; CCPA complaint
+        GDPR &amp; CCPA compliant
       </p>
       <p>
         <Icon name='code-s-slash-line' />

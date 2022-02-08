@@ -48,7 +48,7 @@ const Home: NextPage<ServerSideProps> = () => {
           </p>
           <p>
             <Icon name='shield-check-line' />
-            GDPR &amp; CCPA complaint
+            GDPR &amp; CCPA compliant
           </p>
           <p>
             <Icon name='code-s-slash-line' />
@@ -83,7 +83,7 @@ const Home: NextPage<ServerSideProps> = () => {
             <ThreeImageGridItem
               image={<Illustration illustration='illustration-16' width={122} height={128} />}
               title='Product &amp; UX Teams'
-              body='Use context-rich, customer data and insights to make better decisions for your business.'
+              body='Use context-rich customer data and insights to make better decisions for your business.'
               link='/use-cases/product-and-ux'
             />
             <ThreeImageGridItem
@@ -95,7 +95,7 @@ const Home: NextPage<ServerSideProps> = () => {
             <ThreeImageGridItem
               image={<Illustration illustration='illustration-18' width={164} height={128} />}
               title='Customer Success'
-              body='Provide best-in-class customer support by seeing and hearing your customers&apos; problems first hand.'
+              body='Provide faster, more effective customer support by seeing and hearing your customers&apos; problems first-hand.'
               link='/use-cases/customer-success'
             />
           </ThreeImageGrid>
@@ -149,7 +149,7 @@ const Home: NextPage<ServerSideProps> = () => {
           />
           <SideBySide 
             subtitle='Heatmaps'
-            title='Use real data to evaluate the performance of your site'
+            title='Use interaction data to evaluate the performance of your site'
             body='Use Heatmap data to provide the right content and the most effective interfaces for your users.'
             linkText='Learn More'
             linkHref='/product/heatmaps'
@@ -163,7 +163,7 @@ const Home: NextPage<ServerSideProps> = () => {
         <Container className='centered lg'>
           <div className='understanding-grid'>
             <h2>Understand your visitors without invading their privacy</h2>
-            <p>You don&apos;t have to covertly collect mountains of data on each of your visitors to generate meaningful insights. Our product proves it, by offering world-class customer insights whilst meeting the highest standards in data privacy.</p>
+            <p>You don&apos;t have to covertly collect mountains of data on each of your visitors to generate meaningful insights. Our product proves it, by offering world-class customer insights while meeting the highest standards in data privacy.</p>
             <div className='image'>
               <Illustration illustration='illustration-19' width={598} height={395} />
             </div>
@@ -171,12 +171,12 @@ const Home: NextPage<ServerSideProps> = () => {
           <ThreeTextGrid>
             <ThreeTextGridItem
               title='Private by design'
-              body='Since our inception, privacy-first design has been a core element of our product. We don&apos;t use cookie-based tracking, store IP addresses, or capture form data.'
+              body='Since day one, privacy-first design has been a core element of our product. We don&apos;t use cookie-based tracking, store IP addresses, or capture form data.'
               link='#'
             />
             <ThreeTextGridItem
               title='GDPR &amp; CCPA compliant'
-              body='Squeaky is full compliant with GDPR &amp; CCPA regulations. You&apos;ll be able to use our products whilst protecting the personal data and privacy of your customers.'
+              body='Squeaky is fully compliant with GDPR &amp; CCPA regulations. You&apos;ll be able to use our products while protecting the personal data and privacy of your customers.'
               link='#'
             />
             <ThreeTextGridItem

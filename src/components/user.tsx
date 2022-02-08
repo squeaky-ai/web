@@ -7,7 +7,7 @@ import { usePoll } from 'hooks/use-poll';
 
 const { publicRuntimeConfig } = getConfig();
 
-const { dev } = publicRuntimeConfig;
+const { dev = false } = publicRuntimeConfig;
 
 interface Props {
   user: UserType;
