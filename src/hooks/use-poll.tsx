@@ -24,7 +24,6 @@ function poll(callback: PollCallback, timeout = 5000, interval = 250) {
   return new Promise(checkCondition);
 }
 
-
 export const usePoll = (callback: PollCallback): boolean => {
   const [loaded, setLoaded] = React.useState<boolean>(false);
 
