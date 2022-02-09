@@ -47,7 +47,7 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
             {
               icon: 'line-chart-line',
               title: 'Powerful playback',
-              body: 'Learn from your visitors by watching recordings of their visits. We provide rich meta data on their visit and you can add annotate and tags recordings too.',
+              body: 'Learn from your visitors by watching recordings of their visits. We provide rich metadata on their visit and you can add annotate and tags recordings too.',
               image: <Screenshot screen='session-1' width={738} height={525} />
             },
             {
@@ -92,12 +92,12 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='film-line'
             title='Perfect playback'
-            body='Our script captures a perfect copy of your website, exactly as your visitor saw it. That way, when you play back a visitors session you can see exactly what they saw.'
+            body='Our script captures a perfect copy of your website, exactly as your visitor saw it. That way, when you play back a visitor&apos;s session you can see exactly what they saw.'
           />
           <FeaturesGridItem
             icon='sound-module-line'
             title='Playback controls'
-            body='Pause, and scrub recordings to quickly navigate the playback, view the recording at faster or slower speeds to go through the sessions at your preferred pace.'
+            body='Pause and scrub recordings to quickly navigate the playback, and view the recording at faster or slower speeds to go through the sessions at your preferred pace.'
           />
           <FeaturesGridItem
             icon='zoom-in-line'
@@ -107,7 +107,7 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='information-line'
             title='Session info'
-            body='Anonymous session information, such as the user&apos;s device, browser and language, help you understand the context of their visit, use data linking to add additional fields form your own database.'
+            body='Anonymous session information, such as the user&apos;s device, browser and language, help you understand the context of their visit, use data linking to add additional fields from your own database.'
           />
           <FeaturesGridItem
             icon='time-line'
@@ -132,7 +132,7 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='link'
             title='Data linking'
-            body='For some companies it&apos;s vitally important to be able to link your Squeaky visitors to your existing user database. With our Linked Data feature you can seemlessly make that connection, and still keep their data private if you need.'
+            body='For some companies it&apos;s vitally important to be able to link your Squeaky visitors to your existing user database. With our Linked Data feature you can make that connection, and still keep their data private if you need.'
           />
           <FeaturesGridItem
             icon='layout-column-line'

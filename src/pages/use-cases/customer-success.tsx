@@ -35,7 +35,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
           />
           <UseCasesHeaderStats
             stat='77%'
-            body={<>of companies struggle to close the feedback loop. Squeaky&apos;s <Link href='/product/recordings'><a>session recordings</a></Link> offer immediate context that allows you understand and respond faster than ever.</>}
+            body={<>of companies struggle to close the feedback loop. Squeaky&apos;s <Link href='/product/recordings'><a>session recordings</a></Link> offer immediate context that allows you to understand and respond faster than ever.</>}
           />
           <UseCasesHeaderStats
             stat='2/3'
@@ -50,7 +50,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>It&apos;s never been easier to understand your customers</h2>
-          <p>With Squeaky, when your customers get in touch with a problem you could see exactly what happened, meaning you&apos;ll provide faster and more personalised support.</p>
+          <p>With Squeaky, when your customers get in touch with a problem you can see exactly what happened, and you can provide faster and more personalised support</p>
         </Container>
 
         <Carousel>
@@ -108,13 +108,13 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
     <section className='detect'>
       <Container className='centered lg'>
         <Container className='md centered tagline'>
-          <h2>Detect and diagnose customer problems in new ways.</h2>
+          <h2>Detect and diagnose customer problems in new ways</h2>
           <p>Squeaky offers you brand new tools that will let you understand and address the pain points of your customers faster, and more effectively, than ever.</p>
         </Container>
 
         <SideBySide 
           title='Feedback with context'
-          body='Tired of receiving customer feedback with no idea what they just experienced? Squeaky provides session replay for each piece of feedback you capture, so you can see exactly happened.'
+          body='Tired of receiving customer feedback with no idea what have just experienced? Squeaky provides session replay for each piece of feedback you capture, so you can see exactly what happened.'
           linkText='Discover Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-2' />}
@@ -123,7 +123,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
         />
         <SideBySide 
           title='Walk in your customers&apos; shoes'
-          body='With Squeaky you can quickly look up any customers who have raised support tickets and play back a recording of their session to see first hand what went wrong.'
+          body='With Squeaky you can quickly look up any customers who have raised support tickets and play back a recording of their session to see first-hand what went wrong.'
           linkText='Explore Recordings'
           linkHref='/product/recordings'
           image={<Screen screen='session-2' />}
@@ -150,7 +150,7 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
     </section>
 
     <section className='get-started'>
-      <Cta type='squiggle' title={<h3>Get started in minutes. Your team will thank you.</h3>} />
+      <Cta type='squiggle' title={<h3>Get started now, your team will thank you.</h3>} />
     </section>
   </>
 );

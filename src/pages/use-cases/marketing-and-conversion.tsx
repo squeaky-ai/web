@@ -31,7 +31,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
         <>
           <UseCasesHeaderStats
             stat='2/3'
-            body={<>website visitors can be missed by conventional analytics tools because people reject cookie placement. We&apos;re solved for that with cookieless <Link href='/product/analytics'><a>analytics</a></Link>.</>}
+            body={<>website visitors can be missed by conventional analytics tools because people reject cookie placement. We&apos;ve solved that with cookieless <Link href='/product/analytics'><a>analytics</a></Link>.</>}
           />
           <UseCasesHeaderStats
             stat='53%'
@@ -50,7 +50,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>For marketing &amp; conversion teams seeking the full picture</h2>
-          <p>Sure, Squeaky&apos;s got the numbers, but we also offer rich context too. Thanks to Squeaky, when your customers aren&apos;t converting, you can quickly reveal the the most high-value opportunities for improvement.</p>
+          <p>Sure, Squeaky has the numbers, but we offer rich context too.. Thanks to Squeaky, when your customers aren&apos;t converting, you can quickly reveal the most high-value opportunities for improvement.</p>
         </Container>
 
         <Carousel>
@@ -110,7 +110,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
       <Container className='centered lg'>
         <Container className='md centered tagline'>
           <h2>Let deep understanding of your audience drive your marketing forward</h2>
-          <p>Squeaky&apos;s full featured customer experience platform will help you to drive new experiments and validate your ideas faster than ever.</p>
+          <p>Squeaky&apos;s full-featured customer experience platform will help you to drive new experiments and validate your ideas faster than ever.</p>
         </Container>
 
         <SideBySide 
@@ -123,7 +123,7 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
         />
         <SideBySide 
           title='Quantify the behaviour of your customers'
-          body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision making so you can win more business.'
+          body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.'
           linkText='Explore Heatmaps'
           linkHref='/product/heatmaps'
           image={<Screen screen='heatmaps-3' />}

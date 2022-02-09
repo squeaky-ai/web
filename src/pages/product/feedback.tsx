@@ -139,7 +139,7 @@ const ProductFeedback: NextPage<ServerSideProps> = () => (
     </section>
 
     <section className='get-started'>
-      <Cta type='cross-mauve' title={<h2>Get started in minutes. Your team will thank you.</h2>} />
+      <Cta type='cross-mauve' title={<h2>Get started now, your team will thank you.</h2>} />
     </section>
   </>
 );

@@ -133,7 +133,7 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
     </section>
 
     <section className='get-started'>
-      <Cta type='squiggle' title={<h3>Get started in minutes. Your team will thank you.</h3>} />
+      <Cta type='squiggle' title={<h3>Get started now, your team will thank you.</h3>} />
     </section>
   </>
 );

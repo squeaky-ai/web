@@ -35,7 +35,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
           />
           <UseCasesHeaderStats
             stat='8/10'
-            body={<>of product professionals we surveyed felt their current tools were missing key data, we&apos;re <Link href='/product/feedback'><a>plugging those gaps</a></Link>.</>}
+            body={<>of product professionals we survey felt their current tools were missing key data, <Link href='/product/feedback'><a>we&apos;re plugging those gaps</a></Link>.</>}
           />
           <UseCasesHeaderStats
             stat='93%'
@@ -161,7 +161,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
     </section>
 
     <section className='get-started'>
-      <Cta type='cross-white' title={<h2>Get started in minutes. Your team will thank you.</h2>} />
+      <Cta type='cross-white' title={<h2>Get started now, your team will thank you.</h2>} />
     </section>
   </>
 );
