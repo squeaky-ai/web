@@ -24,11 +24,11 @@ export const User: FC<Props> = ({ children, user }) => {
     const { id, firstName, lastName, email, superuser, createdAt } = user;
 
     window.squeaky.identify(id, {
-      'First name': firstName,
-      'Last name': lastName,
-      'Email': email,
-      'Superuser': superuser ? 'Yes' : 'No',
-      'Created': new Date(createdAt).toLocaleDateString(),
+      'first_name': firstName,
+      'last_name': lastName,
+      'email': email,
+      'superuser': superuser ? 'Yes' : 'No',
+      'created_at': new Date(createdAt).toLocaleDateString(),
     });
   }, [loaded]);
 
