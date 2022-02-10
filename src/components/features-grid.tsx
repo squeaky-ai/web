@@ -10,6 +10,7 @@ interface ChildProps {
   icon: string;
   title: string;
   body: string;
+  enterprise?: boolean;
 }
 
 export const FeaturesGrid: FC<ParentProps> = ({ children }) => (
@@ -18,10 +19,13 @@ export const FeaturesGrid: FC<ParentProps> = ({ children }) => (
   </div>
 );
 
-export const FeaturesGridItem: FC<ChildProps> = ({ icon, title, body }) => (
+export const FeaturesGridItem: FC<ChildProps> = ({ icon, title, body, enterprise }) => (
   <div className='item'>
     <Icon name={icon} />
-    <p><b>{title}</b></p>
+    <p>
+      <b>{title}</b>
+      {enterprise && <span className='enterprise'>Enterprise</span>}
+    </p>
     <p>{body}</p>
   </div>
 );

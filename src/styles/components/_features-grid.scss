@@ -9,10 +9,25 @@
   }
 
   p {
+    align-items: center;
+    display: flex;
     margin: 0;
 
     &:first-of-type {
       margin: .5rem 0 1rem 0;
+    }
+
+    .enterprise {
+      align-items: center;
+      border: 2px solid var(--yellow-500);
+      border-radius: var(--border-radius-lg);
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: var(--font-weight-block);
+      justify-content: center;
+      line-height: 20px;
+      margin: 0 0 0 .75rem;
+      padding: 0 .5rem;
     }
   }
 }

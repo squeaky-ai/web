@@ -128,6 +128,7 @@ const Features: NextPage<ServerSideProps> = () => {
               icon='database-2-line'
               title='Self-hosted'
               body='For our enterprise customers we can offer on-premise hosting, enabling you to store all Squeaky data directly on your own servers.'
+              enterprise
             />
           </FeaturesGrid>
         </Container>
@@ -450,6 +451,7 @@ const Features: NextPage<ServerSideProps> = () => {
               icon='lock-password-line'
               title='SSO'
               body='For enterprise customers we offer Single Sign-On so your teams can have authentication streamlined with the rest of your business.'
+              enterprise
             />
           </FeaturesGrid>
         </Container>
