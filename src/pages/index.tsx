@@ -26,7 +26,7 @@ const Home: NextPage<ServerSideProps> = () => {
 
       <section className='hero'>
         <Container className='centered md'>
-          <h1>The privacy-first customer experience platform</h1>
+          <h1>The privacy-first customer insights platform</h1>
           <p>Create high-value digital experiences by understanding exactly how visitors are using your service or product, without compromising their privacy.</p>
           <div className='actions'>
             <Link href='/auth/signup'>
