@@ -15,14 +15,14 @@ import { Password } from 'components/password';
 import { Message } from 'components/message';
 import { Spinner } from 'components/spinner';
 import { Logo } from 'components/logo';
-import { PASSWORD_REGEX } from 'data/users/constants';
+import { passwordTest } from 'data/users/constants';
 import { userInvitation, teamInviteAccept } from 'lib/api/graphql';
 import { signout } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 const AcceptSchema = Yup.object().shape({
-  password: Yup.string().matches(PASSWORD_REGEX, 'Password must match the criteria defined below').required('Password is required'),
+  password: Yup.string().test(passwordTest),
   terms: Yup.boolean().oneOf([true], 'You must agree to the terms')
 });
 

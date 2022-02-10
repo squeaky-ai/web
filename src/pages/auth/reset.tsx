@@ -13,7 +13,7 @@ import { Label } from 'components/label';
 import { Input } from 'components/input';
 import { Button, DelayedButton } from 'components/button';
 import { Password } from 'components/password';
-import { PASSWORD_REGEX } from 'data/users/constants';
+import { passwordTest } from 'data/users/constants';
 import { resetPassword, changePassword } from 'lib/api/auth';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
@@ -22,7 +22,7 @@ const ResetSchema = Yup.object().shape({
 });
 
 const ChangeSchema = Yup.object().shape({
-  password: Yup.string().matches(PASSWORD_REGEX, 'Password must match the criteria defined below').required('Password is required')
+  password: Yup.string().test(passwordTest),
 });
 
 enum PageView {

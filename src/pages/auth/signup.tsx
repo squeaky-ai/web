@@ -16,7 +16,7 @@ import { Button, DelayedButton } from 'components/button';
 import { Checkbox } from 'components/checkbox';
 import { Message } from 'components/message';
 import { Password } from 'components/password';
-import { PASSWORD_REGEX } from 'data/users/constants';
+import { passwordTest } from 'data/users/constants';
 import { signup, reconfirmAccount } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
@@ -40,7 +40,7 @@ const EmailSchema = Yup.object().shape({
 });
 
 const PasswordSchema = Yup.object().shape({
-  password: Yup.string().matches(PASSWORD_REGEX, 'Password must match the criteria defined below').required('Password is required')
+  password: Yup.string().test(passwordTest),
 });
 
 const Signup: NextPage<ServerSideProps> = () => {

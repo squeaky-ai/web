@@ -1,2 +1,14 @@
-// 1 uppercase, 1 lowercase, 1 number and at least 8 chars
-export const PASSWORD_REGEX = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/;
+import { TestConfig } from 'yup';
+
+export const passwordTest: TestConfig<string> = {
+  name: 'valid password',
+  test: isValidPassword,
+  message: 'Password must match the criteria defined below'
+};
+
+function isValidPassword(input: string) {
+  return input.length >= 8 &&
+         /[a-z]/.test(input) &&
+         /[A-Z]/.test(input) &&
+         /[0-9]/.test(input);
+}
