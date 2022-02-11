@@ -30,7 +30,7 @@ class Document extends NextDocument {
 
           {/* Open Graph / Facebook */}
           <meta property='og:type' content='website' />
-          <meta property='og:title' content='Squeaky.ai | The privacy-first customer experience platform' />
+          <meta property='og:title' content='Squeaky.ai | The privacy-first customer insights platform' />
           <meta property='og:description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
           <meta property='og:url' content={this.url} />
           <meta property='og:image' content={`${this.host}/social-bg.png`} />
@@ -40,7 +40,7 @@ class Document extends NextDocument {
 
           {/* Twitter */}
           <meta property='twitter:site' content='@squeakyai' />
-          <meta property='twitter:title' content='Squeaky | The privacy-first customer experience platform' />
+          <meta property='twitter:title' content='Squeaky | The privacy-first customer insights platform' />
           <meta property='twitter:description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
           <meta property='twitter:url' content={this.url} />
           <meta property='twitter:card' content='summary_large_image' />
