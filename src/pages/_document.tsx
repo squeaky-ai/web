@@ -14,13 +14,17 @@ class Document extends NextDocument {
     return `${this.host}${this.props.__NEXT_DATA__.page}`;
   }
 
+  private get isAuthPage() {
+    return this.props.__NEXT_DATA__.page.startsWith('/auth/');
+  }
+
   public render(): JSX.Element {
     return (
       <Html lang='en'>
         <Head>
           {/* General */}
           <meta name='description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
-          <meta name='robots' content='follow' />
+          <meta name='robots' content={this.isAuthPage ? 'noindex' : 'follow'} />
           <meta name='google' content='nositelinkssearchbox' />
           <meta name='keywords' content='Web, Analytics, Recordings, Visitors' />
           <meta name='theme-color' content='#FFF5EB' />
