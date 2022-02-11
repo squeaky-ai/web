@@ -259,7 +259,7 @@
 
   .header-menu {
     animation: header-menu-show 0s forwards;
-    animation-delay: .25s;
+    animation-delay: .15s;
     background: var(--peach-100);
     box-shadow: 0 1.5rem 1.5rem -1.5rem rgba(0, 0, 0, 0.1);
     left: 0;
@@ -272,7 +272,7 @@
 
   .header-dropdown {
     animation: header-menu-show 0s forwards;
-    animation-delay: .25s;
+    animation-delay: .15s;
     background: var(--white);
     box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
     border-radius: var(--border-radius-md);
@@ -348,13 +348,10 @@
         }
 
         &.product {
-          animation: fade-in .3s ease-in-out forwards;
-          animation-delay: 0ms;
-          background-color: #fdc4a0; // TODO
+          background-color: var(--peach-400);
           background-image: url('../../../public/pricing/product.svg');
           background-position: top 2rem left;
           border: 2px solid var(--peach-500);
-          opacity: 0;
 
           h5, p {
             color: var(--gray-blue-700);
@@ -362,13 +359,10 @@
         }
 
         &.marketing {
-          animation: fade-in .3s ease-in-out forwards;
-          animation-delay: 50ms;
-          background-color: #234977; // TODO
+          background-color: var(--gray-blue-500);
           background-image: url('../../../public/pricing/marketing.svg');
           background-position: top left;
           border: 2px solid var(--gray-blue-700);
-          opacity: 0;
           
           h5 {
             color: var(--white);
@@ -380,13 +374,10 @@
         }
 
         &.customer {
-          animation: fade-in .3s ease-in-out forwards;
-          animation-delay: 100ms;
-          background-color: #a14259; // TODO
+          background-color: var(--mauve-500);
           background-image: url('../../../public/pricing/customer.svg');
           background-position: top left;
           border: 2px solid var(--mauve-700);
-          opacity: 0;
 
           h5 {
             color: var(--white);
@@ -448,40 +439,24 @@
           }
 
           &:nth-of-type(1) {
-            animation: fade-in .3s ease-in-out forwards;
-            animation-delay: 0ms;
-            opacity: 0;
-
             .icon {
               color: var(--marine-blue-700);
             }
           }
 
           &:nth-of-type(2) {
-            animation: fade-in .3s ease-in-out forwards;
-            animation-delay: 50ms;
-            opacity: 0;
-
-            .icon {
+q           .icon {
               color: var(--mauve-500);
             }
           }
 
           &:nth-of-type(3) {
-            animation: fade-in .3s ease-in-out forwards;
-            animation-delay: 100ms;
-            opacity: 0;
-
             .icon {
               color: var(--yellow-500);
             }
           }
 
           &:nth-of-type(4) {
-            animation: fade-in .3s ease-in-out forwards;
-            animation-delay: 150ms;
-            opacity: 0;
-
             .icon {
               color: var(--rose-500);
             }
@@ -564,15 +539,6 @@
         color: var(--white);
       }
     }
-  }
-}
-
-@keyframes fade-in {
-  from { 
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
