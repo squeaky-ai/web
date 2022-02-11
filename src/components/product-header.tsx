@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
 
-import analyticsImage from '../../public/illustrations/illustration-5.svg';
-import feedbackImage from '../../public/illustrations/illustration-6.svg';
-import heatmapsImage from '../../public/illustrations/illustration-21.svg';
-import recordingsImage from '../../public/illustrations/illustration-25.svg';
+import analyticsImage from '../../public/illustrations/illustration-1.svg';
+import feedbackImage from '../../public/illustrations/illustration-2.svg';
+import heatmapsImage from '../../public/illustrations/illustration-9.svg';
+import recordingsImage from '../../public/illustrations/illustration-13.svg';
 
 interface Props {
   title: string;
@@ -56,7 +56,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
             <Image src={imageSrc(image)} width={600} height={500} alt={`Illustration of ${image}`} />
           </div>
         </Container>
-      </div>
+      </div> 
     </div>
     <div className='features'>
       <p>

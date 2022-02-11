@@ -10,7 +10,7 @@ export const ProductTools: FC = () => (
       <h2>Three more incredible tools included in every Squeaky plan.</h2>
       <p>We&apos;ve build a customer experience platform designed to paint the full picture of your customer experience. There&apos;s no need to pay for multiple tools or spend time figuring out how to fit them together.</p>
       <div className='image'>
-        <Illustration illustration='illustration-20' width={598} height={395} />
+        <Illustration illustration='illustration-8' width={598} height={395} />
       </div>
     </div>
     <ThreeTextGrid>

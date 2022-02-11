@@ -81,19 +81,19 @@ const Home: NextPage<ServerSideProps> = () => {
 
           <ThreeImageGrid>
             <ThreeImageGridItem
-              image={<Illustration illustration='illustration-16' width={122} height={128} />}
+              image={<Illustration illustration='illustration-4' width={122} height={128} />}
               title='Product &amp; UX Teams'
               body='Use context-rich customer data and insights to make better decisions for your business.'
               link='/use-cases/product-and-ux'
             />
             <ThreeImageGridItem
-              image={<Illustration illustration='illustration-17' width={138} height={128} />}
+              image={<Illustration illustration='illustration-5' width={138} height={128} />}
               title='Marketing &amp; CRO'
               body='Analyse and segment your traffic to learn why visitors are converting and how you can help more to succeed.'
               link='/use-cases/marketing-and-conversion'
             />
             <ThreeImageGridItem
-              image={<Illustration illustration='illustration-18' width={164} height={128} />}
+              image={<Illustration illustration='illustration-6' width={164} height={128} />}
               title='Customer Success'
               body='Provide faster, more effective customer support by seeing and hearing your customers&apos; problems first-hand.'
               link='/use-cases/customer-success'
@@ -165,7 +165,7 @@ const Home: NextPage<ServerSideProps> = () => {
             <h2>Understand your visitors without invading their privacy</h2>
             <p>You don&apos;t have to covertly collect mountains of data on each of your visitors to generate meaningful insights. Our product proves it, by offering world-class customer insights while meeting the highest standards in data privacy.</p>
             <div className='image'>
-              <Illustration illustration='illustration-19' width={598} height={395} />
+              <Illustration illustration='illustration-7' width={598} height={395} />
             </div>
           </div>
           <ThreeTextGrid>

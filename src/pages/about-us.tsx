@@ -34,10 +34,10 @@ const AboutUs: NextPage<ServerSideProps> = () => (
           <p>And yes, if you want, Squeaky can help you <b>say goodbye to your horrible cookies and consent banner</b>.</p>
         </div>
         <div className='image'>
-          <Illustration illustration='illustration-22' />
+          <Illustration illustration='illustration-10' />
         </div>
         <div className='image'>
-          <Illustration illustration='illustration-23' />
+          <Illustration illustration='illustration-11' />
         </div>
         <div className='text'>
           <h2>Our origins</h2>
@@ -52,7 +52,7 @@ const AboutUs: NextPage<ServerSideProps> = () => (
         <p>It&apos;s early days, <b>but we&apos;re proud to be offering the only truly future proof, ethical solution</b> that allows companies to capture the fullest picture of the customer experience, by putting the customer first.</p>
         </div>
         <div className='image'>
-          <Illustration illustration='illustration-24' />
+          <Illustration illustration='illustration-12' />
         </div>
       </Container>
     </section>

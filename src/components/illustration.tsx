@@ -16,18 +16,6 @@ import illustration10 from '../../public/illustrations/illustration-10.svg';
 import illustration11 from '../../public/illustrations/illustration-11.svg';
 import illustration12 from '../../public/illustrations/illustration-12.svg';
 import illustration13 from '../../public/illustrations/illustration-13.svg';
-import illustration14 from '../../public/illustrations/illustration-14.svg';
-import illustration15 from '../../public/illustrations/illustration-15.svg';
-import illustration16 from '../../public/illustrations/illustration-16.svg';
-import illustration17 from '../../public/illustrations/illustration-17.svg';
-import illustration18 from '../../public/illustrations/illustration-18.svg';
-import illustration19 from '../../public/illustrations/illustration-19.svg';
-import illustration20 from '../../public/illustrations/illustration-20.svg';
-import illustration21 from '../../public/illustrations/illustration-21.svg';
-import illustration22 from '../../public/illustrations/illustration-22.svg';
-import illustration23 from '../../public/illustrations/illustration-23.svg';
-import illustration24 from '../../public/illustrations/illustration-24.svg';
-import illustration25 from '../../public/illustrations/illustration-25.svg';
 
 export type IllustrationType = 
   'illustration-1' |
@@ -42,19 +30,7 @@ export type IllustrationType =
   'illustration-10' |
   'illustration-11' |
   'illustration-12' |
-  'illustration-13' |
-  'illustration-14' |
-  'illustration-15' |
-  'illustration-16' |
-  'illustration-17' |
-  'illustration-18' |
-  'illustration-19' |
-  'illustration-20' |
-  'illustration-21' |
-  'illustration-22' |
-  'illustration-23' |
-  'illustration-24' |
-  'illustration-25';
+  'illustration-13';
 
 
 interface Props extends Omit<ImageProps, 'src'> {
@@ -89,30 +65,6 @@ const getIllustrationSrc = (illustration: IllustrationType) => {
       return illustration12;
     case 'illustration-13':
       return illustration13;
-    case 'illustration-14':
-      return illustration14;
-    case 'illustration-15':
-      return illustration15;
-    case 'illustration-16':
-      return illustration16;
-    case 'illustration-17':
-      return illustration17;
-    case 'illustration-18':
-      return illustration18;
-    case 'illustration-19':
-      return illustration19;
-    case 'illustration-20':
-      return illustration20;
-    case 'illustration-21':
-      return illustration21;
-    case 'illustration-22':
-      return illustration22;
-    case 'illustration-23':
-      return illustration23;
-    case 'illustration-24':
-      return illustration24;
-    case 'illustration-25':
-      return illustration25;
   }
 };
 
