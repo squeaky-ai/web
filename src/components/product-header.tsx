@@ -8,7 +8,7 @@ import { Container } from 'components/container';
 import analyticsImage from '../../public/illustrations/illustration-5.svg';
 import feedbackImage from '../../public/illustrations/illustration-6.svg';
 import heatmapsImage from '../../public/illustrations/illustration-21.svg';
-import recordingsImage from '../../public/illustrations/illustration-4.svg';
+import recordingsImage from '../../public/illustrations/illustration-25.svg';
 
 interface Props {
   title: string;
@@ -53,7 +53,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
             </div>
           </div>
           <div className='image'>
-            <Image src={imageSrc(image)} width={600} height={400} alt={`Illustration of ${image}`} />
+            <Image src={imageSrc(image)} width={600} height={500} alt={`Illustration of ${image}`} />
           </div>
         </Container>
       </div>

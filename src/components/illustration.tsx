@@ -27,6 +27,7 @@ import illustration21 from '../../public/illustrations/illustration-21.svg';
 import illustration22 from '../../public/illustrations/illustration-22.svg';
 import illustration23 from '../../public/illustrations/illustration-23.svg';
 import illustration24 from '../../public/illustrations/illustration-24.svg';
+import illustration25 from '../../public/illustrations/illustration-25.svg';
 
 export type IllustrationType = 
   'illustration-1' |
@@ -52,7 +53,8 @@ export type IllustrationType =
   'illustration-21' |
   'illustration-22' |
   'illustration-23' |
-  'illustration-24';
+  'illustration-24' |
+  'illustration-25';
 
 
 interface Props extends Omit<ImageProps, 'src'> {
@@ -109,6 +111,8 @@ const getIllustrationSrc = (illustration: IllustrationType) => {
       return illustration23;
     case 'illustration-24':
       return illustration24;
+    case 'illustration-25':
+      return illustration25;
   }
 };
 
