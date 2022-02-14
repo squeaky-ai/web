@@ -57,9 +57,11 @@ const Accept: NextPage<ServerSideProps> = ({ user }) => {
 
               toast.add({ type: 'success', body: 'Invitation accepted' });
 
-              return user
-                ? await router.push('/sites')
-                : await router.push('/auth/login');
+              if (user) {
+                location.pathname = '/app/sites';
+              } else {
+                await router.push('/auth/login');
+              }
             }
           }
         } catch(error) {
