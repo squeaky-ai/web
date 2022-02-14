@@ -14,7 +14,7 @@ interface Props {
 
 const Submitted: FC<Pick<Props, 'submittedTitle' | 'submittedMessage'>> = ({ submittedTitle, submittedMessage }) => (
   <div className='submitted'>
-    <Icon name='information-line' />
+    <Icon name='checkbox-circle-line' />
     <h4>{submittedTitle}</h4>
     <p>{submittedMessage}</p>
   </div>

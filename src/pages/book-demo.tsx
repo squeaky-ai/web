@@ -41,7 +41,7 @@ const BookDemo: NextPage<ServerSideProps> = () => {
       <ContactForm
         submitted={submitted}
         submittedTitle='Message sent'
-        submittedMessage='One of our team will get back to you as soon as possible.'
+        submittedMessage='Our team will review your request and get in touch to schedule your demo.'
         aside={
           <>
             <h3>Demo request form</h3>
