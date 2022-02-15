@@ -121,7 +121,7 @@ const Reset: NextPage<ServerSideProps> = () => {
                   <h4>Check Your Email</h4>
                   <p>If you have an existing Squeaky account you will receive password reset instructions at the email address <b>{email}</b>.</p>
                   <DelayedButton delay={10} initialDelayed={false} className='secondary' onClick={() => resetPassword(email)}>
-                    Resend Password
+                    Resend Password Reset Email
                   </DelayedButton>
                 </div>
               )}
