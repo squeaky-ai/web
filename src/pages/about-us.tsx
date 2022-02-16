@@ -28,8 +28,8 @@ const AboutUs: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <div className='text'>
           <h2>Our Mission</h2>
-          <p>At Squeaky we&apos;re making it our lif&apos;s work to create <b>a better web for everyone</b>.</p>
-          <p>Just like you, we believe <b>every great business should be continuously learning from their customers</b>, but we think the current ways of doing so are ineffective, unethical, and invasive. We&apos;re hear to shake things up.</p>
+          <p>At Squeaky we&apos;re making it our life&apos;s work to create <b>a better web for everyone</b>.</p>
+          <p>Just like you, we believe <b>every great business should be continuously learning from their customers</b>, but we think the current ways of doing so are ineffective, unethical, and invasive. We&apos;re here to shake things up.</p>
           <p><b>We create customer experience analytics and monitoring tools</b> that enable companies to learn from their customers and capture high value data and insights, <b>without ever having to compromise on customer privacy</b>.</p>
           <p>And yes, if you want, Squeaky can help you <b>say goodbye to your horrible cookies and consent banner</b>.</p>
         </div>
@@ -41,14 +41,14 @@ const AboutUs: NextPage<ServerSideProps> = () => (
         </div>
         <div className='text'>
           <h2>Our origins</h2>
-          <p>Like many people nowadays, we&apos;re acutely <b>aware of the need to protect our privacy online</b>, always defaulting to software, hardware and companies that consider privacy and security to be core to their values.</p>
-          <p><b>Companies shouldn&apos;t have to suck up vast quantities of our personal data to provide a better product or service.</b> The thing is, because it&apos;s been so easy for too long, many of them do. This has, quite rightly, lead to a backlash. Over <Link href='#'><a>38% of web users</a></Link> now deploy adblockers and other tools to protect privacy, and improve their experience on the web. Regulators are increasingly cracking down too, with legislation like GDPR and CCPA leading the way.</p>
+          <p>Like many people nowadays, we&apos;re acutely aware of the need to protect our privacy online, and we always default to software, hardware and companies that consider privacy and security to be core to their values.</p>
+          <p><b>Companies shouldn&apos;t have to suck up vast quantities of our personal data to provide a better product or service.</b> However, because it&apos;s been so easy for too long, many of them do. This has, quite rightly, lead to a backlash. Over <Link href='https://www.cnet.com/tech/services-and-software/ad-blocking-surges-as-millions-more-seek-privacy-security-and-less-annoyance/'><a rel='noreferrer'>40% of web users</a></Link> now deploy adblockers and other tools to protect privacy and improve their experience on the web. Regulators are increasingly cracking down too, with legislation like GDPR and CCPA leading the way.</p>
           <p>That&apos;s amazing for the global community of internet users, but where does it leave businesses that have been relying on conventional digital and customer experience analytics tools? Well, the prognosis is not good. <b>Companies are missing out on up to two thirds of their available data and insights due to their reliance on cookie and IP-based tracking, or other tools that are gathering far too much sensitive data</b>.</p>
-          <p>We&apos;ve seen firsthand the effect that can have on genuinely well-intentioned teams that are trying to better understand their customers. <b>Being shut out of key data, or being acutely aware that you&apos;re not getting the full picture, can be debilitating</b> - leading to worse products and services for the end user. A Squeaky, we believe it simply doesn&apos;t have to be this way.</p>
+          <p>We&apos;ve seen firsthand the effect that can have on genuinely well-intentioned teams that are trying to better understand their customers. <b>Being shut out of key data, or being acutely aware that you&apos;re not getting the full picture, can be debilitating</b> - leading to worse products and services for the end user. At Squeaky, we believe it doesn&apos;t have to be this way.</p>
         </div>
         <div className='text'>
-        <p>In mid 2021, we decided it was time to build <b>a brand new customer experience analytics and monitoring tool</b> from the ground up - <b>with privacy at its core</b>. In fact, by taking this approach, we&apos;ve managed to turn consumer protection into a net-benefit for businesses too. Opting for a privacy-centric approach like Squeaky, businesses no longer need to fall foul of adblockers, or rejected cookie and consent banners, meaning they&apos;re capturing the true scope of their available data. </p>
-        <p>By making privacy central to each decision we&apos;ve made, <b>we&apos;ve had to find unusual and innovative solutions to data capture and processing that set us apart from the competition</b>. Not only that, but we pair the requisite technology, with 1-on-1 privacy consultations for any of our customers, ensuring their website or web app meets the stringent requirements of the modern web.</p>
+        <p>Mid 2021, we decided it was time to build <b>a brand new customer experience analytics and monitoring tool</b> from the ground up - <b>with privacy at its core</b>. In fact, by taking this approach, we&apos;ve managed to turn consumer protection into a net-benefit for businesses too. Opting for a privacy-centric approach like Squeaky, businesses no longer need to miss out on important data due to ad blockers, or rejected cookie and consent banners, meaning they&apos;re capturing the true scope of their available data. </p>
+        <p>By making privacy central to each of our decisions, <b>we&apos;ve had to find unusual and innovative solutions to data capture and processing that set us apart from the competition</b>. Not only that, but we pair the requisite technology, with 1-on-1 privacy consultations for any of our customers, ensuring their website or web app meets the stringent requirements of the modern web.</p>
         <p>It&apos;s early days, <b>but we&apos;re proud to be offering the only truly future proof, ethical solution</b> that allows companies to capture the fullest picture of the customer experience, by putting the customer first.</p>
         </div>
         <div className='image'>
@@ -61,8 +61,8 @@ const AboutUs: NextPage<ServerSideProps> = () => (
       <Container className='lg centered'>
         <h2>Our Founders</h2>
         <Container className='sm centered'>
-          <p>Chris and Lewis started Squeaky because of a shared belief that whilst <b>knowledge is power, privacy is sacred</b>.</p>
-          <p>They&apos;ve used their years of product, design and technology expertise to create a <b>best-in-class customer experience data platform</b>, in the least invasive way possible.</p>
+          <p>Chris and Lewis started Squeaky because of a shared belief that while <b>knowledge is power, privacy is sacred</b>.</p>
+          <p>They&apos;ve used their years of product, design, and technology expertise to create a <b>best-in-class customer experience data platform</b>, in the least invasive way possible.</p>
         </Container>
         <Container className='md-lg centered people'>
           <div className='person'>
@@ -76,7 +76,7 @@ const AboutUs: NextPage<ServerSideProps> = () => (
               </a>
             </h3>
             <h6>Cofounder &amp; ceo</h6>
-            <p>Chris is a strategy, product and design specialist who&apos;s built products and teams at some of the Netherland&apos;s most successful startups, before going on to found Squeaky.</p>
+            <p>Chris is a strategy, product, and design specialist who&apos;s built products and teams at some of the Netherland&apos;s most successful startups, before going on to found Squeaky.</p>
           </div>
           <div className='person'>
             <div className='image'>

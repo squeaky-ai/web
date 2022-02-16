@@ -91,22 +91,22 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='user-line'
             title='Page visits'
-            body='Understanding when your pages are proving most popular will help your discover the content that matters most to your visitors.'
+            body='Understanding when your pages are proving most popular will help you discover the content that matters most to your visitors.'
           />
           <FeaturesGridItem
             icon='calendar-line'
             title='Filter by date'
-            body='Viewing your data over the right time period is vital, so Squeakily lets you quickly apply pre-defined date ranges.'
+            body='Viewing your data over the right time period is vital, so Squeaky lets you quickly apply pre-defined date ranges.'
           />
           <FeaturesGridItem
             icon='timer-line'
             title='Average session duration'
-            body='Squeaky highlights how long people are spending on your website or app, helping to provide important insights into how engaging your content is.'
+            body='Squeaky highlights how long people are spending on your website or app, providing important insights into how engaging your content is.'
           />
           <FeaturesGridItem
             icon='pages-line'
             title='Pages per session'
-            body='Quickly discover how efffective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages then leaving.'
+            body='Quickly discover how effective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages and then leaving.'
           />
           <FeaturesGridItem
             icon='route-line'
@@ -116,7 +116,7 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='map-pin-2-line'
             title='Location and language'
-            body='Find out which regions and languages are bring you the most visitors, so you can make sure you content and marketing is targeted at the right people.'
+            body='Find out which regions and languages bring you the most visitors, so you can make sure your content and marketing is targeted at the right people.'
           />
           <FeaturesGridItem
             icon='thumb-up-line'
@@ -126,12 +126,12 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='device-line'
             title='Browser and device types'
-            body='Target your website improvements based on precise knowledge of the technology your customer are using data on browser, device type'
+            body='Deliver targeted improvements to your website, using precise knowledge of the devices and browsers your visitors are using.'
           />
           <FeaturesGridItem
             icon='arrow-left-right-line'
             title='Device widths'
-            body='Quickly discover how efffective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages then leaving.'
+            body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
           />
         </FeaturesGrid>
 

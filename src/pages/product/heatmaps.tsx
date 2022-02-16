@@ -25,7 +25,7 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
       subtitle='Heatmaps'
       body={
         <>
-          Use heatmaps to quantify your customer experience and discover which content, interfaces and layouts matter most to your visitors.
+          Use heatmaps to quantify your customer experience and discover which content, interfaces, and layouts matter most to your visitors.
           <ul>
             <li>Spot issues you couldn&apos;t predict</li>
             <li>Analyse the impact of changes you make</li>
@@ -64,7 +64,7 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
             {
               icon: 'ghost-line',
               title: 'Analyse your releases',
-              body: 'Use date filters to compare the performance or your pages before and after major changes, to discover if the work your doing is having the impact you expect.',
+              body: 'Use date filters to compare the performance or your pages before and after major changes, to discover if the work your\'e doing is having the impact you expect.',
               image: <Screenshot screen='heatmaps-4' width={738} height={525} />
             }
           ]}
@@ -112,7 +112,7 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
           <FeaturesGridItem
             icon='database-2-line'
             title='365 storage'
-            body='There are no time limits on the data you can access, any recording you&apos;ve captured under your subscription will be available until it is deleted after 365 days. Please contact us if you require data storage beyound the standard 365 limit.'
+            body='Any recording you&apos;ve captured under your subscription will be available for 365 days. If you require data storage beyond the standard 365 limit, please get in touch.'
           />
         </FeaturesGrid>
 

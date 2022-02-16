@@ -51,7 +51,7 @@ const ProductFeedback: NextPage<ServerSideProps> = () => (
             {
               icon: 'emotion-happy-line',
               title: 'Sentiment surveys',
-              body: 'Often the best feedback is collected unprompted. Our Sentiment Survey provides you with a straightforward and relatable way to let your customers tell you how they\'re feeling.',
+              body: 'The best feedback is often collected unprompted. Our Sentiment Survey provides you with a straightforward and relatable way to let your customers tell you how they\'re feeling.',
               image: <Screenshot screen='sentiment-2' width={738} height={525} />
             },
             {

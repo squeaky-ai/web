@@ -25,7 +25,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
       <section className='hero'>
         <Container className='centered sm-md'>
           <h1>Unleash your data</h1>
-          <p>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b> and <b>heatmap</b> data.</p>
+          <p>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b>, and <b>heatmap</b> data.</p>
           <Currencies selected={currency} setSelected={setCurrency} />
         </Container>
         <Calculator currency={currency} />
@@ -78,7 +78,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
             body={
               <>
                 <p>Visits are the times when individual visitors have visited your website or web app. If a visitors has been inactive for 30 minutes then the visit is closed, if they reactivate then a new visit is started.</p>
-                <p>If you are not familiar with how much traffic or visitors you currently have then don&apos;t worry. You can start on the free pricing plan and you will be notified when you have exceeded your visit limits, and can upgrade at that time.</p>
+                <p>If you are not familiar with how much traffic or visitors you currently have, then don&apos;t worry. You can start on the free pricing plan and you will be notified when you have exceeded your visit limits, and can upgrade at that time.</p>
               </>
             }
           />
@@ -88,7 +88,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
               <>
                 <p>As you approach your visit limit we will send you an email to let you know, and once your limit has been reached you will also be notified in the application. If you go over your limit you have two options:</p>
                 <ol>
-                  <li>You can simple wait until your next month starts, at which point you will begin collect visits again with your new months allocation.</li>
+                  <li>You can simply wait until your next month starts, at which point you will begin collect visits again with your new months allocation.</li>
                   <li>You can upgrade your plan within Squeaky, this will both ensure you don&apos;t run over your limit the following month, and also unlock any visits you&apos;ve currently missed.</li>
                 </ol>
               </>
@@ -106,7 +106,7 @@ const Pricing: NextPage<ServerSideProps> = () => {
             title='When do we need to pay?'
             body={
               <>
-                <p>Your monthly subscription for your Squeaky plan will be billed on the same day as you initiated your active plan e.g. if you first starting using the Light Plan on the 3rd of February, you will be billed on the 3rd of each month thereafter.</p>
+                <p>Your monthly subscription for your Squeaky plan will be billed on the same day as you initiated your active plan, e.g. if you first starting using the Light Plan on the 3rd of February, you will be billed on the 3rd of each month thereafter.</p>
               </>
             }
           />

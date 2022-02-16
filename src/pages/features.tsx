@@ -106,13 +106,13 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Privacy</h3>
-            <p>At Squeaky, privacy is not just a buzzword, it&apos;s a core feature of our offering. We&apos;re private by default, and offer a full range of options to help you protect your customer&apos;s data.</p>
+            <p>At Squeaky, privacy is not just a buzzword, it&apos;s a core feature of our offering. We&apos;re private by default, and offer a full range of options to help you protect your customers&apos; data.</p>
           </Container>
           <FeaturesGrid>
             <FeaturesGridItem
               icon='ghost-line'
-              title='Anoymous by default'
-              body='Squeaky maintains your users privacy by avoiding cookie-based tracking, and never storing IP addresses or undertaking digital fingerprinting.'
+              title='Anonymous by default'
+              body='Squeaky maintains your visitors&apos; privacy by avoiding cookie-based tracking, and never storing IP addresses or undertaking digital fingerprinting.'
             />
             <FeaturesGridItem
               icon='input-cursor-move'
@@ -175,7 +175,7 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='alarm-warning-line'
               title='Visitor status'
-              body='Squeaky automatically hightlights any visitors you&apos;ve never viewed before, helping you to better support and learn from new visitors.'
+              body='Squeaky automatically highlights any visitors you&apos;ve never viewed before, helping you to better support and learn from new visitors.'
             />
             <FeaturesGridItem
               icon='star-line'
@@ -185,7 +185,7 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='pages-line'
               title='Detailed anonymity'
-              body='We capture non-private information, like visitor device, browser and language, along with a host of other important data points that enrich your understanding of your visitors.'
+              body='We capture non-private information, like the visitors&apos; device, browser, and language, along with a host of other important data points that enrich your understanding of your visitors.'
             />
             <FeaturesGridItem
               icon='link'
@@ -297,17 +297,17 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='calendar-line'
               title='Filter by date'
-              body='Viewing your data over the right time period is vital, so Squeakily lets you quickly apply pre-defined date ranges.'
+              body='Viewing your data over the right time period is vital, so Squeaky lets you quickly apply pre-defined date ranges.'
             />
             <FeaturesGridItem
               icon='timer-line'
               title='Average session duration'
-              body='Squeaky highlights how long people are spending on your website or app, helping to provide important insights into how engaging your content is.'
+              body='Squeaky highlights how long people are spending on your website or app, providing important insights into how engaging your content is.'
             />
             <FeaturesGridItem
               icon='pages-line'
               title='Pages per session'
-              body='Quickly discover how efffective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages then leaving.'
+              body='Quickly discover how effective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages and then leaving.'
             />
             <FeaturesGridItem
               icon='route-line'
@@ -317,7 +317,7 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='map-pin-2-line'
               title='Location and language'
-              body='Find out which regions and languages are bring you the most visitors, so you can make sure you content and marketing is targeted at the right people.'
+              body='Find out which regions and languages bring you the most visitors, so you can make sure your content and marketing is targeted at the right people.'
             />
             <FeaturesGridItem
               icon='thumb-up-line'
@@ -327,12 +327,12 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='device-line'
               title='Browser and device types'
-              body='Target your website improvements based on precise knowledge of the technology your customer are using data on browser, device type'
+              body='Deliver targeted improvements to your website, using precise knowledge of the devices and browsers your visitors are using.'
             />
             <FeaturesGridItem
               icon='arrow-left-right-line'
               title='Device widths'
-              body='Quickly discover how efffective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages then leaving.'
+              body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
             />
           </FeaturesGrid>
         </Container>
@@ -409,7 +409,7 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='database-2-line'
               title='365 storage'
-              body='There are no time limits on the data you can access, any recording you&apos;ve captured under your subscription will be available until it is deleted after 365 days. Please contact us if you require data storage beyound the standard 365 limit.'
+              body='Any recording you&apos;ve captured under your subscription will be available for 365 days. If you require data storage beyond the standard 365 limit, please get in touch.'
             />
           </FeaturesGrid>
         </Container>
@@ -419,7 +419,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Team</h3>
-            <p>At Squeaky we believe that every member of the your team should care about the experience of your customers, so we&apos;ve created a flexible team management system to enable anyone and everyone to be involved.</p>
+            <p>At Squeaky we believe that every member of your team should care about the experience of your customers, so we&apos;ve created a flexible team management system to enable anyone and everyone to be involved.</p>
           </Container>
           <FeaturesGrid>
             <FeaturesGridItem
@@ -440,12 +440,12 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='share-line'
               title='Sharing'
-              body='We&apos;ve just the click of a button you can share interesting recordings with anyone else in your Squeaky team.'
+              body='With just the click of a button you can share interesting recordings with anyone else in your Squeaky team.'
             />
             <FeaturesGridItem
               icon='eye-line'
               title='Screening'
-              body='Whilst you&apos;ll want your team in Squeaky with you, you won&apos;t want their visits impacting your data, that why we let you screen out visits from specific email domains/address or IP addresses.'
+              body='While you&apos;ll want your team in Squeaky with you, you won&apos;t want their visits impacting your data. That&apos;s why we let you screen out visits from specific email domains/address or IP addresses.'
             />
             <FeaturesGridItem
               icon='lock-password-line'
@@ -461,7 +461,7 @@ const Features: NextPage<ServerSideProps> = () => {
         <Container className='lg centered'>
           <Container className='md'>
             <h3>Ease of use</h3>
-            <p>We&apos;ve paired our incredible array of features with a world class user experience, offering effortless access to insights that can fundamentally change your business.</p>
+            <p>We&apos;ve paired our incredible array of features with a world-class user experience, offering effortless access to insights that can fundamentally change your business.</p>
           </Container>
           <FeaturesGrid>
             <FeaturesGridItem
@@ -472,7 +472,7 @@ const Features: NextPage<ServerSideProps> = () => {
             <FeaturesGridItem
               icon='emotion-happy-line'
               title='Fast and intuitive'
-              body='We&apos;ve made Squeaky insanely fast and created an elegant and deceptively simple interface to ensure you get results quickly.'
+              body='We&apos;ve made Squeaky incredibly fast and created an elegant and deceptively simple interface to ensure you get results quickly.'
             />
             <FeaturesGridItem
               icon='customer-service-2-line'
