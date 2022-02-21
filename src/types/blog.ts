@@ -25,4 +25,6 @@ export type Posts = {
   posts: Post[];
   categories: string[];
   tags: string[];
+  selectedTags: string[];
+  selectedCategory: string;
 }
