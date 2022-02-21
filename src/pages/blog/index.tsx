@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
-import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog';
+import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
 
@@ -47,7 +47,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {toHumanDate(post.data.date)}
                     </p>
                     <p className='description'>
-                      {truncate(post.content, { length: 160 })}
+                      {truncate(post.markdown, { length: 160 })}
                     </p>
                   </div>
                 </a>

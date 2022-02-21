@@ -11,7 +11,8 @@ export type PostData = {
 
 export type Post = {
   data: PostData;
-  content: string;
+  markdown: string;
+  html: string;
 }
 
 export type Status = 'draft' | 'active';
