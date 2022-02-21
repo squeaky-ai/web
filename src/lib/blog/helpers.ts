@@ -1,17 +1,15 @@
 import type { NextRouter } from 'next/router';
 
 export function buildCategoryUrl(router: NextRouter, category: string | null): string {
-  const [path, query] = router.asPath.split('?');
+  const path = '/blog';
+  const [, query] = router.asPath.split('?');
+  const queryString = `${query ? `?${query}` : ''}`;
 
   if (!category) {
-    return path;
+    return `${path}${queryString}`;
   }
 
-  const params = new URLSearchParams(query);
-
-  params.set('category', category);
-
-  return `${path}?${params.toString()}`;
+  return `${path}/${category.toLowerCase()}${queryString}`;
 };
 
 export function buildTagsUrl(router: NextRouter, tag: string): string {
@@ -34,13 +32,13 @@ export function buildTagsUrl(router: NextRouter, tag: string): string {
   return `${path}?${params.toString()}`;
 };
 
-export function getStringQueryParam(param: string | string[]): string | null {
+export function getCategoryFromPathParam(param: string | string[]): string | null {
   if (!param) return null;
 
-  return Array.isArray(param) ? param.join('') : param;
+  return Array.isArray(param) ? param[0] : param;
 }
 
-export function getArrayQueryParam(param: string | string[]): string[] {
+export function getTagsFromQueryParam(param: string | string[]): string[] {
   if (!param) return [];
 
   return Array.isArray(param) ? param : [param]

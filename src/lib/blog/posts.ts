@@ -5,7 +5,7 @@ import markdown from 'markdown-it';
 import { uniq } from 'lodash';
 import type { GetServerSideProps } from 'next';
 import { ServerSideProps, getUserFromContext } from 'lib/auth';
-import { getStringQueryParam, getArrayQueryParam } from 'lib/blog/helpers';
+import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
 import type { Post, Posts } from 'types/blog';
 
 let postsCache: Post[] = null;
@@ -50,7 +50,7 @@ async function listPosts(): Promise<Post[]> {
       // Sort by date descending. The dates are strings
       // because nextjs JSON serializes it when it passes
       // it as props
-      return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
+      return new Date(a.data.date).valueOf() - new Date(b.data.date).valueOf();
     });
 
   postsCache = posts;
@@ -71,7 +71,7 @@ async function filterPosts(posts: Post[], tags: string[], category: string | nul
     if (category) {
       // If the category is in the query params it must
       // match the post categories exactly 
-      conditions.push(post.data.category === category);
+      conditions.push(post.data.category.toLowerCase() === category);
     }
 
     if (tags.length) {
@@ -111,8 +111,8 @@ export const queryPosts: GetServerSideProps = async (context) => {
   // Query params will either be:
   // - a string if there's one: ?foo=bar => { foo: 'bar' }
   // - an array of strings if there's more than one: ?foo=bar&foo=baz { foo: ['bar', 'baz'] }
-  const selectedTags = getArrayQueryParam(tags);
-  const selectedCategory = getStringQueryParam(category);
+  const selectedTags = getTagsFromQueryParam(tags);
+  const selectedCategory = getCategoryFromPathParam(category);
 
   const posts = await filterPosts(
     all,

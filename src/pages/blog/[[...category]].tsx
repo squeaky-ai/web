@@ -76,7 +76,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
 
               {categories.map(category => (
                 <Link href={buildCategoryUrl(router, category)} key={category}>
-                  <a className={classnames('category', { selected: selectedCategory === category })}>
+                  <a className={classnames('category', { selected: selectedCategory === category.toLowerCase() })}>
                     {category}
                   </a>
                 </Link>
