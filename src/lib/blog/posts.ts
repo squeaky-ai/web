@@ -58,10 +58,8 @@ async function listPosts(): Promise<Post[]> {
   return posts;
 }
 
-async function getFilteredPosts(tags: string[], category: string | null, superuser: boolean) {
-  const all = await listPosts();
-
-  return all.filter(post => {
+async function filterPosts(posts: Post[], tags: string[], category: string | null, superuser: boolean) {
+  return posts.filter(post => {
     const conditions: boolean[] = [];
 
     if (!superuser) {
@@ -106,15 +104,18 @@ async function getPostBySlug(slug: string, superuser: boolean) {
 
 export const queryPosts: GetServerSideProps = async (context) => {
   const { tags = [], category } = context.query;
-  const user = await getUserFromContext(context);
 
+  const all = await listPosts();
+  const user = await getUserFromContext(context);
+  
   // Query params will either be:
   // - a string if there's one: ?foo=bar => { foo: 'bar' }
   // - an array of strings if there's more than one: ?foo=bar&foo=baz { foo: ['bar', 'baz'] }
   const selectedTags = getArrayQueryParam(tags);
   const selectedCategory = getStringQueryParam(category);
 
-  const posts = await getFilteredPosts(
+  const posts = await filterPosts(
+    all,
     selectedTags,
     selectedCategory,
     user ? user.superuser : false,
@@ -130,8 +131,8 @@ export const queryPosts: GetServerSideProps = async (context) => {
         // applied in the UI
         selectedTags,
         selectedCategory,
-        tags: uniq(posts.map(post => post.data.tags).flat()),
-        categories:  uniq(posts.map(post => post.data.category)),
+        tags: uniq(all.map(post => post.data.tags).flat()),
+        categories:  uniq(all.map(post => post.data.category)),
       },
     },
   };

@@ -19,7 +19,7 @@ export type Status = 'draft' | 'active';
 
 export type Author = {
   name: string;
-  image: string | null;
+  image: string;
 }
 
 export type Posts = {

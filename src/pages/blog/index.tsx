@@ -9,6 +9,7 @@ import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
+import { BlogAuthor } from 'components/blog-author';
 import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
@@ -43,6 +44,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {post.data.title}
                     </h4>
                     <p className='meta'>
+                      <BlogAuthor author={post.data.author.image} />
                       {post.data.author.name}
                       <span className='divider' />
                       {toHumanDate(post.data.date)}
@@ -55,37 +57,43 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
               </Link>
             </Card>
           ))}
+
+          {posts.length === 0 && (
+            <p>No posts matching your filters</p>
+          )}
         </main>
 
         <aside>
-          <h4>Categories</h4>
+          <div className='sidebar'>
+            <h4>Categories</h4>
 
-          <div className='categories'>
-            <Link href={buildCategoryUrl(router, null)}>
-              <a className={classnames('category', { selected: selectedCategory === null })}>
-                All
-              </a>
-            </Link>
-
-            {categories.map(category => (
-              <Link href={buildCategoryUrl(router, category)} key={category}>
-                <a className={classnames('category', { selected: selectedCategory === category })}>
-                  {category}
+            <div className='categories'>
+              <Link href={buildCategoryUrl(router, null)}>
+                <a className={classnames('category', { selected: selectedCategory === null })}>
+                  All
                 </a>
               </Link>
-            ))}
-          </div>
-          
-          <h4>Tags</h4>
-          
-          <div className='tags'>
-            {tags.map(tag => (
-              <Link href={buildTagsUrl(router, tag)} key={tag}>
-                <a className={classnames('tag', { selected: selectedTags.includes(tag) })}>
-                  {tag}
-                </a>
-              </Link>
-            ))}
+
+              {categories.map(category => (
+                <Link href={buildCategoryUrl(router, category)} key={category}>
+                  <a className={classnames('category', { selected: selectedCategory === category })}>
+                    {category}
+                  </a>
+                </Link>
+              ))}
+            </div>
+            
+            <h4>Tags</h4>
+            
+            <div className='tags'>
+              {tags.map(tag => (
+                <Link href={buildTagsUrl(router, tag)} key={tag}>
+                  <a className={classnames('tag', { selected: selectedTags.includes(tag) })}>
+                    {tag}
+                  </a>
+                </Link>
+              ))}
+            </div>
           </div>
         </aside>
       </Container>

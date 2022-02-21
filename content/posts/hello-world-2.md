@@ -1,17 +1,16 @@
 ---
 title: Hello world
 tags:
-  - SEO
-  - SEM
-  - Optimisation
+  - Engineering
+  - Ruby on Rails
 author:
-  name: Chris Pattison
-  image: chris.png
-category: Marketing
-date: '2022-02-17T07:55:00Z'
+  name: Lewis Monteith
+  image: lewis.png
+category: Engineering
+date: '2022-01-19T07:55:00Z'
 status: Draft
 metaDescription: This is a blog post that will show you how to do something amazing for your business, just take a look.
-slug: /marketing-and-conversion/this-is-the-slug
+slug: /engineering/this-is-the-slug-2
 ---
 
 This is some text in the article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ullamcorper est. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam vel placerat enim. Praesent id porttitor nunc, ac venenatis neque. Cras ac porttitor sem, at iaculis dolor. Quisque tristique ut est non accumsan. Curabitur imperdiet turpis ante. Praesent ac accumsan nulla. Cras porttitor neque erat, nec mattis odio auctor at.
