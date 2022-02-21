@@ -5,6 +5,7 @@ import Head from 'next/head';
 import classnames from 'classnames';
 import { truncate } from 'lodash';
 import { useRouter } from 'next/router';
+import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
@@ -88,6 +89,10 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
           </div>
         </aside>
       </Container>
+
+      <section className='get-started'>
+        <Cta type='squiggle' title={<h3>If you&apos;re enjoying our articles, you&apos;ll love our product.</h3>} />
+      </section>
     </>
   );
 };

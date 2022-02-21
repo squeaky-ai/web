@@ -36,15 +36,22 @@ async function listPosts(): Promise<Post[]> {
   const path = resolveContentPath('posts');
   const files = await fs.readdir(path);
 
-  const posts = files.map(file => {
-    const { data, content } = matter.read(resolveContentPath(`posts/${file}`));
+  const posts = files
+    .map(file => {
+      const { data, content } = matter.read(resolveContentPath(`posts/${file}`));
 
-    return { 
-      data,
-      markdown: content,
-      html: markdown().render(content),
-    } as Post;
-  });
+      return { 
+        data,
+        markdown: content,
+        html: markdown().render(content),
+      } as Post;
+    })
+    .sort((a, b) => {
+      // Sort by date descending. The dates are strings
+      // because nextjs JSON serializes it when it passes
+      // it as props
+      return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
+    });
 
   postsCache = posts;
 
