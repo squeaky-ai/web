@@ -21,6 +21,7 @@ const themeOverrides: ThemeOverrides = {
   '/use-cases/marketing-and-conversion': 'blue',
   '/use-cases/customer-success': 'mauve',
   '/about-us': 'mauve',
+  '/blog': 'mauve',
 };
 
 export const Header: FC<Props> = ({ user }) => {
