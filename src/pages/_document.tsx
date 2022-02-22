@@ -10,12 +10,36 @@ class Document extends NextDocument {
     }
   }
 
+  private get page() {
+    return this.props.__NEXT_DATA__.page;
+  }
+
+  private get pageProps() {
+    return this.props.__NEXT_DATA__.props.pageProps;
+  }
+
   private get url() {
-    return `${this.host}${this.props.__NEXT_DATA__.page}`;
+    return `${this.host}${this.page}`;
   }
 
   private get isAuthPage() {
-    return this.props.__NEXT_DATA__.page.startsWith('/auth/');
+    return this.page.startsWith('/auth/');
+  }
+
+  private get title() {
+    if (this.pageProps.blog?.post) {
+      return `Squeaky.ai | ${this.pageProps.blog.post.data.title}`;
+    }
+
+    return 'Squeaky.ai | The privacy-first customer insights platform';
+  }
+
+  private get description() {
+    if (this.pageProps.blog?.post) {
+      return `Squeaky.ai | ${this.pageProps.blog.post.data.metaDescription}`;
+    }
+
+    return 'Understand exactly how customers are using your website or web app, without invading their privacy.';
   }
 
   public render(): JSX.Element {
@@ -23,19 +47,18 @@ class Document extends NextDocument {
       <Html lang='en'>
         <Head>
           {/* General */}
-          <meta name='description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
+          <meta name='description' content={this.description} />
           <meta name='robots' content={this.isAuthPage ? 'noindex' : 'follow'} />
           <meta name='google' content='nositelinkssearchbox' />
           <meta name='keywords' content='Web, Analytics, Recordings, Visitors' />
           <meta name='theme-color' content='#FFF5EB' />
 
-          {/* TODO: Delete */}
           <meta name='ahrefs-site-verification' content='4ab46532f5ca328773b891e0df42f34475fb429916b57684a416f5a3e57e652e' />
 
           {/* Open Graph / Facebook */}
           <meta property='og:type' content='website' />
-          <meta property='og:title' content='Squeaky.ai | The privacy-first customer insights platform' />
-          <meta property='og:description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
+          <meta property='og:title' content={this.title} />
+          <meta property='og:description' content={this.description} />
           <meta property='og:url' content={this.url} />
           <meta property='og:image' content={`${this.host}/social-bg.png`} />
           <meta property='og:image:width' content='1200' />
@@ -44,8 +67,8 @@ class Document extends NextDocument {
 
           {/* Twitter */}
           <meta property='twitter:site' content='@squeakyai' />
-          <meta property='twitter:title' content='Squeaky | The privacy-first customer insights platform' />
-          <meta property='twitter:description' content='Understand exactly how customers are using your website or web app, without invading their privacy.' />
+          <meta property='twitter:title' content={this.title} />
+          <meta property='twitter:description' content={this.description} />
           <meta property='twitter:url' content={this.url} />
           <meta property='twitter:card' content='summary_large_image' />
           <meta property='twitter:image' content={`${this.host}/social-bg.png`} />

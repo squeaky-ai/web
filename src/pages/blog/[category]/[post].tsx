@@ -10,12 +10,10 @@ import { toHumanDate } from 'lib/dates';
 const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
   const { post } = blog;
 
-  console.log(post);
-
   return (
     <>
       <Head>
-        <title>Squeaky | Blog</title> 
+        <title>Squeaky | Blog | {post.data.title}</title> 
       </Head>
 
       <section className='blog-header'>
