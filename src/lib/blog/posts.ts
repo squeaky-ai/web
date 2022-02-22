@@ -8,7 +8,7 @@ import { ServerSideProps, getUserFromContext } from 'lib/auth';
 import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
 import type { Post, Posts } from 'types/blog';
 
-let postsCache: Post[] = null;
+let postsCache: Post[] = [];
 
 export interface QueryPostsProps extends ServerSideProps {
   blog: Posts;
@@ -25,7 +25,7 @@ function resolveContentPath(p: string) {
 }
 
 async function listPosts(): Promise<Post[]> {
-  if (postsCache) {
+  if (postsCache.length) {
     // There's no need to do scan the files and parse
     // the markup on every request so we can cache it
     // for the life of the server. If this grows or 
@@ -37,6 +37,9 @@ async function listPosts(): Promise<Post[]> {
   const files = await fs.readdir(path);
 
   const posts = files
+    .filter(file => {
+      return file.endsWith('.md');
+    })
     .map(file => {
       const { data, content } = matter.read(resolveContentPath(`posts/${file}`));
 
@@ -65,7 +68,7 @@ async function filterPosts(posts: Post[], tags: string[], category: string | nul
     if (!superuser) {
       // Superusers can see draft posts but regular
       // users can't
-      conditions.push(post.data.status !== 'draft')
+      conditions.push(!post.data.draft);
     }
 
     if (category) {
@@ -94,7 +97,7 @@ async function getPostBySlug(slug: string, superuser: boolean) {
     return null;
   }
 
-  if (post.data.status === 'draft' && !superuser) {
+  if (post.data.draft && !superuser) {
     // Superusers can see draft posts but regular users can't
     return null;
   }

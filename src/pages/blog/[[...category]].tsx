@@ -9,7 +9,6 @@ import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
-import { BlogAuthor } from 'components/blog-author';
 import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
@@ -44,7 +43,9 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {post.data.title}
                     </h4>
                     <p className='meta'>
-                      <BlogAuthor author={post.data.author.image} />
+                      <span className='blog-author'>
+                        <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                      </span>
                       {post.data.author.name}
                       <span className='divider' />
                       {toHumanDate(post.data.date)}

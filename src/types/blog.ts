@@ -4,7 +4,7 @@ export type PostData = {
   author: Author;
   category: string;
   date: string;
-  status: Status;
+  draft: boolean;
   metaImage: string;
   metaDescription: string;
   slug: string;
@@ -15,8 +15,6 @@ export type Post = {
   markdown: string;
   html: string;
 }
-
-export type Status = 'draft' | 'active';
 
 export type Author = {
   name: string;

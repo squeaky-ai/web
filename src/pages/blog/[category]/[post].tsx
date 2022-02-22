@@ -2,7 +2,6 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
-import { BlogAuthor } from 'components/blog-author';
 import { Container } from 'components/container';
 import { GetPostsProps, getPost as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
@@ -26,7 +25,7 @@ const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
             <h1>{post.data.title}</h1>
 
             <p className='meta'>
-              <BlogAuthor author={post.data.author.image} />
+              <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
               {post.data.author.name}
               <span className='divider' />
               Last updated: <b>{toHumanDate(post.data.date)}</b>
