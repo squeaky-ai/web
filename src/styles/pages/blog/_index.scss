@@ -26,10 +26,10 @@
       margin: 0 3rem 0 0;
 
       .card {
-        border: 1px solid transparent;
         border-radius: var(--border-radius-md);
         box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
         margin: 0 0 1.5rem 0;
+        overflow: hidden;
         padding: 0;
 
         a {
@@ -39,8 +39,16 @@
 
           .image {
             flex-shrink: 0;
+            font-size: 0;
             height: 320px;
             width: 320px;
+
+            img {
+              height: 320px;
+              object-fit: cover;
+              position: relative;
+              width: 320px;
+            }
           }
 
           .content {
@@ -79,12 +87,15 @@
 
             .description {
               margin: 0;
+              max-height: 8rem;
+              overflow: hidden;
             }
           }
         }
 
         &:hover {
-          border-color: var(--mauve-700);
+          border: 1px solid var(--mauve-700);
+          margin: -1px -1px calc(1.5rem - 1px) -1px;
         }
       }
     }

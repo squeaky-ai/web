@@ -37,7 +37,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
               <Link href={`/blog${post.data.slug}`}>
                 <a>
                   <div className='image'>
-
+                    <img src={post.data.metaImage} alt='Blog cover image' />
                   </div>
                   <div className='content'>
                     <h4>
@@ -50,7 +50,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {toHumanDate(post.data.date)}
                     </p>
                     <p className='description'>
-                      {truncate(post.markdown, { length: 160 })}
+                      {truncate(post.markdown, { length: 120 })}
                     </p>
                   </div>
                 </a>

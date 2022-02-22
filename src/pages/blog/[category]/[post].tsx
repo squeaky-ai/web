@@ -41,7 +41,7 @@ const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
             </div>
           </div>
           <div className='image'>
-
+            <img src={post.data.metaImage} alt='Blog cover image' />
           </div>
         </Container>
       </section>

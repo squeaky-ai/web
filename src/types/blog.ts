@@ -5,6 +5,7 @@ export type PostData = {
   category: string;
   date: string;
   status: Status;
+  metaImage: string;
   metaDescription: string;
   slug: string;
 }
