@@ -19,7 +19,7 @@ export const HeaderProduct: FC = () => {
                 <Icon name='vidicon-line' />
                 Recordings
               </h5>
-              <p>Walk in your customers shoes.</p>
+              <p>Walk in your customers&apos; shoes.</p>
             </a>
           </Link>
           <Link href='/product/analytics'>

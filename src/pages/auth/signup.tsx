@@ -217,7 +217,7 @@ const Signup: NextPage<ServerSideProps> = () => {
               <li><span>1</span>Unlock your customer experience data</li>
               <li><span>2</span>Discover opportunities to improve your user journeys</li>
               <li><span>3</span>Find new ways to improve conversion and retention</li>
-              <li><span>4</span>Walk in your customers footsteps</li>
+              <li><span>4</span>Walk in your customers&apos; footsteps</li>
             </ol>
             <div className='highlight'>
               <Icon name='check-line' />
