@@ -56,7 +56,7 @@ export const useFeedback = (): UsePlans => {
   return {
     loading,
     error: !!error,
-    feedback: data ? data.feedback : fallback,
+    feedback: data?.feedback || fallback,
     visitor,
   };
 };

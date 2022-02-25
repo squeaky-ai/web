@@ -77,11 +77,11 @@ const FeedbackNps: NextPage = () => {
 
   React.useEffect(() => {
     if (ref.current) {
-      ref.current.setAttribute('style', `--nps-accent-color: ${feedback.npsAccentColor};`);
+      ref.current.setAttribute('style', `--nps-accent-color: ${feedback?.npsAccentColor};`);
     }
-  }, [feedback.npsAccentColor]);
+  }, [feedback?.npsAccentColor]);
 
-  if (loading) {
+  if (loading || !feedback.npsEnabled) {
     return null;
   }
 

@@ -4,6 +4,7 @@ import getConfig from 'next/config';
 import Script from 'next/script';
 import type { User as UserType } from 'types/graphql';
 import { usePoll } from 'hooks/use-poll';
+import { useRouter } from 'next/router';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -14,6 +15,10 @@ interface Props {
 }
 
 export const User: FC<Props> = ({ children, user }) => {
+  const router = useRouter();
+
+  const isFeedback = router.pathname.startsWith('/feedback');
+
   const loaded = usePoll(() => {
     return window.hasOwnProperty('squeaky');
   });
@@ -30,6 +35,10 @@ export const User: FC<Props> = ({ children, user }) => {
       'created': new Date(createdAt).toLocaleDateString(),
     });
   }, [loaded]);
+
+  if (isFeedback) {
+    return <>{children}</>;
+  }
 
   return (
     <>

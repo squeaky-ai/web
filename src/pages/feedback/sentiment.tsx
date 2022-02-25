@@ -53,11 +53,11 @@ const FeedbackSentiment: NextPage = () => {
 
   React.useEffect(() => {
     if (ref.current) {
-      ref.current.setAttribute('style', `--sentiment-accent-color: ${feedback.sentimentAccentColor};`);
+      ref.current.setAttribute('style', `--sentiment-accent-color: ${feedback?.sentimentAccentColor};`);
     }
-  }, [feedback.sentimentAccentColor]);
+  }, [feedback?.sentimentAccentColor]);
 
-  if (loading) {
+  if (loading || !feedback.sentimentEnabled) {
     return null;
   }
 
