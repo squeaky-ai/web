@@ -1,4 +1,7 @@
 .page.feedback.nps {
+  background: var(--white);
+  min-height: 100vh;
+
   .title {
     font-size: 1rem;
     font-weight: var(--font-weight-block);
@@ -209,14 +212,13 @@
   }
 
   form {
-    background: var(--white);
     max-width: 34rem;
 
     &.step-1,
     &.step-2,
     &.step-3 {
       .likeliness {
-        padding: 3rem;
+        padding: 3rem 3rem 2rem 3rem;
   
         .labels {
           display: none;
@@ -244,6 +246,7 @@
     &.step-3 {
       .details {
         display: block;
+        margin: 0;
       }
     }
 

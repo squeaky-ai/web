@@ -6,7 +6,6 @@ import { range } from 'lodash';
 import { Formik } from 'formik';
 import { Icon } from 'components/icon';
 import { Logo } from 'components/logo';
-import { Spinner } from 'components/spinner';
 import { Label } from 'components/label';
 import { Input } from 'components/input';
 import { Rating } from 'components/ratings';
@@ -59,7 +58,7 @@ const FeedbackSentiment: NextPage = () => {
   }, [feedback.sentimentAccentColor]);
 
   if (loading) {
-    return <Spinner />;
+    return null;
   }
 
   return (

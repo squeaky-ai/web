@@ -1,6 +1,8 @@
 .page.feedback.sentiment {
+  background: var(--white);
+  min-height: 100vh;
+
   form {
-    background: var(--white);
     max-width: 22rem;
 
     .title {
@@ -10,6 +12,10 @@
       margin: 0;
       padding: 3rem 2rem 1rem 2rem;
       text-align: center;
+    }
+
+    .textarea {
+      margin: 0;
     }
     
     .ratings {

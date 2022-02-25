@@ -4,7 +4,6 @@ import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { range } from 'lodash';
-import { Spinner } from 'components/spinner';
 import { Label } from 'components/label';
 import { Input } from 'components/input';
 import { Radio } from 'components/radio';
@@ -83,7 +82,7 @@ const FeedbackNps: NextPage = () => {
   }, [feedback.npsAccentColor]);
 
   if (loading) {
-    return <Spinner />;
+    return null;
   }
 
   return (
@@ -119,7 +118,11 @@ const FeedbackNps: NextPage = () => {
                 return;
               }
 
-              updateStep(step === steps.START ? steps.FOLLOW_UP : step);
+              if (!feedback.npsContactConsentEnabled) {
+                return updateStep(steps.FOLLOW_UP);
+              }
+
+              updateStep(steps.CONTACT);
             };
 
             const onContactChange = (event: React.ChangeEvent<HTMLInputElement>) => {
