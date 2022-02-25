@@ -38,7 +38,7 @@ export const useFeedback = (): UsePlans => {
 
   const visitor: VisitorParams = {
     siteId: '' + router.query.site_id,
-    visitorId: '' + router.query.visitorId,
+    visitorId: '' + router.query.visitor_id,
     sessionId: '' + router.query.session_id,
   };
 

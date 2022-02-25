@@ -45,8 +45,6 @@ const FeedbackSentiment: NextPage = () => {
   const submitSentiment = async (values: Record<string, string>) => {
     setStep(steps.CONFIRM);
 
-    console.log(values);
-
     await createSentiment({
       score: Number(values.score),
       comment: values.comment || null,
