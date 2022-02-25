@@ -12,8 +12,8 @@ import { TextArea } from 'components/textarea';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
-import { useFeedback } from 'hooks/use-feedback';
 import { createNps } from 'lib/api/graphql';
+import { useFeedback } from 'hooks/use-feedback';
 
 const steps = {
   START: 0,

@@ -7,3 +7,11 @@ export const NPS_CREATE_MUTATION = gql`
     }
   }
 `;
+
+export const SENTIMENT_CREATE_MUTATION = gql`
+  mutation SentimentCreate($input: SentimentCreateInput!) {
+    sentimentCreate(input: $input) {
+      message
+    }
+  }
+`;

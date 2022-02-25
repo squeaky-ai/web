@@ -3,7 +3,7 @@ import { UsersInvitation, TeamInviteAcceptInput, Team, NpsCreateInput } from 'ty
 import { USER_INVITATION_QUERY } from 'data/users/queries';
 import { TEAM_INVITE_ACCEPT_MUTATION } from 'data/teams/mutations';
 import { BOOK_DEMO_MUTATION, CONTACT_MUTATION } from 'data/contact/mutations';
-import { NPS_CREATE_MUTATION } from 'data/feedback/mutations';
+import { NPS_CREATE_MUTATION, SENTIMENT_CREATE_MUTATION } from 'data/feedback/mutations';
 import { BookDemoInput, ContactInput } from 'types/contact';
 
 export const cache = new InMemoryCache();
@@ -49,6 +49,13 @@ export const bookDemoForm = async (input: BookDemoInput): Promise<void> => {
 export const createNps = async (input: NpsCreateInput): Promise<void> => {
   await client.mutate({
     mutation: NPS_CREATE_MUTATION,
+    variables: { input }
+  });
+};
+
+export const createSentiment = async (input: NpsCreateInput): Promise<void> => {
+  await client.mutate({
+    mutation: SENTIMENT_CREATE_MUTATION,
     variables: { input }
   });
 };
