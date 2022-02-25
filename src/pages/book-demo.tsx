@@ -164,7 +164,7 @@ const BookDemo: NextPage<ServerSideProps> = () => {
                 />
                 <span className='validation'>{errors.message}</span>
 
-                <Button type='submit' className='primary' disabled={isSubmitting} >
+                <Button type='submit' className='primary' disabled={isSubmitting}>
                   Submit Demo Request
                 </Button>
               </form>

@@ -540,6 +540,10 @@ q           .icon {
       }
     }
   }
+
+  &.white:not(.scrolled):not(.sub-menu-open):not(.open) {
+    background: var(--white);
+  }
 }
 
 @keyframes header-menu-show {

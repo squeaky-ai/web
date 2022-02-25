@@ -15,12 +15,14 @@ interface Props {
   user: User;
 }
 
-type ThemeOverrides = Record<string, 'blue' | 'mauve'>;
+type ThemeOverrides = Record<string, 'blue' | 'mauve' | 'white'>;
 
 const themeOverrides: ThemeOverrides = {
   '/use-cases/marketing-and-conversion': 'blue',
   '/use-cases/customer-success': 'mauve',
   '/about-us': 'mauve',
+  '/blog/[[...category]]': 'mauve',
+  '/blog/[category]/[post]': 'white',
 };
 
 export const Header: FC<Props> = ({ user }) => {
