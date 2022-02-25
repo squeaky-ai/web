@@ -31,6 +31,10 @@ export const Page: FC<Props> = ({ children, user }) => {
     slug.push('home');
   }
 
+  if (slug.includes('feedback')) {
+    return <>{children}</>;
+  }
+
   return (
     <div className={classnames('page', ...slug)}>
       <Header user={user} />
