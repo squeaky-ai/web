@@ -51,7 +51,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {toHumanDate(post.data.date)}
                     </p>
                     <p className='description'>
-                      {truncate(post.markdown, { length: 120 })}
+                      {truncate(post.text, { length: 120 })}
                     </p>
                   </div>
                 </a>
