@@ -116,13 +116,13 @@ const Accept: NextPage<ServerSideProps> = ({ user }) => {
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
                         try {
-                          await teamInviteAccept({ password: values.password, token: router.query.token as string });
-                          setSubmitting(false);
-                        
+                          await teamInviteAccept({ password: values.password, token: router.query.token as string });                        
                           toast.add({ type: 'success', body: 'Invitation accepted succesfully' });
                           await router.push('/auth/login');
                         } catch(error) {
                           toast.add({ type: 'error', body: 'There was an error accepting the invitation' });
+                        } finally {
+                          setSubmitting(false);
                         }
                       })();
                     }}

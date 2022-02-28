@@ -10,6 +10,7 @@ import { usePlans } from 'hooks/use-plans';
 import { Spinner } from 'components/spinner';
 import { monthlyPrice, recordingsPerMonthLimit, formatShortRecordingCount } from 'lib/plans';
 import type { Currency } from 'types/common';
+import { Message } from './message';
 
 interface Props {
   currency: Currency;
@@ -18,7 +19,7 @@ interface Props {
 export const Calculator: FC<Props> = ({ currency }) => {
   const [plan, setPlan] = React.useState<number>(1);
 
-  const { plans, loading } = usePlans();
+  const { plans, loading, error } = usePlans();
 
   const isHighestPlan = plan === plans.length;
 
@@ -38,6 +39,17 @@ export const Calculator: FC<Props> = ({ currency }) => {
 
     return { left: '50%', transform: 'translateX(-50%)' };
   };
+
+  if (error) {
+    return (
+      <Container className='centered calculator xsm'>
+        <Message 
+          type='error' 
+          message='Pricing unavailable, please try again later'
+        />
+      </Container>
+    );
+  }
 
   return (
     <Container className='centered calculator md-lg'>

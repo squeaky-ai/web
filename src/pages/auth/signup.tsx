@@ -17,9 +17,9 @@ import { Checkbox } from 'components/checkbox';
 import { Message } from 'components/message';
 import { Password } from 'components/password';
 import { passwordTest } from 'data/users/constants';
-import { signup, reconfirmAccount } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { authSignup, authReconfirm } from 'lib/api/graphql';
 
 enum PageView {
   EMAIL,
@@ -52,11 +52,13 @@ const Signup: NextPage<ServerSideProps> = () => {
   const [checkEmailExists] = useLazyQuery(USER_EXISTS);
 
   const resendConfirmation = async () => {
-    const { error } = await reconfirmAccount(email);
-
-    error
-      ? toasts.add({ type: 'error', body: 'There was an issue resending the verification email' })
-      : toasts.add({ type: 'success', body: 'Verification email send successfully' });
+    try {
+      await authReconfirm({ email });
+      toasts.add({ type: 'success', body: 'Verification email send successfully' });
+    } catch(error) {
+      console.error(error);
+      toasts.add({ type: 'error', body: 'There was an issue resending the verification email' });
+    }
   };
 
   return (
@@ -137,11 +139,14 @@ const Signup: NextPage<ServerSideProps> = () => {
                     validationSchema={PasswordSchema}
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
-                        const { body } = await signup({ email: values.email, password: values.password });
-                        setSubmitting(false);
-
-                        if (body) {
+                        try {
+                          await authSignup({ email: values.email, password: values.password });
                           setPageView(PageView.VERIFY);
+                        } catch(error) {
+                          console.error(error);
+                          toasts.add({ type: 'error', body: 'There was an error creating your account' });
+                        } finally {
+                          setSubmitting(false);
                         }
                       })();
                     }}
