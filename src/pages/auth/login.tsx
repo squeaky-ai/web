@@ -12,10 +12,11 @@ import { Logo } from 'components/logo';
 import { Input } from 'components/input';
 import { Button, DelayedButton } from 'components/button';
 import { Message } from 'components/message';
-import { login, confirmAccount, reconfirmAccount } from 'lib/api/auth';
+import { login } from 'lib/api/auth';
 import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { authConfirm, authReconfirm } from 'lib/api/graphql';
 
 enum PageView {
   LOGIN,
@@ -42,26 +43,27 @@ const Login: NextPage<ServerSideProps> = () => {
   } = useLoginAttemps();
 
   const resendConfirmation = async () => {
-    const { error } = await reconfirmAccount(email);
-
-    if (error) {
-      toasts.add({ type: 'error', body: 'There was an issue resending the verification email' });
-    } else {
+    try {
+      await authReconfirm({ email });
       toasts.add({ type: 'success', body: 'Verification email send successfully' });
       setPageView(PageView.LOGIN);
+    } catch(error) {
+      console.error(error);
+      toasts.add({ type: 'error', body: 'There was an issue resending the verification email' });
     }
   };
 
   React.useEffect(() => {
     (async () => {
-      const { token } = router.query;
+      const token = router.query.token as string;
       if (!token) return;
 
-      const { body, error } = await confirmAccount(token as string);
-      if (!error) {
-        setEmail(body.email);
+      try {
+        const { email } = await authConfirm({ token });
+        setEmail(email);
         router.push({ pathname: '/auth/login', query: {} });
-      } else {
+      } catch(error) {
+        console.error(error);
         toasts.add({ type: 'error', body: 'There was an error with your sign in token' });
       }
     })();

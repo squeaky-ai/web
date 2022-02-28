@@ -12,6 +12,7 @@ import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
 import { contactForm } from 'lib/api/graphql';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { useToasts } from 'hooks/use-toasts';
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -22,6 +23,7 @@ const ContactSchema = Yup.object().shape({
 });
 
 const ContactUs: NextPage<ServerSideProps> = () => {
+  const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
@@ -60,10 +62,15 @@ const ContactUs: NextPage<ServerSideProps> = () => {
             enableReinitialize
             onSubmit={(values, { setSubmitting }) => {
               (async () => {
-                await contactForm(values);
-  
-                setSubmitting(false);
-                setSubmitted(true);
+                try {
+                  await contactForm(values);
+                  setSubmitted(true);
+                } catch(error) {
+                  console.error(error);
+                  toasts.add({ type: 'error', body: 'There was an error sending the contact form' });
+                } finally {
+                  setSubmitting(false);
+                }
               })();
             }}
           >

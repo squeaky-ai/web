@@ -13,6 +13,7 @@ import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
 import { bookDemoForm } from 'lib/api/graphql';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { useToasts } from 'hooks/use-toasts';
 
 const BookDemoSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -25,6 +26,7 @@ const BookDemoSchema = Yup.object().shape({
 });
 
 const BookDemo: NextPage<ServerSideProps> = () => {
+  const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
@@ -62,10 +64,15 @@ const BookDemo: NextPage<ServerSideProps> = () => {
             enableReinitialize
             onSubmit={(values, { setSubmitting }) => {
               (async () => {
-                await bookDemoForm(values);
-
-                setSubmitting(false);
-                setSubmitted(true);
+                try {
+                  await bookDemoForm(values);;
+                  setSubmitted(true);
+                } catch(error) {
+                  console.error(error);
+                  toasts.add({ type: 'error', body: 'There was an error booking the demo' });
+                } finally {
+                  setSubmitting(false);
+                }
               })();
             }}
           >

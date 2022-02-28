@@ -14,8 +14,9 @@ import { Input } from 'components/input';
 import { Button, DelayedButton } from 'components/button';
 import { Password } from 'components/password';
 import { passwordTest } from 'data/users/constants';
-import { resetPassword, changePassword } from 'lib/api/auth';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { authPasswordReset, authPasswordUpdate } from 'lib/api/graphql';
+import { useToasts } from 'hooks/use-toasts';
 
 const ResetSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email address').required('Email is required')
@@ -34,6 +35,8 @@ enum PageView {
 
 const Reset: NextPage<ServerSideProps> = () => {
   const router = useRouter();
+  const toasts = useToasts();
+
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
   const [email, setEmail] = React.useState<string>(null);
 
@@ -70,13 +73,15 @@ const Reset: NextPage<ServerSideProps> = () => {
                     validationSchema={ResetSchema}
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
-                        const { body } = await resetPassword(values.email);
-                        
-                        setEmail(values.email);
-                        setSubmitting(false);
-
-                        if (body) {
+                        try {
+                          await authPasswordReset({ email: values.email });
+                          setEmail(values.email);
                           setPageView(PageView.VERIFY);
+                        } catch(error) {
+                          console.error(error);
+                          toasts.add({ type: 'error', body: 'There was an error resetting your password' });
+                        } finally {
+                          setSubmitting(false);
                         }
                       })();
                     }}
@@ -120,7 +125,7 @@ const Reset: NextPage<ServerSideProps> = () => {
                   <Icon name='checkbox-circle-line' />
                   <h4>Check Your Email</h4>
                   <p>If you have an existing Squeaky account you will receive password reset instructions at the email address <b>{email}</b>.</p>
-                  <DelayedButton delay={10} initialDelayed={false} className='secondary' onClick={() => resetPassword(email)}>
+                  <DelayedButton delay={10} initialDelayed={false} className='secondary' onClick={() => authPasswordReset({ email })}>
                     Resend Password Reset Email
                   </DelayedButton>
                 </div>
@@ -131,15 +136,18 @@ const Reset: NextPage<ServerSideProps> = () => {
                   <h2>Create New Password</h2>
 
                   <Formik
-                    initialValues={{ reset_password_token: router.query.token as string, password: '' }}
+                    initialValues={{ resetPasswordToken: router.query.token as string, password: '' }}
                     validationSchema={ChangeSchema}
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
-                        const { error } = await changePassword(values);
-                        setSubmitting(false);
-
-                        if (!error) {
+                        try {
+                          await authPasswordUpdate(values);
                           setPageView(PageView.COMPLETE);
+                        } catch(error) {
+                          console.error(error);
+                          toasts.add({ type: 'error', body: 'There was an error updating your password' });
+                        } finally {
+                          setSubmitting(false);
                         }
                       })();
                     }}
