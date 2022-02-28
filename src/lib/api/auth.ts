@@ -1,5 +1,7 @@
 import axios from 'axios';
 import getConfig from 'next/config';
+import { USER_QUERY } from 'data/users/queries';
+import { getGqlString } from 'lib/api/graphql';
 import type { User } from 'types/graphql';
 
 type LoginInput = {
@@ -26,13 +28,14 @@ const { publicRuntimeConfig } = getConfig();
 
 export const session = async <T>(cookie: string): Promise<T> => {
   try {
-    const response = await axios.get(`${publicRuntimeConfig.apiHost}/api/auth/current.json`, {
+    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query: getGqlString(USER_QUERY) }, {
       headers: {
         'Accept': 'application/json',
         'Cookie': cookie
       }
     });
-    return response.data;
+
+    return data.data.user;
   } catch(error: any) {
     console.error(error.code, error.response);
     return null;

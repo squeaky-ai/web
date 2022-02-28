@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, TypedDocumentNode } from '@apollo/client';
 import { UsersInvitation, TeamInviteAcceptInput, Team, NpsCreateInput } from 'types/graphql';
 import { USER_INVITATION_QUERY } from 'data/users/queries';
 import { TEAM_INVITE_ACCEPT_MUTATION } from 'data/teams/mutations';
@@ -13,6 +13,10 @@ export const client = new ApolloClient({
   uri: '/api/graphql',
   ssrMode: typeof window === 'undefined',
 });
+
+export const getGqlString = (document: TypedDocumentNode): string => {
+  return document.loc?.source?.body;
+};
 
 export const userInvitation = async (token: string): Promise<UsersInvitation> => {
   const { data } = await client.query({
