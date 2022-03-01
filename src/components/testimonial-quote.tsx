@@ -3,11 +3,11 @@ import type { FC } from 'react';
 import classnames from 'classnames';
 import Image from 'next/image';
 
-import matt from '../../public/people/matt.png';
-import yassine from '../../public/people/yassine.png';
-import steve from '../../public/people/steve.png';
-import steven from '../../public/people/steven.png';
-import nathan from '../../public/people/nathan.png';
+import matt from '../../public/people/matt.webp';
+import yassine from '../../public/people/yassine.webp';
+import steve from '../../public/people/steve.webp';
+import steven from '../../public/people/steven.webp';
+import nathan from '../../public/people/nathan.webp';
 
 interface Props {
   quote: string;

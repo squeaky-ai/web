@@ -5,11 +5,11 @@ tags:
   - Tag 2
 author:
   name: Lewis Monteith
-  image: /blog/author.png # needs to match an image in /public/stallions/
+  image: /blog/author.webp # needs to match an image in /public/stallions/
 category: Category
 date: '2022-01-19T07:55:00Z'
 draft: true
-metaImage: /blog/image.jpg # Path from /public
+metaImage: /blog/image.webp # Path from /public
 metaDescription: Meta description
 slug: /category/slug # The url that will be used (must be /<category>/<slug>)
 ---
@@ -30,4 +30,4 @@ console.log('Hello world');
 1. Ordered list 1
 2. Ordered list 2
 
-![Alt text for image](/blog/<path_to_image>.jpg)
+![Alt text for image](/blog/<path_to_image>.webp)

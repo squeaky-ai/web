@@ -8,9 +8,9 @@ import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-import isoLogo from '../../../public/compliance/iso.png';
-import pciDssLogo from '../../../public/compliance/pci-dss.png';
-import socLogo from '../../../public/compliance/soc.png';
+import isoLogo from '../../../public/compliance/iso.webp';
+import pciDssLogo from '../../../public/compliance/pci-dss.webp';
+import socLogo from '../../../public/compliance/soc.webp';
 
 const Security: NextPage<ServerSideProps> = () => (
   <>
