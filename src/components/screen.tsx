@@ -3,19 +3,19 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import type { ImageProps } from 'next/image';
 
-import session1 from '../../public/screens/session-1.png';
-import session2 from '../../public/screens/session-2.png';
-import analytics1 from '../../public/screens/analytics-1.png';
-import analytics2 from '../../public/screens/analytics-2.png';
-import feedback1 from '../../public/screens/feedback-1.png';
-import feedback2 from '../../public/screens/feedback-2.png';
-import feedback3 from '../../public/screens/feedback-3.png';
-import heatmaps1 from '../../public/screens/heatmaps-1.png';
-import heatmaps2 from '../../public/screens/heatmaps-2.png';
-import heatmaps3 from '../../public/screens/heatmaps-3.png';
-import heatmaps4 from '../../public/screens/heatmaps-4.png';
-import privacy1 from '../../public/screens/privacy-1.png';
-import privacy2 from '../../public/screens/privacy-2.png';
+import session1 from '../../public/screens/session-1.webp';
+import session2 from '../../public/screens/session-2.webp';
+import analytics1 from '../../public/screens/analytics-1.webp';
+import analytics2 from '../../public/screens/analytics-2.webp';
+import feedback1 from '../../public/screens/feedback-1.webp';
+import feedback2 from '../../public/screens/feedback-2.webp';
+import feedback3 from '../../public/screens/feedback-3.webp';
+import heatmaps1 from '../../public/screens/heatmaps-1.webp';
+import heatmaps2 from '../../public/screens/heatmaps-2.webp';
+import heatmaps3 from '../../public/screens/heatmaps-3.webp';
+import heatmaps4 from '../../public/screens/heatmaps-4.webp';
+import privacy1 from '../../public/screens/privacy-1.webp';
+import privacy2 from '../../public/screens/privacy-2.webp';
 
 type ScreenType = 
   'session-1' |
