@@ -33,7 +33,7 @@ describe('Login', () => {
 
   describe('when the email is in use but the password is wrong', () => {
     const email = `${randomId()}@email.com`;
-    const password = randomId();
+    const password = 'Password1!';
 
     beforeAll(async () => {
       await createUser(email, password);      
@@ -63,7 +63,7 @@ describe('Login', () => {
 
   describe('when the email is in use and the password is correct', () => {
     const email = `${randomId()}@email.com`;
-    const password = randomId();
+    const password = 'Password1!';
 
     beforeAll(async () => {
       await createUser(email, password);      

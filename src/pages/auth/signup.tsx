@@ -103,7 +103,7 @@ const Signup: NextPage<ServerSideProps> = () => {
                       isValid,
                       dirty,
                     }) => (
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} data-test='signup-form'>
                         <Label htmlFor='email'>Email</Label>
                         <Input
                           name='email' 
