@@ -31,7 +31,7 @@ export const Page: FC<Props> = ({ children, user }) => {
     slug.push('home');
   }
 
-  if (slug.includes('feedback')) {
+  if (router.route.startsWith('/feedback')) {
     return <>{children}</>;
   }
 
