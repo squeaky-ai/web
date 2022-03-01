@@ -146,7 +146,7 @@ const Login: NextPage<ServerSideProps> = () => {
                       isValid,
                       dirty,
                     }) => (
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} data-test='login-form'>
                         <Label htmlFor='email'>Email</Label>
                         <Input
                           name='email' 
