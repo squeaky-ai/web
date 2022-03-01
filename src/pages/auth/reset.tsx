@@ -75,13 +75,12 @@ const Reset: NextPage<ServerSideProps> = () => {
                       (async () => {
                         try {
                           await authPasswordReset({ email: values.email });
-                          setEmail(values.email);
-                          setPageView(PageView.VERIFY);
                         } catch(error) {
                           console.error(error);
-                          toasts.add({ type: 'error', body: 'There was an error resetting your password' });
                         } finally {
+                          setEmail(values.email);
                           setSubmitting(false);
+                          setPageView(PageView.VERIFY);
                         }
                       })();
                     }}
@@ -97,7 +96,7 @@ const Reset: NextPage<ServerSideProps> = () => {
                       isValid,
                       dirty,
                     }) => (
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} data-test='reset-form'>
                         <Label htmlFor='email'>Email</Label>
                         <Input
                           name='email' 
