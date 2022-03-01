@@ -14,7 +14,7 @@ import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-import useCasesHeaderImage from '../../../public/use-cases/use-case-2.png';
+import useCasesHeaderImage from '../../../public/use-cases/use-case-2.webp';
 
 const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
   <>

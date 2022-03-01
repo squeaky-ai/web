@@ -14,7 +14,7 @@ import { TestimonialQuote } from 'components/testimonial-quote';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
-import useCasesHeaderImage from '../../../public/use-cases/use-case-1.png';
+import useCasesHeaderImage from '../../../public/use-cases/use-case-1.webp';
 
 const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
   <>
