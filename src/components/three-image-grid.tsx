@@ -27,7 +27,7 @@ export const ThreeImageGridItem: FC<ChildProps> = ({ image, title, body, link })
     <h4>{title}</h4>
     <p>{body}</p>
     <Link href={link}>
-      <a>Learn More</a>
+      <a aria-label={title}>Learn More</a>
     </Link>
   </div>
 );

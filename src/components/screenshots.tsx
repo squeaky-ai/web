@@ -3,19 +3,19 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import type { ImageProps } from 'next/image';
 
-import analytics1 from '../../public/screenshots/analytics-1.jpg';
-import analytics2 from '../../public/screenshots/analytics-2.jpg';
-import dashboard1 from '../../public/screenshots/dashboard-1.jpg';
-import heatmaps1 from '../../public/screenshots/heatmaps-1.jpg';
-import heatmaps2 from '../../public/screenshots/heatmaps-2.jpg';
-import heatmaps3 from '../../public/screenshots/heatmaps-3.jpg';
-import heatmaps4 from '../../public/screenshots/heatmaps-4.jpg';
-import nps1 from '../../public/screenshots/nps-1.jpg';
-import nps2 from '../../public/screenshots/nps-2.jpg';
-import recordings1 from '../../public/screenshots/recordings-1.jpg';
-import sentiment1 from '../../public/screenshots/sentiment-1.jpg';
-import sentiment2 from '../../public/screenshots/sentiment-2.jpg';
-import session1 from '../../public/screenshots/session-1.jpg';
+import analytics1 from '../../public/screenshots/analytics-1.webp';
+import analytics2 from '../../public/screenshots/analytics-2.webp';
+import dashboard1 from '../../public/screenshots/dashboard-1.webp';
+import heatmaps1 from '../../public/screenshots/heatmaps-1.webp';
+import heatmaps2 from '../../public/screenshots/heatmaps-2.webp';
+import heatmaps3 from '../../public/screenshots/heatmaps-3.webp';
+import heatmaps4 from '../../public/screenshots/heatmaps-4.webp';
+import nps1 from '../../public/screenshots/nps-1.webp';
+import nps2 from '../../public/screenshots/nps-2.webp';
+import recordings1 from '../../public/screenshots/recordings-1.webp';
+import sentiment1 from '../../public/screenshots/sentiment-1.webp';
+import sentiment2 from '../../public/screenshots/sentiment-2.webp';
+import session1 from '../../public/screenshots/session-1.webp';
 
 type ScreenshotType = 
   'analytics-1' |
