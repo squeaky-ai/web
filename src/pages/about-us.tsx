@@ -10,8 +10,8 @@ import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
 
-import chris from '../../public/stallions/chris.png';
-import lewis from '../../public/stallions/lewis.png';
+import chris from '../../public/stallions/chris.webp';
+import lewis from '../../public/stallions/lewis.webp';
 
 const AboutUs: NextPage<ServerSideProps> = () => (
   <>
