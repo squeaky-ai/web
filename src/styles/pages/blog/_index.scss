@@ -17,9 +17,18 @@
     display: flex;
     padding: 4rem 2rem;
 
+    @include breakpoint-md {
+      flex-direction: column-reverse;
+      padding: 2rem;
+    }
+
     main {
       flex: 1;
       margin: 0 3rem 0 0;
+
+      @include breakpoint-md {
+        margin: 0;
+      }
 
       .card {
         border-radius: var(--border-radius-md);
@@ -87,6 +96,18 @@
               overflow: hidden;
             }
           }
+
+          @include breakpoint-md {
+            flex-direction: column;
+
+            .image {
+              width: 100%;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
         }
 
         &:hover {
@@ -99,10 +120,19 @@
     aside {
       width: 25rem;
 
+      @include breakpoint-md {
+        margin: 0 0 2rem 0;
+        width: 100%;
+      }
+
       .sidebar {
         background: var(--peach-100);
         border-radius: var(--border-radius-md);
         padding: 3rem;
+
+        @include breakpoint-md {
+          padding: 2rem;
+        }
 
         h4 {
           margin: 0 0 1.5rem 0;

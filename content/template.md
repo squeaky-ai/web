@@ -7,6 +7,7 @@ author:
   name: Lewis Monteith
   image: /blog/author.webp # needs to match an image in /public/stallions/
 category: Category
+summary: Hello world
 date: '2022-01-19T07:55:00Z'
 draft: true
 metaImage: /blog/image.webp # Path from /public

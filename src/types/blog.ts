@@ -3,6 +3,7 @@ export type PostData = {
   tags: string[];
   author: Author;
   category: string;
+  summary: string;
   date: string;
   draft: boolean;
   metaImage: string;
