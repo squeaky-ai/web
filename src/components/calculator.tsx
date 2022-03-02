@@ -2,7 +2,7 @@ import React from 'react';
 import type { FC } from 'react';
 import Link from 'next/link';
 import classnames from 'classnames';
-import { range } from 'lodash';
+import { range } from 'lib/utils';
 import { Icon } from 'components/icon';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
@@ -73,7 +73,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
               </div>
               <div className='slider'>
                 <div className='progress'>
-                  {range(0, plans.length).map(i => (
+                  {range(plans.length).map(i => (
                     <span key={i} className={classnames({ active: plan > i })} />
                   ))}
                 </div>

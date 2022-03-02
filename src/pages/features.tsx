@@ -2,12 +2,12 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import classnames from 'classnames';
-import { debounce, findLast } from 'lodash';
 import { Button } from 'components/button';
 import { Container } from 'components/container';
 import { PageTitle, PageTitleNav } from 'components/page-title';
 import { FeaturesGrid, FeaturesGridItem } from 'components/features-grid';
 import { Cta } from 'components/cta';
+import { debounce } from 'lib/utils';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 
 type Tab = 'privacy' | 'dashboard' | 'visitors' | 'recordings' | 'analytics' | 'feedback' | 'heatmaps' | 'team' | 'ease-of-use';
@@ -64,9 +64,10 @@ const Features: NextPage<ServerSideProps> = () => {
   };
 
   const handleScroll = debounce(() => {
+    console.log('!!');
     const scroll = window.scrollY;
 
-    const match = findLast(tabs, t => {
+    const match = [...tabs].reverse().find(t => {
       const element = document.getElementById(t.tab);
       return element?.offsetTop <= scroll;
     });

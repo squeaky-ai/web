@@ -2,12 +2,12 @@ import React from 'react';
 import type { FC } from 'react';
 import Link from 'next/link';
 import classnames from 'classnames';
-import { throttle } from 'lodash';
 import { Logo } from 'components/logo';
 import { Container } from 'components/container';
 import { HeaderMenuLarge } from 'components/header-menu-large';
 import { HeaderMenuSmall } from 'components/header-menu-small';
 import { useRouter } from 'next/router';
+import { debounce } from 'lib/utils';
 import type { SubMenu } from 'types/common';
 import type { User } from 'types/graphql';
 
@@ -41,7 +41,7 @@ export const Header: FC<Props> = ({ user }) => {
     return () => setSubMenuOpen(subMenu);
   };
 
-  const handleScroll = throttle(() => {
+  const handleScroll = debounce(() => {
     setScrolled(window.scrollY !== 0);
   }, 100);
 

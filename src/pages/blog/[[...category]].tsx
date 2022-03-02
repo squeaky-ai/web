@@ -3,7 +3,6 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 import classnames from 'classnames';
-import { truncate } from 'lodash';
 import { useRouter } from 'next/router';
 import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
@@ -11,6 +10,7 @@ import { Card } from 'components/card';
 import { Container } from 'components/container';
 import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
+import { truncate } from 'lib/utils';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
 
 const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
@@ -51,7 +51,7 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                       {toHumanDate(post.data.date)}
                     </p>
                     <p className='description'>
-                      {truncate(post.data.summary, { length: 120 })}
+                      {truncate(post.data.summary, 120)}
                     </p>
                   </div>
                 </a>

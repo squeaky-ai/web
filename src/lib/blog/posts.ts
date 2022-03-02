@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 import markdown from 'markdown-it';
-import { uniq } from 'lodash';
+import { uniq } from 'lib/utils';
 import { ServerSideProps, getUserFromContext } from 'lib/auth';
 import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
 import type { Post, Posts } from 'types/blog';

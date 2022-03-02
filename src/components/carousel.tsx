@@ -1,9 +1,8 @@
 import React from 'react';
 import type { FC } from 'react';
 import classnames from 'classnames';
-import { debounce } from 'lodash';
-import { range } from 'lodash';
 import { Button } from 'components/button';
+import { range, debounce } from 'lib/utils';
 
 interface Props {
   children: React.ReactNode;
@@ -92,7 +91,7 @@ export class Carousel extends React.Component<Props, State> {
           {this.items}
         </div>
         <div className='indicator'>
-          {range(0, this.count).map(i => (
+          {range(this.count).map(i => (
             <Button 
               key={i}
               onClick={() => this.onChange(i)} 

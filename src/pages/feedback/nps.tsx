@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { range } from 'lodash';
+import { range } from 'lib/utils';
 import { Label } from 'components/label';
 import { Input } from 'components/input';
 import { Radio } from 'components/radio';

@@ -10,13 +10,17 @@
   }
 
   &.block {
-    background: var(--white);
+    background: var(--gray-blue-800);
     border-radius: var(--border-radius-md);
     box-shadow: var(--box-shadow-md);
     margin: 0 0 1.5rem 0;
     overflow: hidden;
-    padding: 0;
+    padding: 2rem;
     width: 100%;
+
+    code {
+      color: var(--peach-100);
+    }
 
     @include breakpoint-md {
       code {

@@ -2,7 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import * as Yup from 'yup';
-import { range } from 'lodash';
+import { range } from 'lib/utils';
 import { Formik } from 'formik';
 import { Icon } from 'components/icon';
 import { Logo } from 'components/logo';
