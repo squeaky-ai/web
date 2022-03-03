@@ -67,7 +67,7 @@ const AboutUs: NextPage<ServerSideProps> = () => (
         <Container className='md-lg centered people'>
           <div className='person'>
             <div className='image'>
-              <Image src={chris} alt='Chris, cofunder and CEO' width={360} height={416} />
+              <Image src={chris} alt='Chris, cofunder and CEO' width={360} height={416} unoptimized priority />
             </div>
             <h3>
               Chris Pattison
@@ -80,7 +80,7 @@ const AboutUs: NextPage<ServerSideProps> = () => (
           </div>
           <div className='person'>
             <div className='image'>
-              <Image src={lewis} alt='Lewis, cofunder and CTO' width={360} height={416} />
+              <Image src={lewis} alt='Lewis, cofunder and CTO' width={360} height={416} unoptimized priority />
             </div>
             <h3>
               Lewis Monteith
