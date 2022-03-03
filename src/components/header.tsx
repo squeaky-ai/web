@@ -53,6 +53,10 @@ export const Header: FC<Props> = ({ user }) => {
     }
   };
 
+  const handleMouseLeave = () => {
+    setSubMenuOpen(null);
+  };
+
   React.useEffect(() => {
     window.addEventListener('click', handleClick);
     window.addEventListener('scroll', handleScroll);
@@ -69,7 +73,7 @@ export const Header: FC<Props> = ({ user }) => {
   }, [router.route]);
 
   return (
-    <div ref={ref} className={classnames('header', themeOverride, { scrolled, open, 'sub-menu-open': subMenuOpen })}>
+    <div ref={ref} className={classnames('header', themeOverride, { scrolled, open, 'sub-menu-open': subMenuOpen })} onMouseLeave={handleMouseLeave}>
       <Container className='lg centered'>
         <Link href='/'>
           <a className='logo'>

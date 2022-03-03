@@ -11,10 +11,9 @@ interface Props {
   active: boolean;
   children: React.ReactNode;
   handleOpen: VoidFunction;
-  handleClose: VoidFunction;
 }
 
-export const HeaderMenu: FC<Props> = ({ link, open, active, children, handleOpen, handleClose }) => {
+export const HeaderMenu: FC<Props> = ({ link, open, active, children, handleOpen }) => {
   return (
     <>
       <Button className={classnames('link menu', { active, open })} onMouseEnter={handleOpen}>
@@ -23,7 +22,7 @@ export const HeaderMenu: FC<Props> = ({ link, open, active, children, handleOpen
       </Button>
 
       {open && (
-        <div className='header-menu' onMouseLeave={handleClose}>
+        <div className='header-menu'>
           <Container className='lg centered'>
             {children}
           </Container>
