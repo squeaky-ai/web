@@ -79,7 +79,7 @@ const Signup: NextPage<ServerSideProps> = () => {
             <Card>
               {pageView === PageView.EMAIL && (
                 <>
-                  <h2>Sign Up</h2>
+                  <h1>Sign Up</h1>
                   <Formik
                     initialValues={{ email: (router.query.email || '') as string, terms: false }}
                     validationSchema={EmailSchema}
@@ -133,7 +133,7 @@ const Signup: NextPage<ServerSideProps> = () => {
 
               {pageView === PageView.PASSWORD && (
                 <>
-                  <h2>Sign Up</h2>
+                  <h1>Sign Up</h1>
                   <Formik
                     initialValues={{ email, password: '' }}
                     validationSchema={PasswordSchema}

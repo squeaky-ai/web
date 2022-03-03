@@ -64,7 +64,7 @@ const Reset: NextPage<ServerSideProps> = () => {
             <Card>
               {pageView == PageView.EMAIL && (
                 <>
-                  <h2>Reset Password</h2> 
+                  <h1>Reset Password</h1> 
 
                   <p>If you&apos;d like to reset your password, please enter your email address below and click the reset password button.</p>
 
@@ -132,7 +132,7 @@ const Reset: NextPage<ServerSideProps> = () => {
 
               {pageView === PageView.CHANGE && (
                 <>
-                  <h2>Create New Password</h2>
+                  <h1>Create New Password</h1>
 
                   <Formik
                     initialValues={{ resetPasswordToken: router.query.token as string, password: '' }}

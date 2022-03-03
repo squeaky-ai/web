@@ -22,8 +22,8 @@ class Document extends NextDocument {
     return `${this.host}${this.page}`;
   }
 
-  private get isAuthPage() {
-    return this.page.startsWith('/auth/');
+  private get isIndexable() {
+    return !this.page.startsWith('/auth/');
   }
 
   private get title() {
@@ -48,10 +48,12 @@ class Document extends NextDocument {
         <Head>
           {/* General */}
           <meta name='description' content={this.description} />
-          <meta name='robots' content={this.isAuthPage ? 'noindex' : 'follow'} />
+          <meta name='robots' content={this.isIndexable ? 'follow' : 'noindex'} />
           <meta name='google' content='nositelinkssearchbox' />
           <meta name='keywords' content='Web, Analytics, Recordings, Visitors' />
           <meta name='theme-color' content='#FFF5EB' />
+
+          {this.isIndexable && <link rel='canonical' href={this.url} />}
 
           <meta name='ahrefs-site-verification' content='4ab46532f5ca328773b891e0df42f34475fb429916b57684a416f5a3e57e652e' />
 

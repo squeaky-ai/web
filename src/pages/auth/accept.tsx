@@ -108,7 +108,7 @@ const Accept: NextPage<ServerSideProps> = ({ user }) => {
 
               {!loading && email && (
                 <>
-                  <h2>Sign Up</h2>
+                  <h1>Sign Up</h1>
 
                   <Formik
                     initialValues={{ password: '', terms: false }}

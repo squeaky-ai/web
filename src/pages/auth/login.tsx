@@ -87,7 +87,7 @@ const Login: NextPage<ServerSideProps> = () => {
             <Card>
               {pageView === PageView.LOGIN && ( 
                 <>
-                  <h2>Log In</h2>
+                  <h1>Log In</h1>
 
                   {!!email && (
                     <Message
