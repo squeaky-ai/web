@@ -39,7 +39,8 @@ Typically, multiple people use staging to validate their changes before release.
 
 This leads people to introduce a branching strategy, so that changes do not need to be rolled back, and hotfixes to production can bypass the changes waiting on staging. Branches are then constantly out of sync with each other, and problems often surface when you merge, rebase and backfill hotfixes.
 
-![Illustration showing complex branching strategies](/blog/branching-strategy.jpg)
+![Illustration showing complex branching strategies](/blog/branching-strategy.png)
+*Branching strategies quickly become complex and time consuming*
 
 ### Releases are too large
 
