@@ -21,13 +21,11 @@ export const HeaderMenu: FC<Props> = ({ link, open, active, children, handleOpen
         <Icon name='arrow-drop-down-line' className='arrow' />
       </Button>
 
-      {open && (
-        <div className='header-menu'>
-          <Container className='lg centered'>
-            {children}
-          </Container>
-        </div>
-      )}
+      <div className={classnames('header-menu', { open })}>
+        <Container className='lg centered'>
+          {children}
+        </Container>
+      </div>
     </>
   );
 };
