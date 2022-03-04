@@ -15,7 +15,7 @@ export const truncate = (string: string = '', size: number): string => {
 };
 
 export const uniq = (items: string[]): string[] => {
-  const set = new Set(...items);
+  const set = new Set(items);
   return Array.from(set);
 };
 

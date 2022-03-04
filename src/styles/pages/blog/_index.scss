@@ -57,7 +57,19 @@
           }
 
           .content {
+            height: 320px;
             padding: 3rem;
+
+
+            @include breakpoint-md {
+              height: auto;
+            }
+
+            .overflow {
+              height: 100%;
+              overflow: hidden;
+              width: 100%;
+            }
 
             h4 {
               color: var(--gray-blue-800);

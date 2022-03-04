@@ -25,7 +25,9 @@ const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
             <h1>{post.data.title}</h1>
 
             <p className='meta'>
-              <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+              <span className='blog-author'>
+                <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+              </span>
               {post.data.author.name}
               <span className='divider' />
               Last updated: <b>{toHumanDate(post.data.date)}</b>

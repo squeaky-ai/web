@@ -39,20 +39,22 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                     <img src={post.data.metaImage} alt='Blog cover image' />
                   </div>
                   <div className='content'>
-                    <h4>
-                      {post.data.title}
-                    </h4>
-                    <p className='meta'>
-                      <span className='blog-author'>
-                        <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
-                      </span>
-                      {post.data.author.name}
-                      <span className='divider' />
-                      {toHumanDate(post.data.date)}
-                    </p>
-                    <p className='description'>
-                      {truncate(post.data.summary, 120)}
-                    </p>
+                    <div className='overflow'>
+                      <h4>
+                        {post.data.title}
+                      </h4>
+                      <p className='meta'>
+                        <span className='blog-author'>
+                          <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                        </span>
+                        {post.data.author.name}
+                        <span className='divider' />
+                        {toHumanDate(post.data.date)}
+                      </p>
+                      <p className='description'>
+                        {truncate(post.data.summary, 120)}
+                      </p>
+                    </div>
                   </div>
                 </a>
               </Link>
