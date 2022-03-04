@@ -45,7 +45,6 @@ async function listPosts(): Promise<Post[]> {
 
       return {
         data,
-        text: content.replaceAll('\n', ' ').replace(/[^a-zA-Z0-9\. ]/g, ''),
         html: markdown().render(content),
       } as Post;
     })

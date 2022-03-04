@@ -13,7 +13,6 @@ export type PostData = {
 
 export type Post = {
   data: PostData;
-  text: string;
   html: string;
 }
 
