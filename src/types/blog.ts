@@ -14,6 +14,7 @@ export type PostData = {
 export type Post = {
   data: PostData;
   html: string;
+  editLink?: string;
 }
 
 export type Author = {

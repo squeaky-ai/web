@@ -10,13 +10,20 @@ import { Card } from 'components/card';
 import { Container } from 'components/container';
 import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
-import { truncate } from 'lib/utils';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
+import { Button } from 'components/button';
+import type { Post } from 'types/blog';
 
 const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
   
   const { tags, categories, posts, selectedCategory, selectedTags } = blog;
+
+  const onDraftClick = (post: Post) => (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+
+    window.open(post.editLink, '_blank');
+  };
 
   return (
     <>
@@ -49,10 +56,13 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                         </span>
                         {post.data.author.name}
                         <span className='divider' />
-                        {toHumanDate(post.data.date)}
+                        {post.data.draft
+                          ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
+                          : toHumanDate(post.data.date)
+                        }
                       </p>
                       <p className='description'>
-                        {truncate(post.data.summary, 120)}
+                        {post.data.summary}
                       </p>
                     </div>
                   </div>

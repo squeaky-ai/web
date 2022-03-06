@@ -24,7 +24,7 @@ function resolveContentPath(p: string) {
   return path.join(root, 'content', p);
 }
 
-async function listPosts(): Promise<Post[]> {
+async function listPosts(superuser: boolean): Promise<Post[]> {
   if (postsCache.length) {
     // There's no need to do scan the files and parse
     // the markup on every request so we can cache it
@@ -46,6 +46,7 @@ async function listPosts(): Promise<Post[]> {
       return {
         data,
         html: markdown().render(content),
+        editLink: superuser ? `https://github.com/squeaky-ai/web/blob/main/content/posts/${file}` : undefined,
       } as Post;
     })
     .sort((a, b) => {
@@ -88,7 +89,7 @@ async function filterPosts(posts: Post[], tags: string[], category: string | nul
 
 async function getPostBySlug(slug: string, superuser: boolean) {
   // This isn't ideal, but it's cached so who cares
-  const all = await listPosts();
+  const all = await listPosts(superuser);
 
   const post = all.find(post => post.data.slug === slug);
 
@@ -107,8 +108,10 @@ async function getPostBySlug(slug: string, superuser: boolean) {
 export const queryPosts: GetServerSideProps = async (context) => {
   const { tags = [], category } = context.query;
 
-  const all = await listPosts();
   const user = await getUserFromContext(context);
+  const superuser = user ? user.superuser : false;
+
+  const all = await listPosts(superuser);
   
   // Query params will either be:
   // - a string if there's one: ?foo=bar => { foo: 'bar' }
@@ -120,7 +123,7 @@ export const queryPosts: GetServerSideProps = async (context) => {
     all,
     selectedTags,
     selectedCategory,
-    user ? user.superuser : false,
+    superuser,
   );
 
   return {

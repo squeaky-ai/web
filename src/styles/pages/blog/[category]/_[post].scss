@@ -6,11 +6,20 @@
     background-image: url('../../../../../public/backgrounds/blog-2.svg');
     background-position: bottom left;
     background-repeat: repeat-x;
-    padding: 5rem 0 12rem 0;
+    padding: 5rem 2rem 12rem 2rem;
+
+    @include breakpoint-sm {
+      background-image: none;
+      padding: 5rem 2rem;
+    }
 
     .container {
       align-items: center;
       display: flex;
+
+      @include breakpoint-sm {
+        flex-direction: column;
+      }
 
       .title {
         flex: 1;
@@ -30,6 +39,14 @@
           object-fit: cover;
           position: relative;
           width: 100%;
+
+          @include breakpoint-md {
+            height: 25rem;
+          }
+        }
+
+        @include breakpoint-sm {
+          margin: 2rem 0 -17.5rem 0;
         }
       }
 
@@ -51,6 +68,7 @@
         background: var(--gray-200);
         border-radius: var(--border-radius-o);
         display: inline-block;
+        flex-shrink: 0;
         height: 1.5rem;
         margin: 0 .5rem 0 0;
         overflow: hidden;
@@ -63,6 +81,7 @@
         font-size: 16px;
         line-height: 24px;
         margin: 0 0 3rem 0;
+        white-space: nowrap;
 
         b {
           margin-left: .25rem;
@@ -89,7 +108,11 @@
   }
 
   .blog-body {
-    padding: 4rem 0;
+    padding: 4rem 2rem;
+
+    @include breakpoint-sm {
+      margin-top: 12.5rem;
+    }
 
     h2 {
       font-size: 32px;

@@ -39,17 +39,16 @@
 
         a {
           color: var(--gray-blue-700);
-          display: flex;
+          display: grid;
+          grid-template-columns: 320px 1fr;
           text-decoration: none;
 
           .image {
             flex-shrink: 0;
             font-size: 0;
-            height: 320px;
-            width: 320px;
 
             img {
-              height: 320px;
+              height: 100%;
               object-fit: cover;
               position: relative;
               width: 320px;
@@ -57,7 +56,6 @@
           }
 
           .content {
-            height: 320px;
             padding: 3rem;
 
 
@@ -88,6 +86,7 @@
               background: var(--gray-200);
               border-radius: var(--border-radius-o);
               display: inline-block;
+              flex-shrink: 0;
               height: 1.5rem;
               margin: 0 .5rem 0 0;
               overflow: hidden;
@@ -102,15 +101,21 @@
               margin: 0 0 1.5rem 0;
             }
 
+            .draft {
+              color: var(--mauve-700);
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
             .description {
               margin: 0;
-              max-height: 8rem;
-              overflow: hidden;
             }
           }
 
           @include breakpoint-md {
-            flex-direction: column;
+            grid-template-columns: 1fr;
 
             .image {
               width: 100%;
@@ -125,6 +130,10 @@
         &:hover {
           border: 1px solid var(--mauve-700);
           margin: -1px -1px calc(1.5rem - 1px) -1px;
+
+          h4 {
+            text-decoration: underline;
+          }
         }
       }
     }
