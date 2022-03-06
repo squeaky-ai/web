@@ -140,7 +140,17 @@ const Signup: NextPage<ServerSideProps> = () => {
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
                         try {
-                          await authSignup({ email: values.email, password: values.password });
+                          const user = await authSignup({ email: values.email, password: values.password });
+
+                          if (window.squeaky) {
+                            window.squeaky.identify(user.id, {
+                              'name': '',
+                              'email': user.email,
+                              'superuser': 'No',
+                              'created': new Date(user.createdAt).toLocaleDateString(),
+                            });
+                          }
+
                           setPageView(PageView.VERIFY);
                         } catch(error) {
                           console.error(error);

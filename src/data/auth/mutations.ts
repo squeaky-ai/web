@@ -5,6 +5,7 @@ export const AUTH_SIGNUP_MUTATION = gql`
     authSignup(input: $input) {
       id
       email
+      createdAt
     }
   }
 `;

@@ -115,12 +115,22 @@ const Login: NextPage<ServerSideProps> = () => {
                       (async () => {
                         if (exceeded) return;
 
-                        const { error } = await login(values);
+                        const { body, error } = await login(values);
 
                         setSubmitting(false);
 
                         if (!error) {
                           clear();
+
+                          if (window.squeaky) {
+                            window.squeaky.identify(body.id, {
+                              'name': `${body.first_name || ''} ${body.last_name || ''}`,
+                              'email': body.email,
+                              'superuser': body.superuser ? 'Yes' : 'No',
+                              'created': new Date(body.created_at).toLocaleDateString(),
+                            });
+                          }
+
                           location.href = '/app/sites';
                           return;
                         }
