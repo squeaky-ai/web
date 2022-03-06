@@ -35,7 +35,7 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
           />
           <UseCasesHeaderStats
             stat='8/10'
-            body={<>of product professionals we survey felt their current tools were missing key data, <Link href='/product/feedback'><a>we&apos;re plugging those gaps</a></Link>.</>}
+            body={<>of product professionals we surveyed felt their current tools were missing key data, <Link href='/product/feedback'><a>we&apos;re plugging those gaps</a></Link>.</>}
           />
           <UseCasesHeaderStats
             stat='93%'
