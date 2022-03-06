@@ -27,7 +27,7 @@ const Home: NextPage<ServerSideProps> = () => {
       <section className='hero'>
         <Container className='centered md'>
           <h1>The privacy-first customer insights platform</h1>
-          <p>Create high-value digital experiences by understanding exactly how visitors are using your service or product, without compromising their privacy.</p>
+          <p>Squeaky helps you grow your business, by building better digital experiences. Our all-in-one tool includes analytics, session recording, feedback and heatmaps.</p>
           <div className='actions'>
             <Link href='/auth/signup'>
               <a className='button primary'>
