@@ -21,9 +21,11 @@ export const ThreeImageGrid: FC<ParentProps> = ({ children }) => (
 
 export const ThreeImageGridItem: FC<ChildProps> = ({ image, title, body, link }) => (
   <div className='item'>
-    <div className='image'>
-      {image}
-    </div>
+    <Link href={link}>
+      <a className='image'>
+        {image}
+      </a>
+    </Link>
     <h4>{title}</h4>
     <p>{body}</p>
     <Link href={link}>
