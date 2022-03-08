@@ -10,7 +10,12 @@
 
     @include breakpoint-sm {
       background-image: none;
-      padding: 5rem 2rem;
+      padding: 2rem 2rem 5rem 2rem;
+
+      h1 {
+        font-size: 38px;
+        line-height: 48px;
+      }
     }
 
     .container {
@@ -83,8 +88,28 @@
         margin: 0 0 3rem 0;
         white-space: nowrap;
 
+        span {
+          align-items: center;
+          display: flex;
+        }
+
         b {
           margin-left: .25rem;
+        }
+
+        @include breakpoint-sm {
+          align-items: flex-start;
+          flex-direction: column;
+          margin: 0 0 2rem 0;
+          white-space: normal;
+
+          .divider {
+            display: none;
+
+            + span {
+              margin: 0 0 0 2rem;
+            }
+          }
         }
       }
 
@@ -118,14 +143,18 @@
       font-size: 32px;
       font-weight: var(--font-weight-block);
       line-height: 48px;
-      margin: 2rem 0 1rem 0;
+      margin: 3rem 0 1rem 0;
     }
 
     h3 {
       font-size: 24px;
       font-weight: var(--font-weight-block);
       line-height: 32px;
-      margin: 2rem 0 1rem 0;
+      margin: 3rem 0 1rem 0;
+    }
+
+    h4 {
+      margin: 4rem 0 1rem 0;
     }
 
     ul, ol {
@@ -143,7 +172,7 @@
     }
 
     img {
-      border-radius: var(--border-radius-md);
+      border-radius: var(--border-radius-lg);
       display: block;
       width: 100%;
 

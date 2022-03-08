@@ -46,7 +46,7 @@ async function listPosts(superuser: boolean): Promise<Post[]> {
       return {
         data,
         html: markdown().render(content),
-        editLink: superuser ? `https://github.com/squeaky-ai/web/blob/main/content/posts/${file}` : undefined,
+        editLink: superuser ? `https://github.com/squeaky-ai/web/blob/main/content/posts/${file}` : null,
       } as Post;
     })
     .sort((a, b) => {

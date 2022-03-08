@@ -51,15 +51,19 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
                         {post.data.title}
                       </h4>
                       <p className='meta'>
-                        <span className='blog-author'>
-                          <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                        <span>
+                          <span className='blog-author'>
+                            <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                          </span>
+                          {post.data.author.name}
                         </span>
-                        {post.data.author.name}
                         <span className='divider' />
-                        {post.data.draft
-                          ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                          : toHumanDate(post.data.date)
-                        }
+                        <span>
+                          {post.data.draft
+                            ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
+                            : toHumanDate(post.data.date)
+                          }
+                        </span>
                       </p>
                       <p className='description'>
                         {post.data.summary}
