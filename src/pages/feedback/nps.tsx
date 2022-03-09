@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { range } from 'lib/utils';
@@ -13,6 +11,7 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { createNps } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
+import type { SqueakyPage } from 'types/page';
 
 const steps = {
   START: 0,
@@ -29,7 +28,7 @@ const NpsSchema = Yup.object().shape({
   email: Yup.string(),
 });
 
-const FeedbackNps: NextPage = () => {
+const FeedbackNps: SqueakyPage = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [step, setStep] = React.useState<number>(0);
@@ -87,10 +86,6 @@ const FeedbackNps: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Nps</title>
-      </Head>
-
       <div ref={ref} className='page feedback nps'>
         <Formik
           initialValues={{ score: null, comment: '', contact: '0', email: '' }}
@@ -234,5 +229,11 @@ const FeedbackNps: NextPage = () => {
     </>
   );
 };
+
+FeedbackNps.getMetaData = () => ({
+  title: 'Squeaky | Nps',
+  description: 'Understand exactly how customers are using your website or web app, without invading their privacy.',
+  index: false,
+});
 
 export default FeedbackNps;

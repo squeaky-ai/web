@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -13,13 +11,10 @@ import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { ProductTools } from 'components/product-tools';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const ProductHeatmaps: NextPage<ServerSideProps> = () => (
+const ProductHeatmaps: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Heatmaps</title> 
-    </Head>
-
     <ProductHeader
       title='Understand which content matters'
       subtitle='Heatmaps'
@@ -137,6 +132,12 @@ const ProductHeatmaps: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+ProductHeatmaps.getMetaData = () => ({
+  title: 'Squeaky | Heatmaps',
+  description: 'Use our heatmap tool to visualise where visitors are clicking and scrolling on your site. You\'ll quickly discover which content, interfaces, and layouts work.',
+  index: true,
+});
 
 export default ProductHeatmaps;
 export { getServerSideProps };

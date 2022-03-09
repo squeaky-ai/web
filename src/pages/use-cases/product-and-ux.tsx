@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from 'components/container';
@@ -13,15 +11,12 @@ import { Cta } from 'components/cta';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-1.webp';
 
-const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
+const UseCasesProductAndUx: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Product &amp; UX</title> 
-    </Head>
-
     <UseCasesHeader
       subtitle='For Product &amp; UX Teams'
       title='Build better customer experiences'
@@ -165,6 +160,12 @@ const UseCasesProductAndUx: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+UseCasesProductAndUx.getMetaData = () => ({
+  title: 'Squeaky | Product & UX',
+  description: 'See how Squeaky helps product and UX teams to improve their customer experience, using session recordings, analytics, heatmaps, and direct user feedback.',
+  index: true,
+});
 
 export default UseCasesProductAndUx;
 export { getServerSideProps };

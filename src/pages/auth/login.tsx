@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -17,6 +15,7 @@ import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authConfirm, authReconfirm } from 'lib/api/graphql';
+import type { SqueakyPage } from 'types/page';
 
 enum PageView {
   LOGIN,
@@ -28,7 +27,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Password is required')
 });
 
-const Login: NextPage<ServerSideProps> = () => {
+const AuthLogin: SqueakyPage<ServerSideProps> = () => {
   const router = useRouter();
   const toasts = useToasts();
   const [email, setEmail] = React.useState<string>('');
@@ -71,10 +70,6 @@ const Login: NextPage<ServerSideProps> = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Log in</title>
-      </Head>
-
       <Link href='/'>
         <a className='logo'>
           <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
@@ -221,5 +216,11 @@ const Login: NextPage<ServerSideProps> = () => {
   );
 };
 
-export default Login;
+AuthLogin.getMetaData = () => ({
+  title: 'Squeaky | Log in',
+  description: 'Log in to your Squeaky account to access your latest customer experience insights. Don\'t have an account yet? Sign up free today!',
+  index: true,
+});
+
+export default AuthLogin;
 export { getServerSideProps };

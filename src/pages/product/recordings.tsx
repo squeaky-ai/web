@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -14,13 +12,10 @@ import { Cta } from 'components/cta';
 import { UpAndRunning } from 'components/up-and-running';
 import { ProductTools } from 'components/product-tools';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const ProductRecordings: NextPage<ServerSideProps> = () => (
+const ProductRecordings: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Recordings</title> 
-    </Head>
-
     <ProductHeader
       title='See what your customers see'
       subtitle='Recordings'
@@ -167,6 +162,12 @@ const ProductRecordings: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+ProductRecordings.getMetaData = () => ({
+  title: 'Squeaky | Recordings',
+  description: 'Use session recording to capture each visit to your site. Playback recordings to help you improve your site, convert more leads, and provide great support.',
+  index: true,
+});
 
 export default ProductRecordings;
 export { getServerSideProps };

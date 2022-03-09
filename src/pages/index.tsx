@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
@@ -16,14 +14,11 @@ import { ThreeImageGrid, ThreeImageGridItem } from 'components/three-image-grid'
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Platforms } from 'components/platforms';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const Home: NextPage<ServerSideProps> = () => {
+const Home: SqueakyPage<ServerSideProps> = () => {
   return (
     <>
-      <Head>
-        <title>Squeaky | The privacy-first customer experience platform</title>
-      </Head>
-
       <section className='hero'>
         <Container className='centered md'>
           <h1>The privacy-first customer insights platform</h1>
@@ -202,6 +197,12 @@ const Home: NextPage<ServerSideProps> = () => {
     </>
   );
 };
+
+Home.getMetaData = () => ({
+  title: 'Squeaky | The privacy-first customer experience platform',
+  description: 'Understand exactly how customers are using your website or web app, without invading their privacy.',
+  index: true,
+});
 
 export default Home;
 export { getServerSideProps };

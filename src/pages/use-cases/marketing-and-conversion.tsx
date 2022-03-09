@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from 'components/container';
@@ -13,15 +11,12 @@ import { TestimonialQuote } from 'components/testimonial-quote';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-2.webp';
 
-const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
+const UseCasesMarketingAndConversion: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Marketing &amp; Conversion</title> 
-    </Head>
-
     <UseCasesHeader
       subtitle='For Marketing &amp; conversion'
       title='Qualify &amp; convert more leads'
@@ -159,6 +154,12 @@ const UseCasesMarketingAndConversion: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+UseCasesMarketingAndConversion.getMetaData = () => ({
+  title: 'Squeaky | Marketing & Conversion',
+  description: 'Find out how Squeaky can help you engage with your audience, and convert more visitors to customers, with our analytics, heatmaps, and session recording tools.',
+  index: true,
+});
 
 export default UseCasesMarketingAndConversion;
 export { getServerSideProps };

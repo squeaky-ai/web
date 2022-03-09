@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { range } from 'lib/utils';
 import { Formik } from 'formik';
@@ -13,6 +11,7 @@ import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
 import { createSentiment } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
+import type { SqueakyPage } from 'types/page';
 
 const steps = {
   START: 0,
@@ -25,7 +24,7 @@ const SentimentSchema = Yup.object().shape({
   comment: Yup.string(),
 });
 
-const FeedbackSentiment: NextPage = () => {
+const FeedbackSentiment: SqueakyPage = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [step, setStep] = React.useState<number>(0);
@@ -63,10 +62,6 @@ const FeedbackSentiment: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Sentiment</title>
-      </Head>
-
       <div ref={ref} className='page feedback sentiment'>
         <Formik
           initialValues={{ score: null, comment: '' }}
@@ -148,5 +143,11 @@ const FeedbackSentiment: NextPage = () => {
     </>
   );
 };
+
+FeedbackSentiment.getMetaData = () => ({
+  title: 'Squeaky | Feedback',
+  description: 'Understand exactly how customers are using your website or web app, without invading their privacy.',
+  index: false,
+});
 
 export default FeedbackSentiment;

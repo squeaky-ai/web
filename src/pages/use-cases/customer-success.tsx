@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from 'components/container';
@@ -13,15 +11,12 @@ import { Cta } from 'components/cta';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-3.webp';
 
-const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
+const UseCasesCustomerSuccess: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Customer Success</title> 
-    </Head>
-
     <UseCasesHeader
       subtitle='For customer success teams'
       title='Follow in your customers&apos; footsteps'
@@ -154,6 +149,12 @@ const UseCasesCustomerSuccess: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+UseCasesCustomerSuccess.getMetaData = () => ({
+  title: 'Squeaky | Customer Success',
+  description: 'See how Squeaky can help you improve your customer support by collecting customer feedback, viewing session recordings, and capturing useful analytics data.',
+  index: true,
+});
 
 export default UseCasesCustomerSuccess;
 export { getServerSideProps };

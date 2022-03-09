@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from 'components/container';
 import { Currencies } from 'components/currencies';
@@ -12,16 +10,13 @@ import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { Currency } from 'types/common';
+import type { SqueakyPage } from 'types/page';
 
-const Pricing: NextPage<ServerSideProps> = () => {
+const Pricing: SqueakyPage<ServerSideProps> = () => {
   const [currency, setCurrency] = React.useState<Currency>(CURRENCIES[0]);
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Pricing</title> 
-      </Head>
-
       <section className='hero'>
         <Container className='centered sm-md'>
           <h1>Unleash your data</h1>
@@ -160,6 +155,12 @@ const Pricing: NextPage<ServerSideProps> = () => {
     </>
   );
 };
+
+Pricing.getMetaData = () => ({
+  title: 'Squeaky | Pricing',
+  description: 'Find out which Squeaky subscription is right for your business. We have a wide range of pricing plans, including free and enterprise options.',
+  index: true,
+});
 
 export default Pricing;
 export { getServerSideProps };

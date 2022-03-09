@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { PageTitle } from 'components/page-title';
@@ -13,6 +11,7 @@ import { Button } from 'components/button';
 import { contactForm } from 'lib/api/graphql';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
+import type { SqueakyPage } from 'types/page';
 
 const ContactSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -22,16 +21,12 @@ const ContactSchema = Yup.object().shape({
   message: Yup.string().required('Message is required'),
 });
 
-const ContactUs: NextPage<ServerSideProps> = () => {
+const ContactUs: SqueakyPage<ServerSideProps> = () => {
   const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Contact Us</title> 
-      </Head>
-
       <PageTitle
         title='How can we help?'
         subtitle={<>For general enquiries or support please use the form below, to book a demo, <Link href='/book-demo'><a>click here</a></Link>.</>}
@@ -158,6 +153,12 @@ const ContactUs: NextPage<ServerSideProps> = () => {
     </>
   );
 };
+
+ContactUs.getMetaData = () => ({
+  title: 'Squeaky | Contact Us',
+  description: 'Find out which Squeaky subscription is right for your business. We have a wide range of pricing plans, including free and enterprise options.',
+  index: true,
+});
 
 export default ContactUs;
 export { getServerSideProps };

@@ -1,23 +1,18 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 import isoLogo from '../../../public/compliance/iso.webp';
 import pciDssLogo from '../../../public/compliance/pci-dss.webp';
 import socLogo from '../../../public/compliance/soc.webp';
 
-const Security: NextPage<ServerSideProps> = () => (
+const LegalSecurity: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Security</title> 
-    </Head>
-
     <PageTitle
       title='Legal &amp; Compliance'
       subtitle=''
@@ -79,5 +74,11 @@ const Security: NextPage<ServerSideProps> = () => (
   </>
 );
 
-export default Security;
+LegalSecurity.getMetaData = () => ({
+  title: 'Squeaky | Security',
+  description: 'The security of your data, and the data we process on your behalf, are of paramount importance. Read our security page to understand our practices and policies.',
+  index: true,
+});
+
+export default LegalSecurity;
 export { getServerSideProps };

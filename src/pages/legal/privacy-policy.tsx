@@ -1,18 +1,13 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const PrivacyPolicy: NextPage<ServerSideProps> = () => (
+const LegalPrivacyPolicy: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Privacy Policy</title> 
-    </Head>
-
     <PageTitle
       title='Legal &amp; Compliance'
       subtitle=''
@@ -170,5 +165,11 @@ const PrivacyPolicy: NextPage<ServerSideProps> = () => (
   </>
 );
 
-export default PrivacyPolicy;
+LegalPrivacyPolicy.getMetaData = () => ({
+  title: 'Squeaky | Privacy Policy',
+  description: 'Read our privacy policy to see how we collect, safeguard, and disclose information that results from your use of our customer insights software.',
+  index: true,
+});
+
+export default LegalPrivacyPolicy;
 export { getServerSideProps };

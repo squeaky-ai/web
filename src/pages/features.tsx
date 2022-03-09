@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import classnames from 'classnames';
 import { Button } from 'components/button';
 import { Container } from 'components/container';
@@ -9,6 +7,7 @@ import { FeaturesGrid, FeaturesGridItem } from 'components/features-grid';
 import { Cta } from 'components/cta';
 import { debounce } from 'lib/utils';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 type Tab = 'privacy' | 'dashboard' | 'visitors' | 'recordings' | 'analytics' | 'feedback' | 'heatmaps' | 'team' | 'ease-of-use';
 
@@ -53,7 +52,7 @@ const tabs: Tabs = [
   },
 ];
 
-const Features: NextPage<ServerSideProps> = () => {
+const Features: SqueakyPage<ServerSideProps> = () => {
   const [tab, setTab] = React.useState<Tab>('privacy');
 
   const handleTabClick = (tab: Tab) => () => {
@@ -85,10 +84,6 @@ const Features: NextPage<ServerSideProps> = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Features</title> 
-      </Head>
-
       <PageTitle
         title='Features'
         subtitle={<>Picking the right tool is vital, which is why we provide a detailed overview of all our core features.</>}
@@ -495,6 +490,12 @@ const Features: NextPage<ServerSideProps> = () => {
     </>
   );
 };
+
+Features.getMetaData = () => ({
+  title: 'Squeaky | Features',
+  description: 'We\'ve collected all of Squeaky\'s most important features onto one page, making it easy for you to understand exactly how our platform can help your business.',
+  index: true,
+});
 
 export default Features;
 export { getServerSideProps };

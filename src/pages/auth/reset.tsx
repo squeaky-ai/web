@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useRouter } from 'next/router';
@@ -17,6 +15,7 @@ import { passwordTest } from 'data/users/constants';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authPasswordReset, authPasswordUpdate } from 'lib/api/graphql';
 import { useToasts } from 'hooks/use-toasts';
+import type { SqueakyPage } from 'types/page';
 
 const ResetSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email address').required('Email is required')
@@ -33,7 +32,7 @@ enum PageView {
   COMPLETE
 }
 
-const Reset: NextPage<ServerSideProps> = () => {
+const AuthReset: SqueakyPage<ServerSideProps> = () => {
   const router = useRouter();
   const toasts = useToasts();
 
@@ -48,10 +47,6 @@ const Reset: NextPage<ServerSideProps> = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Reset Password</title>
-      </Head>
-
       <Link href='/'>
         <a className='logo'>
           <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
@@ -205,5 +200,11 @@ const Reset: NextPage<ServerSideProps> = () => {
   );
 };
 
-export default Reset;
+AuthReset.getMetaData = () => ({
+  title: 'Squeaky | Reset Password',
+  description: 'Have you forgotten your Squeaky password? Don\'t worry! Simply visit our password reset page and we\'ll help you log back in.',
+  index: true,
+});
+
+export default AuthReset;
 export { getServerSideProps };

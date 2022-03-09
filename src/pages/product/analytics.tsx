@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -14,13 +12,10 @@ import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { ProductTools } from 'components/product-tools';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const ProductAnalytics: NextPage<ServerSideProps> = () => (
+const ProductAnalytics: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Analytics</title> 
-    </Head>
-
     <ProductHeader
       title='Let data drive your decisions'
       subtitle='Analytics'
@@ -156,6 +151,12 @@ const ProductAnalytics: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+ProductAnalytics.getMetaData = () => ({
+  title: 'Squeaky | Analytics',
+  description: 'Use our analytics tool to better understand your audience, know your traffic, generate leads, and grow your revenue. It\'s simple and 100% privacy friendly.',
+  index: true,
+});
 
 export default ProductAnalytics;
 export { getServerSideProps };

@@ -1,18 +1,13 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const LegalTerms: NextPage<ServerSideProps> = () => (
-  <>
-    <Head>
-      <title>Squeaky | Terms Of Service</title> 
-    </Head>
-    
+const LegalTermsOfService: SqueakyPage<ServerSideProps> = () => (
+  <>    
     <PageTitle
       title='Legal &amp; Compliance'
       subtitle=''
@@ -161,5 +156,11 @@ const LegalTerms: NextPage<ServerSideProps> = () => (
   </>
 );
 
-export default LegalTerms;
+LegalTermsOfService.getMetaData = () => ({
+  title: 'Squeaky | Terms Of Service',
+  description: 'Review our terms of service page for a clear and concise picture of the terms we provide to people visiting our site or using our web app.',
+  index: true,
+});
+
+export default LegalTermsOfService;
 export { getServerSideProps };

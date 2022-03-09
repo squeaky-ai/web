@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import Image from 'next/image';
 import { PageTitle } from 'components/page-title';
 import { Illustration } from 'components/illustration';
@@ -9,16 +7,13 @@ import { Cta } from 'components/cta';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
+import type { SqueakyPage } from 'types/page';
 
 import chris from '../../public/stallions/chris.webp';
 import lewis from '../../public/stallions/lewis.webp';
 
-const AboutUs: NextPage<ServerSideProps> = () => (
+const AboutUs: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | About Us</title> 
-    </Head>
-
     <PageTitle
       title='About us'
       subtitle={<>We&apos;re passionate geeks who believe that businesses should be able to learn from their customers without invading their privacy.</>}
@@ -106,6 +101,12 @@ const AboutUs: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+AboutUs.getMetaData = () => ({
+  title: 'Squeaky | About Us',
+  description: 'Learn about Squeaky\'s mission to create a better web, and why we started a privacy-first customer analytics company in the first place.',
+  index: true,
+});
 
 export default AboutUs;
 export { getServerSideProps };

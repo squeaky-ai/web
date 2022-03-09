@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { Icon } from 'components/icon';
 import { PageTitle } from 'components/page-title';
 import { Container } from 'components/container';
@@ -8,13 +6,10 @@ import { Code } from 'components/code';
 import { Main } from 'components/main';
 import { Tabs } from 'components/tabs';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const Developers: NextPage<ServerSideProps> = () => (
+const Developers: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Developers</title>
-    </Head>
-
     <PageTitle
       title='Developers'
       subtitle={<>Last Updated: <b>September 1st 2021</b></>}
@@ -234,6 +229,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
     </Main>
   </>
 );
+
+Developers.getMetaData = () => ({
+  title: 'Squeaky | Developers',
+  description: 'If you\'d like help installing Squeaky, or getting the most out of our privacy features, read our developer documentation and you\'ll hit the ground running.',
+  index: true,
+});
 
 export default Developers;
 export { getServerSideProps };

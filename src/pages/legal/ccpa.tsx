@@ -1,19 +1,14 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
 import { Divider } from 'components/divider';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const Ccpa: NextPage<ServerSideProps> = () => (
+const LegalCcpa: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | CCPA</title> 
-    </Head>
-
     <PageTitle
       title='Legal &amp; Compliance'
       subtitle=''
@@ -77,5 +72,11 @@ const Ccpa: NextPage<ServerSideProps> = () => (
   </>
 );
 
-export default Ccpa;
+LegalCcpa.getMetaData = () => ({
+  title: 'Squeaky | CCPA',
+  description: 'Learn about how Squeaky\'s customer insights software uses privacy-first technology to ensure your business can stay CCPA compliant.',
+  index: true,
+});
+
+export default LegalCcpa;
 export { getServerSideProps };

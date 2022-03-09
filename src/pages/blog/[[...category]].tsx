@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import { Cta } from 'components/cta';
@@ -13,8 +11,9 @@ import { toHumanDate } from 'lib/dates';
 import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
 import { Button } from 'components/button';
 import type { Post } from 'types/blog';
+import type { SqueakyPage } from 'types/page';
 
-const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
+const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
   
   const { tags, categories, posts, selectedCategory, selectedTags } = blog;
@@ -27,10 +26,6 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Blog</title> 
-      </Head>
-
       <PageTitle
         title='The Squeaky Blog'
         subtitle={<>Insights and ideas on how to build great products, make marketing more human, and customer experiences better.</>}
@@ -120,6 +115,18 @@ const Blog: NextPage<QueryPostsProps> = ({ blog }) => {
       </section>
     </>
   );
+};
+
+Blog.getMetaData = (props, router) => {
+  const description = router.asPath === '/blog'
+    ? 'Read the Squeaky blog to discover our insights and ideas on how to build great products, make marketing more human, and build better customer experiences.'
+    : `We\'ve grouped all our blog posts about ${props.blog.categories[0]} in one place, so you can read the content that matters to you.`;
+
+  return {
+    title: 'Squeaky | Blog',
+    description,
+    index: true,
+  };
 };
 
 export default Blog;

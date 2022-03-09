@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { PageTitle } from 'components/page-title';
@@ -14,6 +12,7 @@ import { Select, Option } from 'components/select';
 import { bookDemoForm } from 'lib/api/graphql';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
+import type { SqueakyPage } from 'types/page';
 
 const BookDemoSchema = Yup.object().shape({
   firstName: Yup.string().required('First name is required'),
@@ -25,16 +24,12 @@ const BookDemoSchema = Yup.object().shape({
   message: Yup.string().required('Reason for demo is required'),
 });
 
-const BookDemo: NextPage<ServerSideProps> = () => {
+const BookDemo: SqueakyPage<ServerSideProps> = () => {
   const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Book Demo</title> 
-      </Head>
-
       <PageTitle
         title='Let&apos;s talk'
         subtitle={<>Wondering how Squeaky&apos;s all-in-one customer experience analytics platform can help your business succeed? Book a product demo below and we&apos;ll tell you everything.</>}
@@ -182,6 +177,12 @@ const BookDemo: NextPage<ServerSideProps> = () => {
     </>
   );
 };
+
+BookDemo.getMetaData = () => ({
+  title: 'Squeaky | Book Demo',
+  description: 'Would you like to discover how customer experience analytics can help your business, or be provided with a custom quote? Book a demo and we\'ll be happy to help.',
+  index: true,
+});
 
 export default BookDemo;
 export { getServerSideProps };

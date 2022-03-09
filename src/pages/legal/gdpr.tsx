@@ -1,20 +1,15 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import { Divider } from 'components/divider';
 import { LegalMessage } from 'components/legal-message';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const Gdpr: NextPage<ServerSideProps> = () => (
+const LegalGdpr: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | GDPR</title> 
-    </Head>
-
     <PageTitle
       title='Legal &amp; Compliance'
       subtitle=''
@@ -105,5 +100,11 @@ const Gdpr: NextPage<ServerSideProps> = () => (
   </>
 );
 
-export default Gdpr;
+LegalGdpr.getMetaData = () => ({
+  title: 'Squeaky | GDPR',
+  description: 'Thanks to Squeaky, you can stop worrying about whether you can use customer analytics tools and remain GDPR compliant. Read our GDPR page to learn more.',
+  index: true,
+});
+
+export default LegalGdpr;
 export { getServerSideProps };

@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { gql, useLazyQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
@@ -20,6 +18,7 @@ import { passwordTest } from 'data/users/constants';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authSignup, authReconfirm } from 'lib/api/graphql';
+import type { SqueakyPage } from 'types/page';
 
 enum PageView {
   EMAIL,
@@ -43,7 +42,7 @@ const PasswordSchema = Yup.object().shape({
   password: Yup.string().test(passwordTest),
 });
 
-const Signup: NextPage<ServerSideProps> = () => {
+const AuthSignup: SqueakyPage<ServerSideProps> = () => {
   const toasts = useToasts();
   const router = useRouter();
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
@@ -63,10 +62,6 @@ const Signup: NextPage<ServerSideProps> = () => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Sign up</title>
-      </Head>
-
       <Link href='/'>
         <a className='logo'>
           <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
@@ -249,5 +244,11 @@ const Signup: NextPage<ServerSideProps> = () => {
   ); 
 };
 
-export default Signup;
+AuthSignup.getMetaData = () => ({
+  title: 'Squeaky | Sign up',
+  description: 'Sign up for a free Squeaky account today! You\'ll finally be able to get the most out of your visitor data, while respecting their privacy too.',
+  index: true,
+});
+
+export default AuthSignup;
 export { getServerSideProps };

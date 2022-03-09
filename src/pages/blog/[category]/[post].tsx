@@ -1,20 +1,15 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import { Container } from 'components/container';
 import { GetPostsProps, getPost as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
+import type { SqueakyPage } from 'types/page';
 
-const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
+const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
   const { post } = blog;
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Blog | {post.data.title}</title> 
-      </Head>
-
       <section className='blog-header'>
         <Container className='lg centered'>
           <div className='title'>
@@ -57,6 +52,12 @@ const BlogPost: NextPage<GetPostsProps> = ({ blog }) => {
     </>
   );
 };
+
+BlogPost.getMetaData = (props) => ({
+  title: `Squeaky | Blog | ${props.blog.post.data.title}`,
+  description: props.blog.post.data.metaDescription,
+  index: true,
+});
 
 export default BlogPost;
 export { getServerSideProps };

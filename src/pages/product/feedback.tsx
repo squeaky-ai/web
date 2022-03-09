@@ -1,6 +1,4 @@
 import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -13,13 +11,10 @@ import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { ProductTools } from 'components/product-tools';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
-const ProductFeedback: NextPage<ServerSideProps> = () => (
+const ProductFeedback: SqueakyPage<ServerSideProps> = () => (
   <>
-    <Head>
-      <title>Squeaky | Feedback</title> 
-    </Head>
-
     <ProductHeader
       title='Listen to your customers'
       subtitle='Feedback'
@@ -143,6 +138,12 @@ const ProductFeedback: NextPage<ServerSideProps> = () => (
     </section>
   </>
 );
+
+ProductFeedback.getMetaData = () => ({
+  title: 'Squeaky | Feedback',
+  description: 'Use feedback widgets to find out what your visitors think of your site. You can easily customise when and where to show NPS or Sentiment surveys to visitors.',
+  index: true,
+});
 
 export default ProductFeedback;
 export { getServerSideProps };

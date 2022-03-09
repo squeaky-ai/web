@@ -1,7 +1,5 @@
 import React from 'react';
-import type { NextPage } from 'next';
 import Link from 'next/link';
-import Head from 'next/head';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import { useRouter } from 'next/router';
@@ -20,13 +18,14 @@ import { userInvitation, teamInviteAccept } from 'lib/api/graphql';
 import { signout } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import type { SqueakyPage } from 'types/page';
 
 const AcceptSchema = Yup.object().shape({
   password: Yup.string().test(passwordTest),
   terms: Yup.boolean().oneOf([true], 'You must agree to the terms')
 });
 
-const Accept: NextPage<ServerSideProps> = ({ user }) => {
+const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
   const toast = useToasts();
   const router = useRouter();
   const [email, setEmail] = React.useState<string>(null);
@@ -79,10 +78,6 @@ const Accept: NextPage<ServerSideProps> = ({ user }) => {
 
   return (
     <>
-      <Head>
-        <title>Squeaky | Accept Invitation</title>
-      </Head>
-
       <Link href='/'>
         <a className='logo'>
           <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
@@ -177,5 +172,11 @@ const Accept: NextPage<ServerSideProps> = ({ user }) => {
   );
 };
 
-export default Accept;
+AuthAccept.getMetaData = () => ({
+  title: 'Squeaky | Accept Invitation',
+  description: 'Understand exactly how customers are using your website or web app, without invading their privacy.',
+  index: false,
+});
+
+export default AuthAccept;
 export { getServerSideProps };
