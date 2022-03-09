@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
-import markdown from 'markdown-it';
 import { uniq } from 'lib/utils';
 import { ServerSideProps, getUserFromContext } from 'lib/auth';
 import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
@@ -45,7 +44,7 @@ async function listPosts(superuser: boolean): Promise<Post[]> {
 
       return {
         data,
-        html: markdown().render(content),
+        markdown: content,
         editLink: superuser ? `https://github.com/squeaky-ai/web/blob/main/content/posts/${file}` : null,
       } as Post;
     })

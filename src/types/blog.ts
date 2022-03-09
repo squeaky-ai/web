@@ -13,7 +13,7 @@ export type PostData = {
 
 export type Post = {
   data: PostData;
-  html: string;
+  markdown: string;
   editLink?: string;
 }
 
