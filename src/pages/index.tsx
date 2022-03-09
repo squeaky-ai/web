@@ -200,7 +200,7 @@ const Home: SqueakyPage<ServerSideProps> = () => {
 
 Home.getMetaData = () => ({
   title: 'Squeaky | The privacy-first customer experience platform',
-  description: 'Understand exactly how customers are using your website or web app, without invading their privacy.',
+  description: 'Squeaky\'s customer insights platform helps you understand exactly how customers are using your website or web app, without invading their privacy.',
   index: true,
 });
 
