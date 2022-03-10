@@ -103,10 +103,11 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
 };
 
 BlogPost.getMetaData = (props) => ({
-  title: `Squeaky | Blog | ${props.blog.post.data.title}`,
+  title: `The Squeaky Blog | ${props.blog.post.data.title}`,
   description: props.blog.post.data.metaDescription,
   index: true,
   author: props.blog.post.data.author.name,
+  image: props.blog.post.data.metaImage,
 });
 
 export default BlogPost;

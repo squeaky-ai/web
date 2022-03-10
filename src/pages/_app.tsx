@@ -20,6 +20,7 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
   const meta = Component.getMetaData(pageProps, router);
 
   const url = `${publicRuntimeConfig.webHost}${router.asPath}`;
+  const image = meta.image || `${publicRuntimeConfig.webHost}/social-bg.png`;
 
   return (
     <>
@@ -41,7 +42,7 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <meta property='og:title' content={meta.title} />
         <meta property='og:description' content={meta.description} />
         <meta property='og:url' content={url} />
-        <meta property='og:image' content={`${publicRuntimeConfig.webHost}/social-bg.png`} />
+        <meta property='og:image' content={image} />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
         <meta property='og:site_name' content='Squeaky.ai' />
@@ -52,7 +53,7 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <meta property='twitter:description' content={meta.description} />
         <meta property='twitter:url' content={url} />
         <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:image' content={`${publicRuntimeConfig.webHost}/social-bg.png`} />
+        <meta property='twitter:image' content={image} />
 
         {/* Icons */}
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />

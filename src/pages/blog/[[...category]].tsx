@@ -162,13 +162,17 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
 };
 
 Blog.getMetaData = (props, router) => {
-  const description = router.asPath === '/blog'
-    ? 'Read the Squeaky blog to discover our insights and ideas on how to build great products, make marketing more human, and build better customer experiences.'
-    : `We\'ve grouped all our blog posts about ${props.blog.categories[0]} in one place, so you can read the content that matters to you.`;
+  if (router.asPath === '/blog') {
+    return {
+      title: 'The Squeaky Blog',
+      description: 'Read the Squeaky blog to discover our insights and ideas on how to build great products, make marketing more human, and build better customer experiences.',
+      index: true,
+    }
+  }
 
   return {
-    title: 'Squeaky | Blog',
-    description,
+    title: `The Squeaky Blog | ${props.blog.categories[0]} Articles`,
+    description: `We\'ve grouped all our blog posts about ${props.blog.categories[0]} in one place, so you can read the content that matters to you.`,
     index: true,
   };
 };
