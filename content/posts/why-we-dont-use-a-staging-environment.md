@@ -1,18 +1,19 @@
 ---
 title: Why we don’t use a staging environment
 tags:
-  - Engineering
+  - Tips
+  - Ideas
   - Culture
 author:
   name: Lewis Monteith
   image: https://squeaky.ai/stallions/lewis.webp
-category: Product
+category: Development
 summary: It’s common in the tech industry to create several pre-live environments, staging, and even team, or feature-level environments.
 date: '2022-03-04T10:03:00Z'
 draft: true
 metaImage: https://squeaky.ai/blog/cat-in-space.webp
 metaDescription: Do you need a staging environment? We've written this short blog post to share how an alternative approach is saving us time, and helping us ship better code.
-slug: /product/why-we-dont-use-a-staging-environment
+slug: /development/why-we-dont-use-a-staging-environment
 ---
 
 ## Introduction
