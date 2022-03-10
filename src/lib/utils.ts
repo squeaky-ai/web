@@ -29,3 +29,29 @@ export function debounce(callback: Function, wait: number) {
     }, wait);
   };
 }
+
+export function throttle(callback: Function, wait: number) {
+  let lastTime: number;
+  let inThrottle: boolean;
+  let lastCallback: NodeJS.Timeout;
+
+  return function(this: any) {
+    const context = this;
+    const args = arguments;
+
+    if (!inThrottle) {
+      callback.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastCallback);
+
+      lastCallback = setTimeout(() => {
+        if (Date.now() - lastTime >= wait) {
+          callback.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, Math.max(wait - (Date.now() - lastTime), 0));
+    }
+  };
+};
