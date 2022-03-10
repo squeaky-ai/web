@@ -168,6 +168,10 @@
       @include breakpoint-md {
         margin: 0 0 2rem 0;
         width: 100%;
+
+        h4 {
+          display: none;
+        }
       }
 
       .sidebar {
@@ -176,7 +180,13 @@
         padding: 3rem;
 
         @include breakpoint-md {
-          padding: 2rem;
+          background: none;
+          display: flex;
+          padding: 0;
+        }
+
+        @include breakpoint-sm {
+          flex-direction: column;
         }
 
         h4 {
@@ -199,6 +209,32 @@
               text-decoration: none;
             }
           }
+
+          .large {
+            display: block;
+          }
+
+          .small {
+            display: none;
+          }
+
+          @include breakpoint-md {
+            flex: 1;
+            margin: 0 2rem 0 0;
+
+            .large {
+              display: none;
+            }
+
+            .small {
+              display: block;
+            }
+          }
+
+          @include breakpoint-sm {
+            flex-direction: column;
+            margin: 0 0;
+          }
         }
 
         .tags {
@@ -219,6 +255,26 @@
             &.selected {
               border-color: var(--mauve-700);
               color: var(--mauve-700);
+            }
+          }
+
+          .large {
+            display: block;
+          }
+
+          .small {
+            display: none;
+          }
+
+          @include breakpoint-md {
+            flex: 1;
+
+            .large {
+              display: none;
+            }
+
+            .small {
+              display: block;
             }
           }
         }

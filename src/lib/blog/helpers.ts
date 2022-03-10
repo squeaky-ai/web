@@ -12,7 +12,7 @@ export function buildCategoryUrl(router: NextRouter, category: string | null): s
   return `${path}/${category.toLowerCase()}${queryString}`;
 };
 
-export function buildTagsUrl(router: NextRouter, tag: string): string {
+export function buildTagUrl(router: NextRouter, tag: string): string {
   const [path, query] = router.asPath.split('?');
 
   const params = new URLSearchParams(query);
@@ -31,6 +31,20 @@ export function buildTagsUrl(router: NextRouter, tag: string): string {
 
   return `${path}?${params.toString()}`;
 };
+
+export function buildTagsUrl(router: NextRouter, tags: string[]): string {
+  const [path, query] = router.asPath.split('?');
+
+  const params = new URLSearchParams(query);
+
+  params.delete('tags');
+
+  for (const tag of tags) {
+    params.append('tags', tag);
+  }
+
+  return `${path}?${params.toString()}`;
+}
 
 export function getCategoryFromPathParam(param: string | string[]): string | null {
   if (!param) return null;

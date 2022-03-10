@@ -1,0 +1,43 @@
+.multi-select {
+  position: relative;
+
+  .input {
+    color: var(--gray-500);
+    font-style: italic;
+  }
+
+  & > .icon {
+    display: flex;
+    height: 2rem;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    pointer-events: none;
+    position: absolute;
+    right: .25rem;
+    top: .15rem;
+    width: 2rem;
+  }
+
+  .multi-select-options {
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-sm);
+    left: 0;
+    padding: .5rem 0;
+    position: absolute;
+    top: 2.75rem;
+    width: 100%;
+
+    .option {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+      padding: .5rem 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

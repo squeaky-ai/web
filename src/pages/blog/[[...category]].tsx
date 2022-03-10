@@ -8,8 +8,11 @@ import { Card } from 'components/card';
 import { Container } from 'components/container';
 import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
-import { buildCategoryUrl, buildTagsUrl } from 'lib/blog/helpers';
+import { buildCategoryUrl, buildTagUrl, buildTagsUrl } from 'lib/blog/helpers';
 import { Button } from 'components/button';
+import { Label } from 'components/label';
+import { Select, Option } from 'components/select';
+import { MultiSelect } from 'components/multi-select';
 import type { Post } from 'types/blog';
 import type { SqueakyPage } from 'types/page';
 
@@ -22,6 +25,19 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
     event.preventDefault();
 
     window.open(post.editLink, '_blank');
+  };
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const category = event.target.value || null;
+    const url = buildCategoryUrl(router, category);
+
+    router.push(url);
+  };
+
+  const handleTagChange = (tags: string[]) => {
+    const url = buildTagsUrl(router, tags);
+
+    router.push(url);
   };
 
   return (
@@ -80,31 +96,59 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
             <h4>Categories</h4>
 
             <div className='categories'>
-              <Link href={buildCategoryUrl(router, null)}>
-                <a className={classnames('category', { selected: selectedCategory === null })}>
-                  All
-                </a>
-              </Link>
-
-              {categories.map(category => (
-                <Link href={buildCategoryUrl(router, category)} key={category}>
-                  <a className={classnames('category', { selected: selectedCategory === category.toLowerCase() })}>
-                    {category}
+              <div className='large'>
+                <Link href={buildCategoryUrl(router, null)}>
+                  <a className={classnames('category', { selected: selectedCategory === null })}>
+                    All
                   </a>
                 </Link>
-              ))}
+
+                {categories.map(category => (
+                  <Link href={buildCategoryUrl(router, category)} key={category}>
+                    <a className={classnames('category', { selected: selectedCategory === category.toLowerCase() })}>
+                      {category}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+
+              <div className='small'>
+                <Label htmlFor='category'>Category</Label>
+                <Select id='category' onChange={handleCategoryChange} defaultValue={selectedCategory}>
+                  <Option value=''>
+                    All
+                  </Option>
+                  {categories.map(category => (
+                    <Option key={category} value={category.toLowerCase()}>
+                      {category}
+                    </Option>
+                  ))}
+                </Select>
+              </div>
             </div>
             
             <h4>Tags</h4>
             
             <div className='tags'>
-              {tags.map(tag => (
-                <Link href={buildTagsUrl(router, tag)} key={tag}>
-                  <a className={classnames('tag', { selected: selectedTags.includes(tag) })}>
-                    {tag}
-                  </a>
-                </Link>
-              ))}
+              <div className='large'>
+                {tags.map(tag => (
+                  <Link href={buildTagUrl(router, tag)} key={tag}>
+                    <a className={classnames('tag', { selected: selectedTags.includes(tag) })}>
+                      {tag}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+
+              <div className='small'>
+                <Label htmlFor='tags'>Tags</Label>
+                
+                <MultiSelect
+                  options={tags}
+                  defaultSelected={selectedTags}
+                  onUpdate={handleTagChange}
+                />
+              </div>
             </div>
           </div>
         </aside>
