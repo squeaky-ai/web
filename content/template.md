@@ -7,7 +7,6 @@ author:
   name: Lewis Monteith
   image: https://squeaky.ai/blog/<path_to_image>.webp
 category: Category
-summary: Hello world
 date: '2022-01-19T07:55:00Z'
 draft: true
 metaImage: https://squeaky.ai/blog/<path_to_image>.webp

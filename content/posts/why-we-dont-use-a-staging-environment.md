@@ -8,7 +8,6 @@ author:
   name: Lewis Monteith
   image: https://squeaky.ai/stallions/lewis.webp
 category: Development
-summary: It’s common in the tech industry to create several pre-live environments, staging, and even team, or feature-level environments.
 date: '2022-03-04T10:03:00Z'
 draft: false
 metaImage: https://squeaky.ai/blog/cat-in-space.webp

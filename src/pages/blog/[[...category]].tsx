@@ -77,7 +77,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                         </span>
                       </p>
                       <p className='description'>
-                        {post.data.summary}
+                        {post.data.metaDescription}
                       </p>
                     </div>
                   </div>
