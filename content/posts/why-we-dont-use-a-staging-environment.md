@@ -10,8 +10,8 @@ category: Product
 summary: It’s common in the tech industry to create several pre-live environments, staging, and even team, or feature-level environments.
 date: '2022-03-04T10:03:00Z'
 draft: true
-metaImage: https://squeaky.ai/blog/cat-in-space.jpg
-metaDescription: TODO
+metaImage: https://squeaky.ai/blog/cat-in-space.webp
+metaDescription: Do you need a staging environment? We've written this short blog post to share how an alternative approach is saving us time, and helping us ship better code.
 slug: /product/why-we-dont-use-a-staging-environment
 ---
 
@@ -39,7 +39,7 @@ Typically, multiple people use staging to validate their changes before release.
 
 This leads people to introduce a branching strategy, so that changes do not need to be rolled back, and hotfixes to production can bypass the changes waiting on staging. Branches are then constantly out of sync with each other, and problems often surface when you merge, rebase and backfill hotfixes.
 
-![Illustration showing complex branching strategies](https://squeaky.ai/blog/branching-strategy.png)
+![Illustration showing complex branching strategies](https://squeaky.ai/blog/branching-strategy.webp)
 *Branching strategies quickly become complex and time consuming*
 
 ### Releases are too large

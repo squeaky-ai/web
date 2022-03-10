@@ -19,6 +19,8 @@ type SqueakyComponent = AppProps & { Component: SqueakyApp<any> }
 const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
   const meta = Component.getMetaData(pageProps, router);
 
+  const url = `${publicRuntimeConfig.webHost}${router.asPath}`;
+
   return (
     <>
       <Head>
@@ -30,15 +32,15 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <meta name='keywords' content='Web, Analytics, Recordings, Visitors' />
         <meta name='theme-color' content='#FFF5EB' />
 
-        {meta.index && <link rel='canonical' href={router.asPath} />}
-
-        <meta name='ahrefs-site-verification' content='4ab46532f5ca328773b891e0df42f34475fb429916b57684a416f5a3e57e652e' />
+        {/* Conditional */}
+        {meta.index && <link rel='canonical' href={url} />}
+        {meta.author && <meta name='author' content={meta.author} />}
 
         {/* Open Graph / Facebook */}
         <meta property='og:type' content='website' />
         <meta property='og:title' content={meta.title} />
         <meta property='og:description' content={meta.description} />
-        <meta property='og:url' content={router.asPath} />
+        <meta property='og:url' content={url} />
         <meta property='og:image' content={`${publicRuntimeConfig.webHost}/social-bg.png`} />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
@@ -48,7 +50,7 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <meta property='twitter:site' content='@squeakyai' />
         <meta property='twitter:title' content={meta.title} />
         <meta property='twitter:description' content={meta.description} />
-        <meta property='twitter:url' content={router.asPath} />
+        <meta property='twitter:url' content={url} />
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:image' content={`${publicRuntimeConfig.webHost}/social-bg.png`} />
 
@@ -58,6 +60,9 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
         <link rel='icon' type='image/x-icon' href='/favicon.ico' />
         <link rel='manifest' href='/site.webmanifest' />
+
+        {/* Third parties */}
+        <meta name='ahrefs-site-verification' content='4ab46532f5ca328773b891e0df42f34475fb429916b57684a416f5a3e57e652e' />
       </Head>
 
       <ApolloProvider client={client}>

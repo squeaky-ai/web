@@ -106,6 +106,7 @@ BlogPost.getMetaData = (props) => ({
   title: `Squeaky | Blog | ${props.blog.post.data.title}`,
   description: props.blog.post.data.metaDescription,
   index: true,
+  author: props.blog.post.data.author.name,
 });
 
 export default BlogPost;

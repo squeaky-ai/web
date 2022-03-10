@@ -6,6 +6,7 @@ export type SqueakyPageMeta = {
   title: string;
   description: string;
   index: boolean;
+  author?: string;
 }
 
 type GetSqueakyPageMeta<T> = (props: T, router: Router) => SqueakyPageMeta; 

@@ -68,6 +68,9 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <Link href='/about-us'>
               <a>About us</a>
             </Link>
+            <Link href='/blog'>
+              <a>Blog</a>
+            </Link>
             <Link href={publicRuntimeConfig.helpCenterUrl}>
               <a target='_blank' rel='noreferrer'>Help centre</a>
             </Link>

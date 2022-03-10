@@ -84,6 +84,9 @@ export const Footer: FC = () => (
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Resources'>
+          <Link href='/blog'>
+            <a>Blog</a>
+          </Link>
           <Link href={publicRuntimeConfig.helpCenterUrl}>
             <a target='_blank' rel='noreferrer'>Help centre</a>
           </Link>

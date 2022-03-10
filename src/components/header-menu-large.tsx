@@ -47,6 +47,11 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
             About Us
           </a>
         </Link>
+        <Link href='/blog'>
+          <a className='button'>
+            Blog
+          </a>
+        </Link>
         <Link href={publicRuntimeConfig.helpCenterUrl}>
           <a target='_blank' rel='noreferrer' className='button'>
             Help centre
