@@ -31,7 +31,7 @@ In our experience, there are a number of problems with having pre-live environme
 
 More often than not, each environment uses different hardware, configurations, and software versions. Most companies are not prepared to pay for a staging environment identical to production, and it adds a lot of extra time and complexity to ensure that all services are synchronised with production.
 
-This creates various problems, such as different load capabilities, different database behaviours, and unpredictable results due to poor test data. I’ve encountered these sorts of issue regularly during my career. For example, finding a bug in production that was ultimately due to a consistency issues with our database, when a record is written to one database node, and you attempt to read it from another node before it has had time to propagate. The user signed up, but upon redirection was presented with a 401 Unauthorised page as their record could not be found. We only ran a single node in staging due to the cost, and the bug was not caught until it was in production.
+This creates various problems, such as different load capabilities, different database behaviours, and unpredictable results due to poor test data. I’ve encountered these sorts of issue regularly during my career. For example, I've encountered bugs in production that were ultimately due to inconsistencies with our databases, where a record is written to one database node but we were attempting to read it from another node before it had time to propagate. The user signed up, but upon redirection was presented with a 401 Unauthorised page as their record could not be found. We only ran a single node in staging due to the cost, and the bug was not caught until it was in production.
 
 ### There’s always a queue
 
@@ -44,7 +44,7 @@ This causes people to introduce a branching strategy, so that changes do not nee
 
 ### Releases are too large
 
-As queues slow down development and lead to multiple changes being bundled into larger releases, this leads to Big Bang releases where it is more likely you’ll introduce bugs, hard to isolate the culprit, and more difficult to roll back effectively.
+As queues slow down development and lead to multiple changes being bundled into larger releases, this leads to Big Bang releases where it’s more likely you’ll introduce bugs, harder to isolate the issues, and more difficult to roll back effectively..
 
 ### Poor ownership of changes
 
