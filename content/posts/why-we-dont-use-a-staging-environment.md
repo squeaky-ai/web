@@ -6,11 +6,11 @@ tags:
   - Culture
 author:
   name: Lewis Monteith
-  image: https://squeaky.ai/stallions/lewis.webp
+  image: https://cdn.squeaky.ai/blog/lewis.jpg
 category: Development
 date: '2022-03-04T10:03:00Z'
 draft: false
-metaImage: https://squeaky.ai/blog/cat-in-space.jpg
+metaImage: https://cdn.squeaky.ai/blog/cat-in-space.jpg
 metaDescription: Do you need a staging environment? We've written this short blog post to share how an alternative approach is saving us time, and helping us ship better code.
 slug: /development/why-we-dont-use-a-staging-environment
 ---
@@ -39,7 +39,7 @@ Typically, multiple people use staging to validate their changes before release.
 
 This causes people to introduce a branching strategy, so that changes do not need to be rolled back, and hotfixes to production can bypass the changes waiting on staging. Branches are then constantly out of sync with each other, and problems often surface when you merge, rebase, and backfill hotfixes.
 
-![Illustration showing complex branching strategies](https://squeaky.ai/blog/branching-strategy.png)
+![Illustration showing complex branching strategies](https://cdn.squeaky.ai/blog/branching-strategy.png)
 *Branching strategies quickly become complex and time-consuming*
 
 ### Releases are too large
