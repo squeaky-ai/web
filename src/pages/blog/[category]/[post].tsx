@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown'
 import { Container } from 'components/container';
 import { GetPostsProps, getPost as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
@@ -15,15 +14,27 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
     .replace(/ /g, '-')
     .replace(/[^a-z-]/g, '');
 
-  const headings = post
-    .markdown
-    .split('\n')
-    .filter(line => line.startsWith('## '))
+  // The html needs to be escaped
+  const content = post.body
+    .replace(/\\n/g, '')
+    .replace(/\\"/g, '"');
+
+  // Extract the content of all of the h2 tags
+  // to build a list of links to them. This is used
+  // for the "what we'll cover" bit at the top
+  const headings = content
+    .match(/<h2>([^<]+)<\/h2>/g)
     .map(line => {
-      const text = line.replace('## ', '').trim();
+      const text = line.replace('<h2>', '').replace('</h2>', '').trim();
 
       return { text, slug: toTextSlug(text) };
     });
+
+  // Add ids to all of the h2 tags so the "what we'll cover"
+  // stuff can link properly
+  const html = content.replace(/<h2>([^<]+)<\/h2>/g, (_tag, string) => {
+    return `<h2 id="${toTextSlug(string)}">${string}</h2>`;
+  });
 
   return (
     <>
@@ -31,26 +42,26 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
         <Container className='lg centered'>
           <div className='title'>
             <div className='breadcrumbs'>
-              <Link href='/blog'><a>Blog</ a></Link> / <Link href={`/blog/${post.data.category.toLowerCase()}`}><a>{post.data.category}</a></Link> / Article
+              <Link href='/blog'><a>Blog</ a></Link> / <Link href={`/blog/${post.category.toLowerCase()}`}><a>{post.category}</a></Link> / Article
             </div>
 
-            <h1>{post.data.title}</h1>
+            <h1>{post.title}</h1>
 
             <p className='meta'>
               <span>
                 <span className='blog-author'>
-                  <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                  <img src={post.author.image} height={24} width={24} alt='Image of the blog author' />
                 </span>
-                {post.data.author.name}
+                {post.author.name}
               </span>
               <span className='divider' />
               <span>
-                Last updated: <b>{toHumanDate(post.data.date)}</b>
+                Last updated: <b>{toHumanDate(post.updatedAt)}</b>
               </span>
             </p>
 
             <div className='tags'>
-              {post.data.tags.map(tag => (
+              {post.tags.map(tag => (
                 <span className='tag' key={tag}>
                   {tag}
                 </span>
@@ -58,7 +69,7 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
             </div>
           </div>
           <div className='image'>
-            <img src={post.data.metaImage} alt='Blog cover image' />
+            <img src={post.metaImage} alt='Blog cover image' />
           </div>
         </Container>
       </section>
@@ -82,32 +93,18 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
           </div>
         )}
 
-        <article>
-          <ReactMarkdown
-            // eslint-disable-next-line react/no-children-prop
-            children={post.markdown}
-            components={{
-              h2: ({ children, ...props }) => (
-                <h2 {...props}>
-                  <a id={toTextSlug(children.toString())}>
-                    {children}
-                  </a>
-                </h2>
-              )
-            }}
-          />
-        </article>
+        <article dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </>
   );
 };
 
 BlogPost.getMetaData = (props) => ({
-  title: `The Squeaky Blog | ${props.blog.post.data.title}`,
-  description: props.blog.post.data.metaDescription,
+  title: `The Squeaky Blog | ${props.blog.post.title}`,
+  description: props.blog.post.metaDescription,
   index: true,
-  author: props.blog.post.data.author.name,
-  image: props.blog.post.data.metaImage,
+  author: props.blog.post.author.name,
+  image: props.blog.post.metaImage,
 });
 
 export default BlogPost;

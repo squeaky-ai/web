@@ -214,10 +214,16 @@
       margin: 5rem 0;
     }
 
+    figure {
+      margin: 0;
+      padding: 0;
+    }
+
     img {
       border-radius: var(--border-radius-lg);
       display: block;
-      width: 100%;
+      height: auto !important;
+      width: 100% !important;
 
       + em {
         color: var(--gray-blue-700);
