@@ -210,6 +210,10 @@
       line-height: 32px;
     }
 
+    a {
+      color: var(--mauve-700);
+    }
+
     hr {
       margin: 5rem 0;
     }
@@ -220,7 +224,6 @@
     }
 
     img {
-      border-radius: var(--border-radius-lg);
       display: block;
       height: auto !important;
       width: 100% !important;
