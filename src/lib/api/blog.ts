@@ -35,7 +35,7 @@ export const getBlogPosts = async <T>(cookie: string, category: string | null, t
     const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
-        'Cookie': cookie || ''
+        'Cookie': cookie || '',
       }
     });
 
@@ -72,7 +72,7 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
     const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
-        'Cookie': cookie
+        'Cookie': cookie || '',
       }
     });
 
