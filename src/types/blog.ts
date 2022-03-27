@@ -1,28 +1,7 @@
-export type PostData = {
-  title: string;
-  tags: string[];
-  author: Author;
-  category: string;
-  date: string;
-  draft: boolean;
-  metaImage: string;
-  metaDescription: string;
-  slug: string;
-}
-
-export type Post = {
-  data: PostData;
-  markdown: string;
-  editLink?: string;
-}
-
-export type Author = {
-  name: string;
-  image: string;
-}
+import type { BlogPost } from 'types/graphql';
 
 export type Posts = {
-  posts: Post[];
+  posts: BlogPost[];
   categories: string[];
   tags: string[];
   selectedTags: string[];

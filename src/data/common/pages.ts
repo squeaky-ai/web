@@ -170,8 +170,6 @@ export const getPageData = (
   args: string[] = [],
 ): Pick<PageMeta, 'title' | 'description' | 'index'> => {
   const match = pages(args).find(p => p.href === path || p.href === page);
-
-  console.log(match);
   
   return match || {
     title: 'Squeaky.ai | The privacy-first customer insights platform',

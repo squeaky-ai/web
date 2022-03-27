@@ -63,7 +63,6 @@ const Features: SqueakyPage<ServerSideProps> = () => {
   };
 
   const handleScroll = debounce(() => {
-    console.log('!!');
     const scroll = window.scrollY;
 
     const match = [...tabs].reverse().find(t => {

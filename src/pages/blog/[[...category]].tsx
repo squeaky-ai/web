@@ -13,7 +13,7 @@ import { Button } from 'components/button';
 import { Label } from 'components/label';
 import { Select, Option } from 'components/select';
 import { MultiSelect } from 'components/multi-select';
-import type { Post } from 'types/blog';
+import type { BlogPost } from 'types/graphql';
 import type { SqueakyPage } from 'types/page';
 
 const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
@@ -21,10 +21,10 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   
   const { tags, categories, posts, selectedCategory, selectedTags } = blog;
 
-  const onDraftClick = (post: Post) => (event: React.MouseEvent<HTMLButtonElement>) => {
+  const onDraftClick = (post: BlogPost) => (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    window.open(post.editLink, '_blank');
+    window.open(`https://squeaky.ai/app/__admin/blog/${post.slug}`, '_blank');
   };
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -50,34 +50,34 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
       <Container className='lg centered posts'>
         <main>
           {posts.map(post => (
-            <Card key={post.data.slug}>
-              <Link href={`/blog${post.data.slug}`}>
+            <Card key={post.slug}>
+              <Link href={`/blog${post.slug}`}>
                 <a>
                   <div className='image'>
-                    <img src={post.data.metaImage} alt='Blog cover image' />
+                    <img src={post.metaImage} alt='Blog cover image' />
                   </div>
                   <div className='content'>
                     <div className='overflow'>
                       <h4>
-                        {post.data.title}
+                        {post.title}
                       </h4>
                       <p className='meta'>
                         <span>
                           <span className='blog-author'>
-                            <img src={post.data.author.image} height={24} width={24} alt='Image of the blog author' />
+                            <img src={post.author.image} height={24} width={24} alt='Image of the blog author' />
                           </span>
-                          {post.data.author.name}
+                          {post.author.name}
                         </span>
                         <span className='divider' />
                         <span>
-                          {post.data.draft
+                          {post.draft
                             ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                            : toHumanDate(post.data.date)
+                            : toHumanDate(post.createdAt)
                           }
                         </span>
                       </p>
                       <p className='description'>
-                        {post.data.metaDescription}
+                        {post.metaDescription}
                       </p>
                     </div>
                   </div>
