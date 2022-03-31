@@ -21,3 +21,12 @@ export const CURRENCIES: Currency[] = [
     symbol: '$',
   },
 ];
+
+export enum Plans {
+  FREE = 1,
+  LIGHT = 2,
+  PLUS = 3,
+  BUSINESS = 4,
+  PREMIUM = 5,
+  ENTERPRISE = 6,
+};

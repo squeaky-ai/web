@@ -8,9 +8,10 @@ import { Card } from 'components/card';
 import { Container } from 'components/container';
 import { usePlans } from 'hooks/use-plans';
 import { Spinner } from 'components/spinner';
+import { Message } from 'components/message';
 import { monthlyPrice, recordingsPerMonthLimit, formatShortRecordingCount } from 'lib/plans';
+import { Plans } from 'data/common/constants';
 import type { Currency } from 'types/common';
-import { Message } from './message';
 
 interface Props {
   currency: Currency;
@@ -29,11 +30,11 @@ export const Calculator: FC<Props> = ({ currency }) => {
   };
 
   const getCalculatorStyle = (): React.CSSProperties => {
-    if (plan < 3) {
+    if (plan < Plans.PLUS) {
       return { left: 0 };
     }
 
-    if (plan >= 4) {
+    if (plan >= Plans.PREMIUM) {
       return { right: 0 };
     }
 
@@ -67,8 +68,8 @@ export const Calculator: FC<Props> = ({ currency }) => {
               </p>
               <div className='slider-label'>
                 <p style={getCalculatorStyle()}>
-                  <Icon name='group-line' />
-                  <b>{recordingsPerMonthLimit(plans, plan)}</b> visits per month
+                  <Icon name={plan === Plans.ENTERPRISE ? 'user-voice-line' : 'group-line'} />
+                  <b>{recordingsPerMonthLimit(plans, plan)}</b> {plan === Plans.ENTERPRISE ? '' : 'visits per month'}
                 </p>
               </div>
               <div className='slider'>
@@ -121,7 +122,7 @@ export const Calculator: FC<Props> = ({ currency }) => {
             )}
             {!isHighestPlan && (
               <div className='plan'>
-               <h4>{plans[plan]?.name}</h4>
+               <h4>{plans[plan - 1]?.name} Plan</h4>
                <p className='limit'>{plan === plans.length ? 'more than' : 'up to'} {recordingsPerMonthLimit(plans, plan)} visits per month</p>
                <h1>{currency.symbol}{monthlyPrice(plans, plan, currency.name)}</h1>
                <p className='duration'>per month</p>

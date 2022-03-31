@@ -4,7 +4,7 @@ export const recordingsPerMonthLimit = (plans: Plan[], plan: number) => {
   const match = plans[plan - 1];
 
   if (plans.length === plan) {
-    return '250,000+';
+    return 'Let\'s talk';
   }
 
   return match.maxMonthlyRecordings.toLocaleString();
