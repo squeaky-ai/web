@@ -109,7 +109,7 @@ const UseCasesCustomerSuccess: SqueakyPage<ServerSideProps> = () => (
 
         <SideBySide 
           title='Feedback with context'
-          body='Tired of receiving customer feedback with no idea what have just experienced? Squeaky provides session replay for each piece of feedback you capture, so you can see exactly what happened.'
+          body='Tired of receiving customer feedback with no idea what they&apos;ve just experienced? Squeaky provides session replay for each piece of feedback you capture, so you can see exactly what happened.'
           linkText='Discover Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-2' />}
