@@ -2,18 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 import { Container } from 'components/container';
 import { Currencies } from 'components/currencies';
-import { CURRENCIES } from 'data/common/constants';
 import { Calculator } from 'components/calculator';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
+import { getUsefulCurrency } from 'lib/currency';
 import type { Currency } from 'types/common';
 import type { SqueakyPage } from 'types/page';
 
 const Pricing: SqueakyPage<ServerSideProps> = () => {
-  const [currency, setCurrency] = React.useState<Currency>(CURRENCIES[0]);
+  const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
 
   return (
     <>
