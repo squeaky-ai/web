@@ -167,17 +167,17 @@ const Home: SqueakyPage<ServerSideProps> = () => {
             <ThreeTextGridItem
               title='Private by design'
               body='Since day one, privacy-first design has been a core element of our product. We don&apos;t use cookie-based tracking, store IP addresses, or capture form data.'
-              link='#'
+              link='/legal/privacy-policy'
             />
             <ThreeTextGridItem
               title='GDPR &amp; CCPA compliant'
               body='Squeaky is fully compliant with GDPR &amp; CCPA regulations. You&apos;ll be able to use our products while protecting the personal data and privacy of your customers.'
-              link='#'
+              link='/legal/gdpr'
             />
             <ThreeTextGridItem
               title='Security minded'
               body='Along with a privacy-centric approach to data we also adhere to industry standard security processes and protocols.'
-              link='#'
+              link='/legal/security'
             />
           </ThreeTextGrid>
         </Container>
