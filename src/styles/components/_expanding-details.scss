@@ -47,7 +47,7 @@
 
       .button {
         align-items: center;
-        background: none;
+        background: transparent;
         border: none;
         color: var(--peach-100);
         display: flex;
@@ -128,7 +128,7 @@
         }
 
         &.show {
-          background: none;
+          background: transparent;
         }
       }
     }

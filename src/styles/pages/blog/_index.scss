@@ -182,7 +182,7 @@
         padding: 3rem;
 
         @include breakpoint-md {
-          background: none;
+          background: transparent;
           display: flex;
           padding: 0;
         }
