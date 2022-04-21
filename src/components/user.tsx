@@ -12,6 +12,7 @@ const { dev = false } = publicRuntimeConfig;
 
 interface Props {
   user: UserType;
+  children: React.ReactNode;
 }
 
 export const User: FC<Props> = ({ children, user }) => {
