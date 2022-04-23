@@ -51,6 +51,8 @@ export const useFeedback = (): UsePlans => {
     npsEnabled: false,
     sentimentEnabled: false,
     sentimentExcludedPages: [],
+    npsExcludedPages: [],
+    sentimentDevices: [],
   };
 
   return {
