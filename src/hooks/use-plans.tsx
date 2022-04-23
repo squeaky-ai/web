@@ -16,6 +16,7 @@ const QUERY = gql`
         id
         currency
         amount
+        interval
       }
     }
   }
@@ -29,6 +30,6 @@ export const usePlans = (): UsePlans => {
   return {
     loading,
     error: !!error,
-    plans,
+    plans: plans.slice(0, 6),
   };
 };
