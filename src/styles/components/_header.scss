@@ -125,12 +125,17 @@
     .based-in-europe {
       margin: 0 0 0 1.5rem;
 
+      @include breakpoint-lg {
+        display: none;
+      }  
+
       @include breakpoint-md {
+        display: flex;
         margin: 3rem auto 0 auto;
         justify-content: center;
       }
     }
-    
+
     @include breakpoint-md {
       &.large {
         display: none;
