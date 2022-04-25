@@ -20,7 +20,7 @@ export const BasedInEurope: FC = () => {
   return (
     <div className='based-in-europe'>
       <Image src={eu} width={28} height={20} alt='EU Flag' />
-      <p>Based in Europe <Icon name='heart-line' /></p>
+      <p>Based in Europe <Icon name='heart-fill' /></p>
     </div>
   );
 };
