@@ -9,6 +9,7 @@ import { HeaderMenu } from 'components/header-menu';
 import { HeaderUseCases } from 'components/header-use-cases';
 import { HeaderProduct } from 'components/header-product';
 import { HeaderButtons } from 'components/header-buttons';
+import { BasedInEurope } from 'components/based-in-europe';
 import type { User } from 'types/graphql';
 import type { SubMenu } from 'types/common';
 
@@ -71,6 +72,8 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
       </HeaderDropdown>
 
       <HeaderButtons user={user} />
+
+      <BasedInEurope />
     </menu>
   );
 };

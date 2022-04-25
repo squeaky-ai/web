@@ -6,6 +6,7 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { HeaderButtons } from 'components/header-buttons';
 import { HeaderMenuSmallDrawer } from 'components/header-menu-small-drawer';
+import { BasedInEurope } from 'components/based-in-europe';
 import type { User } from 'types/graphql';
 import type { SubMenu } from 'types/common';
 
@@ -101,6 +102,8 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
               </a>
             </Link>
           </div>
+
+          <BasedInEurope />
         </div>
       )}
     </menu>

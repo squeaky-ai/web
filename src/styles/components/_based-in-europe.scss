@@ -1,0 +1,16 @@
+.based-in-europe {
+  align-items: center;
+  display: flex;
+
+  p {
+    font-size: 10px;
+    line-height: 10px;
+    margin: 0 0 0 .5rem;
+    width: 3rem;
+
+    .icon {
+      color: var(--rose-500);
+      vertical-align: middle;
+    }
+  }
+}
