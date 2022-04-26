@@ -2,9 +2,9 @@ import React from 'react';
 import type { FC } from 'react';
 import classnames from 'classnames';
 import { CURRENCIES } from 'data/common/constants';
-import type { Currency } from 'types/common';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
+import type { Currency } from 'types/common';
 
 interface Props {
   selected: Currency;

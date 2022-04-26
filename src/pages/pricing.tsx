@@ -3,17 +3,19 @@ import Link from 'next/link';
 import { Container } from 'components/container';
 import { Currencies } from 'components/currencies';
 import { Calculator } from 'components/calculator';
+import { Intervals } from 'components/intervals';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
-import { getUsefulCurrency } from 'lib/currency';
+import { Interval, getUsefulCurrency } from 'lib/currency';
 import type { Currency } from 'types/common';
 import type { SqueakyPage } from 'types/page';
 
 const Pricing: SqueakyPage<ServerSideProps> = () => {
   const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
+  const [interval, setInterval] = React.useState<Interval>(Interval.MONTHLY);
 
   return (
     <>
@@ -21,9 +23,12 @@ const Pricing: SqueakyPage<ServerSideProps> = () => {
         <Container className='centered sm-md'>
           <h1>Unleash your data</h1>
           <p>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b>, and <b>heatmap</b> data.</p>
-          <Currencies selected={currency} setSelected={setCurrency} />
+          <div className='options'>
+            <Currencies selected={currency} setSelected={setCurrency} />
+            <Intervals selected={interval} setSelected={setInterval} />
+          </div>
         </Container>
-        <Calculator currency={currency} />
+        <Calculator currency={currency} interval={interval} />
       </section>
 
       <section className='plan'>

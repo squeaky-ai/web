@@ -23,6 +23,20 @@
         margin: 5rem auto 0 auto;
       }
 
+      .options {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint-sm {
+          flex-direction: column;
+
+          .intervals {
+            margin: 1rem 0 0 0;
+          }
+        }
+      }
+
       &:after {
         background: var(--peach-200);
         bottom: 0;

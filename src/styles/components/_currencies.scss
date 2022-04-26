@@ -4,12 +4,13 @@
 
   .button {
     align-items: center;
-    background: var(--peach-200);
-    border: none;
+    background: var(--peach-50);
+    border: 2px solid var(--peach-300);
     border-radius: var(--border-radius-xl);
     display: inline-flex;
     font-weight: var(--font-weight-normal);
-    padding: .5rem 1rem;
+    height: 2.5rem;
+    padding: 0 1rem;
 
     b {
       margin-right: .25rem;
@@ -34,15 +35,18 @@
   }
 
   .options {
+    border: 2px solid var(--peach-300);
     border-radius: var(--border-radius-lg);
     display: flex;
     flex-direction: column;
+    margin-top: -2px;
     overflow: hidden;
     position: absolute;
     width: 100%;
     z-index: 2;
 
     .button {
+      border: none;
       border-radius: 0;
       width: 100%;
     }

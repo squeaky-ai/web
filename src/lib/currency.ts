@@ -1,6 +1,11 @@
 import { CURRENCIES } from 'data/common/constants';
 import type { Currency } from 'types/common';
 
+export enum Interval {
+  MONTHLY = 'month',
+  YEARLY = 'year',
+}
+
 export const getUsefulCurrency = (): Currency => {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 

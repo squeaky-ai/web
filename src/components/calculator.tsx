@@ -9,15 +9,17 @@ import { Container } from 'components/container';
 import { usePlans } from 'hooks/use-plans';
 import { Spinner } from 'components/spinner';
 import { Message } from 'components/message';
-import { monthlyPrice, recordingsPerMonthLimit, formatShortRecordingCount } from 'lib/plans';
+import { getPriceForCurrentAndInterval, recordingsPerMonthLimit, formatShortRecordingCount } from 'lib/plans';
 import { Plans } from 'data/common/constants';
+import { Interval } from 'lib/currency';
 import type { Currency } from 'types/common';
 
 interface Props {
   currency: Currency;
+  interval: Interval;
 }
 
-export const Calculator: FC<Props> = ({ currency }) => {
+export const Calculator: FC<Props> = ({ currency, interval }) => {
   const [plan, setPlan] = React.useState<number>(1);
 
   const { plans, loading, error } = usePlans();
@@ -124,8 +126,8 @@ export const Calculator: FC<Props> = ({ currency }) => {
               <div className='plan'>
                <h4>{plans[plan - 1]?.name} Plan</h4>
                <p className='limit'>{plan === plans.length ? 'more than' : 'up to'} {recordingsPerMonthLimit(plans, plan)} visits per month</p>
-               <h1>{currency.symbol}{monthlyPrice(plans, plan, currency.name)}</h1>
-               <p className='duration'>per month</p>
+               <h1>{currency.symbol}{getPriceForCurrentAndInterval(plans, plan, interval, currency.name)}</h1>
+               <p className='duration'>per {interval === Interval.MONTHLY ? 'month' : 'year'}</p>
                <Link href='/auth/signup'>
                  <a className='button primary'>
                    Get Started Free

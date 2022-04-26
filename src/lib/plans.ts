@@ -1,3 +1,4 @@
+import { Interval } from 'lib/currency';
 import type { Plan, PlansCurrency } from 'types/graphql';
 
 export const recordingsPerMonthLimit = (plans: Plan[], plan: number) => {
@@ -10,14 +11,16 @@ export const recordingsPerMonthLimit = (plans: Plan[], plan: number) => {
   return match.maxMonthlyRecordings.toLocaleString();
 };
 
-export const monthlyPrice = (plans: Plan[], plan: number, currency: PlansCurrency) => {
+export const getPriceForCurrentAndInterval = (plans: Plan[], plan: number, interval: Interval, currency: PlansCurrency) => {
   const match = plans[plan - 1];
 
   if (plans.length === plan) {
     return 'Ask';
   }
 
-  return match.pricing?.find(p => p.currency === currency)?.amount || 0;
+  return match.pricing?.find(
+    p => p.currency === currency && p.interval === interval
+  )?.amount || 0;
 };
 
 export const formatShortRecordingCount = (count: number) => {
