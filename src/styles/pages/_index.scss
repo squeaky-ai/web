@@ -11,14 +11,14 @@
         margin: 0 0 2rem 0;
       }
 
-      a {
-        color: var(--mauve-700);
-      }
-
       p {
         color: var(--gray-blue-700);
         margin: 0 0 2rem 0;
         padding: 0 5rem;
+
+        a {
+          color: var(--mauve-700);
+        }
       }
 
       .actions {
