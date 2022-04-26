@@ -22,7 +22,7 @@ const Home: SqueakyPage<ServerSideProps> = () => {
       <section className='hero'>
         <Container className='centered md'>
           <h1>Product analytics for customer-obsessed companies</h1>
-          <p>Squeaky&apos;s future-proof <Link href='/product/analytics'><a>analytics suite</a></Link> lets you capture up to 60% more data than legacy tools by putting customer privacy first.</p>
+          <p>Squeaky&apos;s future-proof <a href='#elevate-your-customers-digital-experience'>analytics suite</a> lets you capture up to 60% more data than legacy tools by putting customer privacy first.</p>
           <div className='actions'>
             <Link href='/auth/signup'>
               <a className='button primary'>
@@ -112,7 +112,7 @@ const Home: SqueakyPage<ServerSideProps> = () => {
 
       <section className='showcase'>
         <Container className='centered sm-md'>
-          <h2>Elevate your customers&apos; digital experience</h2>
+          <h2 id='elevate-your-customers-digital-experience'>Elevate your customers&apos; digital experience</h2>
           <p className='subheading'>Squeaky <b>puts data at the heart</b> of how you understand and improve your customer experience.</p>
         </Container>
 
