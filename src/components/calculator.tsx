@@ -9,6 +9,7 @@ import { Container } from 'components/container';
 import { usePlans } from 'hooks/use-plans';
 import { Spinner } from 'components/spinner';
 import { Message } from 'components/message';
+import { Tag } from 'components/tag';
 import { getPriceForCurrentAndInterval, recordingsPerMonthLimit, formatShortRecordingCount } from 'lib/plans';
 import { Plans } from 'data/common/constants';
 import { Interval } from 'lib/currency';
@@ -124,7 +125,12 @@ export const Calculator: FC<Props> = ({ currency, interval }) => {
             )}
             {!isHighestPlan && (
               <div className='plan'>
-               <h4>{plans[plan - 1]?.name} Plan</h4>
+               <h4>
+                 {plans[plan - 1]?.name} Plan
+                 {interval === Interval.YEARLY && (
+                   <Tag>20% OFF</Tag>
+                 )}
+                </h4>
                <p className='limit'>{plan === plans.length ? 'more than' : 'up to'} {recordingsPerMonthLimit(plans, plan)} visits per month</p>
                <h1>{currency.symbol}{getPriceForCurrentAndInterval(plans, plan, interval, currency.name)}</h1>
                <p className='duration'>per {interval === Interval.MONTHLY ? 'month' : 'year'}</p>
