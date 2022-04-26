@@ -21,8 +21,8 @@ const Home: SqueakyPage<ServerSideProps> = () => {
     <>
       <section className='hero'>
         <Container className='centered md'>
-          <h1>The privacy-first customer insights platform</h1>
-          <p>Squeaky helps you grow your business, by building better digital experiences. Our all-in-one tool includes analytics, session recording, feedback and heatmaps.</p>
+          <h1>Product analytics for customer-obsessed companies</h1>
+          <p>Squeaky&apos;s future-proof <Link href='/product/analytics'><a>analytics suite</a></Link> lets you capture up to 60% more data than legacy tools by putting customer privacy first.</p>
           <div className='actions'>
             <Link href='/auth/signup'>
               <a className='button primary'>
