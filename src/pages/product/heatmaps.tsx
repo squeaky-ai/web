@@ -41,7 +41,7 @@ const ProductHeatmaps: SqueakyPage<ServerSideProps> = () => (
             {
               icon: 'vidicon-line',
               title: 'Discover what\'s important',
-              body: 'Get precise data on visitor numbers, page views, and session statistics for any timeframe you need.',
+              body: 'Clickmaps let you see which elements are being clicked on each page of your site, allowing you to pinpoint the content and interface elements that matter most.',
               image: <Screenshot screen='heatmaps-1' width={738} height={525} />
             },
             {
