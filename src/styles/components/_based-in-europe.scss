@@ -2,6 +2,14 @@
   align-items: center;
   display: flex;
 
+  .flag {
+    height: 1.25rem;
+
+    &.dark {
+      display: none;
+    }
+  }
+
   p {
     font-size: 10px;
     line-height: 10px;

@@ -531,6 +531,18 @@ q           .icon {
       }
     }
 
+    .based-in-europe {
+      color: var(--white);
+
+      .flag {
+        display: none;
+
+        &.dark {
+          display: inline-block;
+        }
+      }
+    }
+
     menu {
       .link,
       .secondary {
@@ -546,6 +558,10 @@ q           .icon {
       .icon {
         color: var(--white);
       }
+    }
+
+    .based-in-europe {
+      color: var(--white);
     }
 
     menu {
