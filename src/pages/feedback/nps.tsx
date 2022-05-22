@@ -217,7 +217,7 @@ const FeedbackNps: SqueakyPage = () => {
 
                   <p>Thank you for sharing your feedback and helping to make our service better.</p>
 
-                  <Button className='close' onClick={handleClose}>
+                  <Button className='close' type='button' onClick={handleClose}>
                     Close
                   </Button>
                 </div>
