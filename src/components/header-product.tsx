@@ -13,15 +13,6 @@ export const HeaderProduct: FC = () => {
     <div className='product'>
       <Container className='lg centered'>
         <div className='links'>
-          <Link href='/product/recordings'>
-            <a className='item'>
-              <h5>
-                <Icon name='vidicon-line' />
-                Recordings
-              </h5>
-              <p>Walk in your customers&apos; shoes.</p>
-            </a>
-          </Link>
           <Link href='/product/analytics'>
             <a className='item'>
               <h5>
@@ -29,6 +20,15 @@ export const HeaderProduct: FC = () => {
                 Analytics
               </h5>
               <p>Let data drive your decisions.</p>
+            </a>
+          </Link>
+          <Link href='/product/recordings'>
+            <a className='item'>
+              <h5>
+                <Icon name='vidicon-line' />
+                Recordings
+              </h5>
+              <p>Walk in your customers&apos; shoes.</p>
             </a>
           </Link>
           <Link href='/product/feedback'>
