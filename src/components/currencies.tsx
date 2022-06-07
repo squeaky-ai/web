@@ -20,7 +20,7 @@ export const Currencies: FC<Props> = ({ selected, setSelected }) => {
     setSelected(selected);
     setOpen(false);
 
-    window.squeaky?.addEvent('CurrencyChanged', selected);
+    window.squeaky?.addEvent('CurrencyChanged', { currency: selected.name });
   };
 
   return (
