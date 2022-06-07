@@ -12,6 +12,7 @@ type ExternalAttributes = Record<string, string | number>;
 
 interface Squeaky {
   identify: (id: string, input: ExternalAttributes) => void;
+  addEvent: (name: string, input: ExternalAttributes) => void;
 }
 
 export type Currency = { 
