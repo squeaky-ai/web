@@ -1,11 +1,11 @@
 import { ApolloClient, InMemoryCache, TypedDocumentNode } from '@apollo/client';
-import { UsersInvitation, TeamInviteAcceptInput, Team, NpsCreateInput, AuthSignUpInput, User, AuthConfirmInput, AuthReconfirmInput, AuthPasswordUpdateInput, AuthPasswordResetInput } from 'types/graphql';
+import { UsersInvitation, TeamInviteAcceptInput, Team, NpsCreateInput, AuthSignUpInput, User, AuthConfirmInput, AuthReconfirmInput, AuthPasswordUpdateInput, AuthPasswordResetInput, ContactPartnersInput } from 'types/graphql';
 import { USER_INVITATION_QUERY } from 'data/users/queries';
 import { TEAM_INVITE_ACCEPT_MUTATION } from 'data/teams/mutations';
 import { AUTH_SIGNUP_MUTATION, AUTH_CONFIRM_MUTATION, AUTH_RECONFIRM_MUTATION, AUTH_PASSWORD_UPDATE_MUTATION, AUTH_PASSWORD_RESET_MUTATION } from 'data/auth/mutations';
-import { BOOK_DEMO_MUTATION, CONTACT_MUTATION } from 'data/contact/mutations';
+import { BOOK_DEMO_MUTATION, CONTACT_MUTATION, CONTACT_STARTUPS_MUTATION, CONTACT_PARTNERS_MUTATION } from 'data/contact/mutations';
 import { NPS_CREATE_MUTATION, SENTIMENT_CREATE_MUTATION } from 'data/feedback/mutations';
-import { BookDemoInput, ContactInput } from 'types/contact';
+import { ContactInput, ContactStartupsInput, ContactDemoInput } from 'types/graphql';
 
 export const cache = new InMemoryCache();
 
@@ -89,9 +89,23 @@ export const contactForm = async (input: ContactInput): Promise<void> => {
   });
 };
 
-export const bookDemoForm = async (input: BookDemoInput): Promise<void> => {
+export const bookDemoForm = async (input: ContactDemoInput): Promise<void> => {
   await client.mutate({
     mutation: BOOK_DEMO_MUTATION,
+    variables: { input },
+  });
+};
+
+export const contactStartupsForm = async (input: ContactStartupsInput): Promise<void> => {
+  await client.mutate({
+    mutation: CONTACT_STARTUPS_MUTATION,
+    variables: { input },
+  });
+};
+
+export const contactPartnersForm = async (input: ContactPartnersInput): Promise<void> => {
+  await client.mutate({
+    mutation: CONTACT_PARTNERS_MUTATION,
     variables: { input },
   });
 };

@@ -15,3 +15,19 @@ export const BOOK_DEMO_MUTATION = gql`
     }
   }
 `;
+
+export const CONTACT_STARTUPS_MUTATION = gql`
+  mutation ContactStartups($input: ContactStartupsInput!) {
+    contactStartups(input: $input) {
+      message
+    }
+  }
+`;
+
+export const CONTACT_PARTNERS_MUTATION = gql`
+  mutation($input: ContactPartnersInput!) {
+    contactPartners(input: $input) {
+      message
+    }
+  }
+`;

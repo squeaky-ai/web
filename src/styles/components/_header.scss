@@ -572,6 +572,27 @@ q           .icon {
     }
   }
 
+  &.mauve-dark:not(.scrolled):not(.sub-menu-open):not(.open) {
+    background: var(--mauve-800);
+
+    .hamburger {
+      .icon {
+        color: var(--white);
+      }
+    }
+
+    .based-in-europe {
+      color: var(--white);
+    }
+
+    menu {
+      .link,
+      .secondary {
+        color: var(--white);
+      }
+    }
+  }
+
   &.white:not(.scrolled):not(.sub-menu-open):not(.open) {
     background: var(--white);
   }

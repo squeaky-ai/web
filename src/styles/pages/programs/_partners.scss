@@ -1,0 +1,128 @@
+.page.partners {
+  section {
+    &.get-rewarded {
+      background-color: var(--mauve-700);
+      background-image: url('../../../../public/backgrounds/partner-1.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 6rem 6rem 6rem;
+    }
+
+    &.faq {
+      background-color: var(--peach-200);
+      padding: 4rem 5rem 6rem 5rem;
+
+      h2 {
+        margin: 0 0 3rem 0;
+        text-align: center;
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 6rem 2rem;
+      }
+    }
+
+    &.help {
+      background-color: var(--peach-400);
+      background-image: url('../../../../public/backgrounds/partner-2.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 3rem 8rem 3rem;
+
+      .tagline {
+        h2 {
+          color: var(--gray-blue-800);
+          margin: 0 0 2rem 0;
+        }
+
+        p {
+          color: var(--gray-blue-700);
+          margin: 0 0 3rem 0;
+        }
+      }
+
+      .carousel {
+        .indicator {
+          .button {
+            background: var(--white);
+  
+            &.active {
+              background: var(--mauve-700);
+            }
+          }
+        }
+      }
+
+      h3 {
+        color: var(--gray-blue-800);
+        margin: 4rem 0;
+        padding: 0 0 1rem 0;
+        position: relative;
+
+        &:after {
+          background: var(--mauve-700);
+          bottom: 0;
+          content: ' ';
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          width: 25%;
+        }
+      }
+
+      .four-icon-grid {
+        .item {
+          .icon {
+            color: var(--mauve-700);
+          }
+
+          h4 {
+            color: var(--gray-blue-800);
+          }
+
+          p {
+            color: var(--gray-blue-700);
+          }
+        }
+      }
+    }
+
+    &.contact {
+      background-color: var(--mauve-700);
+      background-position: top left;
+      background-repeat: repeat-x;
+
+      .contact-form {
+        background-image: url('../../../../public/backgrounds/partner-4.svg');
+
+        &:before {
+          background-color: var(--peach-400);
+        }
+
+        .card {
+          min-height: 48rem;
+        }
+      }
+    }
+
+    &.get-in-touch {
+      background-color: var(--gray-blue-700);
+      padding: 6rem 6rem 0 6rem;
+
+      @include breakpoint-md {
+        display: none;
+      }
+
+      .cta {
+        h3 {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

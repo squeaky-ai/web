@@ -102,6 +102,15 @@ export const Footer: FC = () => (
           </Link>
         </FooterLinkGroup>
 
+        <FooterLinkGroup title='Programs'>
+          <Link href='/programs/partners'>
+            <a>For Partners</a>
+          </Link>
+          <Link href='/programs/startups'>
+            <a>For Startups</a>
+          </Link>
+        </FooterLinkGroup>
+
         <FooterLinkGroup title='Legal &amp; Compliance'>
           <Link href='/legal/privacy-policy'>
             <a>Privacy Policy</a>

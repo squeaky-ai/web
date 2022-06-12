@@ -1,0 +1,178 @@
+.page.startups {
+  section {
+    &.help {
+      background-color: var(--mauve-700);
+      background-image: url('../../../../public/backgrounds/partner-1.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 3rem 8rem 3rem;
+
+      .tagline {
+        h2 {
+          color: var(--white);
+          margin: 0 0 2rem 0;
+        }
+
+        p {
+          color: var(--peach-100);
+          margin: 0 0 3rem 0;
+        }
+      }
+
+      .carousel {
+        .indicator {
+          .button {
+            background: var(--mauve-400);
+  
+            &.active {
+              background: var(--peach-200);
+            }
+          }
+        }
+      }
+
+      h3 {
+        color: var(--white);
+        margin: 4rem 0;
+        padding: 0 0 1rem 0;
+        position: relative;
+
+        &:after {
+          background: var(--rose-500);
+          bottom: 0;
+          content: ' ';
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          width: 25%;
+        }
+      }
+
+      .four-icon-grid {
+        .item {
+          .icon {
+            color: var(--peach-500);
+          }
+
+          h4 {
+            color: var(--white);
+          }
+
+          p {
+            color: var(--peach-100);
+          }
+        }
+      }
+    }
+
+    &.how-it-works {
+      background-color: var(--peach-200);
+      background-image: url('../../../../public/backgrounds/partner-3.svg');
+      background-position: top left;
+      background-repeat: repeat-x;
+      padding: 12rem 6rem 6rem 6rem;
+
+      h2 {
+        color: var(--gray-blue-800);
+      }
+
+      .subheading {
+        color: var(--gray-blue-700);
+      }
+
+      .step-item {
+        &:first-of-type {
+          background-image: linear-gradient(90deg, var(--peach-200) 50%, rgba(116, 42, 64, 0) 50%);
+        }
+
+        &:last-of-type {
+          background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, var(--peach-200) 50%)
+        }
+
+        h4 {
+          color: var(--gray-blue-800);
+        }
+
+        p {
+          color: var(--gray-blue-700);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+
+        .step-item {
+          &:first-of-type {
+            background-image: none;
+          }
+      
+          &:last-of-type {
+            background-color: var(--peach-200);
+            background-image: none;
+          }
+        }
+      }
+    }
+
+    &.faq {
+      background-color: var(--peach-100);
+      padding: 4rem 5rem 6rem 5rem;
+
+      h2 {
+        margin: 0 0 3rem 0;
+        text-align: center;
+      }
+
+      .accordion {
+        background: var(--peach-200);
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 6rem 2rem;
+      }
+    }
+
+    &.contact {
+      background-color: var(--peach-400);
+      background-position: top left;
+      background-repeat: repeat-x;
+
+      .contact-form {
+        background-color: var(--peach-400);
+        background-image: url('../../../../public/backgrounds/partner-5.svg');
+
+        &:before {
+          background-color: var(--peach-100);
+        }
+
+        .card {
+          min-height: 48rem;
+        }
+      }
+    }
+
+    &.get-in-touch {
+      background-color: var(--gray-blue-700);
+      padding: 6rem 6rem 0 6rem;
+
+      @include breakpoint-md {
+        display: none;
+      }
+
+      .cta {
+        h3 {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
