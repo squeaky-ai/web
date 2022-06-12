@@ -17,6 +17,7 @@ import { Button } from 'components/button';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
+import { contactPartnersForm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
 
 const ContactSchema = Yup.object().shape({
@@ -25,7 +26,7 @@ const ContactSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email address').required('Email is required'),
   name: Yup.string().required('Company name is required'),
   description: Yup.string(),
-  clientCount: Yup.number(),
+  clientCount: Yup.string(),
 });
 
 const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
@@ -100,7 +101,7 @@ const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
             title='How do I track my referrals and get paid?'
             body={
               <>
-                <p>When one of your clients is going to sign up for a paid Squeaky plan then you should provide them with a copy of your unique referral code and have them email us the code. We'll provide you with a dashboard to track your clients subscriptions and instructions for when and how to invoice Squeaky for your referral fees.</p>
+                <p>When one of your clients is going to sign up for a paid Squeaky plan then you should provide them with a copy of your unique referral code and have them email us the code. We&apos;ll provide you with a dashboard to track your clients subscriptions and instructions for when and how to invoice Squeaky for your referral fees.</p>
               </>
             }
           />
@@ -178,7 +179,7 @@ const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
                 onSubmit={(values, { setSubmitting }) => {
                   (async () => {
                     try {
-                      console.log(values);
+                      await contactPartnersForm(values);
                       setSubmitted(true);
                     } catch(error) {
                       console.error(error);

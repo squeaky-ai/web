@@ -18,6 +18,7 @@ import { ContactForm } from 'components/contact-form';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
+import { contactStartupsForm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
 
 const ContactSchema = Yup.object().shape({
@@ -25,7 +26,7 @@ const ContactSchema = Yup.object().shape({
   lastName: Yup.string().required('Last name is required'),
   email: Yup.string().email('Please enter a valid email address').required('Email is required'),
   name: Yup.string().required('Company name is required'),
-  yearsActive: Yup.number(),
+  yearsActive: Yup.string(),
   trafficCount: Yup.string(),
 });
 
@@ -184,7 +185,7 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
                 onSubmit={(values, { setSubmitting }) => {
                   (async () => {
                     try {
-                      console.log(values);
+                      await contactStartupsForm(values);
                       setSubmitted(true);
                     } catch(error) {
                       console.error(error);
