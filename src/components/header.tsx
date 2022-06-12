@@ -15,7 +15,7 @@ interface Props {
   user: User;
 }
 
-type ThemeOverrides = Record<string, 'blue' | 'mauve' | 'white'>;
+type ThemeOverrides = Record<string, 'blue' | 'mauve' | 'mauve-dark' | 'white'>;
 
 const themeOverrides: ThemeOverrides = {
   '/use-cases/marketing-and-conversion': 'blue',
@@ -23,6 +23,8 @@ const themeOverrides: ThemeOverrides = {
   '/about-us': 'mauve',
   '/blog/[[...category]]': 'mauve',
   '/blog/[category]/[post]': 'white',
+  '/programs/partners': 'mauve-dark',
+  '/programs/startups': 'mauve-dark',
 };
 
 export const Header: FC<Props> = ({ user }) => {
@@ -35,7 +37,7 @@ export const Header: FC<Props> = ({ user }) => {
   const [subMenuOpen, setSubMenuOpen] = React.useState<SubMenu>(null);
 
   const themeOverride = themeOverrides[router.route];
-  const useLightLogo = ['blue', 'mauve'].includes(themeOverride) && !scrolled && !subMenuOpen && !open;
+  const useLightLogo = ['blue', 'mauve', 'mauve-dark'].includes(themeOverride) && !scrolled && !subMenuOpen && !open;
 
   const handleOpen = (subMenu: SubMenu) => {
     return () => setSubMenuOpen(subMenu);

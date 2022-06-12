@@ -64,8 +64,12 @@
     }
 
     .submitted {
+      align-items: center;
       background: var(--gray-blue-50);
       border-radius: var(--border-radius-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 7rem 3rem;
       text-align: center;
 
@@ -101,6 +105,11 @@
         i {
           margin: .25rem 0 0 0;
         }
+      }
+
+      & + p {
+        color: var(--gray-500);
+        margin-bottom: .75rem;
       }
     }
 
