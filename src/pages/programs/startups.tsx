@@ -14,6 +14,7 @@ import { Input } from 'components/input';
 import { Label } from 'components/label';
 import { Screenshot } from 'components/screenshots';
 import { Cta } from 'components/cta';
+import { Illustration } from 'components/illustration';
 import { ContactForm } from 'components/contact-form';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
@@ -47,7 +48,7 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
                 Apply Now
               </a>
             </Link>
-            <Link href='#'>
+            <Link href='#learn-more'>
               <a className='button secondary'>
                 Learn More
               </a>
@@ -57,7 +58,7 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
         image='startup'
       />
 
-      <section className='help'>
+      <section className='help' id='learn-more'>
         <Container className='lg centered'>
           <Container className='md tagline'>
             <h2>Squeaky helps startups to create market leading customer experiences.</h2>
@@ -165,7 +166,7 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
         </Container>
       </section>
 
-      <section className='contact'>
+      <section className='contact' id='apply-now'>
         <ContactForm 
           submitted={submitted}
           submittedTitle='Message sent'
@@ -174,6 +175,9 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
             <>
               <h3>Apply to our startup program for 50% off</h3>
               <p>If you&apos;d like to apply to Squeaky&apos;s startup program then please complete the form opposite and someone from our team will get back to you with 2 days.</p>
+              <div className='egg'>
+                <Illustration illustration='illustration-16' height={262} width={230} />
+              </div>
             </>
           }
           form={

@@ -12,6 +12,7 @@ import { TextArea } from 'components/textarea';
 import { Carousel, CarouselItem } from 'components/carousel';
 import { Screenshot } from 'components/screenshots';
 import { Cta } from 'components/cta';
+import { Illustration } from 'components/illustration';
 import { ContactForm } from 'components/contact-form';
 import { Button } from 'components/button';
 import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
@@ -159,7 +160,7 @@ const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
         </Container>
       </section>
 
-      <section className='contact'>
+      <section className='contact' id='become-a-partner'>
         <ContactForm 
           submitted={submitted}
           submittedTitle='Message sent'
@@ -168,6 +169,9 @@ const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
             <>
               <h3>Become a partner</h3>
               <p>If you&apos;d like to apply to become a Squeaky partner then please complete the form opposite and someone from our partnership program will get back to you.</p>
+              <div className='egg'>
+                <Illustration illustration='illustration-16' height={262} width={230} />
+              </div>
             </>
           }
           form={

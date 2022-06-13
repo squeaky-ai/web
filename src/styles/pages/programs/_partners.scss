@@ -93,9 +93,18 @@
     }
 
     &.contact {
-      background-color: var(--mauve-700);
+      background-color: var(--peach-400);
       background-position: top left;
       background-repeat: repeat-x;
+
+      &:before {
+        display: block;
+        content: ' ';
+        height: 140px;
+        margin: -140px 0 0 0;
+        pointer-events: none;
+        visibility: hidden;
+      }
 
       .contact-form {
         background-image: url('../../../../public/backgrounds/partner-4.svg');
@@ -104,8 +113,25 @@
           background-color: var(--peach-400);
         }
 
+        aside {
+          display: flex;
+          flex-direction: column;
+        }
+
         .card {
-          min-height: 48rem;
+          min-height: 50rem;
+        }
+
+        .egg {
+          background-image: url('../../../../public/backgrounds/egg-gray.svg');
+          background-repeat: no-repeat;
+          background-position: 0 8rem;
+          flex: 1;
+          padding: 5rem 0 0 5rem;
+
+          @include breakpoint-md {
+            display: none;
+          }
         }
       }
     }
