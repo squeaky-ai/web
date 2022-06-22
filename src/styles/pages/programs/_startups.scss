@@ -73,6 +73,23 @@
           }
         }
       }
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+
+        h2 {
+          margin: 0 0 6rem 0;
+        }
+      }
+
+      @include breakpoint-sm {
+        background-image: none;
+        padding: 4rem 2rem;
+
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+      }
     }
 
     &.how-it-works {
@@ -154,6 +171,7 @@
       background-color: var(--peach-100);
       background-position: top left;
       background-repeat: repeat-x;
+      overflow: hidden;
 
       &:before {
         display: block;
@@ -190,6 +208,19 @@
 
           @include breakpoint-md {
             display: none;
+          }
+        }
+
+        @include breakpoint-sm {
+          margin-left: -2rem;
+          width: calc(100% + 4rem);
+
+          .card {
+            border-radius: 0;
+          }
+
+          .button {
+            width: 100%;
           }
         }
       }
