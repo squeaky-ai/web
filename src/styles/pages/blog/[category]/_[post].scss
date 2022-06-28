@@ -143,6 +143,7 @@
     .covering {
       background: var(--peach-200);
       border-radius: var(--border-radius-lg);
+      margin: 0 0 2rem 0;
       padding: 2rem;
   
       p {
@@ -165,6 +166,10 @@
         a {
           color: var(--mauve-700);
         }
+      }
+
+      & + * {
+        margin-top: 0;
       }
     }
 
@@ -219,23 +224,25 @@
     }
 
     figure {
-      margin: 0;
+      margin: 0 0 1.5rem 0;
       padding: 0;
-    }
 
-    img {
-      display: block;
-      height: auto !important;
-      width: 100% !important;
-
-      + em {
-        color: var(--gray-blue-700);
+      img {
         display: block;
-        font-size: 14px;
-        line-height: 20px;
+        height: auto !important;
+        width: 100% !important;
+      }
+
+      figcaption {
         margin: 1rem 0 0 0;
         text-align: center;
       }
+    }
+
+    .embed {
+      align-items: center;
+      display: flex;
+      justify-content: center;
     }
 
     pre {
