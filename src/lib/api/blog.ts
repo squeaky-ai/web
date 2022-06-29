@@ -63,6 +63,7 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
           metaDescription
           slug
           body
+          scripts
           createdAt
           updatedAt
         }
