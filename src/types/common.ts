@@ -21,4 +21,3 @@ export type Currency = {
 };
 
 export type SubMenu = 'use-cases' | 'product' | 'more';
-

@@ -15,38 +15,47 @@ export const HeaderProduct: FC = () => {
         <div className='links'>
           <Link href='/product/analytics'>
             <a className='item'>
-              <h5>
+              <div className='icon-background'>
                 <Icon name='line-chart-line' />
-                Analytics
-              </h5>
+              </div>
+              <h5>Analytics</h5>
               <p>Let data drive your decisions.</p>
             </a>
           </Link>
           <Link href='/product/recordings'>
             <a className='item'>
-              <h5>
+              <div className='icon-background'>
                 <Icon name='vidicon-line' />
-                Recordings
-              </h5>
+              </div>
+              <h5>Recordings</h5>
               <p>Walk in your customers&apos; shoes.</p>
             </a>
           </Link>
           <Link href='/product/feedback'>
             <a className='item'>
-              <h5>
+              <div className='icon-background'>
                 <Icon name='user-voice-line' />
-                Feedback
-              </h5>
+              </div>
+              <h5>Feedback</h5>
               <p>Hear directly from customers. </p>
             </a>
           </Link>
           <Link href='/product/heatmaps'>
             <a className='item'>
-              <h5>
+              <div className='icon-background'>
                 <Icon name='fire-line' />
-                Heatmaps
-              </h5>
+              </div>
+              <h5>Heatmaps</h5>
               <p>Understand what&apos;s important.</p>
+            </a>
+          </Link>
+          <Link href='/product/journeys'>
+            <a className='item'>
+              <div className='icon-background'>
+                <Icon name='route-line' />
+              </div>
+              <h5>Journeys</h5>
+              <p>Visualise your customer journey.</p>
             </a>
           </Link>
         </div>
