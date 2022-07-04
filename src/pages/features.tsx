@@ -9,7 +9,7 @@ import { debounce } from 'lib/utils';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-type Tab = 'privacy' | 'dashboard' | 'visitors' | 'recordings' | 'analytics' | 'feedback' | 'heatmaps' | 'team' | 'ease-of-use';
+type Tab = 'privacy' | 'dashboard' | 'visitors' | 'analytics' |  'recordings' | 'feedback' | 'heatmaps' | 'journeys' | 'team' | 'ease-of-use';
 
 type Tabs = { name: string; tab: Tab }[];
 
@@ -27,12 +27,12 @@ const tabs: Tabs = [
     tab: 'visitors',
   },
   {
-    name: 'Recordings',
-    tab: 'recordings',
-  },
-  {
     name: 'Analytics',
     tab: 'analytics',
+  },
+  {
+    name: 'Recordings',
+    tab: 'recordings',
   },
   {
     name: 'Feedback',
@@ -41,6 +41,10 @@ const tabs: Tabs = [
   {
     name: 'Heatmaps',
     tab: 'heatmaps',
+  },
+  {
+    name: 'Journeys',
+    tab: 'journeys',
   },
   {
     name: 'Team',
@@ -201,6 +205,67 @@ const Features: SqueakyPage<ServerSideProps> = () => {
         </Container>
       </section>
 
+      <section id='analytics'>
+        <Container className='lg centered'>
+          <Container className='md'>
+            <h3>Analytics</h3>
+            <p>Our analytics tool turns your data into actionable insights, enabling you to quickly understand the trends and behaviours that matter most to your business.</p>
+          </Container>
+          <FeaturesGrid>
+            <FeaturesGridItem
+              icon='line-chart-line'
+              title='Visitor numbers'
+              body='Knowing what times and days your traffic is peaking provides vital signals that help you measure success and learn when to post content, release changes or start new marketing campaigns.'
+            />
+            <FeaturesGridItem
+              icon='user-line'
+              title='Page visits'
+              body='Understanding when your pages are proving most popular will help your discover the content that matters most to your visitors.'
+            />
+            <FeaturesGridItem
+              icon='calendar-line'
+              title='Filter by date'
+              body='Viewing your data over the right time period is vital, so Squeaky lets you quickly apply pre-defined date ranges.'
+            />
+            <FeaturesGridItem
+              icon='timer-line'
+              title='Average session duration'
+              body='Squeaky highlights how long people are spending on your website or app, providing important insights into how engaging your content is.'
+            />
+            <FeaturesGridItem
+              icon='pages-line'
+              title='Pages per session'
+              body='Quickly discover how effective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages and then leaving.'
+            />
+            <FeaturesGridItem
+              icon='route-line'
+              title='Traffic sources'
+              body='Knowing where your visitors are arriving from can help you to better understand your audience and the effectiveness of your marketing campaigns.'
+            />
+            <FeaturesGridItem
+              icon='map-pin-2-line'
+              title='Location and language'
+              body='Find out which regions and languages bring you the most visitors, so you can make sure your content and marketing is targeted at the right people.'
+            />
+            <FeaturesGridItem
+              icon='thumb-up-line'
+              title='Popular pages'
+              body='Most visitors are going to visit your homepage, but where do they go next, and for how long? Squeaky surfaces this data to help you rapidly improve your site or app.'
+            />
+            <FeaturesGridItem
+              icon='device-line'
+              title='Browser and device types'
+              body='Deliver targeted improvements to your website, using precise knowledge of the devices and browsers your visitors are using.'
+            />
+            <FeaturesGridItem
+              icon='arrow-left-right-line'
+              title='Device widths'
+              body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
+            />
+          </FeaturesGrid>
+        </Container>
+      </section>
+
       <section id='recordings'>
         <Container className='lg centered'>
           <Container className='md'>
@@ -267,67 +332,6 @@ const Features: SqueakyPage<ServerSideProps> = () => {
               icon='bookmark-3-line'
               title='Bookmarking'
               body='Keep track of the most interesting or important recordings by bookmarking your favourites. You can access these quickly later on by using the filters provided, or from within the visitor&apos;s individual profile.'
-            />
-          </FeaturesGrid>
-        </Container>
-      </section>
-
-      <section id='analytics'>
-        <Container className='lg centered'>
-          <Container className='md'>
-            <h3>Analytics</h3>
-            <p>Our analytics tool turns your data into actionable insights, enabling you to quickly understand the trends and behaviours that matter most to your business.</p>
-          </Container>
-          <FeaturesGrid>
-            <FeaturesGridItem
-              icon='line-chart-line'
-              title='Visitor numbers'
-              body='Knowing what times and days your traffic is peaking provides vital signals that help you measure success and learn when to post content, release changes or start new marketing campaigns.'
-            />
-            <FeaturesGridItem
-              icon='user-line'
-              title='Page visits'
-              body='Understanding when your pages are proving most popular will help your discover the content that matters most to your visitors.'
-            />
-            <FeaturesGridItem
-              icon='calendar-line'
-              title='Filter by date'
-              body='Viewing your data over the right time period is vital, so Squeaky lets you quickly apply pre-defined date ranges.'
-            />
-            <FeaturesGridItem
-              icon='timer-line'
-              title='Average session duration'
-              body='Squeaky highlights how long people are spending on your website or app, providing important insights into how engaging your content is.'
-            />
-            <FeaturesGridItem
-              icon='pages-line'
-              title='Pages per session'
-              body='Quickly discover how effective your site is by seeing whether your visitors are regularly browsing the entirety of your site, or sticking to a narrow selection of pages and then leaving.'
-            />
-            <FeaturesGridItem
-              icon='route-line'
-              title='Traffic sources'
-              body='Knowing where your visitors are arriving from can help you to better understand your audience and the effectiveness of your marketing campaigns.'
-            />
-            <FeaturesGridItem
-              icon='map-pin-2-line'
-              title='Location and language'
-              body='Find out which regions and languages bring you the most visitors, so you can make sure your content and marketing is targeted at the right people.'
-            />
-            <FeaturesGridItem
-              icon='thumb-up-line'
-              title='Popular pages'
-              body='Most visitors are going to visit your homepage, but where do they go next, and for how long? Squeaky surfaces this data to help you rapidly improve your site or app.'
-            />
-            <FeaturesGridItem
-              icon='device-line'
-              title='Browser and device types'
-              body='Deliver targeted improvements to your website, using precise knowledge of the devices and browsers your visitors are using.'
-            />
-            <FeaturesGridItem
-              icon='arrow-left-right-line'
-              title='Device widths'
-              body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
             />
           </FeaturesGrid>
         </Container>
@@ -405,6 +409,42 @@ const Features: SqueakyPage<ServerSideProps> = () => {
               icon='database-2-line'
               title='365 storage'
               body='Any recording you&apos;ve captured under your subscription will be available for 365 days. If you require data storage beyond the standard 365 limit, please get in touch.'
+            />
+          </FeaturesGrid>
+        </Container>
+      </section>
+
+      <section id='journeys'>
+        <Container className='lg centered'>
+          <Container className='md'>
+            <h3>Journeys</h3>
+            <p>We help you uncover the journeys your visitors are taking through your site, enabling you to discover unexpected patterns and user behaviour so that you can improve the customer experience you&apos;re offering.</p>
+          </Container>
+          <FeaturesGrid>
+            <FeaturesGridItem
+              icon='route-line'
+              title='Start and end points'
+              body='Set the exact starting point of a customer journey and you&apos;ll see exactly where your visitors when from there. Alternatively, set an end point to see the routes your visitors took to get there.'
+            />
+            <FeaturesGridItem
+              icon='arrow-right-down-line'
+              title='Drop-off rates'
+              body='View drop off rates that show you how many users are leaving your site from any given page in their journey. This will help you improve and optimise the journeys to keep your visitors from leaving too soon.'
+            />
+            <FeaturesGridItem
+              icon='vidicon-line'
+              title='View recordings'
+              body='If you&apos;ve spotted some user journeys that you&apos;d like to watch back, you can quickly jump from the journeys view to a filtered list or recordings that match that journey.'
+            />
+            <FeaturesGridItem
+              icon='magic-line'
+              title='Autocapture'
+              body='From the moment the Squeaky tracking code is installed, you&apos;re continuously collecting journeys data for any page that your users have visited. This gives you a wealth of data to analyse at any time you choose'
+            />
+            <FeaturesGridItem
+              icon='calendar-line'
+              title='Filter by date'
+              body='Viewing your data over the right time period is vital, so Squeakily lets you quickly apply pre-defined date ranges.'
             />
           </FeaturesGrid>
         </Container>
