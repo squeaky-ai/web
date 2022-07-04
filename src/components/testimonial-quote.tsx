@@ -8,6 +8,7 @@ import yassine from '../../public/people/yassine.webp';
 import steve from '../../public/people/steve.webp';
 import steven from '../../public/people/steven.webp';
 import nathan from '../../public/people/nathan.webp';
+import stas from '../../public/people/stas.webp';
 
 interface Props {
   quote: string;
@@ -18,7 +19,7 @@ interface Props {
   flip?: boolean;
 }
 
-type Person = 'matt' | 'yassine' | 'steve'  | 'steven' | 'nathan';
+type Person = 'matt' | 'yassine' | 'steve'  | 'steven' | 'nathan' | 'stas';
 
 const imageSrc = (person: Props['person']) => {
   switch(person) {
@@ -32,6 +33,8 @@ const imageSrc = (person: Props['person']) => {
       return steven;
     case 'nathan':
       return nathan;
+    case 'stas':
+      return stas;
   }
 };
 

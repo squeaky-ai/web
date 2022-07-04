@@ -17,6 +17,9 @@ import sentiment1 from '../../public/screenshots/sentiment-1.webp';
 import sentiment2 from '../../public/screenshots/sentiment-2.webp';
 import session1 from '../../public/screenshots/session-1.webp';
 import journeys1 from '../../public/screenshots/journeys-1.webp';
+import journeys2 from '../../public/screenshots/journeys-2.webp';
+import journeys3 from '../../public/screenshots/journeys-3.webp';
+import journeys4 from '../../public/screenshots/journeys-4.webp';
 
 type ScreenshotType = 
   'analytics-1' |
@@ -32,7 +35,10 @@ type ScreenshotType =
   'sentiment-2' |
   'session-1' | 
   'recordings-1' | 
-  'journeys-1';
+  'journeys-1' | 
+  'journeys-2' | 
+  'journeys-3' | 
+  'journeys-4';
 
 interface Props extends Omit<ImageProps, 'src'> {
   screen: ScreenshotType;
@@ -68,6 +74,12 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return recordings1;
     case 'journeys-1':
       return journeys1;
+    case 'journeys-2':
+      return journeys2;
+    case 'journeys-3':
+      return journeys3;
+    case 'journeys-4':
+      return journeys4;
   }
 };
 

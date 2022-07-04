@@ -9,12 +9,13 @@ import analyticsImage from '../../public/illustrations/illustration-1.svg';
 import feedbackImage from '../../public/illustrations/illustration-2.svg';
 import heatmapsImage from '../../public/illustrations/illustration-9.svg';
 import recordingsImage from '../../public/illustrations/illustration-13.svg';
+import journeysImage from '../../public/illustrations/illustration-17.svg';
 
 interface Props {
   title: string;
   subtitle: string;
   body: React.ReactNode;
-  image: 'analytics' | 'feedback' | 'heatmaps' | 'recordings';
+  image: 'analytics' | 'feedback' | 'heatmaps' | 'recordings' | 'journeys'
 }
 
 const imageSrc = (image: Props['image']) => {
@@ -27,6 +28,8 @@ const imageSrc = (image: Props['image']) => {
       return heatmapsImage;
     case 'recordings':
       return recordingsImage;
+    case 'journeys':
+      return journeysImage;
   }
 }
 
