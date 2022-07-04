@@ -69,6 +69,9 @@ const Home: SqueakyPage<ServerSideProps> = () => {
           <CarouselItem>
             <Screenshot screen='heatmaps-1' alt='Screenshot of the Squeaky heatmaps page' />
           </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
+          </CarouselItem>
         </Carousel>
 
         <Container className='centered md-lg'>

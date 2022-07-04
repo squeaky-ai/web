@@ -61,6 +61,9 @@ const UseCasesCustomerSuccess: SqueakyPage<ServerSideProps> = () => (
           <CarouselItem>
             <Screenshot screen='recordings-1' width={1440} height={1024} alt='Screenshot of the Squeaky recordings page' />
           </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
+          </CarouselItem>
         </Carousel>
 
         <h3>Included in every plan</h3>

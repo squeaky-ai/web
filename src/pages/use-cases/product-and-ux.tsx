@@ -63,6 +63,9 @@ const UseCasesProductAndUx: SqueakyPage<ServerSideProps> = () => (
           <CarouselItem>
             <Screenshot screen='heatmaps-1' width={1440} height={1024} alt='Screenshot of the Squeaky heatmaps page' />
           </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
+          </CarouselItem>
         </Carousel>
 
         <h3>Included in every plan</h3>
