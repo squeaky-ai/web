@@ -64,6 +64,9 @@ export const Footer: FC = () => (
           <Link href='/product/feedback'>
             <a>Feedback</a>
           </Link>
+          <Link href='/product/journeys'>
+            <a>Journeys</a>
+          </Link>
           <Link href='/features'>
             <a>Features</a>
           </Link>

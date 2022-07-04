@@ -1,7 +1,7 @@
-.four-icon-grid {
+.five-icon-grid {
   display: grid;
   grid-gap: 3rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
   @include breakpoint-lg {
     grid-template-columns: repeat(2, 1fr);
@@ -28,6 +28,8 @@
 
     p {
       color: var(--peach-100);
+      font-size: 16px;
+      line-height: 24px;
       margin: 0;
     }
   }

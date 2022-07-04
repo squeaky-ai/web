@@ -5,7 +5,7 @@ import { Currencies } from 'components/currencies';
 import { Calculator } from 'components/calculator';
 import { Intervals } from 'components/intervals';
 import { TestimonialQuote } from 'components/testimonial-quote';
-import { FourIconGrid, FourItemGridItem } from 'components/four-icon-grid';
+import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
 import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
@@ -34,28 +34,33 @@ const Pricing: SqueakyPage<ServerSideProps> = () => {
       <section className='plan'>
         <Container className='centered lg'>
           <h3>Included in every plan</h3>
-          <FourIconGrid>
-            <FourItemGridItem
+          <FiveIconGrid>
+            <FiveItemGridItem
               icon='vidicon-line'
               title='Recordings'
               body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
             />
-            <FourItemGridItem
+            <FiveItemGridItem
               icon='line-chart-line'
               title='Analytics'
               body='Turn your data into actionable insights to improve your user experience and convert leads faster than ever.'
             />
-            <FourItemGridItem
+            <FiveItemGridItem
               icon='user-voice-line'
               title='Feedback'
               body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
             />
-            <FourItemGridItem
+            <FiveItemGridItem
               icon='fire-line'
               title='Heatmaps'
               body='Discover which content matters most to your visitors, and where your business could be performing better.'
             />
-          </FourIconGrid>
+            <FiveItemGridItem
+              icon='route-line'
+              title='Journeys'
+              body='Find out where your customers are going or where they came from by mapping their journey through your site.'
+            />
+          </FiveIconGrid>
         </Container>
       </section>
 

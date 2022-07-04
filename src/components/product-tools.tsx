@@ -7,7 +7,7 @@ import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 export const ProductTools: FC = () => (
   <Container className='product-tools centered lg'>
     <div className='tools-grid'>
-      <h2>Three more incredible tools included in every Squeaky plan.</h2>
+      <h2>Four more incredible tools included in every Squeaky plan.</h2>
       <p>We&apos;ve build a customer experience platform designed to paint the full picture of your customer experience. There&apos;s no need to pay for multiple tools or spend time figuring out how to fit them together.</p>
       <div className='image'>
         <Illustration illustration='illustration-8' width={598} height={395} />
@@ -28,6 +28,11 @@ export const ProductTools: FC = () => (
         title='Heatmaps'
         body='Discover which content matters most to your visitors, and where your business could be performing better.'
         link='/product/heatmaps'
+      />
+      <ThreeTextGridItem
+        title='Journeys'
+        body='Improve your user journeys by discovering the exact routes your visitors take around your site.'
+        link='/product/journeys'
       />
     </ThreeTextGrid>
   </Container>

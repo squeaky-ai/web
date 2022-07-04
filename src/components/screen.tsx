@@ -16,6 +16,8 @@ import heatmaps3 from '../../public/screens/heatmaps-3.webp';
 import heatmaps4 from '../../public/screens/heatmaps-4.webp';
 import privacy1 from '../../public/screens/privacy-1.webp';
 import privacy2 from '../../public/screens/privacy-2.webp';
+import journeys1 from '../../public/screens/journeys-1.webp';
+import journeys2 from '../../public/screens/journeys-2.webp';
 
 type ScreenType = 
   'session-1' |
@@ -30,7 +32,9 @@ type ScreenType =
   'heatmaps-3' |
   'heatmaps-4' |
   'privacy-1' |
-  'privacy-2';
+  'privacy-2' |
+  'journeys-1' |
+  'journeys-2';
 
 interface Props extends Omit<ImageProps, 'src'> {
   screen: ScreenType;
@@ -64,6 +68,10 @@ const getScreenSrc = (screen: ScreenType) => {
       return privacy1;
     case 'privacy-2':
       return privacy2;
+    case 'journeys-1':
+      return journeys1;
+    case 'journeys-2':
+      return journeys2;
   }
 };
 

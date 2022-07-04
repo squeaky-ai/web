@@ -12,13 +12,13 @@ interface ChildProps {
   body: string;
 }
 
-export const FourIconGrid: FC<ParentProps> = ({ children }) => (
-  <div className='four-icon-grid'>
+export const FiveIconGrid: FC<ParentProps> = ({ children }) => (
+  <div className='five-icon-grid'>
     {children}
   </div>
 );
 
-export const FourItemGridItem: FC<ChildProps> = ({ icon, title, body }) => (
+export const FiveItemGridItem: FC<ChildProps> = ({ icon, title, body }) => (
   <div className='item'>
     <Icon name={icon} />
     <h4>{title}</h4>
