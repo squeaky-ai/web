@@ -122,7 +122,7 @@ const ProductFeedback: SqueakyPage<ServerSideProps> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools />
+      <ProductTools options={['analytics', 'recordings', 'heatmaps', 'journeys']} />
     </section>
 
     <section className='easy'>

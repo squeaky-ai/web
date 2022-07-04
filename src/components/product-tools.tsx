@@ -4,7 +4,60 @@ import { Container } from 'components/container';
 import { Illustration } from 'components/illustration';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 
-export const ProductTools: FC = () => (
+type ProductOptions = 'analytics' | 'recordings' | 'feedback' | 'heatmaps' | 'journeys'
+
+interface Props {
+  options: ProductOptions[];
+}
+
+const GridItem = (props: { option: ProductOptions }) => {
+  switch(props.option) {
+    case 'feedback':
+      return (
+        <ThreeTextGridItem
+          title='Feedback'
+          body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
+          link='/product/feedback'
+        />
+      );
+    case 'analytics':
+      return (
+        <ThreeTextGridItem
+          title='Analytics'
+          body='Our privacy-friendly analytics tool offers you straightforward access to the precise and meaningful data you need.'
+          link='/product/analytics'
+        />
+      );
+    case 'recordings':
+      return (
+        <ThreeTextGridItem
+          title='Recordings'
+          body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
+          link='/product/recordings'
+        />
+      );
+    case 'heatmaps':
+      return (
+        <ThreeTextGridItem
+          title='Heatmaps'
+          body='Discover which content matters most to your visitors, and where your business could be performing better.'
+          link='/product/heatmaps'
+        />
+      );
+    case 'journeys':
+      return (
+        <ThreeTextGridItem
+          title='Journeys'
+          body='Improve your user journeys by discovering the exact routes your visitors take around your site.'
+          link='/product/journeys'
+        />
+      );  
+    default:
+      return null;
+  }
+};
+
+export const ProductTools: FC<Props> = ({ options }) => (
   <Container className='product-tools centered lg'>
     <div className='tools-grid'>
       <h2>Four more incredible tools included in every Squeaky plan.</h2>
@@ -14,26 +67,7 @@ export const ProductTools: FC = () => (
       </div>
     </div>
     <ThreeTextGrid>
-      <ThreeTextGridItem
-        title='Recordings'
-        body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
-        link='/product/recordings'
-      />
-      <ThreeTextGridItem
-        title='Feedback'
-        body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
-        link='/product/feedback'
-      />
-      <ThreeTextGridItem
-        title='Heatmaps'
-        body='Discover which content matters most to your visitors, and where your business could be performing better.'
-        link='/product/heatmaps'
-      />
-      <ThreeTextGridItem
-        title='Journeys'
-        body='Improve your user journeys by discovering the exact routes your visitors take around your site.'
-        link='/product/journeys'
-      />
+      {options.map(o => <GridItem key={o} option={o} /> )}
     </ThreeTextGrid>
   </Container>
 );

@@ -114,7 +114,7 @@ const ProductJourneys: SqueakyPage<ServerSideProps> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools />
+      <ProductTools options={['analytics', 'recordings', 'feedback', 'heatmaps']} />
     </section>
 
     <section className='easy'>

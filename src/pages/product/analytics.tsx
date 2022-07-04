@@ -135,9 +135,9 @@ const ProductAnalytics: SqueakyPage<ServerSideProps> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools />
+      <ProductTools options={['recordings', 'feedback', 'heatmaps', 'journeys']} />
     </section>
-
+ 
     <section className='easy'>
       <UpAndRunning />
     </section>

@@ -116,7 +116,7 @@ const ProductHeatmaps: SqueakyPage<ServerSideProps> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools />
+      <ProductTools options={['analytics', 'recordings', 'feedback', 'journeys']} />
     </section>
 
     <section className='easy'>
