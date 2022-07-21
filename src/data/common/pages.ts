@@ -45,7 +45,7 @@ export const pages = (args: string[]): PageMeta[] => [
   {
     href: '/blog',
     title: 'Squeaky | Blog',
-    description: 'Read the Squeaky blog to discover our insights and ideas on how to build great products, make marketing more human, and build better customer experiences.',
+    description: 'Articles about building great products. Tips and ideas about design and engineering. Updates on the Squeaky product.',
     index: true,
   },
   {

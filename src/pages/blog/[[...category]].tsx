@@ -44,7 +44,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
     <>
       <PageTitle
         title='The Squeaky Blog'
-        subtitle={<>Insights and ideas on how to build great products, make marketing more human, and customer experiences better.</>}
+        subtitle={<>Articles about building great products. Tips and ideas about design and engineering. Updates on the Squeaky product.</>}
       />
 
       <Container className='lg centered posts'>
