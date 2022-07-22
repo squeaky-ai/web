@@ -25,6 +25,8 @@ const QUERY = gql`
       npsFollowUpEnabled
       npsContactConsentEnabled
       npsLayout
+      npsLanguages
+      npsLanguagesDefault
       sentimentEnabled
       sentimentAccentColor
       sentimentExcludedPages
@@ -53,6 +55,8 @@ export const useFeedback = (): UsePlans => {
     sentimentExcludedPages: [],
     npsExcludedPages: [],
     sentimentDevices: [],
+    npsLanguages: ['en'],
+    npsLanguagesDefault: 'en',
   };
 
   return {
