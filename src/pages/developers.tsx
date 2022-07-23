@@ -309,8 +309,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
             {tab === 'nps-surveys' && (
               <>
                 <h4><code className='code'>squeaky.showNpsSurvey();</code></h4>
-                <p>Squeaky has several scheduling options, with one of those being "custom". If you select the "custom" option you can trigger the NPS survey programatically from within your application.</p>
-                <p>If you use any scheduling option besides "custom" then calling this method will have effect.</p>
+                <p>Squeaky has several scheduling options, with one of those being &apos;custom&apos;. If you select the &apos;custom&apos; option you can trigger the NPS survey programatically from within your application.</p>
+                <p>If you use any scheduling option besides &apos;custom&apos; then calling this method will have effect.</p>
                 <p>One use may be to attach the function call to a button within your application:</p>
                 <Tabs
                   tabs={[
