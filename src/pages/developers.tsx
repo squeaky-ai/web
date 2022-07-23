@@ -4,42 +4,50 @@ import { PageTitle } from 'components/page-title';
 import { Container } from 'components/container';
 import { Code } from 'components/code';
 import { Main } from 'components/main';
+import { DevelopersTabs } from 'components/developers-tabs';
 import { Tabs } from 'components/tabs';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
+import type { DeveloperTab } from 'types/developers';
 
-const Developers: SqueakyPage<ServerSideProps> = () => (
-  <>
-    <PageTitle
-      title='Developers'
-      subtitle={<>Last Updated: <b>September 1st 2021</b></>}
-    />
+const Developers: SqueakyPage<ServerSideProps> = () => {
+  const [tab, setTab] = React.useState<DeveloperTab>('tracking-code');
 
-    <Main>
-      <Container className='md centered'>
-        <h4>Tracking Code</h4>
-        <p>We recommend that you install the tracking code within the <code className='code'>{'<'}head{'>'}</code> of your page so that it captures as much of the session as possible. Loading the script just before the <code className='code'>{'<'}body{'/>'}</code> could result in the first second or so of a visitors&apos; session being missed.</p>
-        <p>The script is very light and loading is non-blocking, so performance should not be a concern.</p>
-        <p>You can find the correct script with your site id on the settings page of your site. Every site site is different, but here are some suggestions for where best to place the script into your app.</p>
+  return (
+    <>
+      <PageTitle
+        title='Developers'
+        subtitle={<>Last Updated: <b>July 23rd 2022</b></>}
+      />
 
-        <Tabs
-          tabs={[
-            {
-              page: 'ruby',
-              name: 'Ruby on Rails',
-              icon: 'vip-diamond-line',
-              body: (
-                <>
-                  <p className='filename'>
-                    <Icon name='file-code-line' />
-                    app/views/layouts/application.html.erb
-                  </p>
-                  <Code lang='html'>
+      <Main>
+        <Container className='md-lg centered developers-docs'>
+          <DevelopersTabs tab={tab} setTab={setTab} />
+
+          <Container className='developers-contents'>
+            {tab === 'tracking-code' && (
+              <>
+                <h4>Tracking Code</h4>
+                <p>We recommend that you install the tracking code within the <code className='code'>{'<'}head{'>'}</code> of your page so that it captures as much of the session as possible. Loading the script just before the <code className='code'>{'<'}body{'/>'}</code> could result in the first second or so of a visitors&apos; session being missed.</p>
+                <p>The script is very light and loading is non-blocking, so performance should not be a concern.</p>
+                <p>You can find the correct script with your site id on the settings page of your site. Every site site is different, but here are some suggestions for where best to place the script into your app.</p>
+
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/layouts/application.html.erb
+                          </p>
+                          <Code lang='html'>
 {`<!DOCTYPE html>
   <html>
   <head>
-    ...
-
     <script>
       (function(s,q,e,a,u,k,y){
         s._sqSettings={site_id:'your-site-id'};
@@ -55,21 +63,21 @@ const Developers: SqueakyPage<ServerSideProps> = () => (
     <%= yield %>
   </body>
 </html>`}
-                  </Code>
-                </>
-              )
-            },
-            {
-              page: 'react',
-              name: 'React (Next.js)',
-              icon: 'reactjs-line',
-              body: (
-                <>
-                  <p className='filename'>
-                    <Icon name='file-code-line' />
-                    pages/_document.tsx
-                  </p>
-                  <Code lang='typescript'>
+                          </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            pages/_document.tsx
+                          </p>
+                          <Code lang='typescript'>
 {`import NextDocument, { 
   Html, 
   Head, 
@@ -107,68 +115,74 @@ class Document extends NextDocument {
 }
 
 export default Document;`}
-                  </Code>
-                </>
-              )
-            }
-          ]}
-        />
+                          </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
 
-        <h4>User Privacy</h4>
-        <p>At Squeaky we care a lot about user privacy. We do not store any Personally Identifiable Information (PII) related to visitors or their recordings, such as their location or IP address. We try our best to make the recordings as free from PII as possible by masking all form data and any non essential meta data.</p>
-        <p>PII comes in all shapes and sizes and as a result, some responsibility will fall on the site owner.</p>
-        <p>Squeaky offers two css class names that can be used to protect your users&apos; privacy:</p>
-        <p><code className='code'>.squeaky-hide</code> will remove everything contained within it, and replace it with an element of the same dimenstions so that it does not effect the rendering of the page. You may want to use this if there is a large section of text, or some PII that is not in text form (such as an image).</p>
+            {tab === 'user-privacy' && (
+              <>
+                <h4>Privacy</h4>
+                <p>At Squeaky we care a lot about user privacy. We do not store any Personally Identifiable Information (PII) related to visitors or their recordings, such as their location or IP address. We try our best to make the recordings as free from PII as possible by masking all form data and any non essential meta data.</p>
+                <p>PII comes in all shapes and sizes and as a result, some responsibility will fall on the site owner.</p>
+                <p>Squeaky offers two css class names that can be used to protect your users&apos; privacy:</p>
+                <p><code className='code'>.squeaky-hide</code> will remove everything contained within it, and replace it with an element of the same dimenstions so that it does not effect the rendering of the page. You may want to use this if there is a large section of text, or some PII that is not in text form (such as an image).</p>
 
-        <p>It could look like the following:</p>
-        <Code lang='html'>
+                <p>It could look like the following:</p>
+                <Code lang='html'>
 {`<div class="squeaky-hide">
   <p>Name: Bob</p>
   <p>Email: bob@squeaky.ai</p>
   <img src="/images/profile-image.png">
 </div>`}
-        </Code>
+                </Code>
 
-        <p><code className='code'>.squeaky-mask</code> will replace all text contained with asterisks. This is more suited to small pieces of text, such as a users&apos; name appearing within a section of non identifiable text.</p>
+                <p><code className='code'>.squeaky-mask</code> will replace all text contained with asterisks. This is more suited to small pieces of text, such as a users&apos; name appearing within a section of non identifiable text.</p>
 
-        <p>A common sitation may be:</p>
+                <p>A common sitation may be:</p>
 
-        <Code lang='html'>
+                <Code lang='html'>
 {`<p>Welcome back, <span class="squeaky-mask">Bob</span></p>`}
-        </Code>
+                </Code>
+              </>
+            )}
 
-        <h4>User Identification</h4>
-        <p>Privacy is important, however there are times that you may want to link some attributes to a Squeaky visitor. By default, a visitor is completely anonymous, although the site owner can associate any attributes they want with a visitor.</p>
-        <p>This is achieved by using the <code className='code'>squeaky.identify()</code> method that is exposed by the Squeaky script. The identify method accepts any key/values, but keys named <code className='code'>email</code> or <code className='code'>name</code> will have the added benefit of being indexed for search on the visitors page.</p>
+            {tab === 'user-indentification' && (
+              <>
+                <h4><code className='code'>squeaky.identify();</code></h4>
+                <p>Privacy is important, however there are times that you may want to link some attributes to a Squeaky visitor. By default, a visitor is completely anonymous, although the site owner can associate any attributes they want with a visitor.</p>
+                <p>This is achieved by using the <code className='code'>squeaky.identify()</code> method that is exposed by the Squeaky script. The identify method accepts any key/values, but keys named <code className='code'>email</code> or <code className='code'>name</code> will have the added benefit of being indexed for search on the visitors page.</p>
 
-        <p>The identify method takes two arguments. The first is your users unique id (likely the id generated by your database), followed by a javascript object containing the key/value pairs you&apos;d like to associate:</p>
+                <p>The identify method takes two arguments. The first is your users unique id (likely the id generated by your database), followed by a javascript object containing the key/value pairs you&apos;d like to associate:</p>
 
-        <Code lang='typescript'>
+                <Code lang='typescript'>
 {`squeaky.identify('<your-users-uniqueid>', {
   foo: 'bar',
   bar: 'baz',
   ...
 });`}
-        </Code>
+                </Code>
 
-        <p>Once again, every site is different and the location of this is best left to you. You only need to identify a user once per session, so it can be hoisted up fairly high. Here is a recommendation:</p>
+                <p>Once again, every site is different and the location of this is best left to you. You only need to identify a user once per session, so it can be hoisted up fairly high. Here is a recommendation:</p>
 
-        <Tabs
-          tabs={[
-            {
-              page: 'ruby',
-              name: 'Ruby on Rails',
-              icon: 'vip-diamond-line',
-              body: (
-                <>
-                  <p className='filename'>
-                    <Icon name='file-code-line' />
-                    app/views/layouts/application.html.erb
-                  </p>
-                  <Code lang='html'>
-{`...
-
-<body>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/layouts/application.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<body>
   <%= yield %>
 
   <% if user_signed_in? %>
@@ -182,21 +196,21 @@ export default Document;`}
     </script>
   <% end %>
 </body>`}
-                    </Code>
-                </>
-              )
-            },
-            {
-              page: 'react',
-              name: 'React (Next.js)',
-              icon: 'reactjs-line',
-              body: (
-                <>
-                  <p className='filename'>
-                    <Icon name='file-code-line' />
-                    pages/_app.tsx
-                  </p>
-                  <Code lang='typescript'>
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            pages/_app.tsx
+                          </p>
+                          <Code lang='typescript'>
 {`import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
 
@@ -217,18 +231,145 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
 
   return <Component {...pageProps} />;
 };`}
-                    </Code>
-                </>
-              )
-            }
-          ]}
-        />
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
 
-        <p>The Squeaky script initializes and loads asynchronously, and depending on how lightweight your page is, may not be loaded by the time you try to identify the user. It is best to wait for the page to finish entirely before attempting to identify a user.</p>
-      </Container>
-    </Main>
-  </>
-);
+                <p>The Squeaky script initializes and loads asynchronously, and depending on how lightweight your page is, may not be loaded by the time you try to identify the user. It is best to wait for the page to finish entirely before attempting to identify a user.</p>
+              </>
+            )}
+
+            {tab === 'page-views' && (
+              <>
+                <h4><code className='code'>squeaky.addPageView();</code></h4>
+                <p>Squeaky is designed to work with conventional page routing, and will automatically capture page views for both server rendered pages and single page apps.</p>
+                <p>However, if your application uses non-conventional routing, such as a Hash Router, you will need to manually track the page views.</p>
+                <p>You can call <code className='code'>squeaky.addPageView();</code> when your page has loaded, or when your single page app has transitioned to a new view. Be cautious to only call this once per page view or you may end up with duplicate counts in your recordings and analytics.</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/layouts/application.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<body>
+  <%= yield %>
+
+  <script type="text/javascript">
+    window.addEventListener('load', () => {
+      squeaky.addPageView();
+    });
+  </script>
+</body>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            pages/_app.tsx
+                          </p>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+import type { AppProps } from 'next/app';
+
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  React.useEffect(() => {
+    window.addEventListener('load', () => {
+      squeaky.addPageView();
+    });
+  }, []);
+
+  return <Component {...pageProps} />;
+};`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+
+            {tab === 'nps-surveys' && (
+              <>
+                <h4><code className='code'>squeaky.showNpsSurvey();</code></h4>
+                <p>Squeaky has several scheduling options, with one of those being "custom". If you select the "custom" option you can trigger the NPS survey programatically from within your application.</p>
+                <p>If you use any scheduling option besides "custom" then calling this method will have effect.</p>
+                <p>One use may be to attach the function call to a button within your application:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/partials/_nps_survey_button.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<button class="nps-survey" onclick="squeaky.showNpsSurvey();">
+  Give your feedback
+</button>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            components/nps-survey-button.tsx
+                          </p>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+
+const Button: FC = () => {
+  const handleClick = () => {
+    squeaky.showNpsSurvey();
+  };
+
+  return (
+    <button className='nps-survey' onClick={handleClick}>
+      Give your feedback
+    </button>
+  );
+};`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+          </Container>
+        </Container>
+      </Main>
+    </>
+  );
+};
 
 Developers.getMetaData = () => ({
   title: 'Squeaky | Developers',

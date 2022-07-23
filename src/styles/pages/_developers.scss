@@ -1,6 +1,93 @@
 .page.developers {
   background: var(--white);
 
+  .developers-docs {
+    display: flex;
+
+    @include breakpoint-sm {
+      flex-direction: column;
+    }
+  }
+
+  .developers-tabs {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 0 2rem 0 0;
+    width: 12rem;
+
+    @include breakpoint-sm {
+      border-bottom: 1px solid var(--gray-300);
+      margin: 0 0 2rem 0;
+      padding: 0 0 2rem 0;
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 1rem 0 .5rem 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    .button {
+      align-items: center;
+      background: none;
+      border: none;
+      border-radius: var(--border-radius-md);
+      color: var(--gray-500);
+      display: flex;
+      margin: 0 0 .5rem 0;
+      text-align: left;
+
+      &:hover {
+        background: var(--gray-50);
+        color: var(--gray-blue-800);
+
+        .icon {
+          color: var(--gray-700);
+        }
+      }
+
+      span, .code {
+        flex: 1;
+      }
+
+      .icon {
+        color: var(--gray-300);
+      }
+
+      .code {
+        background: none;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0;
+      }
+
+      &.active {
+        color: var(--gray-blue-800);
+
+        .icon {
+          color: var(--gray-blue-800);
+        }
+      }
+    }
+  }
+
+  .developers-contents {
+    width: calc(100% - 12rem);
+
+    @include breakpoint-sm {
+      width: 100%;
+    }
+
+     & > *:first-of-type {
+      margin-top: 0;
+     }
+  }
+
   .page-title {
     margin-bottom: 4rem;
   }
