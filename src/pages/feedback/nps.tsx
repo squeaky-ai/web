@@ -13,7 +13,7 @@ import { Select, Option } from 'components/select';
 import { createNps } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
 import type { SqueakyPage } from 'types/page';
-import { SupportedLanguages } from 'types/translations';
+import type { SupportedLanguages } from 'types/translations';
 
 const steps = {
   START: 0,
@@ -40,6 +40,13 @@ const FeedbackNps: SqueakyPage = () => {
 
   const translations = JSON.parse(feedback.npsTranslations);
 
+  const containerHeight = () => {
+    const form = ref.current.querySelector('form');
+    const { height } = form.getBoundingClientRect();
+
+    return height;
+  };
+
   const submitNps = async (values: Record<string, string>) => {
     const message = JSON.stringify({ 
       key: '__squeaky_submit_nps', 
@@ -60,14 +67,16 @@ const FeedbackNps: SqueakyPage = () => {
   };
 
   const updateStep = (step: number) => {
-    const message = JSON.stringify({ 
-      key: '__squeaky_set_step_nps', 
-      value: { step }, 
-    });
-
-    window.parent.postMessage(message, '*');
-
     setStep(step);
+
+    setTimeout(() => {
+      const message = JSON.stringify({
+        key: '__squeaky_set_step_nps',
+        value: { step, height: containerHeight() }, 
+      });
+  
+      window.parent.postMessage(message, '*');
+    }, 0);
   };
 
   const handleClose = () => {

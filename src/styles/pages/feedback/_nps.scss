@@ -10,6 +10,10 @@
     position: absolute;
     top: 1rem;
 
+    @include breakpoint-x-sm {
+      left: 1rem;
+    }
+
     .translation-icon {
       color: var(--gray-300);
       font-size: 12px;
@@ -44,12 +48,16 @@
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: var(--font-weight-block);
-    line-height: 1.5rem;
+    line-height: 20px;
     margin: 0;
     padding: 3rem 3rem 2rem 3rem;
     text-align: center;
+
+    @include breakpoint-x-sm {
+      padding: 3rem 1rem 1rem 1.5rem;
+    }
   }
 
   .radio {
@@ -65,16 +73,16 @@
   }
 
   .label {
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: var(--font-weight-block);
-    line-height: 1.5rem;
+    line-height: 20px;
     margin: 0 0 .75rem 0;
   }
 
   .input,
   .textarea {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 20px;
 
     &:focus {
       border-color: var(--nps-accent-color);
@@ -96,8 +104,8 @@
 
       p {
         color: var(--gray-500);
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 12px;
+        line-height: 10px;
         margin: 0;
       }
     }
@@ -140,6 +148,22 @@
         }
       }
     }
+
+    @include breakpoint-x-sm {
+      padding: 0 1rem;
+
+      .values {
+        .label {
+          height: 1.5rem;
+          width: 1.5rem;
+
+          span {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+    }
   }
 
   .reason {
@@ -155,11 +179,21 @@
     display: none;
     padding: 2rem 3rem 0 3rem;
 
+    @include breakpoint-x-sm {
+      padding: 1.5rem 1rem 0 1rem;
+    }
+
     .radio-group {
       display: flex;
 
       .radio {
         margin: 0 1.5rem 0 0;
+
+        .check {
+          border-width: 4px;
+          height: 1rem;
+          width: 1rem;
+        }
       }
     }
   }
@@ -224,6 +258,11 @@
     margin: 3rem 0 0 0;
     padding: 1rem 3rem;
 
+    @include breakpoint-x-sm {
+      margin: 1.5rem 0 0 0;
+      padding: 1rem;
+    }
+
     .powered-by {
       align-items: center;
       display: flex;
@@ -264,6 +303,10 @@
         .labels {
           display: none;
         }
+
+        @include breakpoint-x-sm {
+          padding: 3rem 1rem 1.5rem 1rem;
+        }
       }
   
       .title {
@@ -273,6 +316,10 @@
       .reason {
         display: block;
         padding: 0 3rem;
+
+        @include breakpoint-x-sm {
+          padding: 0 1rem;
+        }
       }
   
       .contact {
