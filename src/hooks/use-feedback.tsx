@@ -1,6 +1,11 @@
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import type { Feedback } from 'types/graphql';
+import type { SupportedLanguages } from 'types/translations';
+
+interface Props {
+  locale?: SupportedLanguages;
+}
 
 interface UsePlans {
   loading: boolean;
@@ -36,16 +41,8 @@ const QUERY = gql`
   }
 `;
 
-export const useFeedback = (): UsePlans => {
+export const useFeedback = (props: Props): UsePlans => {
   const router = useRouter();
-
-  const locale = (() => {
-    try {
-      return navigator.language.split('-')[0];
-    } catch {
-      return 'en';
-    }
-  })();
 
   const visitor: VisitorParams = {
     siteId: '' + router.query.site_id,
@@ -56,7 +53,7 @@ export const useFeedback = (): UsePlans => {
   const { data, error, loading } = useQuery<{ feedback: Feedback }>(QUERY, {
     variables: {
       siteId: '' + router.query.site_id,
-      locale,
+      locale: props.locale || 'en',
     },
   });
 

@@ -2,6 +2,47 @@
   background: var(--white);
   min-height: 100vh;
 
+  .locale {
+    align-items: center;
+    display: flex;
+    left: 3rem;
+    margin: 0;
+    position: absolute;
+    top: 1rem;
+
+    .translation-icon {
+      color: var(--gray-300);
+      font-size: 12px;
+      margin: 0 .125rem 0 0;
+    }
+
+    .select {
+      align-self: center;
+      border: none;
+      display: flex;
+      height: auto;
+      margin: 0;
+
+      select {
+        font-size: 12px;
+        font-weight: var(--font-weight-bold);
+        height: auto;
+        line-height: 16px;
+        margin: 0;
+        padding: 0;        
+        text-transform: uppercase;
+      }
+
+      i {
+        font-size: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        position: static;
+        width: 1rem;
+      }
+    }
+  }
+
   .title {
     font-size: 1rem;
     font-weight: var(--font-weight-block);

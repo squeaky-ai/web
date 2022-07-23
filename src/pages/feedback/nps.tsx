@@ -9,9 +9,11 @@ import { TextArea } from 'components/textarea';
 import { Logo } from 'components/logo';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
+import { Select, Option } from 'components/select';
 import { createNps } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
 import type { SqueakyPage } from 'types/page';
+import { SupportedLanguages } from 'types/translations';
 
 const steps = {
   START: 0,
@@ -32,8 +34,9 @@ const FeedbackNps: SqueakyPage = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [step, setStep] = React.useState<number>(0);
+  const [locale, setLocale] = React.useState<SupportedLanguages>(null);
 
-  const { feedback, visitor, loading } = useFeedback();
+  const { feedback, visitor, loading } = useFeedback({ locale });
 
   const translations = JSON.parse(feedback.npsTranslations);
 
@@ -76,11 +79,23 @@ const FeedbackNps: SqueakyPage = () => {
     window.parent.postMessage(message, '*');
   };
 
+  const onLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocale(event.target.value as SupportedLanguages);
+  };
+
   React.useEffect(() => {
     if (ref.current) {
       ref.current.setAttribute('style', `--nps-accent-color: ${feedback?.npsAccentColor};`);
     }
   }, [feedback?.npsAccentColor]);
+
+  React.useEffect(() => {
+    const userLocale = navigator.language.split('-')[0];
+
+    if (!locale && feedback.npsLanguages.includes(userLocale)) {
+      setLocale(userLocale as SupportedLanguages);
+    }
+  }, [feedback?.npsLanguages]);
 
   if (loading || !feedback.npsEnabled) {
     return null;
@@ -131,6 +146,19 @@ const FeedbackNps: SqueakyPage = () => {
           
             return (
               <form className={`step-${step}`} onSubmit={handleSubmit}>
+                {feedback.npsLanguages.length > 1 && (
+                  <div className='locale'>
+                    <Icon name='translate' className='translation-icon' />
+                    <Select value={locale || feedback.npsLanguagesDefault} onChange={onLocaleChange}>
+                      {feedback.npsLanguages.map(npsLanguage => (
+                        <Option key={npsLanguage} value={npsLanguage}>
+                          {npsLanguage}
+                        </Option>
+                      ))}
+                    </Select>
+                  </div>
+                )}
+
                 <div className='ratings'>
                   <p className='title'>{translations.how_likely_to_recommend}</p>
 
