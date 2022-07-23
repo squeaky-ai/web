@@ -16,7 +16,7 @@ interface VisitorParams {
 }
 
 const QUERY = gql`
-  query GetFeedback($siteId: String!) {
+  query GetFeedback($siteId: String!, $locale: String!) {
     feedback(siteId: $siteId) {
       npsEnabled
       npsAccentColor
@@ -27,6 +27,7 @@ const QUERY = gql`
       npsLayout
       npsLanguages
       npsLanguagesDefault
+      npsTranslations(userLocale: $locale)
       sentimentEnabled
       sentimentAccentColor
       sentimentExcludedPages
@@ -38,6 +39,14 @@ const QUERY = gql`
 export const useFeedback = (): UsePlans => {
   const router = useRouter();
 
+  const locale = (() => {
+    try {
+      return navigator.language.split('-')[0];
+    } catch {
+      return 'en';
+    }
+  })();
+
   const visitor: VisitorParams = {
     siteId: '' + router.query.site_id,
     visitorId: '' + router.query.visitor_id,
@@ -45,7 +54,10 @@ export const useFeedback = (): UsePlans => {
   };
 
   const { data, error, loading } = useQuery<{ feedback: Feedback }>(QUERY, {
-    variables: visitor,
+    variables: {
+      siteId: '' + router.query.site_id,
+      locale,
+    },
   });
 
   const fallback: Feedback = {
@@ -54,6 +66,7 @@ export const useFeedback = (): UsePlans => {
     sentimentEnabled: false,
     sentimentExcludedPages: [],
     npsExcludedPages: [],
+    npsTranslations: '{}',
     sentimentDevices: [],
     npsLanguages: ['en'],
     npsLanguagesDefault: 'en',

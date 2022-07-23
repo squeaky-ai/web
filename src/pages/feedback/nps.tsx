@@ -11,7 +11,6 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { createNps } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
-import { Replacements, t as translation } from 'lib/t';
 import type { SqueakyPage } from 'types/page';
 
 const steps = {
@@ -35,6 +34,8 @@ const FeedbackNps: SqueakyPage = () => {
   const [step, setStep] = React.useState<number>(0);
 
   const { feedback, visitor, loading } = useFeedback();
+
+  const translations = JSON.parse(feedback.npsTranslations);
 
   const submitNps = async (values: Record<string, string>) => {
     const message = JSON.stringify({ 
@@ -74,14 +75,6 @@ const FeedbackNps: SqueakyPage = () => {
 
     window.parent.postMessage(message, '*');
   };
-
-  const t = (key: string, replacements?: Replacements) => translation(
-    'feedback',
-    key,
-    replacements,
-    feedback.npsLanguages,
-    feedback.npsLanguagesDefault,
-  );
 
   React.useEffect(() => {
     if (ref.current) {
@@ -139,12 +132,12 @@ const FeedbackNps: SqueakyPage = () => {
             return (
               <form className={`step-${step}`} onSubmit={handleSubmit}>
                 <div className='ratings'>
-                  <p className='title'>{t('how_likely_to_recommend', { name: feedback.npsPhrase })}</p>
+                  <p className='title'>{translations.how_likely_to_recommend}</p>
 
                   <div className='likeliness'>
                     <div className='labels'>
-                      <p>{t('not_likely')}</p>
-                      <p>{t('extremely_likely')}</p>
+                      <p>{translations.not_likely}</p>
+                      <p>{translations.extremely_likely}</p>
                     </div>
                     <div className='values'>
                       {range(11).map(i => (
@@ -165,7 +158,7 @@ const FeedbackNps: SqueakyPage = () => {
                   
                   {feedback.npsFollowUpEnabled && (
                     <div className='reason'>
-                      <Label htmlFor='comment'>{t('what_is_the_main_reason')}</Label>
+                      <Label htmlFor='comment'>{translations.what_is_the_main_reason}</Label>
                       <TextArea 
                         placeholder='Please type here ...' 
                         name='comment' 
@@ -180,19 +173,19 @@ const FeedbackNps: SqueakyPage = () => {
                   {feedback.npsContactConsentEnabled && (
                     <>
                       <div className='contact'>
-                        <Label>{t('would_you_like_to_hear')}</Label>
+                        <Label>{translations.would_you_like_to_hear}</Label>
                         <div className='radio-group'>
                           <Radio name='contact' value='1' checked={values.contact === '1'} onBlur={handleBlur} onChange={onContactChange}>
-                            {t('yes')}
+                            {translations.yes}
                           </Radio>
                           <Radio name='contact' value='0' checked={values.contact === '0'} onBlur={handleBlur} onChange={onContactChange}>
-                            {t('no')}
+                            {translations.no}
                           </Radio>
                         </div>
                       </div>
 
                       <div className='details'>
-                        <Label htmlFor='email'>{t('email_address')}</Label>
+                        <Label htmlFor='email'>{translations.email_address}</Label>
                         <Input
                           type='email'
                           name='email'
@@ -207,14 +200,14 @@ const FeedbackNps: SqueakyPage = () => {
 
                   <div className='footer'>
                     <div className='powered-by'>
-                      <p>{t('powered_by')}</p>
+                      <p>{translations.powered_by}</p>
                       <a href='https://squeaky.ai' target='_blank' rel='noreferrer'>
                         <Logo logo='dark' width={64} height={21} />
                       </a>
                     </div>
 
                     <Button type='submit' className='submit primary' disabled={isSubmitting}>
-                      {t('submit')}
+                      {translations.submit}
                     </Button>
                   </div>
                 </div>
@@ -222,11 +215,11 @@ const FeedbackNps: SqueakyPage = () => {
                 <div className='confirm'>
                   <Icon name='checkbox-circle-line' />
 
-                  <h4>{t('feedback_sent')}</h4>
-                  <p>{t('thanks_for_sharing')}</p>
+                  <h4>{translations.feedback_sent}</h4>
+                  <p>{translations.thanks_for_sharing}</p>
 
                   <Button className='close' type='button' onClick={handleClose}>
-                    {t('close')}
+                    {translations.close}
                   </Button>
                 </div>
               </form>
