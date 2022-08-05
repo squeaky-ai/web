@@ -364,6 +364,65 @@ const Button: FC = () => {
                 />
               </>
             )}
+
+{tab === 'sentiment-surveys' && (
+              <>
+                <h4><code className='code'>squeaky.showSentimentSurvey();</code></h4>
+                <p>Squeaky allows developers to trigger the sentiment survey programatically. Within the sentiment appearance tab in Squeaky, you can select the custom trigger option.</p>
+                <p>If the custom trigger option is checked, then the sentiment survey will not show until this function is called.</p>
+                <p>One use may be to attach the function call to a button within your application:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/partials/_sentiment_survey_button.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<button class="sentiment-survey" onclick="squeaky.showSentimentSurvey();">
+  Give your feedback
+</button>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            components/sentiment-survey-button.tsx
+                          </p>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+
+const Button: FC = () => {
+  const handleClick = () => {
+    squeaky.showSentimentSurvey();
+  };
+
+  return (
+    <button className='sentiment-survey' onClick={handleClick}>
+      Give your feedback
+    </button>
+  );
+};`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
           </Container>
         </Container>
       </Main>
