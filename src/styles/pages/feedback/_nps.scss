@@ -266,6 +266,10 @@
     .powered-by {
       align-items: center;
       display: flex;
+
+      &.hide {
+        visibility: hidden;
+      }
     }
 
     a {

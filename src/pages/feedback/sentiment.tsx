@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
+import classnames from 'classnames';
 import { range } from 'lib/utils';
 import { Formik } from 'formik';
 import { Icon } from 'components/icon';
@@ -113,7 +114,7 @@ const FeedbackSentiment: SqueakyPage = () => {
               />
 
               <div className='footer'>
-                <div className='powered-by'>
+                <div className={classnames('powered-by', { hide: feedback.sentimentHideLogo })}>
                   <p>Powered by</p>
                   <a href='https://squeaky.ai' target='_blank' rel='noreferrer'>
                     <Logo logo='dark' width={64} height={21} />

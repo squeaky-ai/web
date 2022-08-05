@@ -33,10 +33,12 @@ const QUERY = gql`
       npsLanguages
       npsLanguagesDefault
       npsTranslations(userLocale: $locale)
+      npsHideLogo
       sentimentEnabled
       sentimentAccentColor
       sentimentExcludedPages
       sentimentLayout
+      sentimentHideLogo
     }
   }
 `;
@@ -60,13 +62,15 @@ export const useFeedback = (props: Props): UsePlans => {
   const fallback: Feedback = {
     id: null,
     npsEnabled: false,
-    sentimentEnabled: false,
-    sentimentExcludedPages: [],
     npsExcludedPages: [],
     npsTranslations: '{}',
-    sentimentDevices: [],
+    npsHideLogo: false,
     npsLanguages: ['en'],
     npsLanguagesDefault: 'en',
+    sentimentDevices: [],
+    sentimentHideLogo: false,
+    sentimentEnabled: false,
+    sentimentExcludedPages: [],
   };
 
   return {

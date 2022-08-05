@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
+import classnames from 'classnames';
 import { Formik } from 'formik';
 import { range } from 'lib/utils';
 import { Label } from 'components/label';
@@ -236,7 +237,7 @@ const FeedbackNps: SqueakyPage = () => {
                   )}
 
                   <div className='footer'>
-                    <div className='powered-by'>
+                    <div className={classnames('powered-by', { hide: feedback.npsHideLogo })}>
                       <p>{translations.powered_by}</p>
                       <a href='https://squeaky.ai' target='_blank' rel='noreferrer'>
                         <Logo logo='dark' width={64} height={21} />
