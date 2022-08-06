@@ -198,7 +198,7 @@ const FeedbackNps: SqueakyPage = () => {
                     <div className='reason'>
                       <Label htmlFor='comment'>{translations.what_is_the_main_reason}</Label>
                       <TextArea 
-                        placeholder='Please type here ...' 
+                        placeholder={translations.please_type} 
                         name='comment' 
                         rows={2}
                         value={values.comment}
