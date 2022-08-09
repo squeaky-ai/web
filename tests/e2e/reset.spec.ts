@@ -18,7 +18,7 @@ describe('Reset', () => {
     test('shows the confirmation anyway', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/reset');
+      await page.goto('http://localhost:3333/auth/reset');
       await page.waitForSelector('form[data-test="reset-form"]');
 
       await page.type('input[name="email"]', email);
@@ -47,7 +47,7 @@ describe('Reset', () => {
     test('shows the confirmation', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/reset');
+      await page.goto('http://localhost:3333/auth/reset');
       await page.waitForSelector('form[data-test="reset-form"]');
 
       await page.type('input[name="email"]', email);

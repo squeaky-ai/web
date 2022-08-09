@@ -23,7 +23,7 @@ describe('Signup', () => {
     test('tells them to go and check their email to confirm', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/signup');
+      await page.goto('http://localhost:3333/auth/signup');
       await page.waitForSelector('form[data-test="signup-form"]');
 
       await page.type('input[name="email"]', email);
@@ -58,7 +58,7 @@ describe('Signup', () => {
     test('it promps them to log in', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/signup');
+      await page.goto('http://localhost:3333/auth/signup');
       await page.waitForSelector('form[data-test="signup-form"]');
 
       await page.type('input[name="email"]', email);

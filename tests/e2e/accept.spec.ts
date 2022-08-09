@@ -15,7 +15,7 @@ describe('Accept', () => {
     test('shows the confirmation anyway', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/accept');
+      await page.goto('http://localhost:3333/auth/accept');
       await page.waitForSelector('.invalid-invidation');
 
       const messageText = await page.$eval('.invalid-invidation', message => message.innerHTML);
@@ -28,7 +28,7 @@ describe('Accept', () => {
     test('shows the confirmation anyway', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/accept?token=ImALittleTeapot');
+      await page.goto('http://localhost:3333/auth/accept?token=ImALittleTeapot');
       await page.waitForSelector('.invalid-invidation');
 
       const messageText = await page.$eval('.invalid-invidation', message => message.innerHTML);

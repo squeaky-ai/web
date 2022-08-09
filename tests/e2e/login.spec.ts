@@ -16,7 +16,7 @@ describe('Login', () => {
     test('it shows a warning', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/login');
+      await page.goto('http://localhost:3333/auth/login');
       await page.waitForSelector('form[data-test="login-form"]');
 
       await page.type('input[name="email"]', '__does_not_exist__@gmail.com');
@@ -46,7 +46,7 @@ describe('Login', () => {
     test('it shows a warning', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/login');
+      await page.goto('http://localhost:3333/auth/login');
       await page.waitForSelector('form[data-test="login-form"]');
 
       await page.type('input[name="email"]', email);
@@ -76,7 +76,7 @@ describe('Login', () => {
     test('it redirects to the app', async () => {
       const page = await browser.newPage();
 
-      await page.goto('http://localhost:3000/auth/login');
+      await page.goto('http://localhost:3333/auth/login');
       await page.waitForSelector('form[data-test="login-form"]');
 
       await page.type('input[name="email"]', email);
@@ -86,7 +86,7 @@ describe('Login', () => {
 
       await page.waitForNavigation();
 
-      expect(page.url()).toEqual('http://localhost:3000/app/sites');
+      expect(page.url()).toEqual('http://localhost:3333/app/sites');
     }, 10_000);
   });
 });
