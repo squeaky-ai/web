@@ -22,13 +22,17 @@
       align-items: center;
       display: flex;
 
-      @include breakpoint-sm {
-        flex-direction: column;
-      }
-
       .title {
         flex: 1;
         margin: 0 3rem 0 0;
+      }
+
+      @include breakpoint-sm {
+        flex-direction: column;
+
+        .title {
+          margin: 0;
+        }
       }
 
       .image {
@@ -106,7 +110,10 @@
             display: none;
 
             + span {
+              font-size: 13px;
+              line-height: 20px;
               margin: 0 0 0 2rem;
+              white-space: nowrap;
             }
           }
         }
