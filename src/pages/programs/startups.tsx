@@ -276,14 +276,11 @@ const ProgramsStartups: SqueakyPage<ServerSideProps> = () => {
                     />
 
                     <Label htmlFor='trafficCount'>Monthly traffic <i>(to your website or app)</i></Label>
-                    <p>What industry are you in? What services does your company provide?</p>
                     <Select name='trafficCount' onBlur={handleBlur} onChange={handleChange} value={values.trafficCount}>
-                      <Option value='1,000 - 10,000 visits'>1,000 - 10,000 visits</Option>
-                      <Option value='10,000 - 50,000 visits'>10,000 - 50,000 visits</Option>
-                      <Option value='50,000 - 100,000 visits'>50,000 - 100,000 visits</Option>
-                      <Option value='100,000 - 200,000 visits'>100,000 - 200,000 visits</Option>
-                      <Option value='200,000 - 250,000 visits'>200,000 - 250,000 visits</Option>
-                      <Option value='250,000+ visits'>250,000+ visits</Option>
+                      <Option value='< 1,000 visits'>&lt; 1000 visits</Option>
+                      <Option value='1,000 - 25,000 visits'>1,000 - 25,000 visits</Option>
+                      <Option value='25,000 - 100,000 visits'>25,000 - 100,000 visits</Option>
+                      <Option value='100,000+ visits'>100,000+ visits</Option>
                     </Select>
 
                     <Button className='primary' type='submit' disabled={isSubmitting}>
