@@ -28,7 +28,7 @@ const LegalCcpa: SqueakyPage<ServerSideProps> = () => (
       <p>The California Consumer Privacy Act, also referred to as CCPA, is a privacy-centric bill aimed at protecting the privacy of California consumers that became effective on January the 1st, 2020.</p>
 
       <h4>Do I need to comply with CCPA?</h4> 
-      <p>Many people mistakenly believe that the CCPA doesn&apos;t apply to them e.g. because they are not based in Californiao, but this is not always true - so please make sure you&apos;re clear if CCPA applies to you.</p>
+      <p>Many people mistakenly believe that the CCPA doesn&apos;t apply to them e.g. because they are not based in California, but this is not always true - so please make sure you&apos;re clear if CCPA applies to you.</p>
       <p>You will need to comply with the CCPA if you do business in California and meet any of the following requirements:</p>
       <ul>
         <li className='tight'>Have $25 million or more in annual revenue</li>
@@ -49,7 +49,7 @@ const LegalCcpa: SqueakyPage<ServerSideProps> = () => (
 
       <div className='consent-card'>
         <p><b>Squeaky</b></p>
-        <p>We want to process as little personal information as possible when you use our website or service, that&apos;s why we&apos;ve chosen Squeaky for our web analytics. Squeaky doesn&apos;t use cookies and complies fully with the GDPR, and CCPA data privacy regulations - ensuring all usage is tracked anonymously unless otherwise defined or requested. Whilst using this privacy-friendly website analytics software, your IP address is briefly processed for screening purposes and never stored. As per the CCPA, your personal information is no identifiable without your express consent. You can read more about this on Squeaky website.</p>
+        <p>We want to process as little personal information as possible when you use our website or service, that&apos;s why we&apos;ve chosen Squeaky for our web analytics. Squeaky doesn&apos;t use cookies and complies fully with the GDPR, and CCPA data privacy regulations - ensuring all usage is tracked anonymously unless otherwise defined or requested. Whilst using this privacy-friendly website analytics software, your IP address is briefly processed for screening purposes and never stored. As per the CCPA, your personal information is not identifiable without your express consent. You can read more about this on Squeaky&apos;s website.</p>
         <p>The purpose of us using this software is to understand our website traffic in the most privacy-friendly way possible so that we can continually improve our website and business. The lawful basis as per the GDPR is &quot;f); where our legitimate interests are to improve our website and business continually.&quot; As per the explanation, no personal data is stored over time.</p>
         <p><b>Address</b>: Squeaky B.V., Debussystraat 43, 2324KH Leiden, The Netherlands</p>
         <p><b>Usage data</b>: locale, device width and height, browser width and height, referrer, useragent, timezone, session start and end time, click coordinates, clicked elements, scroll position, mouse position, page views, user feedback (if submitted).</p>
