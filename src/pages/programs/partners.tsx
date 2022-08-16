@@ -85,7 +85,7 @@ const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
             title='Who can sign up?'
             body={
               <>
-                <p>The Squeaky Partner Program is open to any legally registered businesses that wishes to refer their clients to Squeaky and help them improve their customer experience. Ideally, you and existing group of clients or an audience who need a solution like Squeaky.</p>
+                <p>The Squeaky Partner Program is open to any legally registered businesses that wishes to refer their clients to Squeaky and help them improve their customer experience. Ideally, you have an existing group of clients or an audience who need a solution like Squeaky.</p>
                 <p>We reserve the right to reject applications from business that we don&apos;t feel are suitable partners to Squeaky.</p>
               </>
             }
