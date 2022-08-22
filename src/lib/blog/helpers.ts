@@ -9,7 +9,7 @@ export function buildCategoryUrl(router: NextRouter, category: string | null): s
     return `${path}${queryString}`;
   }
 
-  return `${path}/${category.toLowerCase()}${queryString}`;
+  return `${path}/${category.toLowerCase().replace(/ /g, '-')}${queryString}`;
 };
 
 export function buildTagUrl(router: NextRouter, tag: string): string {
@@ -49,7 +49,7 @@ export function buildTagsUrl(router: NextRouter, tags: string[]): string {
 export function getCategoryFromPathParam(param: string | string[]): string | null {
   if (!param) return null;
 
-  return Array.isArray(param) ? param[0] : param;
+  return (Array.isArray(param) ? param[0] : param).replace(/-/g, ' ');
 }
 
 export function getTagsFromQueryParam(param: string | string[]): string[] {
