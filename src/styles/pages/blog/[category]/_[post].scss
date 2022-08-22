@@ -252,6 +252,16 @@
       }
     }
 
+    blockquote {
+      border-left: 2px solid var(--mauve-700);
+      margin: 1.5rem 0;
+      padding: 0 0 0 1.5rem;
+
+      p {
+        margin: 0;
+      }
+    }
+
     .embed {
       align-items: center;
       display: flex;
