@@ -119,6 +119,11 @@ const Features: SqueakyPage<ServerSideProps> = () => {
               body='Our script automatically anonymises all data entered in forms and we ensure you never have to transfer customer data from their device.'
             />
             <FeaturesGridItem
+              icon='eraser-line'
+              title='Magic Erasure™'
+              body='Squeaky&apos;s Magic Erasure lets you quickly teach our script (with just a few clicks) which elements on your page to avoid capturing during your visitors&apos; session. It&apos;s a huge time saver that enables you to put user privacy first without needing technical expertise.'
+            />
+            <FeaturesGridItem
               icon='fullscreen-exit-line'
               title='Hide anything'
               body='Add our privacy tags to elements of your site or web app&apos;s html to anonymise any elements you like, ensuring that even logged in users can stay anonymous.'

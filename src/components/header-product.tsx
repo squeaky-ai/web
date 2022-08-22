@@ -69,7 +69,7 @@ export const HeaderProduct: FC = () => {
           </div>
           <p className='banner'>
             <Icon name='star-line' />
-            All plans include our 4 core products
+            All plans include our 5 core products
           </p>
           <div className='banner-right'>
             <Image src={bannerRight} width={32} height={36} alt='illustraion to present text as a banner' unoptimized priority />
