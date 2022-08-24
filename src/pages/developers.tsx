@@ -17,7 +17,7 @@ const Developers: SqueakyPage<ServerSideProps> = () => {
     <>
       <PageTitle
         title='Developers'
-        subtitle={<>Last Updated: <b>July 23rd 2022</b></>}
+        subtitle={<>Last Updated: <b>August 24th 2022</b></>}
       />
 
       <Main>
@@ -365,7 +365,7 @@ const Button: FC = () => {
               </>
             )}
 
-{tab === 'sentiment-surveys' && (
+            {tab === 'sentiment-surveys' && (
               <>
                 <h4><code className='code'>squeaky.showSentimentSurvey();</code></h4>
                 <p>Squeaky allows developers to trigger the sentiment survey programatically. Within the sentiment appearance tab in Squeaky, you can select the custom trigger option.</p>
@@ -412,6 +412,120 @@ const Button: FC = () => {
   return (
     <button className='sentiment-survey' onClick={handleClick}>
       Give your feedback
+    </button>
+  );
+};`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+            {tab === 'accept-consent' && (
+              <>
+                <h4><code className='code'>squeaky.acceptConsent();</code></h4>
+                <p>If you wish to request consent from your visitors before Squeaky collects any data, you have two options. The first option is to use the Squeaky widget, and the second is to use the API with your own interface.</p>
+                <p>To let visitors consent via your own interface, simply call the function:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/partials/_accept_consent_button.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<button class="consent" onclick="squeaky.acceptConsent();">
+  Accept Consent
+</button>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            components/accept-consent-button.tsx
+                          </p>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+
+const Button: FC = () => {
+  const handleClick = () => {
+    squeaky.acceptConsent();
+  };
+
+  return (
+    <button className='consent' onClick={handleClick}>
+      Accept Consent
+    </button>
+  );
+};`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+            {tab === 'reject-consent' && (
+              <>
+                <h4><code className='code'>squeaky.rejectConsent();</code></h4>
+                <p>If you wish to request consent from your visitors before Squeaky collects any data, you have two options. The first option is to use the Squeaky widget, and the second is to use the API with your own interface.</p>
+                <p>To let visitors reject consent via your own interface, simply call the function:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            app/views/partials/_reject_consent_button.html.erb
+                          </p>
+                          <Code lang='html'>
+{`<button class="consent" onclick="squeaky.rejectConsent();">
+  Reject Consent
+</button>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <p className='filename'>
+                            <Icon name='file-code-line' />
+                            components/reject-consent-button.tsx
+                          </p>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+
+const Button: FC = () => {
+  const handleClick = () => {
+    squeaky.rejectConsent();
+  };
+
+  return (
+    <button className='consent' onClick={handleClick}>
+      Reject Consent
     </button>
   );
 };`}

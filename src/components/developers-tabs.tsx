@@ -61,5 +61,19 @@ export const DevelopersTabs: FC<Props> = ({ tab, setTab }) => (
       <code className='code'>showSentimentSurvey</code>
       <Icon name='arrow-drop-right-line' />
     </Button>
+    <Button 
+      className={classnames({ active: tab === 'accept-consent' })}
+      onClick={() => setTab('accept-consent')}
+    >
+      <code className='code'>acceptConsent</code>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
+    <Button 
+      className={classnames({ active: tab === 'reject-consent' })}
+      onClick={() => setTab('reject-consent')}
+    >
+      <code className='code'>rejectConsent</code>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
   </aside>
 );

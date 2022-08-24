@@ -4,4 +4,6 @@ export type DeveloperTab =
   'user-indentification' |
   'nps-surveys' |
   'sentiment-surveys' |
-  'page-views';
+  'page-views' |
+  'accept-consent' |
+  'reject-consent';
