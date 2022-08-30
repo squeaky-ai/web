@@ -290,6 +290,10 @@
       }
     }
     
+    iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
 
     .info {
       background: var(--peach-200);
