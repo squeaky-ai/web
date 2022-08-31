@@ -144,6 +144,7 @@ const UseCasesCustomerSuccess: SqueakyPage<NextPage> = () => (
         <SideBySide 
           title='Understand the exact routes visitors take whlist navigating your site.'
           body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
+          buttonType='secondary-marine'
           linkText='Learn More'
           linkHref='/product/journeys'
           image={<Screen screen='journeys-1' />}

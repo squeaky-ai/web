@@ -156,6 +156,7 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
           body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
           linkText='Learn More'
           linkHref='/product/journeys'
+          buttonType='secondary-marine'
           image={<Screen screen='journeys-1' />}
           flip
         />

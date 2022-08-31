@@ -683,8 +683,14 @@
     }
 
     .blog-link {
+      color: var(--peach-50);
+
       &.hidden {
         visibility: hidden;
+      }
+
+      span {
+        color: var(--white);
       }
 
       @include breakpoint-md {

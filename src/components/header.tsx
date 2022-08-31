@@ -85,7 +85,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
           <Container className='lg centered'>
             <Link href={`/blog${latestBlogPost.slug}`}>
               <a className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
-                Latest Post: {latestBlogPost.title} <Icon name='arrow-right-line' />
+                <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
               </a>
             </Link>
             <menu>
@@ -94,7 +94,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
               </Link>
               {user
                 ? (
-                  <a href='/app/sites'><Icon name='mail-line' /> Go to account</a>
+                  <a href='/app/sites'><Icon name='account-circle-line' /> Go to account</a>
                 ) : (
                   <Link href='/auth/login'>
                     <a><Icon name='account-circle-line' /> Log in</a>
