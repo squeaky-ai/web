@@ -6,7 +6,6 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from 'lib/api/graphql';
 import { ToastProvider } from 'components/toast';
 import { Page } from 'components/page';
-import { User } from 'components/user';
 import type { AppProps } from 'next/app';
 import type { SqueakyApp } from 'types/page';
 
@@ -68,11 +67,9 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
 
       <ApolloProvider client={client}>
         <ToastProvider>
-          <User {...pageProps}>
-            <Page {...pageProps}>
-              <Component {...pageProps} />
-            </Page>
-          </User>
+          <Page {...pageProps}>
+            <Component {...pageProps} />
+          </Page>
         </ToastProvider>
       </ApolloProvider>
     </>

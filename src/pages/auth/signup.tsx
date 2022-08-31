@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { NextPage } from 'next';
 import { gql, useLazyQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { Formik } from 'formik';
@@ -16,7 +17,6 @@ import { Message } from 'components/message';
 import { Password } from 'components/password';
 import { passwordTest } from 'data/users/constants';
 import { useToasts } from 'hooks/use-toasts';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authSignup, authReconfirm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
 
@@ -42,7 +42,7 @@ const PasswordSchema = Yup.object().shape({
   password: Yup.string().test(passwordTest),
 });
 
-const AuthSignup: SqueakyPage<ServerSideProps> = () => {
+const AuthSignup: SqueakyPage<NextPage> = () => {
   const toasts = useToasts();
   const router = useRouter();
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
@@ -251,4 +251,3 @@ AuthSignup.getMetaData = () => ({
 });
 
 export default AuthSignup;
-export { getServerSideProps };

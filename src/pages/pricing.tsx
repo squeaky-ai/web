@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { NextPage } from 'next';
 import { Container } from 'components/container';
 import { Currencies } from 'components/currencies';
 import { Calculator } from 'components/calculator';
@@ -8,12 +9,11 @@ import { TestimonialQuote } from 'components/testimonial-quote';
 import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
 import { Accordion } from 'components/accordion';
 import { Cta } from 'components/cta';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { Interval, getUsefulCurrency } from 'lib/currency';
 import type { Currency } from 'types/common';
 import type { SqueakyPage } from 'types/page';
 
-const Pricing: SqueakyPage<ServerSideProps> = () => {
+const Pricing: SqueakyPage<NextPage> = () => {
   const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
   const [interval, setInterval] = React.useState<Interval>(Interval.MONTHLY);
 
@@ -173,4 +173,3 @@ Pricing.getMetaData = () => ({
 });
 
 export default Pricing;
-export { getServerSideProps };

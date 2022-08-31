@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -13,7 +14,6 @@ import { Message } from 'components/message';
 import { login } from 'lib/api/auth';
 import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authConfirm, authReconfirm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
 
@@ -27,7 +27,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Password is required')
 });
 
-const AuthLogin: SqueakyPage<ServerSideProps> = () => {
+const AuthLogin: SqueakyPage<NextPage> = () => {
   const router = useRouter();
   const toasts = useToasts();
   const [email, setEmail] = React.useState<string>('');
@@ -223,4 +223,3 @@ AuthLogin.getMetaData = () => ({
 });
 
 export default AuthLogin;
-export { getServerSideProps };

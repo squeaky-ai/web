@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import { PageTitle } from 'components/page-title';
 import { Illustration } from 'components/illustration';
 import { Cta } from 'components/cta';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
 import type { SqueakyPage } from 'types/page';
@@ -12,7 +12,7 @@ import type { SqueakyPage } from 'types/page';
 import chris from '../../public/stallions/chris.webp';
 import lewis from '../../public/stallions/lewis.webp';
 
-const AboutUs: SqueakyPage<ServerSideProps> = () => (
+const AboutUs: SqueakyPage<NextPage> = () => (
   <>
     <PageTitle
       title='About us'
@@ -109,4 +109,3 @@ AboutUs.getMetaData = () => ({
 });
 
 export default AboutUs;
-export { getServerSideProps };

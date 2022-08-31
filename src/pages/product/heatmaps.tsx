@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -10,10 +11,9 @@ import { UpAndRunning } from 'components/up-and-running';
 import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { ProductTools } from 'components/product-tools';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-const ProductHeatmaps: SqueakyPage<ServerSideProps> = () => (
+const ProductHeatmaps: SqueakyPage<NextPage> = () => (
   <>
     <ProductHeader
       title='Understand which content matters'
@@ -140,4 +140,3 @@ ProductHeatmaps.getMetaData = () => ({
 });
 
 export default ProductHeatmaps;
-export { getServerSideProps };

@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
+import { NextPage } from 'next';
 import { Formik } from 'formik';
 import { PageTitle } from 'components/page-title';
 import { ContactForm } from 'components/contact-form';
@@ -10,7 +11,6 @@ import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
 import { bookDemoForm } from 'lib/api/graphql';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
 import type { SqueakyPage } from 'types/page';
 
@@ -24,7 +24,7 @@ const BookDemoSchema = Yup.object().shape({
   message: Yup.string().required('Reason for demo is required'),
 });
 
-const BookDemo: SqueakyPage<ServerSideProps> = () => {
+const BookDemo: SqueakyPage<NextPage> = () => {
   const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
@@ -185,4 +185,3 @@ BookDemo.getMetaData = () => ({
 });
 
 export default BookDemo;
-export { getServerSideProps };

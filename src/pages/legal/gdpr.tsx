@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import { NextPage } from 'next';
 import { Divider } from 'components/divider';
 import { LegalMessage } from 'components/legal-message';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalContainer } from 'components/legal-container';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-const LegalGdpr: SqueakyPage<ServerSideProps> = () => (
+const LegalGdpr: SqueakyPage<NextPage> = () => (
   <>
     <PageTitle
       title='Legal &amp; Compliance'
@@ -107,4 +107,3 @@ LegalGdpr.getMetaData = () => ({
 });
 
 export default LegalGdpr;
-export { getServerSideProps };

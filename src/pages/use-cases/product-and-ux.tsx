@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import { Container } from 'components/container';
 import { Screen } from 'components/screen';
 import { Screenshot } from 'components/screenshots';
@@ -10,12 +11,11 @@ import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
 import { Cta } from 'components/cta';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-1.webp';
 
-const UseCasesProductAndUx: SqueakyPage<ServerSideProps> = () => (
+const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
   <>
     <UseCasesHeader
       subtitle='For Product &amp; UX Teams'
@@ -183,4 +183,3 @@ UseCasesProductAndUx.getMetaData = () => ({
 });
 
 export default UseCasesProductAndUx;
-export { getServerSideProps };

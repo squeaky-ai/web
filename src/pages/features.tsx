@@ -1,12 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
+import { NextPage } from 'next';
 import { Button } from 'components/button';
 import { Container } from 'components/container';
 import { PageTitle, PageTitleNav } from 'components/page-title';
 import { FeaturesGrid, FeaturesGridItem } from 'components/features-grid';
 import { Cta } from 'components/cta';
 import { debounce } from 'lib/utils';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
 type Tab = 'privacy' | 'dashboard' | 'visitors' | 'analytics' |  'recordings' | 'feedback' | 'heatmaps' | 'journeys' | 'team' | 'ease-of-use';
@@ -56,7 +56,7 @@ const tabs: Tabs = [
   },
 ];
 
-const Features: SqueakyPage<ServerSideProps> = () => {
+const Features: SqueakyPage<NextPage> = () => {
   const [tab, setTab] = React.useState<Tab>('privacy');
 
   const handleTabClick = (tab: Tab) => () => {
@@ -542,4 +542,3 @@ Features.getMetaData = () => ({
 });
 
 export default Features;
-export { getServerSideProps };

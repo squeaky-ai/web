@@ -65,28 +65,29 @@
   }
 
   &.primary {
-    background: var(--yellow-500);
-    border: 2px solid var(--yellow-500);
+    background: var(--peach-400);
+    border: 2px solid var(--peach-500);
     border-radius: var(--border-radius-xl);
     color: var(--gray-blue-800);
     padding: .34rem 1.25rem;
     white-space: nowrap;
 
     &:hover {
-      opacity: .75;
+      background: var(--peach-300);
     }
   }
 
   &.secondary {
-    background: transparent;
-    border: 2px solid var(--yellow-500);
+    background: var(--white);
+    border: 2px solid var(--mauve-400);
     border-radius: var(--border-radius-xl);
     color: var(--gray-blue-800);
     padding: .34rem 1.25rem;
     white-space: nowrap;
 
     &:hover {
-      opacity: .75;
+      background: var(--peach-50);
+      border-color: var(--mauve-700);
     }
   }
 

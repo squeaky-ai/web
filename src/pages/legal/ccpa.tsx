@@ -1,13 +1,13 @@
 import React from 'react';
+import { NextPage } from 'next';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
 import { Divider } from 'components/divider';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-const LegalCcpa: SqueakyPage<ServerSideProps> = () => (
+const LegalCcpa: SqueakyPage<NextPage> = () => (
   <>
     <PageTitle
       title='Legal &amp; Compliance'
@@ -79,4 +79,3 @@ LegalCcpa.getMetaData = () => ({
 });
 
 export default LegalCcpa;
-export { getServerSideProps };

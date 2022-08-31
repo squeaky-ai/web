@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { NextPage } from 'next';
 import { Formik } from 'formik';
 import { PageTitle } from 'components/page-title';
 import { ContactForm } from 'components/contact-form';
@@ -9,7 +10,6 @@ import { Label } from 'components/label';
 import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
 import { contactForm } from 'lib/api/graphql';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
 import type { SqueakyPage } from 'types/page';
 
@@ -21,7 +21,7 @@ const ContactSchema = Yup.object().shape({
   message: Yup.string().required('Message is required'),
 });
 
-const ContactUs: SqueakyPage<ServerSideProps> = () => {
+const ContactUs: SqueakyPage<NextPage> = () => {
   const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
 
@@ -161,4 +161,3 @@ ContactUs.getMetaData = () => ({
 });
 
 export default ContactUs;
-export { getServerSideProps };

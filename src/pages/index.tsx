@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { NextPage } from 'next';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
 import { Illustration } from 'components/illustration';
@@ -7,34 +7,23 @@ import { Carousel, CarouselItem } from 'components/carousel';
 import { SideBySide } from 'components/side-by-side';
 import { Screen } from 'components/screen';
 import { Screenshot } from 'components/screenshots';
+import { GetStarted } from 'components/get-started';
 import { Cta } from 'components/cta';
 import { UpAndRunning } from 'components/up-and-running';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { ThreeImageGrid, ThreeImageGridItem } from 'components/three-image-grid';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Platforms } from 'components/platforms';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-const Home: SqueakyPage<ServerSideProps> = () => {
+const Home: SqueakyPage<NextPage> = () => {
   return (
     <>
       <section className='hero'>
         <Container className='centered md'>
           <h1>Product analytics for customer-obsessed companies</h1>
           <p>Squeaky&apos;s future-proof <a href='#elevate-your-customers-digital-experience'>analytics suite</a> lets you capture up to 60% more data than legacy tools by putting customer privacy first.</p>
-          <div className='actions'>
-            <Link href='/auth/signup'>
-              <a className='button primary'>
-                Get Started
-              </a>
-            </Link>
-            <Link href='/book-demo'>
-              <a className='button secondary'>
-              Book Demo
-              </a>
-            </Link>
-          </div>
+          <GetStarted />
         </Container>
         <div className='features'>
           <p>
@@ -216,4 +205,3 @@ Home.getMetaData = () => ({
 });
 
 export default Home;
-export { getServerSideProps };

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import { Container } from 'components/container';
 import { Carousel, CarouselItem } from 'components/carousel';
 import { Screenshot } from 'components/screenshots';
@@ -10,12 +11,11 @@ import { Screen } from 'components/screen';
 import { Cta } from 'components/cta';
 import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-3.webp';
 
-const UseCasesCustomerSuccess: SqueakyPage<ServerSideProps> = () => (
+const UseCasesCustomerSuccess: SqueakyPage<NextPage> = () => (
   <>
     <UseCasesHeader
       subtitle='For customer success teams'
@@ -173,4 +173,3 @@ UseCasesCustomerSuccess.getMetaData = () => ({
 });
 
 export default UseCasesCustomerSuccess;
-export { getServerSideProps };

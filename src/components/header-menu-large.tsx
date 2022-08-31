@@ -28,12 +28,12 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
 
   return (
     <menu className='large'>
-      <HeaderMenu link='Use Cases' active={router.route.startsWith('/use-cases')} open={subMenuOpen === 'use-cases'} handleOpen={handleOpen('use-cases')}>
-        <HeaderUseCases />
-      </HeaderMenu>
-
       <HeaderMenu link='Product' active={false} open={subMenuOpen === 'product'} handleOpen={handleOpen('product')}>
         <HeaderProduct />
+      </HeaderMenu>
+
+      <HeaderMenu link='Use Cases' active={router.route.startsWith('/use-cases')} open={subMenuOpen === 'use-cases'} handleOpen={handleOpen('use-cases')}>
+        <HeaderUseCases />
       </HeaderMenu>
 
       <Link href='/pricing'>

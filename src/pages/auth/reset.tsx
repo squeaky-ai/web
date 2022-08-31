@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { NextPage } from 'next';
 import { Formik } from 'formik';
 import { useRouter } from 'next/router';
 import { Icon } from 'components/icon';
@@ -12,7 +13,6 @@ import { Input } from 'components/input';
 import { Button, DelayedButton } from 'components/button';
 import { Password } from 'components/password';
 import { passwordTest } from 'data/users/constants';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { authPasswordReset, authPasswordUpdate } from 'lib/api/graphql';
 import { useToasts } from 'hooks/use-toasts';
 import type { SqueakyPage } from 'types/page';
@@ -32,7 +32,7 @@ enum PageView {
   COMPLETE
 }
 
-const AuthReset: SqueakyPage<ServerSideProps> = () => {
+const AuthReset: SqueakyPage<NextPage> = () => {
   const router = useRouter();
   const toasts = useToasts();
 
@@ -207,4 +207,3 @@ AuthReset.getMetaData = () => ({
 });
 
 export default AuthReset;
-export { getServerSideProps };

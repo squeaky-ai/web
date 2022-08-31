@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -11,10 +12,9 @@ import { Platforms } from 'components/platforms';
 import { Cta } from 'components/cta';
 import { UpAndRunning } from 'components/up-and-running';
 import { ProductTools } from 'components/product-tools';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
-const ProductRecordings: SqueakyPage<ServerSideProps> = () => (
+const ProductRecordings: SqueakyPage<NextPage> = () => (
   <>
     <ProductHeader
       title='See what your customers see'
@@ -170,4 +170,3 @@ ProductRecordings.getMetaData = () => ({
 });
 
 export default ProductRecordings;
-export { getServerSideProps };

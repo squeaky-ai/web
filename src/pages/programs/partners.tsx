@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { NextPage } from 'next';
 import { Formik } from 'formik';
 import { Container } from 'components/container';
 import { Accordion } from 'components/accordion';
@@ -16,7 +17,6 @@ import { Illustration } from 'components/illustration';
 import { ContactForm } from 'components/contact-form';
 import { Button } from 'components/button';
 import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { contactPartnersForm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
@@ -30,7 +30,7 @@ const ContactSchema = Yup.object().shape({
   clientCount: Yup.string(),
 });
 
-const ProgramsPartners: SqueakyPage<ServerSideProps> = () => {
+const ProgramsPartners: SqueakyPage<NextPage> = () => {
   const toasts = useToasts();
   const [submitted, setSubmitted] = React.useState<boolean>(false);
   
@@ -309,4 +309,3 @@ ProgramsPartners.getMetaData = () => ({
 });
 
 export default ProgramsPartners;
-export { getServerSideProps };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextPage } from 'next';
 import { Icon } from 'components/icon';
 import { PageTitle } from 'components/page-title';
 import { Container } from 'components/container';
@@ -6,11 +7,10 @@ import { Code } from 'components/code';
 import { Main } from 'components/main';
 import { DevelopersTabs } from 'components/developers-tabs';
 import { Tabs } from 'components/tabs';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 import type { DeveloperTab } from 'types/developers';
 
-const Developers: SqueakyPage<ServerSideProps> = () => {
+const Developers: SqueakyPage<NextPage> = () => {
   const [tab, setTab] = React.useState<DeveloperTab>('tracking-code');
 
   return (
@@ -551,4 +551,3 @@ Developers.getMetaData = () => ({
 });
 
 export default Developers;
-export { getServerSideProps };

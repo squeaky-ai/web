@@ -1,17 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import { PageTitle } from 'components/page-title';
 import { LegalNav } from 'components/legal-nav';
 import { LegalMessage } from 'components/legal-message';
 import { LegalContainer } from 'components/legal-container';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
 import isoLogo from '../../../public/compliance/iso.webp';
 import pciDssLogo from '../../../public/compliance/pci-dss.webp';
 import socLogo from '../../../public/compliance/soc.webp';
 
-const LegalSecurity: SqueakyPage<ServerSideProps> = () => (
+const LegalSecurity: SqueakyPage<NextPage> = () => (
   <>
     <PageTitle
       title='Legal &amp; Compliance'
@@ -81,4 +81,3 @@ LegalSecurity.getMetaData = () => ({
 });
 
 export default LegalSecurity;
-export { getServerSideProps };

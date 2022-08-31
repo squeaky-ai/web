@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import { Container } from 'components/container';
 import { Carousel, CarouselItem } from 'components/carousel';
 import { Screen } from 'components/screen';
@@ -10,12 +11,11 @@ import { SideBySide } from 'components/side-by-side';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
 
 import useCasesHeaderImage from '../../../public/use-cases/use-case-2.webp';
 
-const UseCasesMarketingAndConversion: SqueakyPage<ServerSideProps> = () => (
+const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
   <>
     <UseCasesHeader
       subtitle='For Marketing &amp; conversion'
@@ -177,4 +177,3 @@ UseCasesMarketingAndConversion.getMetaData = () => ({
 });
 
 export default UseCasesMarketingAndConversion;
-export { getServerSideProps };

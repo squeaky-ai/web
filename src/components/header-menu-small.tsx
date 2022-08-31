@@ -33,17 +33,6 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
 
       {open && (
         <div className='menu-drawer'>
-          <HeaderMenuSmallDrawer title='Use Cases' open={subMenuOpen === 'use-cases'} toggleOpen={toggleSubMenuOpen('use-cases')}>
-            <Link href='/use-cases/product-and-ux'>
-              <a>Product &amp; UX</a>
-            </Link>
-            <Link href='/use-cases/marketing-and-conversion'>
-              <a>Marketing &amp; Conversion</a>
-            </Link>
-            <Link href='/use-cases/customer-success'>
-              <a>Customer Success</a>
-            </Link>
-          </HeaderMenuSmallDrawer>
           <HeaderMenuSmallDrawer title='Product' open={subMenuOpen === 'product'} toggleOpen={toggleSubMenuOpen('product')}>
             <Link href='/product/recordings'>
               <a>Recordings</a>
@@ -60,6 +49,17 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <Link href='/product/journeys'>
               <a>Journeys</a>
             </Link> 
+          </HeaderMenuSmallDrawer>
+          <HeaderMenuSmallDrawer title='Use Cases' open={subMenuOpen === 'use-cases'} toggleOpen={toggleSubMenuOpen('use-cases')}>
+            <Link href='/use-cases/product-and-ux'>
+              <a>Product &amp; UX</a>
+            </Link>
+            <Link href='/use-cases/marketing-and-conversion'>
+              <a>Marketing &amp; Conversion</a>
+            </Link>
+            <Link href='/use-cases/customer-success'>
+              <a>Customer Success</a>
+            </Link>
           </HeaderMenuSmallDrawer>
           <div className='header-drawer-item'>
             <Link href='/pricing'>
