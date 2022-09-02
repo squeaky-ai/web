@@ -54,7 +54,8 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
 
   React.useEffect(() => {
     (async () => {
-      const token = router.query.token as string;
+      const search = new URLSearchParams(location.search)
+      const token = search.get('token');
       if (!token) return;
 
       try {
