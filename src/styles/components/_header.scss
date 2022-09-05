@@ -660,6 +660,10 @@
   height: 2rem;
   padding: .4rem 2rem;
 
+  @include breakpoint-sm {
+    display: none;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
