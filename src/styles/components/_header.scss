@@ -112,7 +112,7 @@
     .auth {
       display: none;
 
-      @include breakpoint-sm {
+      @include breakpoint-md {
         display: inline-block;
       }
     }
@@ -155,7 +155,7 @@
     }
 
 
-    @include breakpoint-sm {
+    @include breakpoint-md {
       & > .primary,
       & > .secondary {
         display: none;
@@ -176,7 +176,7 @@
       display: none;
     }
 
-    @include breakpoint-sm {
+    @include breakpoint-md {
       height: calc(100% - 5rem);
       top: 5rem;
 
@@ -660,17 +660,13 @@
   height: 2rem;
   padding: .4rem 2rem;
 
-  @include breakpoint-sm {
+  @include breakpoint-md {
     display: none;
   }
 
   .container {
     display: flex;
     justify-content: space-between;
-
-    @include breakpoint-md {
-      justify-content: flex-end;
-    }
 
     a {
       align-items: center;
