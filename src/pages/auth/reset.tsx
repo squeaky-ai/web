@@ -3,7 +3,6 @@ import Link from 'next/link';
 import * as Yup from 'yup';
 import { NextPage } from 'next';
 import { Formik } from 'formik';
-import { useRouter } from 'next/router';
 import { Icon } from 'components/icon';
 import { Logo } from 'components/logo';
 import { Container } from 'components/container';
@@ -33,16 +32,17 @@ enum PageView {
 }
 
 const AuthReset: SqueakyPage<NextPage> = () => {
-  const router = useRouter();
   const toasts = useToasts();
 
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
   const [email, setEmail] = React.useState<string>(null);
+  const [token, setToken] = React.useState<string>(null);
 
   React.useEffect(() => {
     const search = new URLSearchParams(location.search)
     const token = search.get('token');
     if (token) {
+      setToken(token);
       setPageView(PageView.CHANGE);
     }
   }, []);
@@ -132,7 +132,7 @@ const AuthReset: SqueakyPage<NextPage> = () => {
                   <h1>Create New Password</h1>
 
                   <Formik
-                    initialValues={{ resetPasswordToken: router.query.token as string, password: '' }}
+                    initialValues={{ resetPasswordToken: token, password: '' }}
                     validationSchema={ChangeSchema}
                     onSubmit={(values, { setSubmitting }) => {
                       (async () => {
