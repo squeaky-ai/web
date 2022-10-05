@@ -15,7 +15,7 @@
     .subtitle {
       color: var(--gray-blue-400);
       font-size: 13px;
-      font-weight: var(--font-weight-block);
+      font-weight: var(--font-weight-semibold);
       line-height: 8px;
       margin: 0 0 1.5rem 0;
       text-transform: uppercase;
@@ -85,13 +85,13 @@
 
     h2 {
       color: var(--mauve-700);
-      font-weight: var(--font-weight-block);
+      font-weight: var(--font-weight-semibold);
       margin: 0 0 2rem 0;
     }
 
     p {
       color: var(--gray-blue-700);
-      font-weight: var(--font-weight-block);
+      font-weight: var(--font-weight-semibold);
       margin: 0;
 
       a {

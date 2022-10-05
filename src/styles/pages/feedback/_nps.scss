@@ -29,7 +29,7 @@
 
       select {
         font-size: 12px;
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-medium);
         height: auto;
         line-height: 16px;
         margin: 0;
@@ -49,7 +49,7 @@
 
   .title {
     font-size: 14px;
-    font-weight: var(--font-weight-block);
+    font-weight: var(--font-weight-semibold);
     line-height: 20px;
     margin: 0;
     padding: 3rem 3rem 2rem 3rem;
@@ -74,7 +74,7 @@
 
   .label {
     font-size: 14px;
-    font-weight: var(--font-weight-block);
+    font-weight: var(--font-weight-semibold);
     line-height: 20px;
     margin: 0 0 .75rem 0;
   }
@@ -141,7 +141,7 @@
           border-radius: 0.25rem;
           cursor: pointer;
           display: flex;
-          font-weight: var(--font-weight-block);
+          font-weight: var(--font-weight-semibold);
           height: 2rem;
           justify-content: center;
           width: 2rem;

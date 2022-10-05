@@ -20,7 +20,7 @@
     color: var(--gray-blue-800);
     display: flex;
     font-size: .875rem;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-medium);
     line-height: 1.25rem;
     
     .icon {
@@ -87,7 +87,7 @@
 
       select {
         font-size: 12px;
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-medium);
         height: auto;
         line-height: 16px;
         margin: 0;
