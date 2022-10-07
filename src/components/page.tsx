@@ -44,11 +44,11 @@ export const Page: FC<Props> = ({ children }) => {
   }
 
   React.useEffect(() => {
-    if (!user || !loaded) return;
+    if (!user || !!loaded || dev) return;
 
     const { id, firstName, lastName, email, superuser, createdAt } = user;
 
-    window.squeaky.identify(id, {
+    window.squeaky?.identify(id, {
       'name': `${firstName} ${lastName}`,
       'email': email,
       'superuser': superuser ? 'Yes' : 'No',
