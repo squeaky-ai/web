@@ -304,7 +304,7 @@ const ProgramsPartners: SqueakyPage<NextPage> = () => {
 
 ProgramsPartners.getMetaData = () => ({
   title: 'Squeaky | Partner with Squeaky',
-  description: 'Join the Squeaky Partner Program to accelerate your business growth. Each time you introduce a client to Squeaky you\'ll earn 20% of any recurring revenue from the referral, for the duration of their contract.',
+  description: 'Join the Squeaky Partner Program to accelerate your business growth by earning a 20% share of the recurring revenue from any client you refer.',
   index: true,
 });
 

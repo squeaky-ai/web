@@ -308,7 +308,7 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
 
 ProgramsStartups.getMetaData = () => ({
   title: 'Squeaky | Squeaky for startups',
-  description: 'At Squeaky we know how it feels to be a new startup that\'s locked out of great tools because of prohibitively expensive pricing, that\'s why we created a discount program just for new businesses!',
+  description: 'We know how it feels to be a new business, locked out of great tools due to prohibitively expensive pricing, so we created a discount program just for startups!',
   index: true,
 });
 
