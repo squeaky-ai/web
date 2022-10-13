@@ -10,7 +10,7 @@ interface UsePage {
 
 interface Response {
   user: User | null;
-  blogPosts: BlogPosts
+  blogPosts: BlogPosts;
 }
 
 const QUERY = gql`

@@ -2,10 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
 import { Container } from 'components/container';
+import { Icon } from 'components/icon';
+import { LatestArticles } from 'components/latest-articles';
 import { GetPostsProps, getPost as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
 import type { SqueakyPage } from 'types/page';
-import { Icon } from 'components/icon';
 
 const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
   const { post } = blog;
@@ -96,6 +97,8 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
 
         <article dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
+
+      <LatestArticles />
 
       {post.scripts.map(script => (
         <Script src={script} key={script} />
