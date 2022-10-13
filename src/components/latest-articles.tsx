@@ -4,22 +4,22 @@ import Link from 'next/link';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import { Container } from 'components/container';
-import { Spinner } from 'components/spinner';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
-import { useBlogPosts } from 'hooks/use-blog-posts';
 import { useResize } from 'hooks/use-resize';
+import type { BlogPost } from 'types/graphql';
 
-export const LatestArticles: FC = () => {
+interface Props {
+  posts: BlogPost[];
+}
+
+export const LatestArticles: FC<Props> = ({ posts }) => {
   const router = useRouter();
   const [position, setPosition] = React.useState<number>(0);
 
   const { desktop, tablet } = useResize();
-  const { blogPosts, error, loading } = useBlogPosts();
 
-  const posts = blogPosts
-    .filter(p => p.slug !== router.asPath.replace('/blog', ''))
-    .sort((a, b) => new Date(b.updatedAt).valueOf() - new Date(a.updatedAt).valueOf());
+  const blogPosts = posts.filter(p => p.slug !== router.asPath.replace('/blog', ''));
 
   const columnCount = (() => {
     if (desktop) return 3;
@@ -36,10 +36,10 @@ export const LatestArticles: FC = () => {
   };
 
   const handleBackward = () => {
-    if (position !== posts.length - columnCount) setPosition(position + 1);
+    if (position !== blogPosts.length - columnCount) setPosition(position + 1);
   };
 
-  if (error || posts.length === 0) {
+  if (blogPosts.length === 0) {
     return null;
   }
   
@@ -58,12 +58,8 @@ export const LatestArticles: FC = () => {
           </div>
         </div>
 
-        {loading && (
-          <Spinner />
-        )}
-
         <div className='posts'>
-          {posts.map((post, index) => (
+          {blogPosts.map((post, index) => (
             <Link key={post.id} href={`/blog${post.slug}`}>
               <a className={classnames('card post', { show: shouldShow(index) })}>
                 <div className='image'>

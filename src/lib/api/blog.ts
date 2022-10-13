@@ -67,6 +67,15 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
           createdAt
           updatedAt
         }
+        blogPosts {
+          posts {
+            id
+            slug
+            title
+            metaImage
+            createdAt
+          }
+        }
       }
     `;
 
@@ -77,7 +86,7 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
       }
     });
 
-    return data.data.blogPost;
+    return data.data;
   } catch(error: any) {
     console.error(error.code, error.response);
     return null;

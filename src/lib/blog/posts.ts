@@ -10,7 +10,10 @@ export interface QueryPostsProps extends ServerSideProps {
 }
 
 export interface GetPostsProps extends ServerSideProps {
-  blog: { post: BlogPost };
+  blog: { 
+    post: BlogPost;
+    posts: BlogPost[];
+  };
 }
 
 export const queryPosts: GetServerSideProps = async (context) => {
@@ -48,16 +51,20 @@ export const getPost: GetServerSideProps = async (context) => {
   const { headers } = context.req;
 
   const user = await getUserFromContext(context);
-  const post = await getBlogPost<BlogPost>(headers.cookie, `/${context.query.category}/${context.query.post}`)
+
+  const { blogPost, blogPosts } = await getBlogPost<{ 
+    blogPost: BlogPost,
+    blogPosts: BlogPosts,
+  }>(headers.cookie, `/${context.query.category}/${context.query.post}`)
 
   return {
     props: {
       user,
-      blog: { post },
+      blog: { post: blogPost, posts: blogPosts?.posts || [] },
     },
     // This will trigger the proper 404 page so we don't need
     // to faff around with status codes or rendering anything
     // special on the /posts/... page
-    notFound: !post,
+    notFound: !blogPost,
   }
 };

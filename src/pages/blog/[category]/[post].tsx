@@ -9,7 +9,7 @@ import { toHumanDate } from 'lib/dates';
 import type { SqueakyPage } from 'types/page';
 
 const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
-  const { post } = blog;
+  const { post, posts } = blog;
 
   const toTextSlug = (text: string) => text
     .toLowerCase()
@@ -98,7 +98,7 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
         <article dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
 
-      <LatestArticles />
+      <LatestArticles posts={posts} />
 
       {post.scripts.map(script => (
         <Script src={script} key={script} />
