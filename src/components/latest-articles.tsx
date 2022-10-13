@@ -52,7 +52,7 @@ export const LatestArticles: FC<Props> = ({ posts }) => {
             <Button className='arrow' disabled={position === 0} onClick={handleForward}>
               <Icon name='arrow-left-line' />
             </Button>
-            <Button className='arrow' disabled={position === posts.length - columnCount} onClick={handleBackward}>
+            <Button className='arrow' disabled={position === blogPosts.length - columnCount} onClick={handleBackward}>
               <Icon name='arrow-right-line' />
             </Button>
           </div>
