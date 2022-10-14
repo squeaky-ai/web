@@ -91,10 +91,10 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='What happens if I go over my visit limit?'
             body={
               <>
-                <p>As you approach your visit limit we will send you an email to let you know, and once your limit has been reached you will also be notified in the application. If you go over your limit you have two options:</p>
+                <p>As you approach the visit limit for your subscription we will send you an email to let you know, and once your limit has been reached you will receive an additional email notification. If you go over your limit you have two options:</p>
                 <ol>
-                  <li>You can simply wait until your next month starts, at which point you will begin collect visits again with your new months allocation.</li>
-                  <li>You can upgrade your plan within Squeaky, this will both ensure you don&apos;t run over your limit the following month, and also unlock any visits you&apos;ve currently missed.</li>
+                  <li>You can simply wait until your next month starts, at which point you will begin capturing new visit data using the new month&apos;s allocation.</li>
+                  <li>You can upgrade your plan within Squeaky, this will both ensure you don&apos;t run over your limit the following month, and have no unnecessary gaps in your data.</li>
                 </ol>
               </>
             }
