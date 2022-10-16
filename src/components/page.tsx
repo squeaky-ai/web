@@ -11,13 +11,14 @@ import { usePage } from 'hooks/use-page';
 
 interface Props {
   children: React.ReactNode;
+  partner?: boolean;
 }
 
 const { publicRuntimeConfig } = getConfig();
 
 const { dev = false } = publicRuntimeConfig;
 
-export const Page: FC<Props> = ({ children }) => {
+export const Page: FC<Props> = ({ children, partner }) => {
   const router = useRouter();
 
   const isFeedback = router.pathname.startsWith('/feedback');
@@ -29,7 +30,8 @@ export const Page: FC<Props> = ({ children }) => {
   const slug = router.route
     .split('/')
     .map(r => r.replace(/[\[\]]|(_id)/g, ''))
-    .filter(r => !!r);
+    .filter(r => !!r)
+    .map(r => r.replace('...', ''));
 
   if (slug.find(s => s === '404')) {
     slug.push('not-found');
@@ -41,6 +43,10 @@ export const Page: FC<Props> = ({ children }) => {
 
   if (slug.length === 0) {
     slug.push('home');
+  }
+
+  if (partner) {
+    slug.push('partner-signup');
   }
 
   React.useEffect(() => {

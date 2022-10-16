@@ -192,10 +192,120 @@
   }
 
   .footer-link {
+    text-align: center;
+
     p {
       color: var(--gray-blue-50);
       margin: 0;
       text-align: center;
+    }
+  }
+
+  &.partner-signup {
+    background-color: var(--mauve-800);
+    background-image: url('../../../../public/backgrounds/squiggle-mauve-horizontal.svg');
+
+    aside {
+      h2 {
+        font-size: 48px;
+        line-height: 64px;
+
+        @include breakpoint-md {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+
+      ol {
+        li {
+          span {
+            border: 1px solid var(--rose-500);
+            color: var(--peach-300);
+          }
+        }
+      }
+    }
+
+    .partner-footer {
+      background: var(--mauve-900);
+      border-radius: var(--border-radius-md);
+      display: inline-block;
+      padding: 1.5rem;
+      position: relative;
+
+      p, .button {
+        color: var(--peach-200);
+        font-size: 14px;
+        line-height: 20px;
+
+        span {
+          color: var(--white);
+          font-weight: var(--font-weight-semibold);
+        }
+      }
+
+      .button {
+        color: var(--peach-500);
+        text-decoration: underline;
+      }
+
+      .partner-benefits {
+        background: var(--mauve-900);
+        border-radius: var(--border-radius-md);
+        bottom: 0;
+        display: none;
+        left: 0;
+        padding: 1.5rem;
+        position: absolute;
+        text-align: left;
+        width: 100%;
+
+        &.open {
+          display: block;
+        }
+
+        p {
+          color: var(--white);
+          margin: 0 0 1.5rem 0;
+          text-align: left;
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+
+          li {
+            color: var(--peach-100);
+            font-size: 14px;
+            line-height: 20px;
+            list-style: none;
+            margin: 0 0 .75rem 0;
+
+            &:last-of-type {
+              margin: 0;
+            }
+
+            .icon {
+              color: var(--yellow-500);
+              font-size: 24px;
+              vertical-align: middle;
+            }
+          }
+        }
+
+        .close {
+          background: none;
+          border: none;
+          color: var(--peach-400);
+          font-size: 24px;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          right: 1.5rem;
+          text-decoration: none;
+          top: 1.5rem;
+        }
+      }
     }
   }
 }
