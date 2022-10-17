@@ -27,7 +27,7 @@ const QUERY = gql`
       posts {
         slug
         title
-        updatedAt
+        createdAt
       }
     }
   }
@@ -39,7 +39,7 @@ const getLatestBlogPost = (data: Response): BlogPost | null => {
 
     const posts = data.blogPosts.posts;
 
-    return [...posts].sort((a, b) => new Date(b.updatedAt).valueOf() - new Date(a.updatedAt).valueOf())[0];
+    return [...posts].sort((a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf())[0];
   } catch(error) {
     console.error(error);
     return null;

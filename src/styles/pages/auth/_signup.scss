@@ -205,6 +205,16 @@
     background-color: var(--mauve-800);
     background-image: url('../../../../public/backgrounds/squiggle-mauve-horizontal.svg');
 
+    @include breakpoint-md {
+      background-image: none;
+
+      .footer-link {
+        p {
+          text-align: left;
+        }
+      }
+    }
+
     aside {
       h2 {
         font-size: 48px;
@@ -267,6 +277,7 @@
         p {
           color: var(--white);
           margin: 0 0 1.5rem 0;
+          padding: 0 2rem 0 0;
           text-align: left;
         }
 
