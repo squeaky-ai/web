@@ -248,6 +248,10 @@
         font-size: 14px;
         line-height: 20px;
 
+        @include breakpoint-md {
+          text-align: left;
+        }
+
         span {
           color: var(--white);
           font-weight: var(--font-weight-semibold);
