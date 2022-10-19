@@ -10,12 +10,13 @@ import feedbackImage from '../../public/illustrations/illustration-2.svg';
 import heatmapsImage from '../../public/illustrations/illustration-9.svg';
 import recordingsImage from '../../public/illustrations/illustration-13.svg';
 import journeysImage from '../../public/illustrations/illustration-17.svg';
+import eventsImage from '../../public/illustrations/illustration-18.svg';
 
 interface Props {
   title: string;
   subtitle: string;
   body: React.ReactNode;
-  image: 'analytics' | 'feedback' | 'heatmaps' | 'recordings' | 'journeys'
+  image: 'analytics' | 'feedback' | 'heatmaps' | 'recordings' | 'journeys' | 'events';
 }
 
 const imageSrc = (image: Props['image']) => {
@@ -30,6 +31,8 @@ const imageSrc = (image: Props['image']) => {
       return recordingsImage;
     case 'journeys':
       return journeysImage;
+    case 'events':
+      return eventsImage;
   }
 }
 
@@ -41,7 +44,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
           <div className='info'>
             <h6>{subtitle}</h6>
             <h1>{title}</h1>
-            <p>{body}</p>
+            {body}
             <div className='actions'>
               <Link href='/auth/signup'>
                 <a className='button primary'>

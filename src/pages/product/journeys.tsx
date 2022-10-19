@@ -20,7 +20,7 @@ const ProductJourneys: SqueakyPage<NextPage> = () => (
       subtitle='Journeys'
       body={
         <>
-          Optimise and improve your user journeys by surfacing the exact routes your visitors are taking when navigating around your site.
+          <p>Optimise and improve your user journeys by surfacing the exact routes your visitors are taking when navigating around your site.</p>
           <ul>
             <li>See the common journeys between pages</li>
             <li>Discover where your customers drop off</li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { Button } from 'components/button';
 import { Container } from 'components/container';
@@ -9,7 +10,7 @@ import { Cta } from 'components/cta';
 import { debounce } from 'lib/utils';
 import type { SqueakyPage } from 'types/page';
 
-type Tab = 'privacy' | 'dashboard' | 'visitors' | 'analytics' |  'recordings' | 'feedback' | 'heatmaps' | 'journeys' | 'team' | 'ease-of-use';
+type Tab = 'privacy' | 'dashboard' | 'visitors' | 'analytics' |  'recordings' | 'events' | 'feedback' | 'events' | 'heatmaps' | 'journeys' | 'team' | 'ease-of-use';
 
 type Tabs = { name: string; tab: Tab }[];
 
@@ -33,6 +34,10 @@ const tabs: Tabs = [
   {
     name: 'Recordings',
     tab: 'recordings',
+  },
+  {
+    name: 'Event Tracking',
+    tab: 'events',
   },
   {
     name: 'Feedback',
@@ -119,14 +124,14 @@ const Features: SqueakyPage<NextPage> = () => {
               body='Our script automatically anonymises all data entered in forms and we ensure you never have to transfer customer data from their device.'
             />
             <FeaturesGridItem
-              icon='eraser-line'
-              title='Magic Erasure™'
-              body='Squeaky&apos;s Magic Erasure lets you quickly teach our script (with just a few clicks) which elements on your page to avoid capturing during your visitors&apos; session. It&apos;s a huge time saver that enables you to put user privacy first without needing technical expertise.'
-            />
-            <FeaturesGridItem
               icon='fullscreen-exit-line'
               title='Hide anything'
               body='Add our privacy tags to elements of your site or web app&apos;s html to anonymise any elements you like, ensuring that even logged in users can stay anonymous.'
+            />
+            <FeaturesGridItem
+              icon='eraser-line'
+              title='Magic Erasure™'
+              body={<span>Quickly prevent data being captured for any element on your site, without having to write a single line of code. <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>Learn more</a></Link></span>}
             />
             <FeaturesGridItem
               icon='database-2-line'
@@ -267,6 +272,11 @@ const Features: SqueakyPage<NextPage> = () => {
               title='Device widths'
               body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
             />
+            <FeaturesGridItem
+              icon='logout-box-line'
+              title='Exit and bounce rate'
+              body='See which pages are keeping visitors on your site longest, and which are causing them to quickly turnaround and leave.'
+            />
           </FeaturesGrid>
         </Container>
       </section>
@@ -285,8 +295,8 @@ const Features: SqueakyPage<NextPage> = () => {
             />
             <FeaturesGridItem
               icon='film-line'
-              title='Perfect playback'
-              body='Our script captures a perfect copy of your website, exactly as your visitor saw it. That way, when you play back a visitor&apos;s session you can see exactly what they saw.'
+              title='Amazing playback'
+              body='Our script captures an exact copy of your website, as your visitor saw it. That way, when you play back a visitors session you can see exactly what they saw.'
             />
             <FeaturesGridItem
               icon='sound-module-line'
@@ -337,6 +347,42 @@ const Features: SqueakyPage<NextPage> = () => {
               icon='bookmark-3-line'
               title='Bookmarking'
               body='Keep track of the most interesting or important recordings by bookmarking your favourites. You can access these quickly later on by using the filters provided, or from within the visitor&apos;s individual profile.'
+            />
+          </FeaturesGrid>
+        </Container>
+      </section>
+
+      <section id='events'>
+        <Container className='lg centered'>
+          <Container className='md'>
+            <h3>Event tracking</h3>
+            <p>Our event tracking functionality allows you to easily track and compare any visitor action on your site, so you can monitor everything from site-wide trends to important micro-interactions.</p>
+          </Container>
+          <FeaturesGrid>
+            <FeaturesGridItem
+              icon='magic-line'
+              title='Autocapture events'
+              body='Squeaky automatically captures several pre-defined visitor actions such as page views, clicks or javascript errors. Autocapture of event data provides you with historical data that you can interrogate at any time in the future.'
+            />
+            <FeaturesGridItem
+              icon='settings-3-line'
+              title='Custom events'
+              body='Add custom tracking for any user activity you can think of e.g. every time a user updated their shopping cart, or tried out a new feature. Custom events are incredibly powerful, though they&apos;re one of the few areas of Squeaky that require technical expertise.'
+            />
+            <FeaturesGridItem
+              icon='file-copy-line'
+              title='Event groups'
+              body='Groups allow you to bundle particular events that are related to one another, making it easy to quickly compare an array of similar events with just a few clicks.'
+            />
+            <FeaturesGridItem
+              icon='line-chart-line'
+              title='Comparisons'
+              body='The event history view allows you to track all instances of an event over time, but you can also pull additional events to the same charts and see, side-by-side, how events compare with one another.'
+            />
+            <FeaturesGridItem
+              icon='time-line'
+              title='Event feed'
+              body='From within the events history page, you have access to a feed showing whenever an event took place, allowing you to quickly find the visitors or recordings that contain a particular event.'
             />
           </FeaturesGrid>
         </Container>
@@ -409,11 +455,6 @@ const Features: SqueakyPage<NextPage> = () => {
               icon='device-line'
               title='Compare devices'
               body='Use our simple toggles to quickly see differences in how your visitors are interacting with your website or web app depending on which device they are visiting on.'
-            />
-            <FeaturesGridItem
-              icon='database-2-line'
-              title='365 storage'
-              body='Any recording you&apos;ve captured under your subscription will be available for 365 days. If you require data storage beyond the standard 365 limit, please get in touch.'
             />
           </FeaturesGrid>
         </Container>

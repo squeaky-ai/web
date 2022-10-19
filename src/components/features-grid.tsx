@@ -9,7 +9,7 @@ interface ParentProps {
 interface ChildProps {
   icon: string;
   title: string;
-  body: string;
+  body: string | React.ReactNode;
   enterprise?: boolean;
 }
 

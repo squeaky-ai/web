@@ -21,7 +21,7 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
       subtitle='Analytics'
       body={
         <>
-          Our privacy-friendly analytics tool offers you straightforward access to the precise and meaningful data you need.
+          <p>Our privacy-friendly analytics tool offers you straightforward access to the precise and meaningful data you need.</p>
           <ul>
             <li>Understand your audience</li>
             <li>Measure performance</li>

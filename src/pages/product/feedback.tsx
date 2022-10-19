@@ -20,7 +20,7 @@ const ProductFeedback: SqueakyPage<NextPage> = () => (
       subtitle='Feedback'
       body={
         <>
-          By using NPS® and Sentiment Surveys anywhere in your website or web app you can ensure you&apos;re taking customer feedback seriously.
+          <p>By using NPS® and Sentiment Surveys anywhere in your website or web app you can ensure you&apos;re taking customer feedback seriously.</p>
           <ul>
             <li>Gather feedback with context</li>
             <li>Use data to spot trends</li>

@@ -20,7 +20,7 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
       subtitle='Heatmaps'
       body={
         <>
-          Use heatmaps to quantify your customer experience and discover which content, interfaces, and layouts matter most to your visitors.
+          <p>Use heatmaps to quantify your customer experience and discover which content, interfaces, and layouts matter most to your visitors.</p>
           <ul>
             <li>Spot issues you couldn&apos;t predict</li>
             <li>Analyse the impact of changes you make</li>

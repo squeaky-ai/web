@@ -21,7 +21,7 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
       subtitle='Recordings'
       body={
         <>
-          Capture pixel-perfect session recordings that help you understand the experience of your customers without compromising their privacy.
+          <p>Capture pixel-perfect session recordings that help you understand the experience of your customers without compromising their privacy.</p>
           <ul>
             <li>Watch customers in-the-wild</li>
             <li>Reproduce and resolve customer issues</li>
