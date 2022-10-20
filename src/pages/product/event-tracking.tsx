@@ -128,7 +128,7 @@ const ProductEvents: SqueakyPage<NextPage> = () => (
 
 ProductEvents.getMetaData = () => ({
   title: 'Squeaky | Events',
-  description: 'Use our heatmap tool to visualise where visitors are clicking and scrolling on your site. You\'ll quickly discover which content, interfaces, and layouts work.',
+  description: 'Easily capture, track and compare user activity across your site, so you can devise targeted improvements for your product or website.',
   index: true,
 });
 

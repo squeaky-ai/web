@@ -133,7 +133,7 @@ const ProductJourneys: SqueakyPage<NextPage> = () => (
 
 ProductJourneys.getMetaData = () => ({
   title: 'Squeaky | Journeys',
-  description: 'Optimise and improve your user journeys by surfacing the exact routes your visitors are taking when navigating around your site.',
+  description: 'Optimise your customer experience by using Squeaky\'s journey mapping tool to surface the exact routes your visitors are taking when navigating your site.',
   index: true,
 });
 

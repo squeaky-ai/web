@@ -59,7 +59,7 @@ export const Footer: FC = () => (
             <a>Recordings</a>
           </Link>
           <Link href='/product/event-tracking'>
-            <a>Events</a>
+            <a>Event Tracking</a>
           </Link>
           <Link href='/product/heatmaps'>
             <a>Heatmaps</a>
