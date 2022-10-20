@@ -22,6 +22,15 @@ export const HeaderProduct: FC = () => {
               <p>Let data drive your decisions.</p>
             </a>
           </Link>
+          <Link href='/product/event-tracking'>
+            <a className='item'>
+              <div className='icon-background'>
+                <Icon name='flashlight-line' />
+              </div>
+              <h5>Event Tracking</h5>
+              <p>Measure every important activity.</p>
+            </a>
+          </Link>
           <Link href='/product/recordings'>
             <a className='item'>
               <div className='icon-background'>
@@ -31,15 +40,6 @@ export const HeaderProduct: FC = () => {
               <p>Walk in your customers&apos; shoes.</p>
             </a>
           </Link>
-          <Link href='/product/feedback'>
-            <a className='item'>
-              <div className='icon-background'>
-                <Icon name='user-voice-line' />
-              </div>
-              <h5>Feedback</h5>
-              <p>Hear directly from customers. </p>
-            </a>
-          </Link>
           <Link href='/product/heatmaps'>
             <a className='item'>
               <div className='icon-background'>
@@ -47,6 +47,15 @@ export const HeaderProduct: FC = () => {
               </div>
               <h5>Heatmaps</h5>
               <p>Understand what&apos;s important.</p>
+            </a>
+          </Link>
+          <Link href='/product/feedback'>
+            <a className='item'>
+              <div className='icon-background'>
+                <Icon name='user-voice-line' />
+              </div>
+              <h5>Feedback</h5>
+              <p>Hear directly from customers. </p>
             </a>
           </Link>
           <Link href='/product/journeys'>

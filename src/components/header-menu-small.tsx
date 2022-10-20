@@ -43,6 +43,9 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <Link href='/product/feedback'>
               <a>Feedback</a>
             </Link>
+            <Link href='/product/event-tracking'>
+              <a>Event tracking</a>
+            </Link>
             <Link href='/product/heatmaps'>
               <a>Heatmaps</a>
             </Link> 

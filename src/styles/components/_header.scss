@@ -426,7 +426,7 @@
         align-items: flex-start;
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
         width: 100%;
 
@@ -458,14 +458,14 @@
             align-items: center;
             color: var(--gray-blue-700);
             display: flex;
-            margin: 1rem 1.5rem .5rem 1.5rem;
+            margin: 1rem 1rem .5rem 1rem;
           }
 
           p {
             color: var(--gray-blue-700);
-            font-size: 16px;
-            line-height: 24px;
-            margin: 0 1.5rem 1rem 1.5rem;
+            font-size: 13px;
+            line-height: 18px;
+            margin: 0 1rem 1rem 1rem;
           }
 
           &:nth-of-type(1) {
@@ -483,6 +483,19 @@
 
           &:nth-of-type(2) {
             .icon-background {
+              background: var(--rose-500);
+
+              .icon {
+                color: var(--white);
+                left: 1.5rem;
+                opacity: .5;
+                top: 0;
+              }
+            }
+          }
+
+          &:nth-of-type(3) {
+            .icon-background {
               background: var(--mauve-500);
 
               .icon {
@@ -494,41 +507,40 @@
             }
           }
 
-          &:nth-of-type(3) {
-            .icon-background {
-              background: var(--peach-400);
-
-              .icon {
-                color: var(--peach-500);
-                left: 1.5rem;
-                transform: rotate(14.39deg);
-                top: -1rem;
-              }
-            }
-          }
-
           &:nth-of-type(4) {
             .icon-background {
               background: var(--yellow-500);
 
               .icon {
                 color: var(--white);
-                left: 4rem;
+                left: 1.5rem;
                 opacity: .5;
-                top: 0;
-                transform: rotate(0deg);
+                top: -.5rem;
               }
             }
           }
 
           &:nth-of-type(5) {
             .icon-background {
+              background: var(--peach-400);
+
+              .icon {
+                color: var(--peach-500);
+                left: 1rem;
+                top: -.5rem;
+                transform: rotate(10deg);
+              }
+            }
+          }
+
+          &:nth-of-type(6) {
+            .icon-background {
               background: var(--mauve-800);
 
               .icon {
                 color: var(--mauve-500);
-                left: 5rem;
-                top: 1rem;
+                left: 1.5rem;
+                top: 0;
                 transform: rotate(20.42deg);
               }
             }
