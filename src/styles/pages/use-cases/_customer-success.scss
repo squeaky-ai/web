@@ -49,7 +49,7 @@
         }
       }
 
-      .five-icon-grid {
+      .three-text-grid {
         .icon {
           color: var(--mauve-700);
         }
@@ -60,6 +60,11 @@
 
         p {
           color: var(--gray-blue-700);
+        }
+    
+        .button.secondary {
+          background: transparent;
+          border-color: var(--rose-500);
         }
       }
     }

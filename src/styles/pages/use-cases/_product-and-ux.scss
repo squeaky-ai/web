@@ -48,6 +48,17 @@
           width: 25%;
         }
       }
+
+      .three-text-grid {
+        p {
+          color: var(--peach-100);
+        }
+    
+        .button.secondary {
+          background: transparent;
+          color: var(--white);
+        }
+      }
     }
 
     &.testimonial {

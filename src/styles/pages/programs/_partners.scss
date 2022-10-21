@@ -92,22 +92,6 @@
         }
       }
 
-      .five-icon-grid {
-        .item {
-          .icon {
-            color: var(--mauve-700);
-          }
-
-          h4 {
-            color: var(--gray-blue-800);
-          }
-
-          p {
-            color: var(--gray-blue-700);
-          }
-        }
-      }
-
       @include breakpoint-md {
         padding: 6rem 3rem;
 
@@ -199,6 +183,25 @@
           max-width: 100%;
         }
       }
+    }
+  }
+
+  .three-text-grid {
+    .icon {
+      color: var(--mauve-700);
+    }
+
+    h4 {
+      color: var(--gray-blue-800);
+    }
+
+    p {
+      color: var(--gray-blue-700);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border-color: var(--rose-500);
     }
   }
 }

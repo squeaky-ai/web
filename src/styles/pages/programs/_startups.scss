@@ -58,19 +58,14 @@
         }
       }
 
-      .five-icon-grid {
-        .item {
-          .icon {
-            color: var(--peach-500);
-          }
+      .three-text-grid {
+        p {
+          color: var(--peach-100);
+        }
 
-          h4 {
-            color: var(--white);
-          }
-
-          p {
-            color: var(--peach-100);
-          }
+        .button.secondary {
+          background: transparent;
+          color: var(--white);
         }
       }
 

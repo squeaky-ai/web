@@ -70,10 +70,6 @@
     .button:first-of-type {
       margin-right: 1rem;
     }
-
-    .button.secondary {
-      color: var(--white);
-    }
   }
 
   @include breakpoint-lg {

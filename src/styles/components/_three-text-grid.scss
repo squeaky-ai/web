@@ -3,21 +3,35 @@
   grid-gap: 3rem;
   grid-template-columns: repeat(3, 1fr);
 
+  .icon {
+    color: var(--peach-500);
+    display: block;
+    font-size: 50px;
+    margin: 0 0 1.5rem 0;
+  }
+
   h4 {
     color: var(--white);
-    margin: 0 0 2rem 0;
-    padding: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
+    padding: 0;
     position: relative;
+  }
 
-    &:after {
-      background: var(--yellow-500);
-      bottom: 0;
-      content: ' ';
-      display: block;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      width: 4rem;
+  .item:not(.has-icon) {
+    h4 {
+      margin: 0 0 2rem 0;
+      padding: 0 0 1rem 0;
+
+      &:after {
+        background: var(--yellow-500);
+        bottom: 0;
+        content: ' ';
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 4rem;
+      }
     }
   }
 

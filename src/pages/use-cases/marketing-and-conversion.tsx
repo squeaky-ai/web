@@ -9,7 +9,7 @@ import { Screenshot } from 'components/screenshots';
 import { Cta } from 'components/cta';
 import { SideBySide } from 'components/side-by-side';
 import { TestimonialQuote } from 'components/testimonial-quote';
-import { FiveIconGrid, FiveItemGridItem } from 'components/five-icon-grid';
+import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { UseCasesHeader, UseCasesHeaderStats } from 'components/use-cases-header';
 import type { SqueakyPage } from 'types/page';
 
@@ -67,33 +67,44 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         </Carousel>
 
         <h3>Included in every plan</h3>
-        <FiveIconGrid>
-          <FiveItemGridItem
+        <ThreeTextGrid>
+          <ThreeTextGridItem
             icon='line-chart-line'
             title='Analytics'
             body='Turn your data into actionable insights to improve your user experience and convert leads faster than ever.'
+            link='/product/analytics'
           />
-          <FiveItemGridItem
-            icon='fire-line'
-            title='Heatmaps'
-            body='Discover which content matters most to your visitors, and where your business could be performing better.'
+          <ThreeTextGridItem
+            icon='flashlight-line'
+            title='Event Tracking'
+            body='Monitor every element of your customer experience by tracking any action taking place on your site.'
+            link='/product/event-tracking'
           />
-          <FiveItemGridItem
-            icon='user-voice-line'
-            title='Feedback'
-            body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
-          />
-          <FiveItemGridItem
+          <ThreeTextGridItem
             icon='vidicon-line'
             title='Recordings'
             body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
+            link='/product/recordings'
           />
-          <FiveItemGridItem
+          <ThreeTextGridItem
+            icon='fire-line'
+            title='Heatmaps'
+            body='Discover which content matters most to your visitors, and where your business could be performing better.'
+            link='/product/heatmaps'
+          />
+          <ThreeTextGridItem
+            icon='user-voice-line'
+            title='Feedback'
+            body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
+            link='/product/feedback'
+          />
+          <ThreeTextGridItem
             icon='route-line'
             title='Journeys'
             body='Find out where your customers are going or where they came from by mapping their journey through your site.'
+            link='/product/journeys'
           />
-        </FiveIconGrid>
+        </ThreeTextGrid>
       </Container>
     </section>
 
