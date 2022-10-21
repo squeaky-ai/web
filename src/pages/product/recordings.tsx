@@ -46,6 +46,12 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
               image: <Screenshot screen='session-1' width={738} height={525} />
             },
             {
+              icon: 'compass-discover-line',
+              title: 'Rich contextual data',
+              body: 'Alongside a rich array of contextual recording information, we link to your visitor\'s profile, any feedback they\'ve provided, a feed of all the pags they visited and their activity that session. You can even enrich it all with notes and tags for easy references later.',
+              image: <Screenshot screen='session-2' width={738} height={525} />,
+            },
+            {
               icon: 'sound-module-line',
               title: 'Advanced filtering',
               body: 'Reduce noise by using advanced filters to segment your recordings and surface only those relevant to the task at hand. ',
@@ -55,8 +61,8 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
               icon: 'ghost-line',
               title: 'Private by design',
               body: 'We provide tools that help you avoid collecting any personal data on your users, even in session recordings.  We also never use cookies or IP address tracking.',
-              image: <Screen screen='privacy-1' width={640} height={390} />,
-              shadowless: true
+              image: <Screen screen='privacy-3' width={616} height={391} />,
+              shadowless: true,
             }
           ]}
         />
@@ -86,8 +92,8 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
           />
           <FeaturesGridItem
             icon='film-line'
-            title='Perfect playback'
-            body='Our script captures a perfect copy of your website, exactly as your visitor saw it. That way, when you play back a visitor&apos;s session you can see exactly what they saw.'
+            title='Amazing playback'
+            body='Our script captures an exact copy of your website, as your visitor saw it. That way, when you play back a visitors session you can see exactly what they saw.'
           />
           <FeaturesGridItem
             icon='sound-module-line'
@@ -146,7 +152,7 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools options={['analytics', 'feedback', 'heatmaps', 'journeys']} />
+      <ProductTools options={['analytics', 'events', 'feedback', 'heatmaps', 'journeys']} />
     </section>
 
     <section className='easy'>
