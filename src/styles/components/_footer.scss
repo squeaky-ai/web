@@ -134,6 +134,18 @@
       &:hover {
         text-decoration: underline;
       }
+
+      .new {
+        background: var(--yellow-500);
+        border-radius: var(--border-radius-sm);
+        color: var(--gray-blue-800);
+        display: inline-block;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0 0 0 .25rem;
+        padding: 0 .25rem;
+        vertical-align: middle;
+      }
     }
 
     .social {

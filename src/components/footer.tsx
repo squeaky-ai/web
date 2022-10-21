@@ -106,6 +106,9 @@ export const Footer: FC = () => (
           <Link href='/about-us'>
             <a>About us</a>
           </Link>
+          <Link href='https://www.notion.so/Careers-df031f3f9ede4d85a289f0e68997cc1a'>
+            <a target='_blank' rel='noreferrer'>Careers<span className='new'>NEW</span></a>
+          </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Programs'>
