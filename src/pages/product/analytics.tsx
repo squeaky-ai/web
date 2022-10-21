@@ -51,7 +51,7 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
               image: <Screenshot screen='analytics-2' width={738} height={525} />
             },
             {
-              icon: 'group-line',
+              icon: 'zoom-in-line',
               title: 'Zoom out, or dig deeper',
               body: 'Alongside site-wide analytics you can also analyse the performance of individual pages of your site, fine tuning your site for the best possible results.',
               image: <Screenshot screen='analytics-3' width={738} height={525} />

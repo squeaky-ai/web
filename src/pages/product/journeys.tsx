@@ -114,7 +114,7 @@ const ProductJourneys: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools options={['analytics', 'recordings', 'feedback', 'heatmaps']} />
+      <ProductTools options={['heatmaps', 'analytics', 'events', 'recordings', 'feedback']} />
     </section>
 
     <section className='easy'>
