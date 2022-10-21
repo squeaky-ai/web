@@ -1,9 +1,9 @@
 import React from 'react';
 import type { FC } from 'react';
-import Link from 'next/link';
 import classnames from 'classnames';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
+import { GetStarted } from 'components/get-started';
 
 interface ParentProps {
   title: string;
@@ -26,11 +26,7 @@ export const UseCasesHeader: FC<ParentProps> = ({ title, subtitle, body, stats, 
         <p className='subtitle'>{subtitle}</p>
         <h1>{title}</h1>
         <p>{body}</p>
-        <Link href='/auth/signup'>
-          <a className='button primary'>
-          Get Started
-          </a>
-        </Link>
+        <GetStarted />
         <p className='check'>
           <Icon name='check-line' />
           No credit card required
