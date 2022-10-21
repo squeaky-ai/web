@@ -5,6 +5,7 @@ import type { ImageProps } from 'next/image';
 
 import analytics1 from '../../public/screenshots/analytics-1.webp';
 import analytics2 from '../../public/screenshots/analytics-2.webp';
+import analytics3 from '../../public/screenshots/analytics-3.webp';
 import dashboard1 from '../../public/screenshots/dashboard-1.webp';
 import events1 from '../../public/screenshots/events-1.webp';
 import events2 from '../../public/screenshots/events-2.webp';
@@ -27,6 +28,7 @@ import journeys4 from '../../public/screenshots/journeys-4.webp';
 type ScreenshotType = 
   'analytics-1' |
   'analytics-2' |
+  'analytics-3' |
   'dashboard-1' |
   'events-1' |
   'events-2' |
@@ -56,6 +58,8 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return analytics1;
     case 'analytics-2':
       return analytics2;
+    case 'analytics-3':
+      return analytics3;
     case 'dashboard-1':
       return dashboard1;
     case 'events-1':

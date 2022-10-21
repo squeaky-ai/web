@@ -4,7 +4,7 @@ import { Container } from 'components/container';
 import { Illustration } from 'components/illustration';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 
-type ProductOptions = 'analytics' | 'recordings' | 'feedback' | 'heatmaps' | 'journeys'
+type ProductOptions = 'analytics' | 'recordings' | 'feedback' | 'heatmaps' | 'journeys' | 'events';
 
 interface Props {
   options: ProductOptions[];
@@ -52,6 +52,14 @@ const GridItem = (props: { option: ProductOptions }) => {
           link='/product/journeys'
         />
       );  
+    case 'events':
+      return (
+        <ThreeTextGridItem
+          title='Events'
+          body='Track and compare any activity on your site, including page visits, button clicks, or any custom event you like.'
+          link='/product/event-tracking'
+        />
+      );
     default:
       return null;
   }

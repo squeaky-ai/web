@@ -51,10 +51,16 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
               image: <Screenshot screen='analytics-2' width={738} height={525} />
             },
             {
+              icon: 'group-line',
+              title: 'Zoom out, or dig deeper',
+              body: 'Alongside site-wide analytics you can also analyse the performance of individual pages of your site, fine tuning your site for the best possible results.',
+              image: <Screenshot screen='analytics-3' width={738} height={525} />
+            },
+            {
               icon: 'ghost-line',
               title: 'Put privacy first',
               body: 'We don\'t use cookies or IP address tracking, and we provide tools that help you avoid collecting any personal data on your users.',
-              image: <Screen screen='privacy-1' width={640} height={390} />,
+              image: <Screen screen='privacy-3' width={616} height={391} />,
               shadowless: true
             }
           ]}
@@ -128,6 +134,11 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
             title='Device widths'
             body='Use our device-width graph to see which screen sizes are most commonly used to view your website or web app, ensuring you only spend time designing for the right scenarios.'
           />
+          <FeaturesGridItem
+            icon='logout-box-line'
+            title='Exit and bounce rates'
+            body='See which pages are keeping visitors on your site longest, and which are causing them to quickly turnaround and leave.'
+          />
         </FeaturesGrid>
 
         <FeaturesBanner />
@@ -135,7 +146,7 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools options={['recordings', 'feedback', 'heatmaps', 'journeys']} />
+      <ProductTools options={['recordings', 'events', 'heatmaps', 'journeys', 'feedback']} />
     </section>
  
     <section className='easy'>

@@ -274,7 +274,7 @@ const Features: SqueakyPage<NextPage> = () => {
             />
             <FeaturesGridItem
               icon='logout-box-line'
-              title='Exit and bounce rate'
+              title='Exit and bounce rates'
               body='See which pages are keeping visitors on your site longest, and which are causing them to quickly turnaround and leave.'
             />
           </FeaturesGrid>

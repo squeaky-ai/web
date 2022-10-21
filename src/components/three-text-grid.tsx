@@ -23,7 +23,7 @@ export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link }) => (
     <h4>{title}</h4>
     <p>{body}</p>
     <Link href={link}>
-      <a>Learn More</a>
+      <a className='button secondary'>Learn More</a>
     </Link>
   </div>
 );
