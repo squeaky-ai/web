@@ -18,9 +18,9 @@ import journeys1 from '../../public/screenshots/journeys-1.webp';
 import journeys2 from '../../public/screenshots/journeys-2.webp';
 import journeys3 from '../../public/screenshots/journeys-3.webp';
 import journeys4 from '../../public/screenshots/journeys-4.webp';
-
 import nps1 from '../../public/screenshots/nps-1.webp';
 import nps2 from '../../public/screenshots/nps-2.webp';
+import nps3 from '../../public/screenshots/nps-3.webp';
 import recordings1 from '../../public/screenshots/recordings-1.webp';
 import sentiment1 from '../../public/screenshots/sentiment-1.webp';
 import sentiment2 from '../../public/screenshots/sentiment-2.webp';
@@ -45,6 +45,7 @@ type ScreenshotType =
   'journeys-4' |
   'nps-1' |
   'nps-2' |
+  'nps-3' |
   'recordings-1' |
   'sentiment-1' |
   'sentiment-2' |
@@ -91,6 +92,8 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return nps1;
     case 'nps-2':
       return nps2;
+    case 'nps-3':
+      return nps3;
     case 'sentiment-1':
       return sentiment1;
     case 'sentiment-2':

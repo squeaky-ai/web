@@ -62,6 +62,12 @@ const ProductFeedback: SqueakyPage<NextPage> = () => (
               body: 'We link all feedback directly to recordings, so you can quickly watch back any visit and understand exactly what they experienced when they submitted their feedback.',
               image: <Screenshot screen='session-1' width={738} height={525} />,
               shadowless: true
+            },
+            {
+              icon: 'translate',
+              title: 'Speak your visitor\'s language',
+              body: 'Localize your feedback widgets and surveys so that they\'re available in any language your visitors need.',
+              image: <Screenshot screen='nps-3' width={738} height={525} />,
             }
           ]}
         />
@@ -122,7 +128,7 @@ const ProductFeedback: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools options={['analytics', 'recordings', 'heatmaps', 'journeys']} />
+      <ProductTools options={['recordings', 'analytics', 'events', 'journeys', 'heatmaps']} />
     </section>
 
     <section className='easy'>
