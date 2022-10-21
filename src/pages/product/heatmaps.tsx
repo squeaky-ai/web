@@ -42,7 +42,8 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
               icon: 'vidicon-line',
               title: 'Discover what\'s important',
               body: 'Clickmaps let you see which elements are being clicked on each page of your site, allowing you to pinpoint the content and interface elements that matter most.',
-              image: <Screenshot screen='heatmaps-1' width={738} height={525} />
+              image: <Screenshot screen='heatmaps-1' width={738} height={525} />,
+              shadowless: true,
             },
             {
               icon: 'sound-module-line',
@@ -104,11 +105,6 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
             title='Compare devices'
             body='Use our simple toggles to quickly see differences in how your visitors are interacting with your website or web app depending on which device they are visiting on.'
           />
-          <FeaturesGridItem
-            icon='database-2-line'
-            title='365 storage'
-            body='Any recording you&apos;ve captured under your subscription will be available for 365 days. If you require data storage beyond the standard 365 limit, please get in touch.'
-          />
         </FeaturesGrid>
 
         <FeaturesBanner />
@@ -116,7 +112,7 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='tools'>
-      <ProductTools options={['analytics', 'recordings', 'feedback', 'journeys']} />
+      <ProductTools options={['analytics', 'events', 'recordings', 'journeys', 'feedback']} />
     </section>
 
     <section className='easy'>
