@@ -132,45 +132,53 @@ const UseCasesCustomerSuccess: SqueakyPage<NextPage> = () => (
         <SideBySide 
           title='Feedback with context'
           body='Tired of receiving customer feedback with no idea what they&apos;ve just experienced? Squeaky provides session replay for each piece of feedback you capture, so you can see exactly what happened.'
-          linkText='Discover Feedback'
+          linkText='Learn About Feedback'
           linkHref='/product/feedback'
-          image={<Screen screen='feedback-2' />}
+          image={<Screen screen='feedback-1' />}
           buttonType='secondary-marine'
           flip
         />
         <SideBySide 
           title='Walk in your customers&apos; shoes'
           body='With Squeaky you can quickly look up any customers who have raised support tickets and play back a recording of their session to see first-hand what went wrong.'
-          linkText='Explore Recordings'
+          linkText='Discover Recordings'
           linkHref='/product/recordings'
-          image={<Screen screen='session-2' />}
+          image={<Screen screen='session-1' />}
           buttonType='secondary-marine'
         />
         <SideBySide  
+          title='Segment and analyse your data to understand your audience'
+          body='With Squeaky&apos;s powerful filters you can segment your recordings based on a wide array of criteria, or understand your traffic at scale with our analytics product.'
+          image={<Screen screen='analytics-1' />}
+          buttonType='secondary-marine'
+          linkText='Explore Analytics'
+          linkHref='/product/analytics'
+          flip
+        />
+      <SideBySide
+          title='Monitor any activity on your site'
+          body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
+          linkText='See Events Tracking'
+          linkHref='/product/event-tracking'
+          buttonType='secondary-marine'
+          image={<Screen screen='events-1' />}
+        />
+        <SideBySide 
           title='Quantify the behaviour of your customers'
           body='Whether it&apos;s spotting trends in customer feedback, or aggregating user interactions in heatmaps, Squeaky lets data do the talking for you.'
-          image={<Screen screen='heatmaps-4' />}
+          linkText='Discover Heatmaps'
+          linkHref='/product/heatmaps'
+          image={<Screen screen='heatmaps-1' />}
           buttonType='secondary-marine'
-          linkText='Learn About Analytics'
-          linkHref='/product/analytics'
           flip
         />
         <SideBySide 
           title='Understand the exact routes visitors take whilst navigating your site.'
           body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
           buttonType='secondary-marine'
-          linkText='Learn More'
+          linkText='See Journeys'
           linkHref='/product/journeys'
           image={<Screen screen='journeys-1' />}
-        />
-        <SideBySide 
-          title='Learn from your customers without invading their privacy'
-          body='We&apos;ve built Squeaky as a privacy-first product from day one, meaning you can gather vital insights whilst keeping your customers data anonymised, and your company compliant.'
-          buttonType='secondary-marine'
-          linkText=''
-          linkHref='/'
-          image={<Screen screen='privacy-1' />}
-          flip
         />
       </Container>
     </section>
