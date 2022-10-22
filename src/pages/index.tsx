@@ -159,7 +159,7 @@ const Home: SqueakyPage<NextPage> = () => {
           />
           <SideBySide 
             subtitle='Journeys'
-            title='Understand the exact routes visitors take whlist navigating your site.'
+            title='Understand the exact routes visitors take whilst navigating your site.'
             body='See where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
             linkText='Learn More'
             linkHref='/product/journeys'

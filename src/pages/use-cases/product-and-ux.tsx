@@ -151,7 +151,7 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
         <SideBySide
           title='Monitor any activity on your site'
           body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
-          linkText='Explore Recordings'
+          linkText='Explore Events Tracking'
           linkHref='/product/event-tracking'
           buttonType='secondary-marine'
           image={<Screen screen='events-1' />}
@@ -175,7 +175,7 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
           flip
         />
         <SideBySide 
-          title='Understand the exact routes visitors take whlist navigating your site.'
+          title='Understand the exact routes visitors take whilst navigating your site.'
           body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
           linkText='Learn More'
           linkHref='/product/journeys'

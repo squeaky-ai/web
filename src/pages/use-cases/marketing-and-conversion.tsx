@@ -133,52 +133,52 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         <SideBySide 
           title='Segment and analyse your data to understand your audience'
           body='With Squeaky&apos;s powerful filters you can segment your recordings based on a wide array of criteria, or understand your traffic at scale with our analytics product.'
-          linkText='Discover Analytics'
+          linkText='Explore Analytics'
           linkHref='/product/analytics'
-          image={<Screen screen='analytics-2' />}
+          image={<Screen screen='analytics-1' />}
           buttonType='secondary'
           flip
-        />
-        <SideBySide 
-          title='Quantify the behaviour of your customers'
-          body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.'
-          linkText='Explore Heatmaps'
-          linkHref='/product/heatmaps'
-          image={<Screen screen='heatmaps-3' />}
-          buttonType='secondary'
         />
         <SideBySide 
           title='See what your customers see'
           body='By watching back session recordings you&apos;ll experience your customer journey first hand, enabling you to develop a greater understanding of their needs and painpoints.'
-          image={<Screen screen='session-2' />}
+          image={<Screen screen='session-1' />}
           buttonType='secondary'
-          linkText='Learn About Recordings'
+          linkText='Discover Recordings'
           linkHref='/product/recordings'
+        />
+        <SideBySide
+          title='Monitor any activity on your site'
+          body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
+          linkText='See Events Tracking'
+          linkHref='/product/event-tracking'
+          buttonType='secondary'
+          image={<Screen screen='events-1' />}
           flip
         />
         <SideBySide 
-          title='Gather direct feedback straight from your customers'
-          body='Don&apos;t just rely on data and best practice when you can discover new opportunities for improvements by collecting direct customer feedback.'
-          linkText='Discover Feedback'
+          title='Hear what your customers are thinking and feeling'
+          body='Understanding where your product is succeeding, and discovering new opportunities for improvements is easy when you add the super power of direct customer feedback.'
+          linkText='Learn About Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-3' />}
           buttonType='secondary'
         />
         <SideBySide 
-          title='Understand the exact routes visitors take whlist navigating your site.'
-          body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
-          linkText='Learn More'
-          linkHref='/product/journeys'
-          image={<Screen screen='journeys-2' />}
+          title='Quantify the behaviour of your customers'
+          body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.'
+          linkText='Discover Heatmaps'
+          linkHref='/product/heatmaps'
+          image={<Screen screen='heatmaps-1' />}
           buttonType='secondary'
           flip
         />
         <SideBySide 
-          title='Learn from your customers without invading their privacy'
-          body='We&apos;ve built Squeaky as a privacy-first product from day one, meaning you can gather vital insights whilst keeping your customers data anonymised, and your company compliant.'
-          linkText=''
-          linkHref='/'
-          image={<Screen screen='privacy-2' />}
+          title='Understand the exact routes visitors take whilst navigating your site.'
+          body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
+          linkText='See Journeys'
+          linkHref='/product/journeys'
+          image={<Screen screen='journeys-2' />}
           buttonType='secondary'
         />
       </Container>
