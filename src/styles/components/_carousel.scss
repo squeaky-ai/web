@@ -25,6 +25,10 @@
         border-radius: var(--border-radius-md);
       }
 
+      &.shadowless {
+        box-shadow: none;
+      }
+
       img {
         display: block;
         width: 100%;

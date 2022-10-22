@@ -6,6 +6,7 @@ import { range, debounce } from 'lib/utils';
 
 interface Props {
   children: React.ReactNode;
+  shadowless?: boolean;
 }
 
 interface State {
@@ -107,8 +108,8 @@ export class Carousel extends React.Component<Props, State> {
   }
 }
 
-export const CarouselItem: FC<Props> = ({ children }) => (
-  <div className='item'>
+export const CarouselItem: FC<Props> = ({ children, shadowless }) => (
+  <div className={classnames('item', { shadowless })}>
     {children}
   </div>
 );

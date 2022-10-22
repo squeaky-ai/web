@@ -7,6 +7,7 @@ import session1 from '../../public/screens/session-1.webp';
 import session2 from '../../public/screens/session-2.webp';
 import analytics1 from '../../public/screens/analytics-1.webp';
 import analytics2 from '../../public/screens/analytics-2.webp';
+import events1 from '../../public/screens/events-1.webp';
 import feedback1 from '../../public/screens/feedback-1.webp';
 import feedback2 from '../../public/screens/feedback-2.webp';
 import feedback3 from '../../public/screens/feedback-3.webp';
@@ -25,6 +26,7 @@ type ScreenType =
   'session-2' |
   'analytics-1' |
   'analytics-2' |
+  'events-1' |
   'feedback-1' |
   'feedback-2' |
   'feedback-3' |
@@ -52,6 +54,8 @@ const getScreenSrc = (screen: ScreenType) => {
       return analytics1;
     case 'analytics-2':
       return analytics2;
+    case 'events-1':
+      return events1;
     case 'feedback-1':
       return feedback1;
     case 'feedback-2':

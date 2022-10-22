@@ -55,7 +55,7 @@ const Home: SqueakyPage<NextPage> = () => {
           <CarouselItem>
             <Screenshot screen='nps-1' alt='Screenshot of the Squeaky NPS page' />
           </CarouselItem>
-          <CarouselItem>
+          <CarouselItem shadowless>
             <Screenshot screen='heatmaps-1' alt='Screenshot of the Squeaky heatmaps page' />
           </CarouselItem>
           <CarouselItem>
@@ -110,20 +110,32 @@ const Home: SqueakyPage<NextPage> = () => {
 
         <Container className='centered lg'>
           <SideBySide 
-            subtitle='Session recording'
-            title='Discover what your customers are really getting up to'
-            body='There&apos;s no need to sift through hours of recording data, our advanced filtering helps you segment and surface only the most relevant customer recordings.'
-            linkText='Learn More'
-            linkHref='/product/recordings'
-            image={<Screen screen='session-1' />}
-          />
-          <SideBySide 
             subtitle='Analytics'
             title='Make better decisions using actionable analytics data'
             body='Monitor performance and make informed decisions about your site, using precise and meaningful data.'
             linkText='Learn More'
             linkHref='/product/analytics'
             image={<Screen screen='analytics-1' />}
+            buttonType='secondary'
+            flip
+          />
+          <SideBySide 
+            subtitle='Session recording'
+            title='Discover what your customers are really getting up to'
+            body='There&apos;s no need to sift through hours of recording data, our advanced filtering helps you segment and surface only the most relevant customer recordings.'
+            linkText='Learn More'
+            linkHref='/product/recordings'
+            image={<Screen screen='session-1' />}
+            buttonType='secondary'
+          />
+          <SideBySide
+            subtitle='Event Tracking'
+            title='Get the full picture by tracking any action on your site'
+            body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
+            linkText='Learn More'
+            linkHref='/product/recordings'
+            image={<Screen screen='events-1' />}
+            buttonType='secondary'
             flip
           />
           <SideBySide 
@@ -133,6 +145,7 @@ const Home: SqueakyPage<NextPage> = () => {
             linkText='Learn More'
             linkHref='/product/feedback'
             image={<Screen screen='feedback-1' />}
+            buttonType='secondary'
           />
           <SideBySide 
             subtitle='Heatmaps'
@@ -141,15 +154,17 @@ const Home: SqueakyPage<NextPage> = () => {
             linkText='Learn More'
             linkHref='/product/heatmaps'
             image={<Screen screen='heatmaps-1' />}
+            buttonType='secondary'
             flip
           />
           <SideBySide 
             subtitle='Journeys'
             title='Understand the exact routes visitors take whlist navigating your site.'
-            body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
+            body='See where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
             linkText='Learn More'
             linkHref='/product/journeys'
             image={<Screen screen='journeys-1' />}
+            buttonType='secondary'
           />
         </Container>
       </section>

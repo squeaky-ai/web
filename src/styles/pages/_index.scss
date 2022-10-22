@@ -190,6 +190,13 @@
         }
       }
 
+      .side-by-side {
+        .button.secondary {
+          background: var(--gray-blue-700);
+          color: var(--white);
+        }
+      }
+
       @include breakpoint-md {
         padding: 6rem 3rem 10rem 3rem;
       }
