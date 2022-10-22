@@ -98,6 +98,11 @@
         p {
           color: var(--gray-blue-700);
         }
+
+        .button.secondary {
+          background: transparent;
+          color: var(--gray-blue-800);
+        }
       }
 
       @include breakpoint-md {

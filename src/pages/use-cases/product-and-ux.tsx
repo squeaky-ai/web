@@ -58,13 +58,16 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
             <Screenshot screen='recordings-1' width={1440} height={1024} alt='Screenshot of the Squeaky recordings page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='nps-1' width={1440} height={1024} alt='Screenshot of the Squeaky NPS page' />
-          </CarouselItem>
-          <CarouselItem shadowless>
-            <Screenshot screen='heatmaps-1' width={1440} height={1024} alt='Screenshot of the Squeaky heatmaps page' />
+            <Screenshot screen='events-1' width={1440} height={1024} alt='Screenshot of the Squeaky events page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
+            <Screenshot screen='nps-1' width={1440} height={1024} alt='Screenshot of the Squeaky NPS page' />
+          </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='heatmaps-4' width={1440} height={1024} alt='Screenshot of the Squeaky heatmaps page' />
+          </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='journeys-1' width={1440} height={1024} alt='Screenshot of the Squeaky journeys page' />
           </CarouselItem>
         </Carousel>
 

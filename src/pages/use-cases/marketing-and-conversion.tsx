@@ -53,16 +53,19 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
             <Screenshot screen='analytics-1' width={1440} height={1024} alt='Screenshot of the Squeaky analytics page' />
           </CarouselItem>
           <CarouselItem>
+            <Screenshot screen='recordings-1' width={1440} height={1024} alt='Screenshot of the Squeaky recordings page' />
+          </CarouselItem>
+          <CarouselItem>
             <Screenshot screen='session-1' width={1440} height={1024} alt='Screenshot of the Squeaky session page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='recordings-1' width={1440} height={1024} alt='Screenshot of the Squeaky recordings page' />
-          </CarouselItem>
-          <CarouselItem shadowless>
-            <Screenshot screen='heatmaps-1' width={1440} height={1024} alt='Screenshot of the Squeaky heatmaps page' />
+            <Screenshot screen='events-1' width={1440} height={1024} alt='Screenshot of the Squeaky events page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
+            <Screenshot screen='heatmaps-4' width={1440} height={1024} alt='Screenshot of the Squeaky heatmaps page' />
+          </CarouselItem>
+          <CarouselItem>
+            <Screenshot screen='journeys-1' width={1440} height={1024} alt='Screenshot of the Squeaky journeys page' />
           </CarouselItem>
         </Carousel>
 
@@ -133,6 +136,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText='Discover Analytics'
           linkHref='/product/analytics'
           image={<Screen screen='analytics-2' />}
+          buttonType='secondary'
           flip
         />
         <SideBySide 
@@ -141,11 +145,13 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText='Explore Heatmaps'
           linkHref='/product/heatmaps'
           image={<Screen screen='heatmaps-3' />}
+          buttonType='secondary'
         />
         <SideBySide 
           title='See what your customers see'
           body='By watching back session recordings you&apos;ll experience your customer journey first hand, enabling you to develop a greater understanding of their needs and painpoints.'
           image={<Screen screen='session-2' />}
+          buttonType='secondary'
           linkText='Learn About Recordings'
           linkHref='/product/recordings'
           flip
@@ -156,6 +162,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText='Discover Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-3' />}
+          buttonType='secondary'
         />
         <SideBySide 
           title='Understand the exact routes visitors take whlist navigating your site.'
@@ -163,6 +170,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText='Learn More'
           linkHref='/product/journeys'
           image={<Screen screen='journeys-2' />}
+          buttonType='secondary'
           flip
         />
         <SideBySide 
@@ -171,6 +179,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText=''
           linkHref='/'
           image={<Screen screen='privacy-2' />}
+          buttonType='secondary'
         />
       </Container>
     </section>
