@@ -34,21 +34,21 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
       {open && (
         <div className='menu-drawer'>
           <HeaderMenuSmallDrawer title='Product' open={subMenuOpen === 'product'} toggleOpen={toggleSubMenuOpen('product')}>
-            <Link href='/product/recordings'>
-              <a>Recordings</a>
-            </Link>
             <Link href='/product/analytics'>
               <a>Analytics</a>
-            </Link>
-            <Link href='/product/feedback'>
-              <a>Feedback</a>
             </Link>
             <Link href='/product/event-tracking'>
               <a>Event tracking</a>
             </Link>
+            <Link href='/product/recordings'>
+              <a>Recordings</a>
+            </Link>
             <Link href='/product/heatmaps'>
               <a>Heatmaps</a>
             </Link> 
+            <Link href='/product/feedback'>
+              <a>Feedback</a>
+            </Link>
             <Link href='/product/journeys'>
               <a>Journeys</a>
             </Link> 

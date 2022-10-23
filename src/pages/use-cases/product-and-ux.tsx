@@ -71,7 +71,7 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
           </CarouselItem>
         </Carousel>
 
-        <h3>Included in every plan</h3>
+        <h3>Squeaky&apos;s core features</h3>
         <ThreeTextGrid>
           <ThreeTextGridItem
             icon='line-chart-line'

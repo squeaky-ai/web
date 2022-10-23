@@ -1,4 +1,12 @@
 .page.marketing-and-conversion {
+  .get-started-form {
+    .sign-up {
+      .input {
+        border-color: transparent;
+      }
+    }
+  }
+
   section {
     &.plan {
       background-color: var(--white);

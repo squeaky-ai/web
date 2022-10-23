@@ -17,6 +17,10 @@
         .item {
           &.show {
             background: var(--gray-blue-600);
+
+            @include breakpoint-md {
+              background: transparent;
+            }
           }
 
           p {
@@ -45,14 +49,6 @@
 
         h2 {
           margin: 0 0 4rem 0;
-        }
-
-        .items {
-          .item {
-            &.show {
-              background: transparent;
-            }
-          }
         }
       }
     }
@@ -135,7 +131,6 @@
     &.easy {
       background-color: var(--gray-blue-700);
       padding: 6rem 5rem;
-
 
       h3 {
         background: var(--white);

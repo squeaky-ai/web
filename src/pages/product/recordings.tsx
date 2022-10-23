@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
@@ -42,14 +43,15 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
             {
               icon: 'line-chart-line',
               title: 'Powerful playback',
-              body: 'Learn from your visitors by watching recordings of their visits. We provide rich metadata on their visit and you can add annotate and tags recordings too.',
+              body: 'Our elegant playback interface allows you to quickly navigate through recordings: pause, play, adjust playback speed, skip inactivity, and view all the different types of user activity directly on the playback timeline.',
               image: <Screenshot screen='session-1' width={738} height={525} />
             },
             {
               icon: 'compass-discover-line',
               title: 'Rich contextual data',
-              body: 'Alongside a rich array of contextual recording information, we link to your visitor\'s profile, any feedback they\'ve provided, a feed of all the pags they visited and their activity that session. You can even enrich it all with notes and tags for easy references later.',
-              image: <Screenshot screen='session-2' width={738} height={525} />,
+              body: 'Alongside a rich array of contextual recording information, we link to your visitor\'s profile, any feedback they\'ve provided, a feed of all the pages they visited and their activity that session. You can even enrich it all with notes and tags for easy references later.',
+              image: <Screenshot screen='session-2' width={738} height={612} />,
+              shadowless: true,
             },
             {
               icon: 'sound-module-line',
@@ -60,7 +62,7 @@ const ProductRecordings: SqueakyPage<NextPage> = () => (
             {
               icon: 'ghost-line',
               title: 'Private by design',
-              body: 'We provide tools that help you avoid collecting any personal data on your users, even in session recordings.  We also never use cookies or IP address tracking.',
+              body: <>We don&apos;t use cookies or IP address tracking, and we provide tools like our <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>Magic Erasure</a></Link> that help you avoid collecting any personal data on your users.</>,
               image: <Screen screen='privacy-3' width={616} height={391} />,
               shadowless: true,
             }

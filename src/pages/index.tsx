@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
@@ -133,7 +134,7 @@ const Home: SqueakyPage<NextPage> = () => {
             title='Get the full picture by tracking any action on your site'
             body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
             linkText='Learn More'
-            linkHref='/product/recordings'
+            linkHref='/product/event-tracking'
             image={<Screen screen='events-1' />}
             buttonType='secondary'
             flip
@@ -181,18 +182,21 @@ const Home: SqueakyPage<NextPage> = () => {
           <ThreeTextGrid>
             <ThreeTextGridItem
               title='Private by design'
-              body='Since day one, privacy-first design has been a core element of our product. We don&apos;t use cookie-based tracking, store IP addresses, or capture form data.'
+              body={<>We don&apos;t use cookies or IP address tracking, and we provide tools like our <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>Magic Erasure</a></Link> that help you avoid collecting any personal data on your users.</>}
               link='/legal/privacy-policy'
+              buttonType='link'
             />
             <ThreeTextGridItem
               title='GDPR &amp; CCPA compliant'
               body='Squeaky is fully compliant with GDPR &amp; CCPA regulations. You&apos;ll be able to use our products while protecting the personal data and privacy of your customers.'
               link='/legal/gdpr'
+              buttonType='link'
             />
             <ThreeTextGridItem
               title='Security minded'
               body='Along with a privacy-centric approach to data we also adhere to industry standard security processes and protocols.'
               link='/legal/security'
+              buttonType='link'
             />
           </ThreeTextGrid>
         </Container>

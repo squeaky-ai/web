@@ -52,7 +52,7 @@ const ProductEvents: SqueakyPage<NextPage> = () => (
               shadowless: true
             },
             {
-              icon: 'warning',
+              icon: 'error-warning-line',
               title: 'Monitor & compare error rates',
               body: 'Find out which errors are having the most impact on your users and compare their impact over time.',
               image: <Screenshot screen='events-3' width={738} height={525} />

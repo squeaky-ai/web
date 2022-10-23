@@ -135,14 +135,14 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           body='With Squeaky&apos;s powerful filters you can segment your recordings based on a wide array of criteria, or understand your traffic at scale with our analytics product.'
           linkText='Explore Analytics'
           linkHref='/product/analytics'
-          image={<Screen screen='analytics-1' />}
+          image={<Screen screen='analytics-3' />}
           buttonType='secondary'
           flip
         />
         <SideBySide 
           title='See what your customers see'
           body='By watching back session recordings you&apos;ll experience your customer journey first hand, enabling you to develop a greater understanding of their needs and painpoints.'
-          image={<Screen screen='session-1' />}
+          image={<Screen screen='session-3' />}
           buttonType='secondary'
           linkText='Discover Recordings'
           linkHref='/product/recordings'
@@ -153,7 +153,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           linkText='See Events Tracking'
           linkHref='/product/event-tracking'
           buttonType='secondary'
-          image={<Screen screen='events-1' />}
+          image={<Screen screen='events-2' />}
           flip
         />
         <SideBySide 
@@ -169,7 +169,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.'
           linkText='Discover Heatmaps'
           linkHref='/product/heatmaps'
-          image={<Screen screen='heatmaps-1' />}
+          image={<Screen screen='heatmaps-5' />}
           buttonType='secondary'
           flip
         />

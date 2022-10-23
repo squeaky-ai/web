@@ -14,7 +14,7 @@ export const GetStarted: FC = () => {
   const router = useRouter();
 
   return (
-    <div className='get-started'>
+    <div className='get-started-form'>
       <Formik
         initialValues={{ email: '' }}
         validationSchema={GetStartedSchema}

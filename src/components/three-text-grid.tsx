@@ -11,8 +11,9 @@ interface ParentProps {
 interface ChildProps {
   icon?: string;
   title: string;
-  body: string;
+  body: string | React.ReactNode;
   link: string;
+  buttonType?: 'primary' | 'secondary' | 'secondary-marine' | 'link';
 }
 
 export const ThreeTextGrid: FC<ParentProps> = ({ children }) => (
@@ -21,13 +22,13 @@ export const ThreeTextGrid: FC<ParentProps> = ({ children }) => (
   </div>
 );
 
-export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link, icon }) => (
+export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link, icon, buttonType }) => (
   <div className={classnames('item', { 'has-icon': icon })}>
     {icon && <Icon name={icon} />}
     <h4>{title}</h4>
     <p>{body}</p>
     <Link href={link}>
-      <a className='button secondary'>Learn More</a>
+      <a className={classnames('button', buttonType || 'secondary')}>Learn More</a>
     </Link>
   </div>
 );

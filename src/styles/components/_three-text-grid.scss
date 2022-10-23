@@ -35,6 +35,11 @@
     }
   }
 
+  .button.link {
+    color: var(--yellow-500);
+    text-decoration: underline;
+  }
+
   p {
     color: var(--peach-200);
     margin: 0 0 1.5rem 0;

@@ -1,4 +1,12 @@
 .page.customer-success {
+  .get-started-form {
+    .sign-up {
+      .input {
+        border-color: transparent;
+      }
+    }
+  }
+
   section {
     &.understand {
       background-color: var(--peach-400);

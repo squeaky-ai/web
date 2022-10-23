@@ -81,8 +81,7 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
 
     <section className='features'>
       <Container className='centered lg'>
-        <h3>Heatmaps</h3>
-        <p>Use aggregated user interaction data to better understand the performance of your site, what areas of your interface are being interacted with most, and which content matters.</p>
+        <h3>Let data do the talking</h3>
 
         <FeaturesGrid>
           <FeaturesGridItem

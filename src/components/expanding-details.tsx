@@ -12,7 +12,7 @@ interface Props {
 interface ExpandingDetailItem {
   icon: string;
   title: string;
-  body: string;
+  body: string | React.ReactNode;
   image: React.ReactNode;
   shadowless?: boolean;
 }

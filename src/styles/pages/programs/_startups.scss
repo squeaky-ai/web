@@ -66,6 +66,10 @@
         .button.secondary {
           background: transparent;
           color: var(--white);
+
+          &:hover {
+            border-color: var(--white);
+          }
         }
       }
 
