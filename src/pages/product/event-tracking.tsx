@@ -127,7 +127,7 @@ const ProductEvents: SqueakyPage<NextPage> = () => (
 );
 
 ProductEvents.getMetaData = () => ({
-  title: 'Squeaky | Events',
+  title: 'Squeaky | Event Tracking',
   description: 'Easily capture, track and compare user activity across your site, so you can devise targeted improvements for your product or website.',
   index: true,
 });
