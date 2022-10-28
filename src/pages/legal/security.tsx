@@ -51,7 +51,7 @@ const LegalSecurity: SqueakyPage<NextPage> = () => (
           <div className='logo'>
             <Image src={pciDssLogo} alt='PCI DSS Logo' unoptimized priority />
           </div>
-          <p>Payments in Squeaky are PCI-compliant as we use Stripe&apos;s hosted payment fields that us a PCI DSS validated server</p>
+          <p>Payments in Squeaky are PCI-compliant as we use Stripe&apos;s hosted payment fields that use a PCI DSS validated server</p>
         </div>
         <div>
           <div className='logo'>

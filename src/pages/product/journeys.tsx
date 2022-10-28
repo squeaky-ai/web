@@ -85,17 +85,17 @@ const ProductJourneys: SqueakyPage<NextPage> = () => (
           <FeaturesGridItem
             icon='route-line'
             title='Start and end points'
-            body='Set the exact starting point of a customer journey and you&apos;ll see exactly where your visitors when from there. Alternatively, set an end point to see the routes your visitors took to get there.'
+            body='Set the exact starting point of a customer journey and you&apos;ll see where your visitors went from there. Alternatively, set an end point to see how your visitors got there.'
           />
           <FeaturesGridItem
             icon='arrow-right-down-line'
             title='Drop-off rates'
-            body='View drop off rates that show you how many users are leaving your site from any given page in their journey. This will help you improve and optimise the journeys to keep your visitors from leaving too soon.'
+            body='View drop-off rates that show you how many users are leaving your site from any given page in their journey. This will help you improve and optimise the journeys and keep your visitors from leaving too soon.'
           />
           <FeaturesGridItem
             icon='vidicon-line'
             title='View recordings'
-            body='If you&apos;ve spotted some user journeys that you&apos;d like to watch back, you can quickly jump from the journeys view to a filtered list or recordings that match that journey.'
+            body='If you&apos;ve spotted a user journey that you&apos;d like to watch back, you can quickly jump from the journeys view to a filtered list or recordings that match that journey.'
           />
           <FeaturesGridItem
             icon='magic-line'
