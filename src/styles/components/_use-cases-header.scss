@@ -10,7 +10,7 @@
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
-    padding: 0 3rem 6rem 3rem;
+    padding: 0 0 6rem 0;
 
     .subtitle {
       color: var(--gray-blue-400);
@@ -46,6 +46,10 @@
       align-items: center;
       display: flex;
       justify-content: center;
+    }
+
+    @include breakpoint-lg {
+      padding: 0 3rem 6rem 3rem;
     }
 
     @include breakpoint-sm {
