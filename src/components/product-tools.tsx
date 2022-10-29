@@ -16,7 +16,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Feedback'
-          body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
+          body={<p>Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.</p>}
           link='/product/feedback'
         />
       );
@@ -24,7 +24,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Analytics'
-          body='Our privacy-friendly analytics tool offers you straightforward access to the precise and meaningful data you need.'
+          body={<p>Our privacy-friendly analytics tool offers you straightforward access to the precise and meaningful data you need.</p>}
           link='/product/analytics'
         />
       );
@@ -32,7 +32,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Recordings'
-          body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
+          body={<p>It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.</p>}
           link='/product/recordings'
         />
       );
@@ -40,7 +40,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Heatmaps'
-          body='Discover which content matters most to your visitors, and where your business could be performing better.'
+          body={<p>Discover which content matters most to your visitors, and where your business could be performing better.</p>}
           link='/product/heatmaps'
         />
       );
@@ -48,7 +48,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Journeys'
-          body='Improve your user journeys by discovering the exact routes your visitors take around your site.'
+          body={<p>Improve your user journeys by discovering the exact routes your visitors take around your site.</p>}
           link='/product/journeys'
         />
       );  
@@ -56,7 +56,7 @@ const GridItem = (props: { option: ProductOptions }) => {
       return (
         <ThreeTextGridItem
           title='Events'
-          body='Track and compare any activity on your site, including page visits, button clicks, or any custom event you like.'
+          body={<p>Track and compare any activity on your site, including page visits, button clicks, or any custom event you like.</p>}
           link='/product/event-tracking'
         />
       );

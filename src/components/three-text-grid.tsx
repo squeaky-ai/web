@@ -11,8 +11,8 @@ interface ParentProps {
 interface ChildProps {
   icon?: string;
   title: string;
-  body: string | React.ReactNode;
-  link: string;
+  body: React.ReactNode;
+  link?: string;
   buttonType?: 'primary' | 'secondary' | 'secondary-marine' | 'link';
 }
 
@@ -26,9 +26,11 @@ export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link, icon, but
   <div className={classnames('item', { 'has-icon': icon })}>
     {icon && <Icon name={icon} />}
     <h4>{title}</h4>
-    <p>{body}</p>
-    <Link href={link}>
-      <a className={classnames('button', buttonType || 'secondary')}>Learn More</a>
-    </Link>
+    {body}
+    {link && (
+      <Link href={link}>
+        <a className={classnames('button', buttonType || 'secondary')}>Learn More</a>
+      </Link>
+    )}
   </div>
 );

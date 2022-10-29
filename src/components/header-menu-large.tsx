@@ -36,6 +36,12 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
         <HeaderUseCases />
       </HeaderMenu>
 
+      <Link href='/privacy'>
+        <a className={classnames('link', { active: router.route === '/privacy' })}>
+          <span>Privacy</span>
+        </a>
+      </Link>
+
       <Link href='/pricing'>
         <a className={classnames('link', { active: router.route === '/pricing' })}>
           <span>Pricing</span>

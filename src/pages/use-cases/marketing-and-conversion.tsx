@@ -74,37 +74,37 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           <ThreeTextGridItem
             icon='line-chart-line'
             title='Analytics'
-            body='Turn your data into actionable insights to improve your user experience and convert leads faster than ever.'
+            body={<p>Turn your data into actionable insights to improve your user experience and convert leads faster than ever.</p>}
             link='/product/analytics'
           />
           <ThreeTextGridItem
             icon='flashlight-line'
             title='Event Tracking'
-            body='Monitor every element of your customer experience by tracking any action taking place on your site.'
+            body={<p>Monitor every element of your customer experience by tracking any action taking place on your site.</p>}
             link='/product/event-tracking'
           />
           <ThreeTextGridItem
             icon='vidicon-line'
             title='Recordings'
-            body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
+            body={<p>It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.</p>}
             link='/product/recordings'
           />
           <ThreeTextGridItem
             icon='fire-line'
             title='Heatmaps'
-            body='Discover which content matters most to your visitors, and where your business could be performing better.'
+            body={<p>Discover which content matters most to your visitors, and where your business could be performing better.</p>}
             link='/product/heatmaps'
           />
           <ThreeTextGridItem
             icon='user-voice-line'
             title='Feedback'
-            body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
+            body={<p>Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.</p>}
             link='/product/feedback'
           />
           <ThreeTextGridItem
             icon='route-line'
             title='Journeys'
-            body='Find out where your customers are going or where they came from by mapping their journey through your site.'
+            body={<p>Find out where your customers are going or where they came from by mapping their journey through your site.</p>}
             link='/product/journeys'
           />
         </ThreeTextGrid>
@@ -132,7 +132,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
 
         <SideBySide 
           title='Segment and analyse your data to understand your audience'
-          body='With Squeaky&apos;s powerful filters you can segment your recordings based on a wide array of criteria, or understand your traffic at scale with our analytics product.'
+          body={<p>With Squeaky&apos;s powerful filters you can segment your recordings based on a wide array of criteria, or understand your traffic at scale with our analytics product.</p>}
           linkText='Explore Analytics'
           linkHref='/product/analytics'
           image={<Screen screen='analytics-3' />}
@@ -141,7 +141,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         />
         <SideBySide 
           title='See what your customers see'
-          body='By watching back session recordings you&apos;ll experience your customer journey first hand, enabling you to develop a greater understanding of their needs and painpoints.'
+          body={<p>By watching back session recordings you&apos;ll experience your customer journey first hand, enabling you to develop a greater understanding of their needs and painpoints.</p>}
           image={<Screen screen='session-3' />}
           buttonType='secondary'
           linkText='Discover Recordings'
@@ -149,7 +149,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         />
         <SideBySide
           title='Monitor any activity on your site'
-          body='Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.'
+          body={<p>Are your visitors behaving how you&apos;d expect? See how often any action is performed on your site by using Squeaky&apos;s powerful event tracking functionality.</p>}
           linkText='See Events Tracking'
           linkHref='/product/event-tracking'
           buttonType='secondary'
@@ -158,7 +158,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         />
         <SideBySide 
           title='Hear what your customers are thinking and feeling'
-          body='Understanding where your product is succeeding, and discovering new opportunities for improvements is easy when you add the super power of direct customer feedback.'
+          body={<p>Understanding where your product is succeeding, and discovering new opportunities for improvements is easy when you add the super power of direct customer feedback.</p>}
           linkText='Learn About Feedback'
           linkHref='/product/feedback'
           image={<Screen screen='feedback-3' />}
@@ -166,7 +166,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         />
         <SideBySide 
           title='Quantify the behaviour of your customers'
-          body='Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.'
+          body={<p>Whether it&apos;s aggregating user interactions in heatmaps, or spotting trends in customer feedback, Squeaky lets data drive your decision-making so you can win more business.</p>}
           linkText='Discover Heatmaps'
           linkHref='/product/heatmaps'
           image={<Screen screen='heatmaps-5' />}
@@ -175,7 +175,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         />
         <SideBySide 
           title='Understand the exact routes visitors take whilst navigating your site.'
-          body='Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.'
+          body={<p>Squeaky&apos;s user journey maps show you where your visitors went from any given page, or how they got there, so you can optimise and improve your customer journeys.</p>}
           linkText='See Journeys'
           linkHref='/product/journeys'
           image={<Screen screen='journeys-2' />}

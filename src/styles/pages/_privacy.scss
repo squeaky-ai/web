@@ -1,0 +1,237 @@
+.page.privacy {
+  .page-title-nav {
+
+    @include breakpoint-sm {
+      display: none;
+    }
+  }
+
+  section {
+    .side-by-side {
+      p {
+        color: var(--gray-blue-700);
+      }
+
+      a {
+        color: var(--mauve-700);
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: var(--font-weight-semibold);
+        line-height: 32px;
+        text-align: left;
+
+        @include breakpoint-md {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &.hero {
+      background: var(--peach-100);
+      padding: 5rem 3rem;
+
+      @include breakpoint-sm {
+        padding: 3rem 2rem;
+      }
+
+      h1 {
+        margin: 0;
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      h4 {
+        color: var(--gray-blue-800);
+        margin: 1.5rem 0;
+      }
+
+      .illustration {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0;
+      }
+
+      a {
+        color: var(--mauve-700);
+      }
+
+      .steps {
+        display: grid;
+        grid-gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+        padding: 5rem 0;
+
+        @include breakpoint-sm {
+          grid-template-columns: 1fr;
+          padding: 2rem 0;
+        }
+
+        .number {
+          align-items: center;
+          background: var(--peach-400);
+          border-radius: var(--border-radius-o);
+          display: flex;
+          font-size: 2rem;
+          font-weight: var(--font-weight-bold);
+          height: 3.5rem;
+          justify-content: center;
+          width: 3.5rem;
+        }
+
+        p {
+          color: var(--gray-blue-700);
+          margin: 0 0 2rem 0;
+          max-width: 100%;
+          text-align: left;
+
+          &:last-of-type {
+            margin: 0;
+          }
+        }
+      }
+
+      .skip {
+        color: var(--mauve-800);
+        display: block;
+        font-size: 2rem;
+        margin: 5rem auto;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+
+    &.tracking {
+      background-color: var(--white);
+      background-image: url('../../../public/backgrounds/privacy-1.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 8rem 3rem 10rem 3rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 3rem 2rem;
+      }
+
+      h3 {
+        color: var(--gray-blue-800);
+        text-align: center;
+      }
+    }
+
+    &.consent {
+      background-color: var(--peach-100);
+      background-image: url('../../../public/backgrounds/privacy-2.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 8rem 3rem 10rem 3rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem 8rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 3rem 2rem 8rem 2rem;
+      }
+
+      h3 {
+        color: var(--gray-blue-800);
+        text-align: center;
+      }
+
+      .message {
+        align-items: center;
+        border: none;
+        border-radius: var(--border-radius-md);
+        box-shadow: .5rem .5rem 0 var(--peach-300);
+        margin: 5rem 0 0 0;
+        padding: 1.5rem 3.5rem;
+
+        @include breakpoint-sm {
+          margin: 0;
+
+          .image {
+            display: none;
+          }
+        }
+
+        h4 {
+          margin: 0 0 1.5rem 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    &.legal {
+      background-color: var(--mauve-800);
+      background-image: url('../../../public/backgrounds/privacy-3.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 8rem 3rem 10rem 3rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 3rem 2rem 6rem 2rem;
+      }
+
+      h3 {
+        color: var(--white);
+        text-align: center;
+      }
+
+      .three-text-grid {
+        margin: 5rem 0 0 0;
+
+        h4::after {
+          background: var(--peach-500);
+        }
+
+        b {
+          color: var(--white);
+        }
+
+        li {
+          color: var(--peach-500);
+        }
+
+        a {
+          color: var(--peach-500);
+          font-size: 18px;
+        }
+      }
+    }
+
+    &.customer-support {
+      background-color: var(--peach-400);
+      padding: 8rem 3rem 10rem 3rem;
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 3rem 2rem;
+      }
+
+      h3 {
+        color: var(--gray-blue-800);
+        text-align: center;
+      }
+    }
+  }
+}

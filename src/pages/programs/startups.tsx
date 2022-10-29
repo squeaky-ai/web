@@ -88,37 +88,37 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
             <ThreeTextGridItem
               icon='line-chart-line'
               title='Analytics'
-              body='Turn your data into actionable insights to improve your user experience and convert leads faster than ever.'
+              body={<p>Turn your data into actionable insights to improve your user experience and convert leads faster than ever.</p>}
               link='/product/analytics'
             />
             <ThreeTextGridItem
               icon='flashlight-line'
               title='Recordings'
-              body='It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.'
+              body={<p>It&apos;s never been easier to understand your users, thanks to our seamless session recording and playback.</p>}
               link='/product/recordings'
             />
             <ThreeTextGridItem
               icon='vidicon-line'
               title='Event Tracking'
-              body='Monitor every element of your customer experience by tracking any action taking place on your site.'
+              body={<p>Monitor every element of your customer experience by tracking any action taking place on your site.</p>}
               link='/product/event-tracking'
             />
             <ThreeTextGridItem
               icon='fire-line'
               title='Heatmaps'
-              body='Discover which content matters most to your visitors, and where your business could be performing better.'
+              body={<p>Discover which content matters most to your visitors, and where your business could be performing better.</p>}
               link='/product/heatmaps'
             />
             <ThreeTextGridItem
               icon='user-voice-line'
               title='Feedback'
-              body='Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.'
+              body={<p>Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.</p>}
               link='/product/feedback'
             />
             <ThreeTextGridItem
               icon='route-line'
               title='Journeys'
-              body='Find out where your customers are going or where they came from by mapping their journey through your site.'
+              body={<p>Find out where your customers are going or where they came from by mapping their journey through your site.</p>}
               link='/product/journeys'
             />
           </ThreeTextGrid>

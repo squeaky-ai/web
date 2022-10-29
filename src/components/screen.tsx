@@ -22,6 +22,12 @@ import heatmaps5 from '../../public/screens/heatmaps-5.webp';
 import privacy1 from '../../public/screens/privacy-1.webp';
 import privacy2 from '../../public/screens/privacy-2.webp';
 import privacy3 from '../../public/screens/privacy-3.webp';
+import privacy4 from '../../public/screens/privacy-4.webp';
+import privacy5 from '../../public/screens/privacy-5.webp';
+import privacy6 from '../../public/screens/privacy-6.webp';
+import privacy7 from '../../public/screens/privacy-7.webp';
+import privacy8 from '../../public/screens/privacy-8.webp';
+import privacy9 from '../../public/screens/privacy-9.webp';
 import journeys1 from '../../public/screens/journeys-1.webp';
 import journeys2 from '../../public/screens/journeys-2.webp';
 
@@ -45,6 +51,12 @@ type ScreenType =
   'privacy-1' |
   'privacy-2' |
   'privacy-3' |
+  'privacy-4' |
+  'privacy-5' |
+  'privacy-6' |
+  'privacy-7' |
+  'privacy-8' |
+  'privacy-9' |
   'journeys-1' |
   'journeys-2';
 
@@ -92,6 +104,18 @@ const getScreenSrc = (screen: ScreenType) => {
       return privacy2;
     case 'privacy-3':
       return privacy3;
+    case 'privacy-4':
+      return privacy4;
+    case 'privacy-5':
+      return privacy5;
+    case 'privacy-6':
+      return privacy6;
+    case 'privacy-7':
+      return privacy7;
+    case 'privacy-8':
+      return privacy8;
+    case 'privacy-9':
+      return privacy9;
     case 'journeys-1':
       return journeys1;
     case 'journeys-2':
