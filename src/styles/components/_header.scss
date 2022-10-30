@@ -156,8 +156,13 @@
 
 
     @include breakpoint-md {
-      & > .primary,
       & > .secondary {
+        display: none;
+      }
+    }
+
+    @include breakpoint-x-sm {
+      & > .primary {
         display: none;
       }
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { FC } from 'react';
 import Link from 'next/link';
+import classnames from 'classnames';
 import getConfig from 'next/config';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
@@ -25,7 +26,7 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
   const toggleSubMenuOpen = (subMenu: SubMenu) => handleOpen(subMenuOpen === subMenu ? null : subMenu);
 
   return (
-    <menu className='small'>
+    <menu className={classnames('small', { user })}>
       <HeaderButtons user={user} />
       <Button className='hamburger' onClick={() => setOpen(!open)}>
         <Icon name={open ? 'close-line' : 'menu-line'} />
