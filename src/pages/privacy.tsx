@@ -250,7 +250,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
 
 Privacy.getMetaData = () => ({
   title: 'Squeaky | Privacy',
-  description: 'TODO',
+  description: 'Find out how Squeaky offers the most privacy-friendly, turnkey product analytics suite on the market.',
   index: true,
 });
 
