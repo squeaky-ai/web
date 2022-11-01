@@ -95,11 +95,11 @@ const Privacy: SqueakyPage<NextPage> = () => {
             <span className='number'>3</span>
             <h4>100% of the value with 100% of the privacy</h4>
             <p>Conventional analytics companies compromise user privacy to deliver value to their customers.</p>
-            <p>We&apos;re taking a new approach, creating an entire suite of analytics tools that uses only the least sensitive data to power the most important features for our customers.</p>
+            <p>We&apos;re taking a new approach, creating an entire suite of analytics tools that uses the <i>least sensitive</i> data to power the <i>most important</i> features for our customers.</p>
           </Card>
         </Container>
         <Container className='centered md'>
-          <p>These guiding principles have led us to take a new and innovative approached to how we build our product, leading to an <b>amazingly broad array of privacy features and functionality throughout our application</b>.</p>
+          <p>These guiding principles have led us to take a new and innovative approach to how we build our product, leading to an <b>amazingly broad array of privacy features and functionality throughout our application</b>.</p>
           <a href='#tracking-and-data-capture' className='skip'>
             <Icon name='arrow-down-line' />
           </a>
@@ -119,7 +119,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
           <SideBySide
             title='No cookies or IP-based tracking'
             image={<Screen screen='privacy-4' height={374} width={512} />}
-            body={<p>Unlike conventional analytics tools we never use cookies, third party or first party, to track your visitors. Likewise, we don&apos;t store your visitors&apos; IP addresses, or undertake digital fingerprinting of any sort.</p>}
+            body={<p>Unlike conventional analytics tools we never use cookies, third party or first party, to track your visitors. Likewise, we don&apos;t store your visitors&apos; IP addresses, or undertake digital fingerprinting of any kind.</p>}
             flip
           />
           <SideBySide
@@ -148,7 +148,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
             image={<Screen screen='privacy-7' height={389} width={512} />}
             body={
               <>
-                <p>If you&apos;re looking for maximum control over the data capture of any element of your site, you can make use of Squeaky&apos;s privacy tags for your HTML.</p>
+                <p>If you&apos;re looking for maximum control over the data capture of any element on your site, you can make use of Squeaky&apos;s privacy tags for your HTML.</p>
                 <p>Visit our <Link href='/developers'><a>developer documentation</a></Link> to learn more.</p>
               </>
             }
@@ -161,7 +161,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
           <SideBySide
             title='The Squeaky consent widget'
             image={<Screen screen='privacy-8' height={400} width={512} />}
-            body={<p>If your business needs visitor consent prior to capturing data you can make use of Squeaky&apos;s built-in consent widget and we&apos;ll never capture any data until your visitor has consented.</p>}
+            body={<p>If your businesses needs visitor consent prior to capturing data you can make use of Squeaky&apos;s built-in consent widget and we&apos;ll never capture any data until your visitor has consented.</p>}
             flip
           />
           <SideBySide
@@ -169,7 +169,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
             image={<Screen screen='privacy-9' height={394} width={509} />}
             body={
               <>
-                <p>Some business will only need to use Squeaky and request user consent at very specific points in their customer journey. For granular control you can manage consent and tracking code activation using our API.</p>
+                <p>Some business will only need to request user consent at very specific points in their customer journey. For granular control you can manage consent and tracking code activation using our API.</p>
                 <p>See our <Link href='/developers'><a>developer documentation</a></Link> to learn more.</p>
               </>
             }
