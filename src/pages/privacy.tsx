@@ -252,6 +252,7 @@ Privacy.getMetaData = () => ({
   title: 'Squeaky | Privacy',
   description: 'Find out how Squeaky offers the most privacy-friendly, turnkey product analytics suite on the market.',
   index: true,
+  image: 'https://squeaky.ai/meta/privacy.jpg',
 });
 
 export default Privacy;
