@@ -14,6 +14,7 @@ import heatmaps1 from '../../public/screenshots/heatmaps-1.webp';
 import heatmaps2 from '../../public/screenshots/heatmaps-2.webp';
 import heatmaps3 from '../../public/screenshots/heatmaps-3.webp';
 import heatmaps4 from '../../public/screenshots/heatmaps-4.webp';
+import heatmaps5 from '../../public/screenshots/heatmaps-5.webp';
 import journeys1 from '../../public/screenshots/journeys-1.webp';
 import journeys2 from '../../public/screenshots/journeys-2.webp';
 import journeys3 from '../../public/screenshots/journeys-3.webp';
@@ -39,6 +40,7 @@ type ScreenshotType =
   'heatmaps-2' |
   'heatmaps-3' |
   'heatmaps-4' | 
+  'heatmaps-5' |
   'journeys-1' | 
   'journeys-2' | 
   'journeys-3' | 
@@ -80,6 +82,8 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return heatmaps3;
     case 'heatmaps-4':
       return heatmaps4;
+    case 'heatmaps-5':
+      return heatmaps5;
     case 'journeys-1':
       return journeys1;
     case 'journeys-2':

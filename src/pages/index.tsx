@@ -48,16 +48,19 @@ const Home: SqueakyPage<NextPage> = () => {
             <Screenshot screen='dashboard-1' alt='Screenshot of the Squeaky dashboard page' />
           </CarouselItem>
           <CarouselItem>
+            <Screenshot screen='analytics-1' alt='Screenshot of the Squeaky analytics page' />
+          </CarouselItem>
+          <CarouselItem>
             <Screenshot screen='session-1' alt='Screenshot of the Squeaky session page' />
           </CarouselItem>
           <CarouselItem>
-            <Screenshot screen='analytics-1' alt='Screenshot of the Squeaky analytics page' />
+            <Screenshot screen='events-1' alt='Screenshot of the Squeaky events page' />
           </CarouselItem>
           <CarouselItem>
             <Screenshot screen='nps-1' alt='Screenshot of the Squeaky NPS page' />
           </CarouselItem>
           <CarouselItem shadowless>
-            <Screenshot screen='heatmaps-1' alt='Screenshot of the Squeaky heatmaps page' />
+            <Screenshot screen='heatmaps-4' alt='Screenshot of the Squeaky heatmaps page' />
           </CarouselItem>
           <CarouselItem>
             <Screenshot screen='journeys-1' alt='Screenshot of the Squeaky journeys page' />
