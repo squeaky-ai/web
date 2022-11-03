@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       # Build and push the docker image
-      - docker build -t web:latest .
+      - docker build --platform linux/amd64 -t web:latest .
       - docker tag web:latest "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web:latest"
       - docker push "${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/web:latest"
       # Extract the .next directory and publish it to S3
