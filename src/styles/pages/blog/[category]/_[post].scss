@@ -244,6 +244,12 @@
         @include breakpoint-md {
           border-radius: var(--border-radius-md);
         }
+
+        &.vertical {
+          height: 100% !important;
+          margin: 0 auto;
+          width: auto !important;
+        }
       }
 
       figcaption {
