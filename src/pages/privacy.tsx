@@ -75,7 +75,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
           <div className='illustration'>
             <Illustration illustration='illustration-19' width={540} height={357} />
           </div>
-          <p>We <Link href='#'><a>founded Squeaky</a></Link> to provide <b>the first truly comprehensive, privacy-friendly product and web analytics suite</b>. However, at the heart of that mission lies a contraction, as great <b>product analytics tools inherently capture a lot data</b>. So, how exactly does Squeaky provide an incredible turnkey analytics tool, whilst also protecting end users from arbitrary or invasive data capture?</p>
+          <p>We <Link href='#'><a>founded Squeaky</a></Link> to provide <b>the first truly comprehensive, privacy-friendly product and web analytics suite</b>. However, at the heart of that mission lies a contradiction, as great <b>product analytics tools inherently capture a lot data</b>. So, how exactly does Squeaky provide an incredible turnkey analytics tool, whilst also protecting end users from arbitrary or invasive data capture?</p>
           <p>There are <b>three pillars of privacy-first product development</b> that form the foundation of our product, and inform every decision we make:</p>
         </Container>
         <Container className='centered lg steps'>
