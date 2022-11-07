@@ -22,7 +22,7 @@ const Home: SqueakyPage<NextPage> = () => {
     <>
       <section className='hero'>
         <Container className='centered md'>
-          <h1>Product analytics for customer-obsessed companies</h1>
+          <h1>Privacy-friendly analytics for the modern web</h1>
           <p>Squeaky&apos;s future-proof <a href='#elevate-your-customers-digital-experience'>analytics suite</a> lets you capture up to 60% more data than legacy tools by putting customer privacy first.</p>
           <GetStarted />
         </Container>
