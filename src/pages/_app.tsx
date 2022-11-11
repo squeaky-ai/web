@@ -19,6 +19,9 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
   const meta = Component.getMetaData(pageProps, router);
 
   const url = `${publicRuntimeConfig.webHost}${router.asPath}`;
+  // Google gets mad if you include the query params and generates
+  // thousands of warnings because the content is too similar
+  const canonicalUrl = url.split('?')[0];
   const image = meta.image || `${publicRuntimeConfig.webHost}/social-bg.png`;
 
   return (
@@ -33,7 +36,7 @@ const App: FC<SqueakyComponent> = ({ Component, pageProps, router }) => {
         <meta name='theme-color' content='#FFF5EB' />
 
         {/* Conditional */}
-        {meta.index && <link rel='canonical' href={url} />}
+        {meta.index && <link rel='canonical' href={canonicalUrl} />}
         {meta.author && <meta name='author' content={meta.author} />}
 
         {/* Open Graph / Facebook */}
