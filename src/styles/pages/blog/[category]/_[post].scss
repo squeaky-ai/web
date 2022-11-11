@@ -297,6 +297,7 @@
     }
 
     pre.code.block {
+      background: var(--peach-200);
       display: block;
       margin: 1.5rem 0;
       overflow-x: auto;
@@ -308,7 +309,7 @@
 
       code {
         background: none;
-        color: var(--peach-100);
+        color: var(--gray-blue-800);
         display: block;
         padding: 0;
       }
