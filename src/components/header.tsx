@@ -83,11 +83,14 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
        <div className={classnames('header-strip', themeOverride)}>
         {!loading && (
           <Container className='lg centered'>
-            <Link href={`/blog${latestBlogPost.slug}`}>
-              <a className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
-                <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
-              </a>
-            </Link>
+            {latestBlogPost && (
+              <Link href={`/blog${latestBlogPost.slug}`}>
+                <a className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
+                  <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
+                </a>
+              </Link>
+            )}
+            {!latestBlogPost && <span />}
             <menu>
               <Link href='/contact-us'>
                 <a><Icon name='mail-line' /> Contact us</a>

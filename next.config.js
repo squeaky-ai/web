@@ -33,7 +33,7 @@ module.exports = {
           source: '/api/:slug*',
           destination: 'http://localhost:3333/api/:slug*',
           basePath: false,
-        }
+        },
       ] 
       // Because Lewis is an idiot and forgot about spaces
       : [
@@ -44,7 +44,16 @@ module.exports = {
         {
           source: '/blog/product%20updates/product-update-q2-2022',
           destination: '/blog/product-updates/product-update-q2-2022',
-        }
+        },
       ];
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/legal',
+        destination: '/legal/terms-of-service',
+        permanent: true,
+      },
+    ]
+  },
 };

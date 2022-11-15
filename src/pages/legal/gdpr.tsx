@@ -59,7 +59,7 @@ const LegalGdpr: SqueakyPage<NextPage> = () => (
       <div className='consent-card'>
         <p><b>Address</b>: Squeaky B.V., Debussystraat 43, 2324KH Leiden, The Netherlands</p>
         <p><b>Usage data</b>: locale, device width and height, browser width and height, referrer, useragent, timezone, session start and end time, click coordinates, clicked elements, scroll position, mouse position, page views, user feedback (if submitted).</p>
-        <p><b>Data storage</b>: AWS eu-west-1 region (The Repblic of Ireland).</p>
+        <p><b>Data storage</b>: AWS eu-west-1 region (The Republic of Ireland).</p>
       </div>
 
       <h4>Does Squeaky use any first, or third-party cookies?</h4>
