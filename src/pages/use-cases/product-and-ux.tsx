@@ -44,7 +44,7 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
       <Container className='lg centered'>
         <Container className='md tagline'>
           <h2>The customer experience tool with no missing pieces</h2>
-          <p>Too many solutions leave product and design professionals wanting more. By combining recordings, analytics, customer profiles, user feedback and analytics in one tool, you&apos;ll get everything you need in on tool.</p>
+          <p>Too many solutions leave product and design professionals wanting more. By combining recordings, analytics, customer profiles, user feedback and analytics in one tool, you&apos;ll get everything you need.</p>
         </Container>
 
         <Carousel>
