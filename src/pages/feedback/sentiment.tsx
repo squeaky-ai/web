@@ -30,7 +30,7 @@ const FeedbackSentiment: SqueakyPage = () => {
 
   const [step, setStep] = React.useState<number>(0);
 
-  const { feedback, visitor, loading } = useFeedback({});
+  const { feedback, visitor, loading } = useFeedback();
 
   const handleClose = () => {
     const message = JSON.stringify({ 
