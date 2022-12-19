@@ -30,7 +30,7 @@ const FeedbackSentiment: SqueakyPage = () => {
 
   const [step, setStep] = React.useState<number>(0);
 
-  const { feedback, visitor, loading } = useFeedback();
+  const { feedback, visitor, loading, demo } = useFeedback();
 
   const handleClose = () => {
     const message = JSON.stringify({ 
@@ -43,6 +43,8 @@ const FeedbackSentiment: SqueakyPage = () => {
 
   const submitSentiment = async (values: Record<string, string>) => {
     setStep(steps.CONFIRM);
+
+    if (demo) return;
 
     await createSentiment({
       score: Number(values.score),
