@@ -4,6 +4,7 @@ import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
 import { useConsent } from 'hooks/use-consent';
 import { Button } from 'components/button';
+import { useTranslations } from 'hooks/use-translations';
 import type { SqueakyPage } from 'types/page';
 import type { SupportedLanguages } from 'types/translations';
 
@@ -15,6 +16,8 @@ const FeedbackConsent: SqueakyPage = () => {
 
   const { loading, error, consent, locale, setLocale } = useConsent();
 
+  const { t } = useTranslations(locale, 'consent');
+
   React.useEffect(() => {
     const resizeObserver = new ResizeObserver(entries => {
       handleSetHeight(entries[0].contentRect.height);
@@ -22,8 +25,6 @@ const FeedbackConsent: SqueakyPage = () => {
 
     resizeObserver.observe(ref.current);
   }, []);
-
-  const translations = JSON.parse(consent.translations);
 
   const onLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLocale(event.target.value as SupportedLanguages);
@@ -60,9 +61,9 @@ const FeedbackConsent: SqueakyPage = () => {
     <div ref={ref} className='page feedback consent'>
       {!loading && !error && (
         <>
-          <h5>{translations.privacy_friendly_analytics}</h5>
-          <p>{translations.we_use_squeaky}</p>
-          <p dangerouslySetInnerHTML={{ __html: translations.set_consent_preferemces }}></p>
+          <h5>{t('privacy_friendly_analytics')}</h5>
+          <p>{t('we_use_squeaky', { name: consent.name })}</p>
+          <p dangerouslySetInnerHTML={{ __html: t('set_consent_preferemces', { privacy_policy_url: consent.privacyPolicyUrl }) }}></p>
 
           {consent.languages.length > 1 && (
             <div className='locale'>
@@ -78,26 +79,26 @@ const FeedbackConsent: SqueakyPage = () => {
           )}
 
           <Button type='button' className={classnames('link', { expand })} onClick={toggleExpand}>
-            {translations.what_makes_squeaky_different}
+            {t('what_makes_squeaky_different')}
             <Icon name='arrow-drop-down-line' />
           </Button>
 
           {expand && (
             <ul>
-              <li>{translations.no_cookies}</li>
-              <li>{translations.never_sold}</li>
-              <li>{translations.data_capture_features}</li>
-              <li>{translations.visitors_are_anonymous}</li>
-              <li>{translations.data_in_eu}</li>
+              <li>{t('no_cookies')}</li>
+              <li>{t('never_sold')}</li>
+              <li>{t('data_capture_features')}</li>
+              <li>{t('visitors_are_anonymous')}</li>
+              <li>{t('data_in_eu')}</li>
             </ul>
           )}
 
           <div className='actions'>
             <Button className='primary' onClick={handleConsent}>
-              {translations.accept}
+              {t('accept')}
             </Button>
             <Button className='secondary' onClick={handleReject}>
-              {translations.reject}
+              {t('reject')}
             </Button>
           </div>
         </>

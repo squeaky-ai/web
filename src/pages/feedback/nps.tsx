@@ -13,6 +13,7 @@ import { Icon } from 'components/icon';
 import { Select, Option } from 'components/select';
 import { createNps } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
+import { useTranslations } from 'hooks/use-translations';
 import type { SqueakyPage } from 'types/page';
 import type { SupportedLanguages } from 'types/translations';
 
@@ -37,9 +38,9 @@ const FeedbackNps: SqueakyPage = () => {
   const [step, setStep] = React.useState<number>(0);
   const [locale, setLocale] = React.useState<SupportedLanguages>(null);
 
-  const { feedback, visitor, loading } = useFeedback({ locale });
+  const { feedback, visitor, loading, demo } = useFeedback();
 
-  const translations = JSON.parse(feedback.npsTranslations);
+  const { t } = useTranslations(locale, 'feedback');
 
   const containerHeight = () => {
     const form = ref.current.querySelector('form');
@@ -51,12 +52,14 @@ const FeedbackNps: SqueakyPage = () => {
   const submitNps = async (values: Record<string, string>) => {
     const message = JSON.stringify({ 
       key: '__squeaky_submit_nps', 
-      value: {}, 
+      value: {},
     });
 
     window.parent.postMessage(message, '*');
 
     updateStep(steps.CONFIRM);
+
+    if (demo) return;
 
     await createNps({
       score: Number(values.score),
@@ -97,7 +100,7 @@ const FeedbackNps: SqueakyPage = () => {
     if (ref.current) {
       ref.current.setAttribute('style', `--nps-accent-color: ${feedback?.npsAccentColor};`);
     }
-  }, [feedback?.npsAccentColor]);
+  }, [loading, feedback?.npsAccentColor]);
 
   React.useEffect(() => {
     const userLocale = navigator.language.split('-')[0];
@@ -170,12 +173,12 @@ const FeedbackNps: SqueakyPage = () => {
                 )}
 
                 <div className='ratings'>
-                  <p className='title'>{translations.how_likely_to_recommend}</p>
+                  <p className='title'>{t('how_likely_to_recommend', { name: feedback.npsPhrase })}</p>
 
                   <div className='likeliness'>
                     <div className='labels'>
-                      <p>{translations.not_likely}</p>
-                      <p>{translations.extremely_likely}</p>
+                      <p>{t('not_likely')}</p>
+                      <p>{t('extremely_likely')}</p>
                     </div>
                     <div className='values'>
                       {range(11).map(i => (
@@ -196,9 +199,9 @@ const FeedbackNps: SqueakyPage = () => {
                   
                   {feedback.npsFollowUpEnabled && (
                     <div className='reason'>
-                      <Label htmlFor='comment'>{translations.what_is_the_main_reason}</Label>
+                      <Label htmlFor='comment'>{t('what_is_the_main_reason')}</Label>
                       <TextArea 
-                        placeholder={translations.please_type} 
+                        placeholder={t('please_type')} 
                         name='comment' 
                         rows={2}
                         value={values.comment}
@@ -211,19 +214,19 @@ const FeedbackNps: SqueakyPage = () => {
                   {feedback.npsContactConsentEnabled && (
                     <>
                       <div className='contact'>
-                        <Label>{translations.would_you_like_to_hear}</Label>
+                        <Label>{t('would_you_like_to_hear')}</Label>
                         <div className='radio-group'>
                           <Radio name='contact' value='1' checked={values.contact === '1'} onBlur={handleBlur} onChange={onContactChange}>
-                            {translations.yes}
+                            {t('yes')}
                           </Radio>
                           <Radio name='contact' value='0' checked={values.contact === '0'} onBlur={handleBlur} onChange={onContactChange}>
-                            {translations.no}
+                            {t('no')}
                           </Radio>
                         </div>
                       </div>
 
                       <div className='details'>
-                        <Label htmlFor='email'>{translations.email_address}</Label>
+                        <Label htmlFor='email'>{t('email_address')}</Label>
                         <Input
                           type='email'
                           name='email'
@@ -238,14 +241,14 @@ const FeedbackNps: SqueakyPage = () => {
 
                   <div className='footer'>
                     <div className={classnames('powered-by', { hide: feedback.npsHideLogo })}>
-                      <p>{translations.powered_by}</p>
+                      <p>{t('powered_by')}</p>
                       <a href='https://squeaky.ai' target='_blank' rel='noreferrer'>
                         <Logo logo='dark' width={64} height={21} />
                       </a>
                     </div>
 
                     <Button type='submit' className='submit primary' disabled={isSubmitting}>
-                      {translations.submit}
+                      {t('submit')}
                     </Button>
                   </div>
                 </div>
@@ -253,11 +256,11 @@ const FeedbackNps: SqueakyPage = () => {
                 <div className='confirm'>
                   <Icon name='checkbox-circle-line' />
 
-                  <h4>{translations.feedback_sent}</h4>
-                  <p>{translations.thanks_for_sharing}</p>
+                  <h4>{t('feedback_sent')}</h4>
+                  <p>{t('thanks_for_sharing')}</p>
 
                   <Button className='close' type='button' onClick={handleClose}>
-                    {translations.close}
+                    {t('close')}
                   </Button>
                 </div>
               </form>

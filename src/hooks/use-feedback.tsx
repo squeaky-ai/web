@@ -1,16 +1,12 @@
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import type { Feedback } from 'types/graphql';
-import type { SupportedLanguages } from 'types/translations';
-
-interface Props {
-  locale?: SupportedLanguages;
-}
 
 interface UsePlans {
   loading: boolean;
   error: boolean;
   feedback: Feedback;
+  demo: boolean;
   visitor: VisitorParams;
 }
 
@@ -21,7 +17,7 @@ interface VisitorParams {
 }
 
 const QUERY = gql`
-  query GetFeedback($siteId: String!, $locale: String!) {
+  query GetFeedback($siteId: String!) {
     feedback(siteId: $siteId) {
       npsEnabled
       npsAccentColor
@@ -32,7 +28,6 @@ const QUERY = gql`
       npsLayout
       npsLanguages
       npsLanguagesDefault
-      npsTranslations(userLocale: $locale)
       npsHideLogo
       sentimentEnabled
       sentimentAccentColor
@@ -43,7 +38,18 @@ const QUERY = gql`
   }
 `;
 
-export const useFeedback = (props: Props): UsePlans => {
+const getThemeOverrides = (overrides?: string): Partial<Feedback> => {
+  if (!overrides) return {};
+
+  try {
+    return JSON.parse(decodeURI(overrides));
+  } catch (error) {
+    console.error('Feedback overrides JSON is invalid: ', error);
+    return {};
+  };
+};
+
+export const useFeedback = (): UsePlans => {
   const router = useRouter();
 
   const visitor: VisitorParams = {
@@ -55,7 +61,6 @@ export const useFeedback = (props: Props): UsePlans => {
   const { data, error, loading } = useQuery<{ feedback: Feedback }>(QUERY, {
     variables: {
       siteId: '' + router.query.site_id,
-      locale: props.locale || 'en',
     },
   });
 
@@ -63,7 +68,6 @@ export const useFeedback = (props: Props): UsePlans => {
     id: null,
     npsEnabled: false,
     npsExcludedPages: [],
-    npsTranslations: '{}',
     npsHideLogo: false,
     npsLanguages: ['en'],
     npsLanguagesDefault: 'en',
@@ -73,10 +77,14 @@ export const useFeedback = (props: Props): UsePlans => {
     sentimentExcludedPages: [],
   };
 
+  const feedback = data?.feedback || fallback;
+  const overrides = getThemeOverrides(router.query.theme_overrides as string);
+
   return {
     loading,
-    error: !!error,
-    feedback: data?.feedback || fallback,
     visitor,
+    error: !!error,
+    demo: router.query.demo === 'true',
+    feedback: { ...feedback, ...overrides },
   };
 };

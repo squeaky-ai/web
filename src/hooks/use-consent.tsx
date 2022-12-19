@@ -13,7 +13,7 @@ interface UseConsent {
 }
 
 const GET_CONSENT_QUERY = gql`
-  query GetConsent($siteId: String!, $locale: String!) { 
+  query GetConsent($siteId: String!) { 
     consent(siteId: $siteId) {
       id
       name
@@ -22,7 +22,6 @@ const GET_CONSENT_QUERY = gql`
       privacyPolicyUrl
       languages
       languagesDefault
-      translations(userLocale: $locale)
     }
   }
 `;
@@ -35,7 +34,6 @@ export const useConsent = (): UseConsent => {
   const { loading, error, data } = useQuery(GET_CONSENT_QUERY, {
     variables: {
       siteId: router.query.site_id as string,
-      locale: locale || 'en',
     }
   });
 
@@ -45,7 +43,6 @@ export const useConsent = (): UseConsent => {
     consentMethod: 'disabled',
     layout: 'bottom_left',
     privacyPolicyUrl: '',
-    translations: '{}',
     languages: ['en'],
     languagesDefault: 'en',
   };
