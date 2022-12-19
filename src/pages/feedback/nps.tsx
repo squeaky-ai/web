@@ -110,7 +110,7 @@ const FeedbackNps: SqueakyPage = () => {
     }
   }, [feedback?.npsLanguages]);
 
-  if (loading || !feedback.npsEnabled) {
+  if (loading || (!demo && !feedback.npsEnabled)) {
     return null;
   }
 

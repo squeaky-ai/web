@@ -59,7 +59,7 @@ const FeedbackSentiment: SqueakyPage = () => {
     }
   }, [loading, feedback?.sentimentAccentColor]);
 
-  if (loading || !feedback.sentimentEnabled) {
+  if (loading || (!demo && !feedback.sentimentEnabled)) {
     return null;
   }
 
