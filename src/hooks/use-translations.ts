@@ -1,13 +1,15 @@
 import { SupportedLanguages } from 'types/translations';
 import { ConsentTranslations, ConsentTranslationValues, consentTranslations } from 'translations/consent';
-import { FeedbackTranslations, FeedbackTranslationValues, feedbackTranslations } from 'translations/feedback';
+import { NpsTranslations, NpsTranslationValues, npsTranslations } from 'translations/nps';
+import { SentimentTranslations, SentimentTranslationValues, sentimentTranslations } from 'translations/sentiment';
 
-type Translations = ConsentTranslations | FeedbackTranslations;
-type TranslationsType = 'consent' | 'feedback';
+type Translations = ConsentTranslations | NpsTranslations | SentimentTranslations;
+type TranslationsType = 'consent' | 'nps' | 'sentiment';
 
 type TranslationResponse<T> = 
-  T extends 'consent'  ? ConsentTranslationValues :
-  T extends 'feedback' ? FeedbackTranslationValues :
+  T extends 'consent'   ? ConsentTranslationValues :
+  T extends 'nps'       ? NpsTranslationValues :
+  T extends 'sentiment' ? SentimentTranslationValues :
   never;
 
 interface UseTranslations<T> {
@@ -19,8 +21,10 @@ const getTranslationsForType = (type: TranslationsType): Translations => {
   switch(type) {
     case 'consent':
       return consentTranslations;
-    case 'feedback':
-      return feedbackTranslations;
+    case 'nps':
+      return npsTranslations;
+    case 'sentiment':
+      return sentimentTranslations;
   }
 };
 

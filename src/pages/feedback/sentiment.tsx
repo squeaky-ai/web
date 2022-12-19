@@ -10,8 +10,11 @@ import { Input } from 'components/input';
 import { Rating } from 'components/ratings';
 import { TextArea } from 'components/textarea';
 import { Button } from 'components/button';
+import { Select, Option } from 'components/select';
 import { createSentiment } from 'lib/api/graphql';
 import { useFeedback } from 'hooks/use-feedback';
+import { useTranslations } from 'hooks/use-translations';
+import { SupportedLanguages } from 'types/translations';
 import type { SqueakyPage } from 'types/page';
 
 const steps = {
@@ -29,8 +32,11 @@ const FeedbackSentiment: SqueakyPage = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const [step, setStep] = React.useState<number>(0);
+  const [locale, setLocale] = React.useState<SupportedLanguages>(null);
 
   const { feedback, visitor, loading, demo } = useFeedback();
+
+  const { t } = useTranslations(locale, 'sentiment');
 
   const handleClose = () => {
     const message = JSON.stringify({ 
@@ -53,11 +59,23 @@ const FeedbackSentiment: SqueakyPage = () => {
     });
   };
 
+  const onLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocale(event.target.value as SupportedLanguages);
+  };
+
   React.useEffect(() => {
     if (ref.current) {
       ref.current.setAttribute('style', `--sentiment-accent-color: ${feedback?.sentimentAccentColor};`);
     }
   }, [loading, feedback?.sentimentAccentColor]);
+
+  React.useEffect(() => {
+    const userLocale = navigator.language.split('-')[0];
+
+    if (!locale && feedback.npsLanguages.includes(userLocale)) {
+      setLocale(userLocale as SupportedLanguages);
+    }
+  }, [feedback?.npsLanguages]);
 
   if (loading || (!demo && !feedback.sentimentEnabled)) {
     return null;
@@ -84,7 +102,7 @@ const FeedbackSentiment: SqueakyPage = () => {
             values,
           }) => (
             <form className={`step-${step}`} onSubmit={handleSubmit}>
-              <p className='title'>How would you rate your experience?</p>
+              <p className='title'>{t('how_would_you_rate')}</p>
 
               <div className='ratings'>
                 {range(5).map(i => (
@@ -109,7 +127,7 @@ const FeedbackSentiment: SqueakyPage = () => {
                 className='comment'
                 name='comment'
                 value={values.comment}
-                placeholder='Tell us about your experience'
+                placeholder={t('tell_us_about_your_experience')}
                 rows={2}
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -117,26 +135,39 @@ const FeedbackSentiment: SqueakyPage = () => {
 
               <div className='footer'>
                 <div className={classnames('powered-by', { hide: feedback.sentimentHideLogo })}>
-                  <p>Powered by</p>
+                  <p>{t('powered_by')}</p>
                   <a href='https://squeaky.ai' target='_blank' rel='noreferrer'>
                     <Logo logo='dark' width={64} height={21} />
                   </a>
                 </div>
 
+                {step === steps.START && feedback.sentimentLanguages.length > 1 && (
+                  <div className='locale'>
+                    <Icon name='translate' className='translation-icon' />
+                    <Select value={locale || feedback.sentimentLanguagesDefault} onChange={onLocaleChange}>
+                      {feedback.sentimentLanguages.map(sentimentLanguage => (
+                        <Option key={sentimentLanguage} value={sentimentLanguage}>
+                          {sentimentLanguage}
+                        </Option>
+                      ))}
+                    </Select>
+                  </div>
+                )}
+
                 <Button type='submit' className='primary' disabled={isSubmitting}>
-                  Send
+                  {t('send')}
                 </Button>
               </div>
 
               <div className='confirm'>
                 <Icon name='checkbox-circle-line' />
 
-                <h4>Feedback sent</h4>
+                <h4>{t('feedback_sent')}</h4>
 
-                <p>Thank you for sharing your feedback and helping to make our service better.</p>
+                <p>{t('thank_you_for_sharing')}</p>
 
                 <Button className='close' type='button' onClick={handleClose}>
-                  Close
+                  {t('close')}
                 </Button>
               </div>
             </form>

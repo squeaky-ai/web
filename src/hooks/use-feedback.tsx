@@ -34,6 +34,8 @@ const QUERY = gql`
       sentimentExcludedPages
       sentimentLayout
       sentimentHideLogo
+      sentimentLanguages
+      sentimentLanguagesDefault
     }
   }
 `;
@@ -75,6 +77,8 @@ export const useFeedback = (): UsePlans => {
     sentimentHideLogo: false,
     sentimentEnabled: false,
     sentimentExcludedPages: [],
+    sentimentLanguages: ['en'],
+    sentimentLanguagesDefault: 'en',
   };
 
   const feedback = data?.feedback || fallback;

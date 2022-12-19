@@ -1,6 +1,6 @@
 import type { SupportedLanguages } from 'types/translations';
 
-export type FeedbackTranslationValues = {
+export type NpsTranslationValues = {
   'how_likely_to_recommend': string,
   'not_likely': string,
   'extremely_likely': string,
@@ -17,12 +17,12 @@ export type FeedbackTranslationValues = {
   'please_type': string,
 };
 
-export type FeedbackTranslations = Record<
+export type NpsTranslations = Record<
   SupportedLanguages, 
-  FeedbackTranslationValues
+  NpsTranslationValues
 >;
 
-export const feedbackTranslations: FeedbackTranslations = {
+export const npsTranslations: NpsTranslations = {
   cs: {
     how_likely_to_recommend: 'Doporučili byste %{name} známým nebo kolegům?',
     not_likely: 'Určitě ne',

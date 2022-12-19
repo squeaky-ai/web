@@ -40,7 +40,7 @@ const FeedbackNps: SqueakyPage = () => {
 
   const { feedback, visitor, loading, demo } = useFeedback();
 
-  const { t } = useTranslations(locale, 'feedback');
+  const { t } = useTranslations(locale, 'nps');
 
   const containerHeight = () => {
     const form = ref.current.querySelector('form');
