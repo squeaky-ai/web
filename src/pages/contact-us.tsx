@@ -29,7 +29,7 @@ const ContactUs: SqueakyPage<NextPage> = () => {
     <>
       <PageTitle
         title='How can we help?'
-        subtitle={<>For general enquiries or support please use the form below, to book a demo, <Link href='/book-demo'><a>click here</a></Link>.</>}
+        subtitle={<>For general enquiries or support please use the form below, to book a demo, <Link href='/book-demo'>click here</Link>.</>}
       />
 
       <ContactForm

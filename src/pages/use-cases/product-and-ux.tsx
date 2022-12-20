@@ -26,11 +26,11 @@ const UseCasesProductAndUx: SqueakyPage<NextPage> = () => (
         <>
           <UseCasesHeaderStats
             stat='56%'
-            body={<>of websites are using <Link href='/product/analytics'><a>analytics tooling</a></Link> to better understand their visitors, we&apos;re on a mission to make that 100%.</>}
+            body={<>of websites are using <Link href='/product/analytics'>analytics tooling</Link> to better understand their visitors, we&apos;re on a mission to make that 100%.</>}
           />
           <UseCasesHeaderStats
             stat='8/10'
-            body={<>of product professionals we surveyed felt their current tools were missing key data, <Link href='/product/feedback'><a>we&apos;re plugging those gaps</a></Link>.</>}
+            body={<>of product professionals we surveyed felt their current tools were missing key data, <Link href='/product/feedback'>we&apos;re plugging those gaps</Link>.</>}
           />
           <UseCasesHeaderStats
             stat='93%'

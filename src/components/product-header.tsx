@@ -46,15 +46,11 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
             <h1>{title}</h1>
             {body}
             <div className='actions'>
-              <Link href='/auth/signup'>
-                <a className='button primary'>
-                  Get Started
-                </a>
+              <Link href='/auth/signup' className='button primary'>
+                Get Started
               </Link>
-              <Link href='/book-demo'>
-                <a className='button secondary'>
-                  Book Demo
-                </a>
+              <Link href='/book-demo' className='button secondary'>
+                Book Demo
               </Link>
             </div>
           </div>

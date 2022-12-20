@@ -49,10 +49,8 @@ const AuthReset: SqueakyPage<NextPage> = () => {
 
   return (
     <>
-      <Link href='/'>
-        <a className='logo'>
-          <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
-        </a>
+      <Link href='/' className='logo'>
+        <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
       </Link>
 
       <div className='center'>
@@ -189,8 +187,8 @@ const AuthReset: SqueakyPage<NextPage> = () => {
                     <Icon name='check-line' />
                   </div>
                   <h4>Password Reset Successfully</h4>
-                  <Link href='/auth/login'>
-                    <a className='button primary'>Go To Login Page</a>
+                  <Link href='/auth/login' className='button primary'>
+                    Go To Login Page
                   </Link>
                 </div>
               )}

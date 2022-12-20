@@ -77,7 +77,7 @@ const LegalGdpr: SqueakyPage<NextPage> = () => (
         <li className='tight'>You can actively send linked data from your database e.g. name, email address etc to Squeaky using our data linking service.</li>
         <li>You can passively send personal information that your users input (unlikely, as we anonymise form fields by default) or that might get displayed on pages of your website or app that Squeaky captures simply because we are recording the page.</li>
       </ol>
-      <p>In the case of passively captured information, you have full control over which fields or elements are excluded and it is important that you exclude the personal data that you do not want Squeaky to capture. We provide documentation on how to do this in the privacy section of your site&apos;s settings in Squeaky, as well as in our <Link href='/developers'><a>developer documentation</a></Link>.</p>
+      <p>In the case of passively captured information, you have full control over which fields or elements are excluded and it is important that you exclude the personal data that you do not want Squeaky to capture. We provide documentation on how to do this in the privacy section of your site&apos;s settings in Squeaky, as well as in our <Link href='/developers'>developer documentation</Link>.</p>
     
       <h4>Can I delete Squeaky data for specific customers when they ask to be forgotten?</h4>
       <p>Yes, you can easily delete individual users with the click of a button in your Squeaky visitors table.</p>

@@ -36,44 +36,30 @@ export const HeaderMenuLarge: FC<Props> = ({ subMenuOpen, user, handleOpen }) =>
         <HeaderUseCases />
       </HeaderMenu>
 
-      <Link href='/privacy'>
-        <a className={classnames('link', { active: router.route === '/privacy' })}>
-          <span>Privacy</span>
-        </a>
+      <Link href='/privacy' className={classnames('link', { active: router.route === '/privacy' })}>
+        <span>Privacy</span>
       </Link>
 
-      <Link href='/pricing'>
-        <a className={classnames('link', { active: router.route === '/pricing' })}>
-          <span>Pricing</span>
-        </a>
+      <Link href='/pricing' className={classnames('link', { active: router.route === '/pricing' })}>
+        <span>Pricing</span>
       </Link>
 
       <HeaderDropdown link='More' active={false} open={subMenuOpen === 'more'} handleOpen={handleOpen('more')} handleClose={handleClose}>
-        <Link href='/about-us'>
-          <a className='button'>
-            About Us
-          </a>
+        <Link href='/about-us' className='button'>
+          About Us
         </Link>
-        <Link href='/blog'>
-          <a className='button'>
-            Blog
-          </a>
+        <Link href='/blog' className='button'>
+          Blog
         </Link>
-        <Link href={publicRuntimeConfig.helpCenterUrl}>
-          <a target='_blank' rel='noreferrer' className='button'>
-            Help centre
-          </a>
+        <Link href={publicRuntimeConfig.helpCenterUrl} target='_blank' rel='noreferrer' className='button'>
+          Help centre
         </Link>
-        <Link href='/contact-us'>
-          <a className='button'>
-            Contact Us
-          </a>
+        <Link href='/contact-us' className='button'>
+          Contact Us
         </Link>
 
-        <Link href='/book-demo'>
-          <a className='button tertiary'>
-            Book Demo
-          </a>
+        <Link href='/book-demo' className='button tertiary'>
+          Book Demo
         </Link>
       </HeaderDropdown>
 

@@ -78,10 +78,8 @@ const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
 
   return (
     <>
-      <Link href='/'>
-        <a className='logo'>
-          <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
-        </a>
+      <Link href='/' className='logo'>
+        <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
       </Link>
 
       <div className='center'>
@@ -152,7 +150,7 @@ const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
                         <Password password={values.password} />
 
                         <Checkbox name='terms' onChange={handleChange} checked={values.terms} invalid={touched.terms && !!errors.terms}>
-                          I have read and accept the <Link href='/legal/terms-of-service'><a target='_blank'>Terms Of Use</a></Link>
+                          I have read and accept the <Link href='/legal/terms-of-service' target='_blank'>Terms Of Use</Link>
                         </Checkbox>
                         <span className='validation'>{errors.terms}</span>
 

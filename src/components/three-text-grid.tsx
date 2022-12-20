@@ -28,8 +28,8 @@ export const ThreeTextGridItem: FC<ChildProps> = ({ title, body, link, icon, but
     <h4>{title}</h4>
     {body}
     {link && (
-      <Link href={link}>
-        <a className={classnames('button', buttonType || 'secondary')}>Learn More</a>
+      <Link href={link} className={classnames('button', buttonType || 'secondary')}>
+        Learn More
       </Link>
     )}
   </div>

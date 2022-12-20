@@ -42,10 +42,8 @@ const ProgramsPartners: SqueakyPage<NextPage> = () => {
         body={<>Join the Squeaky Partner Program to <b>accelerate your business growth</b>. Each time you introduce a client to Squeaky you&apos;ll <b>earn 20% of any recurring revenue from the referral</b>, for the duration of their contract.</>}
         actions={
           <>
-            <Link href='#become-a-partner'>
-              <a className='button primary'>
-                Become A Partner
-              </a>
+            <Link href='#become-a-partner' className='button primary'>
+              Become A Partner
             </Link>
           </>
         }

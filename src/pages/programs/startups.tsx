@@ -43,15 +43,11 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
         body={<>At Squeaky we know how it feels to be <b>a new startup that&apos;s locked out of great tools</b> because of prohibitively expensive pricing, that&apos;s why we created a <b>discount program just for new businesses</b>!</>}
         actions={
           <>
-            <Link href='#apply-now'>
-              <a className='button primary'>
-                Apply Now
-              </a>
+            <Link href='#apply-now' className='button primary'>
+              Apply Now
             </Link>
-            <Link href='#learn-more'>
-              <a className='button secondary'>
-                Learn More
-              </a>
+            <Link href='#learn-more' className='button secondary'>
+              Learn More
             </Link>
           </>
         }
@@ -147,7 +143,7 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
               <>
                 <p>Any business that has been active for less than 2 years can access our startup program.</p>
                 <p>We perform basic due diligence upon receiving your application, and you will have the opportunity to raise a dispute if we reject your application.</p>
-                <p>We reserve the right to reject applications for any reason we see fit, most often this will be if we feel your operating model risks conflicting with our <Link href='/legal/terms-of-service'><a>Terms of Service</a></Link>.</p>
+                <p>We reserve the right to reject applications for any reason we see fit, most often this will be if we feel your operating model risks conflicting with our <Link href='/legal/terms-of-service'>Terms of Service</Link>.</p>
               </>
             }
           />

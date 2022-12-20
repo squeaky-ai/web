@@ -12,59 +12,47 @@ export const HeaderProduct: FC = () => (
   <div className='product'>
     <Container className='lg centered'>
       <div className='links'>
-        <Link href='/product/analytics'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='line-chart-line' />
-            </div>
-            <h5>Analytics</h5>
-            <p>Let data drive your decisions.</p>
-          </a>
+        <Link href='/product/analytics' className='item'>
+          <div className='icon-background'>
+            <Icon name='line-chart-line' />
+          </div>
+          <h5>Analytics</h5>
+          <p>Let data drive your decisions.</p>
         </Link>
-        <Link href='/product/event-tracking'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='flashlight-line' />
-            </div>
-            <h5>Event Tracking</h5>
-            <p>Measure every important activity.</p>
-          </a>
+        <Link href='/product/event-tracking' className='item'>
+          <div className='icon-background'>
+            <Icon name='flashlight-line' />
+          </div>
+          <h5>Event Tracking</h5>
+          <p>Measure every important activity.</p>
         </Link>
-        <Link href='/product/recordings'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='vidicon-line' />
-            </div>
-            <h5>Recordings</h5>
-            <p>Walk in your customers&apos; shoes.</p>
-          </a>
+        <Link href='/product/recordings' className='item'>
+          <div className='icon-background'>
+            <Icon name='vidicon-line' />
+          </div>
+          <h5>Recordings</h5>
+          <p>Walk in your customers&apos; shoes.</p>
         </Link>
-        <Link href='/product/heatmaps'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='fire-line' />
-            </div>
-            <h5>Heatmaps</h5>
-            <p>Understand what&apos;s important.</p>
-          </a>
+        <Link href='/product/heatmaps' className='item'>
+          <div className='icon-background'>
+            <Icon name='fire-line' />
+          </div>
+          <h5>Heatmaps</h5>
+          <p>Understand what&apos;s important.</p>
         </Link>
-        <Link href='/product/feedback'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='user-voice-line' />
-            </div>
-            <h5>Feedback</h5>
-            <p>Hear directly from customers. </p>
-          </a>
+        <Link href='/product/feedback' className='item'>
+          <div className='icon-background'>
+            <Icon name='user-voice-line' />
+          </div>
+          <h5>Feedback</h5>
+          <p>Hear directly from customers. </p>
         </Link>
-        <Link href='/product/journeys'>
-          <a className='item'>
-            <div className='icon-background'>
-              <Icon name='route-line' />
-            </div>
-            <h5>Journeys</h5>
-            <p>Visualise your customer journey.</p>
-          </a>
+        <Link href='/product/journeys' className='item'>
+          <div className='icon-background'>
+            <Icon name='route-line' />
+          </div>
+          <h5>Journeys</h5>
+          <p>Visualise your customer journey.</p>
         </Link>
       </div>
       <div className='info'>

@@ -12,8 +12,9 @@ import drupal from '../../public/platforms/drupal.webp';
 
 type PlatformType = 'wordpress' | 'shopify' | 'wix' | 'webflow' | 'magento' | 'drupal';
 
-interface Props extends Omit<ImageProps, 'src'> {
+interface Props extends Omit<ImageProps, 'src' | 'alt'> {
   platform: PlatformType;
+  alt?: string;
 }
 
 const getPlatformSrc = (platform: PlatformType) => {

@@ -54,8 +54,9 @@ type ScreenshotType =
   'session-1' | 
   'session-2';
 
-interface Props extends Omit<ImageProps, 'src'> {
+interface Props extends Omit<ImageProps, 'src' | 'alt'> {
   screen: ScreenshotType;
+  alt?: string;
 }
 
 const getScreenSrc = (screen: ScreenshotType) => {
@@ -112,5 +113,11 @@ const getScreenSrc = (screen: ScreenshotType) => {
 };
 
 export const Screenshot: FC<Props> = ({ screen, ...props }) => (
-  <Image src={getScreenSrc(screen)} {...props} alt='Screenshot from inside the app' unoptimized priority />
+  <Image 
+    src={getScreenSrc(screen)}
+    alt='Screenshot from inside the app' 
+    unoptimized
+    priority
+    {...props}
+  />
 );

@@ -52,36 +52,34 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
           {posts.map(post => (
             <Card key={post.slug}>
               <Link href={`/blog${post.slug}`}>
-                <a>
-                  <div className='image'>
-                    <img src={post.metaImage} alt='Blog cover image' />
-                  </div>
-                  <div className='content'>
-                    <div className='overflow'>
-                      <h4>
-                        {post.title}
-                      </h4>
-                      <p className='meta'>
-                        <span>
-                          <span className='blog-author'>
-                            <img src={post.author.image} height={24} width={24} alt='Image of the blog author' />
-                          </span>
-                          {post.author.name}
+                <div className='image'>
+                  <img src={post.metaImage} alt='Blog cover image' />
+                </div>
+                <div className='content'>
+                  <div className='overflow'>
+                    <h4>
+                      {post.title}
+                    </h4>
+                    <p className='meta'>
+                      <span>
+                        <span className='blog-author'>
+                          <img src={post.author.image} height={24} width={24} alt='Image of the blog author' />
                         </span>
-                        <span className='divider' />
-                        <span>
-                          {post.draft
-                            ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                            : toHumanDate(post.updatedAt)
-                          }
-                        </span>
-                      </p>
-                      <p className='description'>
-                        {post.metaDescription}
-                      </p>
-                    </div>
+                        {post.author.name}
+                      </span>
+                      <span className='divider' />
+                      <span>
+                        {post.draft
+                          ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
+                          : toHumanDate(post.updatedAt)
+                        }
+                      </span>
+                    </p>
+                    <p className='description'>
+                      {post.metaDescription}
+                    </p>
                   </div>
-                </a>
+                </div>
               </Link>
             </Card>
           ))}
@@ -97,17 +95,13 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
 
             <div className='categories'>
               <div className='large'>
-                <Link href={buildCategoryUrl(router, null)}>
-                  <a className={classnames('category', { selected: selectedCategory === null })}>
-                    All
-                  </a>
+                <Link href={buildCategoryUrl(router, null)} className={classnames('category', { selected: selectedCategory === null })}>
+                  All
                 </Link>
 
                 {categories.map(category => (
-                  <Link href={buildCategoryUrl(router, category)} key={category}>
-                    <a className={classnames('category', { selected: selectedCategory === category.toLowerCase() })}>
-                      {category}
-                    </a>
+                  <Link href={buildCategoryUrl(router, category)} key={category} className={classnames('category', { selected: selectedCategory === category.toLowerCase() })}>
+                    {category}
                   </Link>
                 ))}
               </div>
@@ -132,10 +126,8 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
             <div className='tags'>
               <div className='large'>
                 {tags.map(tag => (
-                  <Link href={buildTagUrl(router, tag)} key={tag}>
-                    <a className={classnames('tag', { selected: selectedTags.includes(tag) })}>
-                      {tag}
-                    </a>
+                  <Link href={buildTagUrl(router, tag)} key={tag} className={classnames('tag', { selected: selectedTags.includes(tag) })}>
+                    {tag}
                   </Link>
                 ))}
               </div>

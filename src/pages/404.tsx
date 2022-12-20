@@ -10,10 +10,8 @@ const NotFound: SqueakyPage = () => (
       <Illustration illustration='illustration-3' height={256} width={256} alt='Error state' />
       <h2>404</h2>
       <p>The page you are looking for cannot be found.</p>
-      <Link href='/'>
-        <a className='button primary'>
-          Back to home
-        </a>
+      <Link href='/' className='button primary'>
+        Back to home
       </Link>
     </Container>
   </Container>

@@ -75,7 +75,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
           <div className='illustration'>
             <Illustration illustration='illustration-19' width={540} height={357} />
           </div>
-          <p>We <Link href='#'><a>founded Squeaky</a></Link> to provide <b>the first truly comprehensive, privacy-friendly product and web analytics suite</b>. However, at the heart of that mission lies a contradiction, as great <b>product analytics tools inherently capture a lot data</b>. So, how exactly does Squeaky provide an incredible turnkey analytics tool, whilst also protecting end users from arbitrary or invasive data capture?</p>
+          <p>We <Link href='#'>founded Squeaky</Link> to provide <b>the first truly comprehensive, privacy-friendly product and web analytics suite</b>. However, at the heart of that mission lies a contradiction, as great <b>product analytics tools inherently capture a lot data</b>. So, how exactly does Squeaky provide an incredible turnkey analytics tool, whilst also protecting end users from arbitrary or invasive data capture?</p>
           <p>There are <b>three pillars of privacy-first product development</b> that form the foundation of our product, and inform every decision we make:</p>
         </Container>
         <Container className='centered lg steps'>
@@ -138,7 +138,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
             body={
               <>
                 <p>Squeaky&apos;s Magic Erasure is a code-free solutions that helps you to prevent data being captured for any specific element on your site, with just one click.</p>
-                <p>This is a privacy feature unique to Squeaky, if you&apos;d like to learn more please <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>click here</a></Link>.</p>
+                <p>This is a privacy feature unique to Squeaky, if you&apos;d like to learn more please <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'>click here</Link>.</p>
               </>
             }
             flip
@@ -149,7 +149,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
             body={
               <>
                 <p>If you&apos;re looking for maximum control over the data capture of any element on your site, you can make use of Squeaky&apos;s privacy tags for your HTML.</p>
-                <p>Visit our <Link href='/developers'><a>developer documentation</a></Link> to learn more.</p>
+                <p>Visit our <Link href='/developers'>developer documentation</Link> to learn more.</p>
               </>
             }
           />
@@ -170,7 +170,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
             body={
               <>
                 <p>Some business will only need to request user consent at very specific points in their customer journey. For granular control you can manage consent and tracking code activation using our API.</p>
-                <p>See our <Link href='/developers'><a>developer documentation</a></Link> to learn more.</p>
+                <p>See our <Link href='/developers'>developer documentation</Link> to learn more.</p>
               </>
             }
           />
@@ -195,8 +195,8 @@ const Privacy: SqueakyPage<NextPage> = () => {
                 <>
                   <p>Squeaky offers a fully compliant, GDPR & CCPA ready, solution out of the box. If you&apos;d like to learn more we&apos;ve answered all your questions on the pages below:</p>
                   <ul>
-                    <li><Link href='/legal/gdpr'><a>General Data Protection Regulation</a></Link></li>
-                    <li><Link href='/legal/ccpa'><a>California Consumer Privacy Act</a></Link></li>
+                    <li><Link href='/legal/gdpr'>General Data Protection Regulation</Link></li>
+                    <li><Link href='/legal/ccpa'>California Consumer Privacy Act</Link></li>
                   </ul>
                 </>
               }
@@ -216,8 +216,8 @@ const Privacy: SqueakyPage<NextPage> = () => {
                 <>
                   <p>Our legal documents are written with humans in mind, no complex legal jargon, just the information you need to to make an informed decision about which tool is right for your business.</p>
                   <ul>
-                    <li><Link href='/legal/privacy-policy'><a>Privacy Policy</a></Link></li>
-                    <li><Link href='/legal/terms-of-service'><a>Terms of Use</a></Link></li>
+                    <li><Link href='/legal/privacy-policy'>Privacy Policy</Link></li>
+                    <li><Link href='/legal/terms-of-service'>Terms of Use</Link></li>
                   </ul>
                 </>
               }

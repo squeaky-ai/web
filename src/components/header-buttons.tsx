@@ -17,10 +17,8 @@ export const HeaderButtons: FC<Props> = ({ user }) => {
         desktop
           ? (
             <>
-              <Link href='/book-demo'>
-                <a className='button primary'>
-                  Book a demo
-                </a>
+              <Link href='/book-demo' className='button primary'>
+                Book a demo
               </Link>
               <a href='/app/sites' className='button secondary auth'>
                 Go To App
@@ -38,16 +36,12 @@ export const HeaderButtons: FC<Props> = ({ user }) => {
 
       {!user && (
         <>
-          <Link href='/auth/signup'>
-            <a className='button primary'>
-              Get Started Free
-            </a>
+          <Link href='/auth/signup' className='button primary'>
+            Get Started Free
           </Link>
 
-          <Link href='/auth/login'>
-            <a className='button secondary auth'>
-              Log In
-            </a>
+          <Link href='/auth/login' className='button secondary auth'>
+            Log In
           </Link>
         </>
       )}

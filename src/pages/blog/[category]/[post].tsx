@@ -44,7 +44,7 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
         <Container className='lg centered'>
           <div className='title'>
             <div className='breadcrumbs'>
-              <Link href='/blog'><a>Blog</ a></Link> / <Link href={`/blog/${post.category.toLowerCase()}`}><a>{post.category}</a></Link> / Article
+              <Link href='/blog'>Blog</Link> / <Link href={`/blog/${post.category.toLowerCase()}`}>{post.category}</Link> / Article
             </div>
 
             <h1>{post.title}</h1>

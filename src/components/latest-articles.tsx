@@ -60,13 +60,11 @@ export const LatestArticles: FC<Props> = ({ posts }) => {
 
         <div className='posts'>
           {blogPosts.map((post, index) => (
-            <Link key={post.id} href={`/blog${post.slug}`}>
-              <a className={classnames('card post', { show: shouldShow(index) })}>
-                <div className='image'>
-                  <img src={post.metaImage} alt='Blog cover image' />
-                </div>
-                <h4>{post.title}</h4>
-              </a>
+            <Link key={post.id} href={`/blog${post.slug}`} className={classnames('card post', { show: shouldShow(index) })}>
+              <div className='image'>
+                <img src={post.metaImage} alt='Blog cover image' />
+              </div>
+              <h4>{post.title}</h4>
             </Link>
           ))}
         </div>

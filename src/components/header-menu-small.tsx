@@ -36,84 +36,74 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
         <div className='menu-drawer'>
           <HeaderMenuSmallDrawer title='Product' open={subMenuOpen === 'product'} toggleOpen={toggleSubMenuOpen('product')}>
             <Link href='/product/analytics'>
-              <a>Analytics</a>
+              Analytics
             </Link>
             <Link href='/product/event-tracking'>
-              <a>Event tracking</a>
+              Event tracking
             </Link>
             <Link href='/product/recordings'>
-              <a>Recordings</a>
+              Recordings
             </Link>
             <Link href='/product/heatmaps'>
-              <a>Heatmaps</a>
+              Heatmaps
             </Link> 
             <Link href='/product/feedback'>
-              <a>Feedback</a>
+              Feedback
             </Link>
             <Link href='/product/journeys'>
-              <a>Journeys</a>
+              Journeys
             </Link> 
           </HeaderMenuSmallDrawer>
           <HeaderMenuSmallDrawer title='Use Cases' open={subMenuOpen === 'use-cases'} toggleOpen={toggleSubMenuOpen('use-cases')}>
             <Link href='/use-cases/product-and-ux'>
-              <a>Product &amp; UX</a>
+              Product &amp; UX
             </Link>
             <Link href='/use-cases/marketing-and-conversion'>
-              <a>Marketing &amp; Conversion</a>
+              Marketing &amp; Conversion
             </Link>
             <Link href='/use-cases/customer-success'>
-              <a>Customer Success</a>
+              Customer Success
             </Link>
           </HeaderMenuSmallDrawer>
           <div className='header-drawer-item'>
-            <Link href='/privacy'>
-              <a className='button'>
-                Privacy
-              </a>
+            <Link href='/privacy' className='button'>
+              Privacy
             </Link>
           </div>
           <div className='header-drawer-item'>
-            <Link href='/pricing'>
-              <a className='button'>
-                Pricing
-              </a>
+            <Link href='/pricing' className='button'>
+              Pricing
             </Link>
           </div>
           <HeaderMenuSmallDrawer title='More' open={subMenuOpen === 'more'} toggleOpen={toggleSubMenuOpen('more')}>
             <Link href='/about-us'>
-              <a>About us</a>
+              About us
             </Link>
             <Link href='/blog'>
-              <a>Blog</a>
+              Blog
             </Link>
-            <Link href={publicRuntimeConfig.helpCenterUrl}>
-              <a target='_blank' rel='noreferrer'>Help centre</a>
+            <Link href={publicRuntimeConfig.helpCenterUrl} target='_blank' rel='noreferrer'>
+              Help centre
             </Link>
             <Link href='/contact-us'>
-              <a>Contact us</a>
+              Contact us
             </Link>
             <Link href='/book-demo'>
-              <a>Book demo</a>
+              Book demo
             </Link>
           </HeaderMenuSmallDrawer>
           <div className='actions'>
             <HeaderButtons user={user} />
           </div>
           <div className='social'>
-            <Link href='https://twitter.com/squeakyai'>
-              <a aria-label='Twitter' target='_blank' rel='noreferrer'>
-                <Icon name='twitter-fill' />
-              </a>
+            <Link href='https://twitter.com/squeakyai' aria-label='Twitter' target='_blank' rel='noreferrer'>
+              <Icon name='twitter-fill' />
             </Link>
-            <Link href='https://www.facebook.com/SqueakyAI'>
-              <a aria-label='Facebook' target='_blank' rel='noreferrer'>
-                <Icon name='facebook-fill' />
-              </a>
+            <Link href='https://www.facebook.com/SqueakyAI' aria-label='Facebook' target='_blank' rel='noreferrer'>
+              <Icon name='facebook-fill' />
             </Link>
-            <Link href='https://www.linkedin.com/company/squeakyai'>
-              <a aria-label='LinkedIn' target='_blank' rel='noreferrer'>
-                <Icon name='linkedin-fill' />
-              </a>
+            <Link href='https://www.linkedin.com/company/squeakyai' aria-label='LinkedIn' target='_blank' rel='noreferrer'>
+              <Icon name='linkedin-fill' />
             </Link>
           </div>
 

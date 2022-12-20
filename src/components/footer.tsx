@@ -13,68 +13,60 @@ export const Footer: FC = () => (
   <footer className='footer'>
     <Container className='lg centered links'>
       <div className='items col-1'>
-        <Link href='/'>
-          <a className='logo'>
-            <Logo logo='main' height={48} width={155} />
-          </a>
+        <Link href='/'  className='logo'>
+          <Logo logo='main' height={48} width={155} />
         </Link>
         <p className='tagline'>Squeaky helps businesses to understand how visitors are using their website or web app, without invading their privacy.</p>
         <p className='small'><b>Follow us</b></p>
         <div className='social'>
-          <Link href='https://twitter.com/squeakyai'>
-            <a aria-label='Twitter' target='_blank' rel='noreferrer'>
-              <Icon name='twitter-fill' />
-            </a>
+          <Link href='https://twitter.com/squeakyai' aria-label='Twitter' target='_blank' rel='noreferrer'>
+            <Icon name='twitter-fill' />
           </Link>
-          <Link href='https://www.facebook.com/SqueakyAI'>
-            <a aria-label='Facebook' target='_blank' rel='noreferrer'>
-              <Icon name='facebook-fill' />
-            </a>
+          <Link href='https://www.facebook.com/SqueakyAI' aria-label='Facebook' target='_blank' rel='noreferrer'>
+            <Icon name='facebook-fill' />
           </Link>
-          <Link href='https://www.linkedin.com/company/squeakyai'>
-            <a aria-label='LinkedIn' target='_blank' rel='noreferrer'>
-              <Icon name='linkedin-fill' />
-            </a>
+          <Link href='https://www.linkedin.com/company/squeakyai' aria-label='LinkedIn' target='_blank' rel='noreferrer'>
+            <Icon name='linkedin-fill' />
           </Link>
         </div>
       </div>
       <div className='items col-2'>
         <FooterLinkGroup title='Use Cases'>
           <Link href='/use-cases/product-and-ux'>
-            <a>Product &amp; UX</a>
+            Product &amp; UX
           </Link>
           <Link href='/use-cases/marketing-and-conversion'>
-            <a>Marketing &amp; Conversion</a>
+            Marketing &amp; Conversion
           </Link>
           <Link href='/use-cases/customer-success'>
-            <a>Customer Success</a>
+            Customer Success
           </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Product'>
           <Link href='/product/analytics'>
-            <a>Analytics</a>
+            Analytics
           </Link>
           <Link href='/product/recordings'>
-            <a>Recordings</a>
+            Recordings
           </Link>
           <Link href='/product/event-tracking'>
-            <a>Event Tracking</a>
+            Event Tracking
           </Link>
           <Link href='/product/heatmaps'>
-            <a>Heatmaps</a>
+            Heatmaps
           </Link>
           <Link href='/product/feedback'>
-            <a>Feedback</a>
+            Feedback
           </Link>
           <Link href='/product/journeys'>
-            <a>Journeys</a>
+            Journeys
           </Link>
           <Link href='/features'>
-            <a>Features</a>
+            Features
           </Link>
           <Link href='/pricing'>
-            <a>Pricing</a>
+            Pricing
           </Link>
         </FooterLinkGroup>
       </div>
@@ -82,59 +74,59 @@ export const Footer: FC = () => (
       <div className='items col-3'>
         <FooterLinkGroup title='Connect'>
           <Link href='/book-demo'>
-            <a>Book a demo</a>
+            Book a demo
           </Link>
           <Link href='/contact-us'>
-            <a>Contact us</a>
+            Contact us
           </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Resources'>
           <Link href='/blog'>
-            <a>Blog</a>
+            Blog
           </Link>
-          <Link href={publicRuntimeConfig.helpCenterUrl}>
-            <a target='_blank' rel='noreferrer'>Help centre</a>
+          <Link href={publicRuntimeConfig.helpCenterUrl} target='_blank' rel='noreferrer'>
+            Help centre
           </Link>
           <Link href='/developers'>
-            <a>Developer docs</a>
+            Developer docs
           </Link>
         </FooterLinkGroup>
       </div>
       <div className='items col-4'>
         <FooterLinkGroup title='Company'>
           <Link href='/about-us'>
-            <a>About us</a>
+            About us
           </Link>
-          <Link href='https://www.notion.so/Careers-df031f3f9ede4d85a289f0e68997cc1a'>
-            <a target='_blank' rel='noreferrer'>Careers<span className='new'>NEW</span></a>
+          <Link href='https://www.notion.so/Careers-df031f3f9ede4d85a289f0e68997cc1a' target='_blank' rel='noreferrer'>
+            Careers<span className='new'>NEW</span>
           </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Programs'>
           <Link href='/programs/partners'>
-            <a>For Partners</a>
+            For Partners
           </Link>
           <Link href='/programs/startups'>
-            <a>For Startups</a>
+            For Startups
           </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Legal &amp; Compliance'>
           <Link href='/legal/privacy-policy'>
-            <a>Privacy Policy</a>
+            Privacy Policy
           </Link>
           <Link href='/legal/terms-of-service'>
-            <a>Terms of Service</a>
+            Terms of Service
           </Link>
           <Link href='/legal/gdpr'>
-            <a>GDPR</a>
+            GDPR
           </Link>
           <Link href='/legal/ccpa'>
-            <a>CCPA</a>
+            CCPA
           </Link>
           <Link href='/legal/security'>
-            <a>Security</a>
+            Security
           </Link>
         </FooterLinkGroup>
       </div>

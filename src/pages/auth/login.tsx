@@ -71,10 +71,8 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
 
   return (
     <>
-      <Link href='/'>
-        <a className='logo'>
-          <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
-        </a>
+      <Link href='/' className='logo'>
+        <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
       </Link>
 
       <div className='center'>
@@ -169,7 +167,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
                         <Label htmlFor='password'>
                           Password
                           <Link href='/auth/reset'>
-                            <a>Forgot <span>your</span> password?</a>
+                            Forgot <span>your</span> password?
                           </Link>
                         </Label>
                         <Input
@@ -211,7 +209,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
       </div>
 
       <div className='footer-link'>
-        <p>New to Squeaky? <Link href='/auth/signup'><a>Sign up</a></Link></p>
+        <p>New to Squeaky? <Link href='/auth/signup'>Sign up</Link></p>
       </div>
     </>
   );

@@ -26,7 +26,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
         <>
           <UseCasesHeaderStats
             stat='2/3'
-            body={<>website visitors can be missed by conventional analytics tools because people reject cookie placement. We&apos;ve solved that with cookieless <Link href='/product/analytics'><a>analytics</a></Link>.</>}
+            body={<>website visitors can be missed by conventional analytics tools because people reject cookie placement. We&apos;ve solved that with cookieless <Link href='/product/analytics'>analytics</Link>.</>}
           />
           <UseCasesHeaderStats
             stat='53%'
@@ -34,7 +34,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
           />
           <UseCasesHeaderStats
             stat='5x'
-            body={<>more expensive to acquire new customers than to retain existing ones. Understanding your <Link href='/product/recordings'><a>customer behaviour</a></Link> can rapidly reduce your costs.</>}
+            body={<>more expensive to acquire new customers than to retain existing ones. Understanding your <Link href='/product/recordings'>customer behaviour</Link> can rapidly reduce your costs.</>}
           />
         </>
       }

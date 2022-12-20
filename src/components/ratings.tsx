@@ -9,8 +9,9 @@ import rating2 from '../../public/ratings/rating-2.svg';
 import rating3 from '../../public/ratings/rating-3.svg';
 import rating4 from '../../public/ratings/rating-4.svg';
 
-interface Props extends Omit<ImageProps, 'src'> {
+interface Props extends Omit<ImageProps, 'src' | 'alt'> {
   rating: number;
+  alt?: string;
 }
 
 const getRatingSrc = (rating: number) => {

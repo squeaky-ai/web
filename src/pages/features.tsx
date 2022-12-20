@@ -131,7 +131,7 @@ const Features: SqueakyPage<NextPage> = () => {
             <FeaturesGridItem
               icon='eraser-line'
               title='Magic Erasure'
-              body={<span>Quickly prevent data being captured for any element on your site, without having to write a single line of code. <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>Learn more</a></Link></span>}
+              body={<span>Quickly prevent data being captured for any element on your site, without having to write a single line of code. <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'>Learn more</Link></span>}
             />
             <FeaturesGridItem
               icon='database-2-line'

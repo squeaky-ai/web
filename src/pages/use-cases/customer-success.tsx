@@ -26,15 +26,15 @@ const UseCasesCustomerSuccess: SqueakyPage<NextPage> = () => (
         <>
           <UseCasesHeaderStats
             stat='84%'
-            body={<>of our customers say gathering direct <Link href='/product/feedback'><a>user feedback</a></Link> linked to <Link href='/product/recordings'><a>sessions recordings</a></Link> is helping them to improve their customer support.</>}
+            body={<>of our customers say gathering direct <Link href='/product/feedback'>user feedback</Link> linked to <Link href='/product/recordings'>sessions recordings</Link> is helping them to improve their customer support.</>}
           />
           <UseCasesHeaderStats
             stat='77%'
-            body={<>of companies struggle to close the feedback loop. Squeaky&apos;s <Link href='/product/recordings'><a>session recordings</a></Link> offer immediate context that allows you to understand and respond faster than ever.</>}
+            body={<>of companies struggle to close the feedback loop. Squeaky&apos;s <Link href='/product/recordings'>session recordings</Link> offer immediate context that allows you to understand and respond faster than ever.</>}
           />
           <UseCasesHeaderStats
             stat='2/3'
-            body={<>of Fortune 1000 companies are using <Link href='/product/feedback'><a>NPS® surveys</a></Link> to measure their customer satisfaction and drive improvements to their products and services.</>}
+            body={<>of Fortune 1000 companies are using <Link href='/product/feedback'>NPS® surveys</Link> to measure their customer satisfaction and drive improvements to their products and services.</>}
           />
         </>
       }

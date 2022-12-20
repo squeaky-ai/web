@@ -116,10 +116,8 @@ export const Calculator: FC<Props> = ({ currency, interval }) => {
                   <li><Icon name='check-line' />Audit Trail</li>
                   <li><Icon name='check-line' />Self-hosting options</li>
                 </ul>
-                <Link href='/contact-us'>
-                  <a className='button primary'>
-                    Talk To Sales
-                  </a>
+                <Link href='/contact-us' className='button primary'>
+                  Talk To Sales
                 </Link>
               </div>
             )}
@@ -134,10 +132,8 @@ export const Calculator: FC<Props> = ({ currency, interval }) => {
                <p className='limit'>{plan === plans.length ? 'more than' : 'up to'} {recordingsPerMonthLimit(plans, plan)} visits per month</p>
                <h1>{currency.symbol}{getPriceForCurrentAndInterval(plans, plan, interval, currency.name)}</h1>
                <p className='duration'>per {interval === Interval.MONTHLY ? 'month' : 'year'}</p>
-               <Link href='/auth/signup'>
-                 <a className='button primary'>
-                   Get Started Free
-                 </a>
+               <Link href='/auth/signup' className='button primary'>
+                  Get Started Free
                </Link>
                <p className='assurance'>
                  <Icon name='check-line' />

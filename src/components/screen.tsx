@@ -60,8 +60,9 @@ type ScreenType =
   'journeys-1' |
   'journeys-2';
 
-interface Props extends Omit<ImageProps, 'src'> {
+interface Props extends Omit<ImageProps, 'src' | 'alt'> {
   screen: ScreenType;
+  alt?: string;
 }
 
 const getScreenSrc = (screen: ScreenType) => {

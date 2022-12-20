@@ -68,10 +68,8 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
 
   return (
     <>
-      <Link href='/'>
-        <a className='logo'>
-          <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
-        </a>
+      <Link href='/' className='logo'>
+        <Logo logo='main' height={48} width={156} alt='Squeaky logo' />
       </Link>
 
       <div className='center'>
@@ -119,7 +117,7 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
                         <span className='validation'>{errors.email}</span>
 
                         <Checkbox name='terms' onChange={handleChange} checked={values.terms} invalid={touched.terms && !!errors.terms}>
-                          I have read and accept the <Link href='/legal/terms-of-service'><a target='_blank'>Terms Of Service</a></Link>
+                          I have read and accept the <Link href='/legal/terms-of-service' target='_blank'>Terms Of Service</Link>
                         </Checkbox>
                         <span className='validation'>{errors.terms}</span>
 
@@ -203,8 +201,8 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
               {pageView === PageView.EMAIL_TAKEN && (
                 <div className='email-taken'>
                   <Message type='info' message={`A user with the email address ${email || ''} already exists. Please choose from the options below.`} />
-                  <Link href='/auth/login'>
-                    <a className='button primary'>Go To Login Page</a>
+                  <Link href='/auth/login' className='button primary'>
+                    Go To Login Page
                   </Link>
                   <Button className='secondary' onClick={() => setPageView(PageView.EMAIL)}>
                     Sign Up With A Different Email
@@ -263,7 +261,7 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
           <PartnerFooter partnerName={partnerName} />
         )}
         {!partner && (
-          <p>Already have an account? <Link href='/auth/login'><a>Log in</a></Link></p>
+          <p>Already have an account? <Link href='/auth/login'>Log in</Link></p>
         )}
       </div>
     </>

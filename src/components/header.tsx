@@ -84,23 +84,21 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
         {!loading && (
           <Container className='lg centered'>
             {latestBlogPost && (
-              <Link href={`/blog${latestBlogPost.slug}`}>
-                <a className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
-                  <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
-                </a>
+              <Link href={`/blog${latestBlogPost.slug}`} className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
+                <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
               </Link>
             )}
             {!latestBlogPost && <span />}
             <menu>
               <Link href='/contact-us'>
-                <a><Icon name='mail-line' /> Contact us</a>
+                <Icon name='mail-line' /> Contact us
               </Link>
               {user
                 ? (
                   <a href='/app/sites'><Icon name='account-circle-line' /> Go to account</a>
                 ) : (
                   <Link href='/auth/login'>
-                    <a><Icon name='account-circle-line' /> Log in</a>
+                    <Icon name='account-circle-line' /> Log in
                   </Link>
                 )
               }
@@ -111,10 +109,8 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
       </div>
       <div ref={ref} className={classnames('header', themeOverride, { scrolled, open, 'sub-menu-open': subMenuOpen })} onMouseLeave={handleMouseLeave}>
         <Container className='lg centered'>
-          <Link href='/'>
-            <a className='logo'>
-              <Logo logo={useLightLogo && !scrolled ? 'main' : 'dark'} height={40} width={130} />
-            </a>
+          <Link href='/' className='logo'>
+            <Logo logo={useLightLogo && !scrolled ? 'main' : 'dark'} height={40} width={130} />
           </Link>
 
           <HeaderMenuLarge

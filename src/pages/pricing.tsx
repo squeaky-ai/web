@@ -138,7 +138,7 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='Are you GDPR and CCPA compliant?'
             body={
               <>
-                <p>Yes of course, please visit our <Link href='/legal/gdpr'><a>Legal &amp; Compliance page</a></Link> to learn more.</p>
+                <p>Yes of course, please visit our <Link href='/legal/gdpr'>Legal &amp; Compliance page</Link> to learn more.</p>
               </>
             }
           />
@@ -146,7 +146,7 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='Do you have a privacy policy?'
             body={
               <>
-                <p>Yes, you can find our privacy policy <Link href='/legal/privacy-policy'><a>here</a></Link>.</p>
+                <p>Yes, you can find our privacy policy <Link href='/legal/privacy-policy'>here</Link>.</p>
               </>
             }
           />

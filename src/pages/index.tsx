@@ -185,7 +185,7 @@ const Home: SqueakyPage<NextPage> = () => {
           <ThreeTextGrid>
             <ThreeTextGridItem
               title='Private by design'
-              body={<p>We don&apos;t use cookies or IP address tracking, and we provide tools like our <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'><a>Magic Erasure</a></Link> that help you avoid collecting any personal data on your users.</p>}
+              body={<p>We don&apos;t use cookies or IP address tracking, and we provide tools like our <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'>Magic Erasure</Link> that help you avoid collecting any personal data on your users.</p>}
               link='/legal/privacy-policy'
               buttonType='link'
             />

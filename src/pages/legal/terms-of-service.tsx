@@ -20,7 +20,7 @@ const LegalTermsOfService: SqueakyPage<NextPage> = () => (
 
       <h4>1. Introduction</h4>
       <p>Welcome to Squeaky B.V. (“<b>Company</b>”, “<b>we</b>”, “<b>our</b>”, “<b>us</b>”). These Terms of Service (“<b>Terms</b>”, “<b>Terms of Service</b>”) govern your use of our website and web app, located at https://squeaky.ai operated by Squeaky B.V..</p>
-      <p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Please read it here <Link href='/legal/privacy-policy'><a>https://squeaky.ai/legal/privacy-policy</a></Link>.</p>
+      <p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Please read it here <Link href='/legal/privacy-policy'>https://squeaky.ai/legal/privacy-policy</Link>.</p>
       <p>Your agreement with us includes these Terms and our Privacy Policy (“<b>Agreements</b>”). You acknowledge that you have read and understood Agreements, and agree to be bound of them.</p>
       <p>If you do not agree with (or cannot comply with) Agreements, then you may not use the Service, but please let us know by emailing at  <a href='mailto:hello@squeaky.ai'>hello@squeaky.ai</a> so we can try to find a solution. These Terms apply to all visitors, users and others who wish to access or use Service.</p>
       <p>Thank you for being responsible.</p>
