@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Squeaky Web",
   "main": "src/pages/index.tsx",
   "repository": "git@github.com:squeaky-ai/web.git",
