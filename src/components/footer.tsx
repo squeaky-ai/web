@@ -63,7 +63,7 @@ export const Footer: FC = () => (
             Journeys
           </Link>
           <Link href='/features'>
-            Features
+            All Features
           </Link>
           <Link href='/pricing'>
             Pricing
@@ -113,11 +113,11 @@ export const Footer: FC = () => (
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Legal &amp; Compliance'>
-          <Link href='/legal/privacy-policy'>
-            Privacy Policy
-          </Link>
           <Link href='/legal/terms-of-service'>
             Terms of Service
+          </Link>
+          <Link href='/legal/privacy-policy'>
+            Privacy Policy
           </Link>
           <Link href='/legal/gdpr'>
             GDPR
