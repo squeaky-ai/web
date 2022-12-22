@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
-import type { Feedback } from 'types/graphql';
+import type { Feedback, SiteSessionSettings } from 'types/graphql';
 
 interface UsePlans {
   loading: boolean;
@@ -18,24 +18,26 @@ interface VisitorParams {
 
 const QUERY = gql`
   query GetFeedback($siteId: String!) {
-    feedback(siteId: $siteId) {
-      npsEnabled
-      npsAccentColor
-      npsSchedule
-      npsPhrase
-      npsFollowUpEnabled
-      npsContactConsentEnabled
-      npsLayout
-      npsLanguages
-      npsLanguagesDefault
-      npsHideLogo
-      sentimentEnabled
-      sentimentAccentColor
-      sentimentExcludedPages
-      sentimentLayout
-      sentimentHideLogo
-      sentimentLanguages
-      sentimentLanguagesDefault
+    siteSessionSettings(siteId: $siteId) {
+      feedback {
+        npsEnabled
+        npsAccentColor
+        npsSchedule
+        npsPhrase
+        npsFollowUpEnabled
+        npsContactConsentEnabled
+        npsLayout
+        npsLanguages
+        npsLanguagesDefault
+        npsHideLogo
+        sentimentEnabled
+        sentimentAccentColor
+        sentimentExcludedPages
+        sentimentLayout
+        sentimentHideLogo
+        sentimentLanguages
+        sentimentLanguagesDefault
+      }
     }
   }
 `;
@@ -60,7 +62,7 @@ export const useFeedback = (): UsePlans => {
     sessionId: '' + router.query.session_id,
   };
 
-  const { data, error, loading } = useQuery<{ feedback: Feedback }>(QUERY, {
+  const { data, error, loading } = useQuery<{ siteSessionSettings: SiteSessionSettings }>(QUERY, {
     variables: {
       siteId: '' + router.query.site_id,
     },
@@ -81,7 +83,7 @@ export const useFeedback = (): UsePlans => {
     sentimentLanguagesDefault: 'en',
   };
 
-  const feedback = data?.feedback || fallback;
+  const feedback = data?.siteSessionSettings?.feedback || fallback;
   const overrides = getThemeOverrides(router.query.theme_overrides as string);
 
   return {

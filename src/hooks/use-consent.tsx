@@ -13,15 +13,17 @@ interface UseConsent {
 }
 
 const GET_CONSENT_QUERY = gql`
-  query GetConsent($siteId: String!) { 
-    consent(siteId: $siteId) {
-      id
-      name
-      consentMethod
-      layout
-      privacyPolicyUrl
-      languages
-      languagesDefault
+  query GetConsent($siteId: String!) {
+    siteSessionSettings(siteId: $siteId) {
+      consent {
+        id
+        name
+        consentMethod
+        layout
+        privacyPolicyUrl
+        languages
+        languagesDefault
+      }
     }
   }
 `;
@@ -58,7 +60,7 @@ export const useConsent = (): UseConsent => {
   return {
     loading,
     error: !!error,
-    consent: data?.consent || fallback,
+    consent: data?.siteSessionSettings?.consent || fallback,
     locale,
     setLocale,
   };
