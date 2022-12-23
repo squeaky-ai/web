@@ -49,12 +49,12 @@ const Developers: SqueakyPage<NextPage> = () => {
   <html>
   <head>
     <script>
-      (function(s,q,e,a,u,k,y){
+      (function(s,q,u,e,a,k,y){
         s._sqSettings={site_id:'your-site-id'};
-        u=q.getElementsByTagName('head')[0];
-        k=q.createElement('script');
-        k.src=e+s._sqSettings.site_id;
-        u.appendChild(k);
+        e=q.getElementsByTagName('head')[0];
+        a=q.createElement('script');
+        a.src=u+s._sqSettings.site_id;
+        e.appendChild(a);
       })(window,document,'https://cdn.squeaky.ai/g/1.0.0/script.js?');
     </script>
   </head>
@@ -96,12 +96,12 @@ class Document extends NextDocument {
       <Html>
         <Head>
           <script dangerouslySetInnerHTML={{ __html: \`
-            (function(s,q,e,a,u,k,y){
+            (function(s,q,u,e,a,k,y){
               s._sqSettings={site_id:'your-site-id'};
-              u=q.getElementsByTagName('head')[0];
-              k=q.createElement('script');
-              k.src=e+s._sqSettings.site_id;
-              u.appendChild(k);
+              e=q.getElementsByTagName('head')[0];
+              a=q.createElement('script');
+              a.src=u+s._sqSettings.site_id;
+              e.appendChild(a);
             })(window,document,'https://cdn.squeaky.ai/g/1.0.0/script.js?');
           \`}} />
         </Head>
