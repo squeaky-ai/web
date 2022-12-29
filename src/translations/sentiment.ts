@@ -35,7 +35,7 @@ export const sentimentTranslations: SentimentTranslations = {
     feedback_sent: 'Feedback gesendet',
     thank_you_for_sharing: 'Vielen Dank für Ihr Feedback und Ihre Hilfe bei der Verbesserung unseres Services.',
     close: 'Schließen',
-    powered_by: 'Unterstützt von Squeaky',
+    powered_by: 'Unterstützt von',
   },
   en: {
     feedback: 'Feedback',
