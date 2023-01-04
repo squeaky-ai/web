@@ -30,6 +30,11 @@
     justify-content: center;
     min-height: 32rem;
     width: calc(50% - 1.5rem);
+
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 
   h6 {

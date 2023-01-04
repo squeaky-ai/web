@@ -3,6 +3,11 @@
   display: flex;
   position: relative;
 
+  img {
+    height: auto;
+    width: 100%;
+  }
+
   .image {
     flex-shrink: 0;
     margin: 0 6rem 0 0;

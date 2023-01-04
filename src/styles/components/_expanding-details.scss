@@ -16,6 +16,11 @@
       overflow: hidden;
       width: 100%;
 
+      img {
+        height: auto;
+        width: 100%;
+      }
+
       &.show {
         display: block;
       }
@@ -36,6 +41,11 @@
       display: none;
       font-size: 0;
       overflow: hidden;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
 
       &.shadowless {
         box-shadow: none;

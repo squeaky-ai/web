@@ -46,6 +46,11 @@
       align-items: center;
       display: flex;
       justify-content: center;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
     }
 
     @include breakpoint-lg {

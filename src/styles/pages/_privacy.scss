@@ -57,6 +57,11 @@
         display: flex;
         justify-content: center;
         margin: 5rem 0;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
       }
 
       a {
