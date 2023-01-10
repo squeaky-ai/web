@@ -1,5 +1,4 @@
-import { CURRENCIES } from 'data/common/constants';
-import type { Currency } from 'types/common';
+import { Currency } from 'types/graphql';
 
 export enum Interval {
   MONTHLY = 'month',
@@ -10,12 +9,23 @@ export const getUsefulCurrency = (): Currency => {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   if (['Europe/London', 'Europe/Belfast'].includes(tz)) {
-    return CURRENCIES[1];
+    return Currency.Gbp;
   }
 
   if (tz.startsWith('Europe')) {
-    return CURRENCIES[0];
+    return Currency.Eur;
   }
 
-  return CURRENCIES[2];
+  return Currency.Usd;
+};
+
+export const getCurrencySymbol = (currency: Currency): string => {
+  switch(currency) {
+    case Currency.Eur:
+      return '€';
+    case Currency.Gbp:
+      return '£';
+    case Currency.Usd:
+      return '$';
+  }
 };

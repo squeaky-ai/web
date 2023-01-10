@@ -10,6 +10,7 @@ interface UsePlans {
 const QUERY = gql`
   query GetPlans {
     plans {
+      id
       name
       maxMonthlyRecordings
       pricing {
