@@ -23,6 +23,10 @@
         margin: 5rem auto 0 auto;
       }
 
+      .error {
+        white-space: nowrap;
+      }
+
       .pricing-comparison {
         align-items: center;
         background: var(--peach-100);
@@ -158,6 +162,14 @@
       h2 {
         margin: 0 0 5rem 0;
         text-align: center;
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 6rem 2rem;
       }
     }
   }

@@ -13,6 +13,9 @@ const QUERY = gql`
       id
       name
       maxMonthlyRecordings
+      teamMemberLimit
+      siteLimit
+      dataStorageMonths
       pricing {
         id
         currency
