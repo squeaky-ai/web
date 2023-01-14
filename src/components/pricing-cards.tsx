@@ -35,7 +35,7 @@ export const PricingCards: FC<Props> = ({ currency, interval, plans }) => {
           <p className='pricing'>
             {data.plan
               ? <><b>{getCurrencySymbol(currency)}{getPricingForCurrencyAndInterval(data.plan, currency, interval)}</b> / {interval}</>
-              : <b>Let's talk</b>
+              : <b>Let&apos;s talk</b>
             }
           </p>
           <Link href='/auth/signup' className='button primary'>

@@ -56,7 +56,7 @@ export const PlanComparison: FC<Props> = ({ currency, interval, plans }) => {
           <h5>Enterprise</h5>
           <p className='price'>
             <Link href='/contact-us' className='button link'>
-              Let's talk!
+              Let&apos;s talk!
             </Link>
           </p>
         </div>
