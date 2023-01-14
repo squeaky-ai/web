@@ -1,21 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { NextPage } from 'next';
+import { Icon } from 'components/icon';
 import { Container } from 'components/container';
 import { Currencies } from 'components/currencies';
-import { Calculator } from 'components/calculator';
+import { PricingCards } from 'components/pricing-cards';
 import { Intervals } from 'components/intervals';
 import { TestimonialQuote } from 'components/testimonial-quote';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Accordion } from 'components/accordion';
+import { PlanComparison } from 'components/plan-comparison';
+import { Message } from 'components/message';
 import { Cta } from 'components/cta';
+import { Spinner } from 'components/spinner';
 import { Interval, getUsefulCurrency } from 'lib/currency';
-import type { Currency } from 'types/common';
+import { usePlans } from 'hooks/use-plans';
 import type { SqueakyPage } from 'types/page';
+import type { Currency } from 'types/graphql';
 
 const Pricing: SqueakyPage<NextPage> = () => {
   const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
   const [interval, setInterval] = React.useState<Interval>(Interval.MONTHLY);
+
+  const { plans, loading, error } = usePlans();
 
   return (
     <>
@@ -28,12 +35,39 @@ const Pricing: SqueakyPage<NextPage> = () => {
             <Intervals selected={interval} setSelected={setInterval} />
           </div>
         </Container>
-        <Calculator currency={currency} interval={interval} />
+
+        {error && (
+          <Container className='centered pricing-cards xsm'>
+            <Message
+              type='error' 
+              message='Pricing unavailable, please try again later'
+            />
+          </Container>
+        )}
+
+        {loading && (
+          <Spinner />
+        )}
+
+        {!loading && !error && (
+          <PricingCards 
+            currency={currency} 
+            interval={interval} 
+            plans={plans}
+          />
+        )}
+        
+        <Container className='centered md-lg'>
+          <a href='#pricing-comparison' className='pricing-comparison'>
+            <Icon name='eye-line' />
+            <span>See Full Comparison</span>
+          </a>
+        </Container>
       </section>
 
       <section className='plan'>
         <Container className='centered lg'>
-          <h3>Included in every plan</h3>
+          <h3>Full-stack, privacy-friendly analytics</h3>
           <ThreeTextGrid>
             <ThreeTextGridItem
               icon='line-chart-line'
@@ -167,6 +201,19 @@ const Pricing: SqueakyPage<NextPage> = () => {
               </>
             }
           />
+        </Container>
+      </section>
+
+      <section id='pricing-comparison' className='pricing-comparison-table'>
+        <Container className='centered lg'>
+          <h2>Compare Plans</h2>
+          {!loading && !error && (
+            <PlanComparison 
+              currency={currency} 
+              interval={interval} 
+              plans={plans}
+            />
+          )}
         </Container>
       </section>
 

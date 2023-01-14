@@ -1,0 +1,226 @@
+.plan-comparison {  
+  .feature-heading {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 320px repeat(4, 1fr);
+    margin: 0 0 2rem 0;
+
+    .item {
+      align-items: center;
+      border-radius: var(--border-radius-md);
+      display: flex;
+      justify-content: space-between;
+      padding: .75rem;
+
+      h5 {
+        margin: 0;
+      }
+
+      .price {
+        color: var(--mauve-700);
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      &.controls {
+        justify-content: flex-start;
+
+        span {
+          margin: 0 .5rem;
+        }
+
+        .button {
+          color: var(--mauve-700);
+          text-align: left;
+          text-decoration: underline;
+        }
+      }
+
+      &.free {
+        background: var(--peach-100);
+        border: 4px solid var(--peach-200);
+      }
+
+      &.starter {
+        background: var(--peach-50);
+        border: 4px solid var(--peach-100);
+      }
+
+      &.business {
+        background: var(--peach-50);
+        border: 4px solid var(--peach-100);
+      }
+
+      &.enterprise {
+        background: var(--mauve-700);
+        border: 4px solid var(--mauve-800);
+
+        h5 {
+          color: var(--peach-50);
+        }
+
+        a {
+          color: var(--peach-400);
+        }
+      }
+    }
+
+    @include breakpoint-lg {
+      grid-template-columns: 210px repeat(4, 1fr);
+
+      .item {
+        align-items: flex-start;
+        flex-direction: column;
+
+        &.controls {
+          justify-content: center;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include breakpoint-md {
+      grid-template-columns: repeat(4, 1fr);
+
+      .item {
+        &.controls {
+          display: none;
+        }
+      }
+    }
+
+    @include breakpoint-sm {
+      grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+    }
+  }
+
+  .feature-header {
+    align-items: center;
+    background: none;
+    border: none;
+    display: flex;
+    padding: 1.5rem;
+    text-align: left;
+    width: 100%;
+
+    span {
+      flex: 1;
+    }
+
+    .icon:not(.arrow) {
+      color: var(--mauve-700);
+      font-size: 1.5rem;
+      margin: 0 .5rem 0 0;
+    }
+
+    .arrow {
+      font-size: 1.25rem;
+    }
+
+
+    @include breakpoint-sm {
+      padding: 1rem;        
+    }
+  }
+
+  .features {
+    display: none;
+
+    .row {
+      align-items: center;
+      border-top: 1px solid var(--gray-150);
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 320px repeat(4, 1fr);
+      padding: .75rem 1rem;
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 0;
+
+        i {
+          color: var(--gray-300);
+          display: block;
+        }
+
+        &:not(:first-of-type) {
+          text-align: center;
+        }
+      }
+
+      .check {
+        color: var(--mauve-700);
+        font-size: 1.25rem;
+      }
+
+      &:nth-child(odd) {
+        background: var(--gray-50);
+      }
+
+      @include breakpoint-lg {
+        grid-template-columns: 210px repeat(4, 1fr);
+      }
+
+      @include breakpoint-md {
+        grid-template-areas: 'heading heading heading heading'
+                             'col-1 col-2 col-3 col-4';
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+
+        p {
+          &:nth-of-type(1) {
+            grid-area: heading;
+            font-weight: var(--font-weight-semibold);
+            text-align: center;
+
+            i {
+              display: none;
+            }
+          }
+
+          &:nth-of-type(2) {
+            grid-area: col-1;
+          }
+
+          &:nth-of-type(3) {
+            grid-area: col-2;
+          }
+
+          &:nth-of-type(4) {
+            grid-area: col-3;
+          }
+
+          &:nth-of-type(5) {
+            grid-area: col-4;
+          }
+        }
+      }
+
+      @include breakpoint-sm {
+        padding: .75rem .5rem;      
+      }
+    }
+  }
+
+  .feature {
+    border-bottom: 1px solid var(--gray-150);
+
+    &.open {
+      margin-top: 2rem;
+
+      .feature-header {
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      .features {
+        display: block;
+      }
+    }
+  }
+}
