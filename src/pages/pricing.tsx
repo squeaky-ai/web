@@ -15,7 +15,6 @@ import { Cta } from 'components/cta';
 import { Spinner } from 'components/spinner';
 import { Interval, getUsefulCurrency } from 'lib/currency';
 import { usePlans } from 'hooks/use-plans';
-import { buildPlanData } from 'data/plans/constants';
 import type { SqueakyPage } from 'types/page';
 import type { Currency } from 'types/graphql';
 
@@ -24,8 +23,6 @@ const Pricing: SqueakyPage<NextPage> = () => {
   const [interval, setInterval] = React.useState<Interval>(Interval.MONTHLY);
 
   const { plans, loading, error } = usePlans();
-
-  const planData = buildPlanData(plans);
 
   return (
     <>
@@ -56,7 +53,7 @@ const Pricing: SqueakyPage<NextPage> = () => {
           <PricingCards 
             currency={currency} 
             interval={interval} 
-            planData={planData}
+            plans={plans}
           />
         )}
         
@@ -214,7 +211,7 @@ const Pricing: SqueakyPage<NextPage> = () => {
             <PlanComparison 
               currency={currency} 
               interval={interval} 
-              planData={planData}
+              plans={plans}
             />
           )}
         </Container>

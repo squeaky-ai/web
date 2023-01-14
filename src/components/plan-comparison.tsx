@@ -5,18 +5,17 @@ import classnames from 'classnames';
 import { Button } from 'components/button';
 import { Icon } from 'components/icon';
 import { getPricingForCurrencyAndInterval } from 'lib/plans';
-import type { Currency } from 'types/graphql';
-import { getCurrencySymbol, Interval } from 'lib/currency';
-import type { PlanData } from 'types/billing';
 import { Plans } from 'data/plans/constants';
+import { getCurrencySymbol, Interval } from 'lib/currency';
+import type { Currency, DecoratedPlan } from 'types/graphql';
 
 interface Props {
   currency: Currency;
   interval: Interval;
-  planData: PlanData[];
+  plans: DecoratedPlan[];
 }
 
-export const PlanComparison: FC<Props> = ({ currency, interval, planData }) => {
+export const PlanComparison: FC<Props> = ({ currency, interval, plans }) => {
   const [open, setOpen] = React.useState<string[]>([]);
 
   const toggleOpen = (name: string) => setOpen(
@@ -29,7 +28,7 @@ export const PlanComparison: FC<Props> = ({ currency, interval, planData }) => {
 
   const collapseAll = () => setOpen([]);
 
-  const getPlanById = (id: string) => planData.find(plan => plan.plan.id === id).plan;
+  const getPlanById = (id: string) => plans.find(plan => plan.plan.id === id).plan;
 
   const freePlan = getPlanById(Plans.Free);
   const starterPlan = getPlanById(Plans.Starter);

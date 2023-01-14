@@ -409,7 +409,6 @@ export type AdminSitePlanUpdateInput = {
   privateInstanceEnabled?: InputMaybe<Scalars['Boolean']>;
   responseTimeHours?: InputMaybe<Scalars['Int']>;
   siteId: Scalars['ID'];
-  siteLimit?: InputMaybe<Scalars['Int']>;
   ssoEnabled?: InputMaybe<Scalars['Boolean']>;
   support?: InputMaybe<Array<Scalars['String']>>;
   teamMemberLimit?: InputMaybe<Scalars['Int']>;
@@ -1011,6 +1010,19 @@ export enum Currency {
   Usd = 'USD'
 }
 
+export type DecoratedPlan = {
+  __typename?: 'DecoratedPlan';
+  capabilities: Array<Scalars['String']>;
+  current: Scalars['Boolean'];
+  description?: Maybe<Scalars['String']>;
+  includesCapabilitiesFrom?: Maybe<Scalars['String']>;
+  name: Scalars['String'];
+  options: Array<Scalars['String']>;
+  plan?: Maybe<Plan>;
+  show: Scalars['Boolean'];
+  usage: Array<Scalars['String']>;
+};
+
 export type Errors = {
   __typename?: 'Errors';
   items: Array<ErrorsItem>;
@@ -1548,6 +1560,13 @@ export type FiltersViewport = {
   minHeight?: InputMaybe<Scalars['Int']>;
   minWidth?: InputMaybe<Scalars['Int']>;
 };
+
+export enum FiltersVisitorType {
+  /** Show results where the visitor was returning */
+  Existing = 'Existing',
+  /** Show results where the visitor was new */
+  New = 'New'
+}
 
 export type Heatmaps = {
   __typename?: 'Heatmaps';
@@ -2227,7 +2246,7 @@ export type Plan = {
   name: Scalars['String'];
   pricing?: Maybe<Array<PlanPrice>>;
   responseTimeHours?: Maybe<Scalars['Int']>;
-  siteLimit: Scalars['Int'];
+  siteLimit?: Maybe<Scalars['Int']>;
   support?: Maybe<Array<Scalars['String']>>;
   teamMemberLimit?: Maybe<Scalars['Int']>;
 };
@@ -2263,7 +2282,7 @@ export type Query = {
   blogPost?: Maybe<BlogPost>;
   blogPosts?: Maybe<BlogPosts>;
   partner?: Maybe<Scalars['String']>;
-  plans: Array<Plan>;
+  plans: Array<DecoratedPlan>;
   site?: Maybe<Site>;
   siteByUuid?: Maybe<Site>;
   siteSessionSettings?: Maybe<SiteSessionSettings>;
@@ -2440,6 +2459,7 @@ export type RecordingsFilters = {
   utmTerm?: InputMaybe<Scalars['String']>;
   viewport: FiltersViewport;
   visitedPages: Array<Scalars['String']>;
+  visitorType?: InputMaybe<FiltersVisitorType>;
 };
 
 export type RecordingsHighlights = {
@@ -2894,7 +2914,7 @@ export type SitesPlan = {
   planId: Scalars['String'];
   privateInstanceEnabled: Scalars['Boolean'];
   responseTimeHours: Scalars['Int'];
-  siteLimit: Scalars['Int'];
+  siteLimit?: Maybe<Scalars['Int']>;
   ssoEnabled: Scalars['Boolean'];
   support?: Maybe<Array<Scalars['String']>>;
   teamMemberLimit?: Maybe<Scalars['Int']>;
