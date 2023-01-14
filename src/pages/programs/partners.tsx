@@ -70,11 +70,11 @@ const ProgramsPartners: SqueakyPage<NextPage> = () => {
             title='How much could you earn?'
             body={
               <>
-                <p>Earnings are dependent on the pricing plans that your clients are on, but here are some examples if you were to have several clients on a paid-monthly premium plan:</p>
+                <p>Earnings are dependent on the pricing plans that your clients are on, but here are some examples if you were to have several clients on a paid-monthly business plan:</p>
                 <ul>
-                  <li>Refer 10 clients and earn up to €11,880 per year</li>
-                  <li>Refer 50 clients and earn up to €59,000 per year</li>
-                  <li>Refer 75 clients and earn up to €89,100 per year</li>
+                  <li>Refer 10 clients and earn up to $7,080 per year</li>
+                  <li>Refer 50 clients and earn up to $35,400 per year</li>
+                  <li>Refer 75 clients and earn up to $53,100 per year</li>
                 </ul>
               </>
             }
@@ -100,7 +100,7 @@ const ProgramsPartners: SqueakyPage<NextPage> = () => {
             title='How do I track my referrals and get paid?'
             body={
               <>
-                <p>When one of your clients is going to sign up for a paid Squeaky plan then you should provide them with a copy of your unique referral code and have them email us the code. We&apos;ll provide you with a dashboard to track your clients subscriptions and instructions for when and how to invoice Squeaky for your referral fees.</p>
+                <p>We provide you with a dedicated sign-up page just for your clients, and you&apos;ll also have access to dashboard where you can track your clients site status, subscriptions, and instructions for when and how to invoice Squeaky for your referral fees.</p>
               </>
             }
           />
@@ -132,7 +132,7 @@ const ProgramsPartners: SqueakyPage<NextPage> = () => {
             </CarouselItem>
           </Carousel>
 
-          <h3>Included in every plan</h3>
+          <h3>Squeaky&apos;s core features</h3>
           <ThreeTextGrid>
             <ThreeTextGridItem
               icon='line-chart-line'

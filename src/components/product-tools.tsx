@@ -68,8 +68,8 @@ const GridItem = (props: { option: ProductOptions }) => {
 export const ProductTools: FC<Props> = ({ options }) => (
   <Container className='product-tools centered lg'>
     <div className='tools-grid'>
-      <h2>Five more incredible tools included in every Squeaky plan.</h2>
-      <p>We&apos;ve built a customer experience platform designed to paint the full picture of your customer experience. There&apos;s no need to pay for multiple tools or spend time figuring out how to fit them together.</p>
+      <h2>Five more incredible features in the Squeaky toolkit.</h2>
+      <p>We&apos;ve built an analytics platform designed to paint the full picture of your customer experience. There&apos;s no need to pay for multiple tools or spend time figuring out how to fit them together.</p>
       <div className='image'>
         <Illustration illustration='illustration-8' width={598} height={395} />
       </div>

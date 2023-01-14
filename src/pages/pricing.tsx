@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import getConfig from 'next/config';
 import { NextPage } from 'next';
 import { Icon } from 'components/icon';
 import { Container } from 'components/container';
@@ -17,6 +18,8 @@ import { Interval, getUsefulCurrency } from 'lib/currency';
 import { usePlans } from 'hooks/use-plans';
 import type { SqueakyPage } from 'types/page';
 import type { Currency } from 'types/graphql';
+
+const { publicRuntimeConfig } = getConfig();
 
 const Pricing: SqueakyPage<NextPage> = () => {
   const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
@@ -127,8 +130,8 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='What are visits and how many do I need?'
             body={
               <>
-                <p>Visits are the times when individual visitors have visited your website or web app. If a visitors has been inactive for 30 minutes then the visit is closed, if they reactivate then a new visit is started.</p>
-                <p>If you are not familiar with how much traffic or visitors you currently have, then don&apos;t worry. You can start on the free pricing plan and you will be notified when you have exceeded your visit limits, and can upgrade at that time.</p>
+                <p>Visits are the times when individual visitors have visited your website or web app. A visit could last minutes or hours, but if a visitor has been inactive for 30 minutes then the visit is closed, if they reactivate then a new visit is started.</p>
+                <p>If you are not familiar with how much traffic or visitors you currently have, then don&apos;t worry. You can start on the free plan and you will be notified when you are approaching your visit limit and can upgrade at that time.</p>
               </>
             }
           />
@@ -136,10 +139,10 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='What happens if I go over my visit limit?'
             body={
               <>
-                <p>As you approach the visit limit for your subscription we will send you an email to let you know, and once your limit has been reached you will receive an additional email notification. If you go over your limit you have two options:</p>
+                <p>As you approach the visit limit for your subscription we will send you an email to let you know, and once your limit has been reached you will receive an additional email notification. If you&apos;re approaching or exceed your limit you have two options:</p>
                 <ol>
                   <li>You can simply wait until your next month starts, at which point you will begin capturing new visit data using the new month&apos;s allocation.</li>
-                  <li>You can upgrade your plan within Squeaky, this will both ensure you don&apos;t run over your limit the following month, and have no unnecessary gaps in your data.</li>
+                  <li>You can upgrade your plan within Squeaky, this will ensure you don&apos;t run over your limit the following month and that have no unnecessary gaps in your data for the current month.</li>
                 </ol>
               </>
             }
@@ -156,7 +159,8 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='When do we need to pay?'
             body={
               <>
-                <p>Your monthly subscription for your Squeaky plan will be billed on the same day as you initiated your active plan, e.g. if you first starting using the Light Plan on the 3rd of February, you will be billed on the 3rd of each month thereafter.</p>
+                <p>For monthly subscriptions your Squeaky plan will be billed on the same day as you initiated your active plan e.g. if you first start using the Light Plan on the 3rd of February, you will be billed on that day and on the 3rd of each month thereafter.</p>
+                <p>For annual subscriptions, your Squeaky plan will be billed on the same day as you initiated your active plan the previous year.</p>
               </>
             }
           />
@@ -164,7 +168,15 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='How easy is it to install Squeaky?'
             body={
               <>
-                <p>We&apos;ve gone out of our way to make sure installing Squeaky is easy. We have installation guides for all leading CMS and eCommerce platforms, as well as for manual installation. Typically installation takes 2-5 minutes, and if you run into any problems we&apos;re on hand to walk you through the steps required to get up and running.</p>
+                <p>We&apos;ve gone out of our way to make sure installing Squeaky is easy. We have <Link href={publicRuntimeConfig.helpCenterTrackingCodeUrl} target='_blank' rel='noreferrer'>installation guides</Link> for all leading CMS and eCommerce platforms, as well as for manual installation. Typically installation takes 2-5 minutes, and if you run into any problems we&apos;re on hand to walk you through the steps required to get up and running.</p>
+              </>
+            }
+          />
+          <Accordion
+            title='Will Squeaky affect my site&apos;s performance?'
+            body={
+              <>
+                <p>Our script is the last thing to load on your page, and is incredible small, so the performance is great - you and your users will never know it&apos;s there. We also don&apos;t cache huge volumes of data on your user&apos;s device, so there is no risk of the user&apos;s device performance degrading as the session gets longer.</p>
               </>
             }
           />
@@ -188,7 +200,14 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='How long is data stored in Squeaky for?'
             body={
               <>
-                <p>By default, all Squeaky data is stored for 365 days. Any visitor sessions older than 365 days will be automatically deleted. For Enterprise customers we can offer extended data storage.</p>
+                <p>Your data storage allocation is dependent upon the plan you are on:</p>
+                <ul>
+                  <li>Free plan: 1 month of data storage.</li>
+                  <li>Starter plan: 3 months of data storage.</li>
+                  <li>Business plan: 12 months of data storage.</li>
+                  <li>Enterprise plan: Custom data storage.</li>
+                </ul>
+                <p>Any session data older than your plans data storage limit will be automatically deleted. </p>
               </>
             }
           />
@@ -196,8 +215,8 @@ const Pricing: SqueakyPage<NextPage> = () => {
             title='Do you provide customer support?'
             body={
               <>
-                <p>We provide email support for all plans and phone support for Enterprise customers, response times are dictated by the Service Level Agreement of your current plan.</p>
-                <p>Alongside direct support via email and phone, we have extensive documentation and how-to guides in our Help Centre.</p>
+                <p>We offer email, live chat, and phone support, depending on the plan you are on. Response times are dictated by the Service Level Agreement of your current plan and Enterprise customers have a dedicated account manager.</p>
+                <p>We also offer extensive documentation and how-to guides in our Help Centre.</p>
               </>
             }
           />

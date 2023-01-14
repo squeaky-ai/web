@@ -511,7 +511,7 @@ const Features: SqueakyPage<NextPage> = () => {
             <FeaturesGridItem
               icon='user-2-line'
               title='Easily manage roles'
-              body='Squeaky offers 3 distinct roles: Owner, Admin, and Member, allowing you to provide only the relevant level of access to each team member.'
+              body='Squeaky offers 4 distinct roles: Owner, Admin, User and Read Only, allowing you to provide only the relevant level of access to each team member.'
             />
             <FeaturesGridItem
               icon='user-settings-line'

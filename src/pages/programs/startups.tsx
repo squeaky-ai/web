@@ -79,7 +79,7 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
             </CarouselItem>
           </Carousel>
 
-          <h3>Included in every plan</h3>
+          <h3>Squeaky&apos;s core features</h3>
           <ThreeTextGrid>
             <ThreeTextGridItem
               icon='line-chart-line'
@@ -153,8 +153,8 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
               <>
                 <p>Potential savings depend upon the pricing plan that you have chosen. Below are few examples</p>
                 <ul>
-                  <li>If you were paying annually for our <b>Plus</b> self-service plan then over 2 years you would have paid €58 per month instead of €145, <span className='rose'>saving €1392</span>.</li>
-                  <li>If you were paying annually for our <b>Premium</b> self-service plan then over 2 years you would have paid €198 per month instead of €492, <span className='rose'>saving €4752</span></li>
+                  <li>If you were paying annually for our <b>Starter</b> self-service plan then over 2 years you would have paid $12.50 per month instead of $25.00, <span className='rose'>saving $300.00</span>.</li>
+                  <li>If you were paying annually for our <b>Business</b> self-service plan then over 2 years you would have paid $147.50 per month instead of $295.00, <span className='rose'>saving $3,540.00</span></li>
                 </ul>
               </>
             }
@@ -171,7 +171,7 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
             title='Does it include all features?'
             body={
               <>
-                <p>Yes, all plans include access to all Squeaky features.</p>
+                <p>The features available vary depending on the plan that you have chosen. If you are unsure whether an additional feature is right for your business then please get in touch - we&apos;ll gladly provide trial usage of additional features for free, and we&apos;re happy to hop on a demo call anytime.</p>
               </>
             }
           />
@@ -186,7 +186,7 @@ const ProgramsStartups: SqueakyPage<NextPage> = () => {
           aside={
             <>
               <h3>Apply to our startup program for 50% off</h3>
-              <p>If you&apos;d like to apply to Squeaky&apos;s startup program then please complete the form opposite and someone from our team will get back to you with 2 days.</p>
+              <p>If you&apos;d like to apply to Squeaky&apos;s startup program then please complete the form opposite and someone from our team will get back to you within 2 days.</p>
               <div className='egg'>
                 <Illustration illustration='illustration-16' height={262} width={230} />
               </div>
