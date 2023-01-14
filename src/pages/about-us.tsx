@@ -25,7 +25,7 @@ const AboutUs: SqueakyPage<NextPage> = () => (
           <h2>Our Mission</h2>
           <p>At Squeaky we&apos;re making it our life&apos;s work to create <b>a better web for everyone</b>.</p>
           <p>Just like you, we believe <b>every great business should be continuously learning from their customers</b>, but we think the current ways of doing so are ineffective, unethical, and invasive. We&apos;re here to shake things up.</p>
-          <p><b>We create customer experience analytics and monitoring tools</b> that enable companies to learn from their customers and capture high value data and insights, <b>without ever having to compromise on customer privacy</b>.</p>
+          <p><b>We create web, product, and customer experience analytics</b> that enable companies to learn from their customers, capturing high value data and insights <b>without ever having to compromise on customer privacy</b>.</p>
           <p>And yes, if you want, Squeaky can help you <b>say goodbye to your horrible cookies and consent banner</b>.</p>
         </div>
         <div className='image'>
@@ -42,7 +42,7 @@ const AboutUs: SqueakyPage<NextPage> = () => (
           <p>We&apos;ve seen firsthand the effect that can have on genuinely well-intentioned teams that are trying to better understand their customers. <b>Being shut out of key data, or being acutely aware that you&apos;re not getting the full picture, can be debilitating</b> - leading to worse products and services for the end user. At Squeaky, we believe it doesn&apos;t have to be this way.</p>
         </div>
         <div className='text'>
-        <p>Mid 2021, we decided it was time to build <b>a brand new customer experience analytics and monitoring tool</b> from the ground up - <b>with privacy at its core</b>. In fact, by taking this approach, we&apos;ve managed to turn consumer protection into a net-benefit for businesses too. Opting for a privacy-centric approach like Squeaky, businesses no longer need to miss out on important data due to ad blockers, or rejected cookie and consent banners, meaning they&apos;re capturing the true scope of their available data. </p>
+        <p>Mid 2021, we decided it was time to build <b>a brand new analytics and monitoring tool</b> from the ground up - <b>with privacy at its core</b>.</p>
         <p>By making privacy central to each of our decisions, <b>we&apos;ve had to find unusual and innovative solutions to data capture and processing that set us apart from the competition</b>. Not only that, but we pair the requisite technology, with 1-on-1 privacy consultations for any of our customers, ensuring their website or web app meets the stringent requirements of the modern web.</p>
         <p>It&apos;s early days, <b>but we&apos;re proud to be offering the only truly future proof, ethical solution</b> that allows companies to capture the fullest picture of the customer experience, by putting the customer first.</p>
         </div>
@@ -57,7 +57,7 @@ const AboutUs: SqueakyPage<NextPage> = () => (
         <h2>Our Founders</h2>
         <Container className='sm centered'>
           <p>Chris and Lewis started Squeaky because of a shared belief that while <b>knowledge is power, privacy is sacred</b>.</p>
-          <p>They&apos;ve used their years of product, design, and technology expertise to create a <b>best-in-class customer experience data platform</b>, in the least invasive way possible.</p>
+          <p>They&apos;ve used their years of product, design, and technology expertise to create a <b>best-in-class analytics platform</b>, in the least invasive way possible.</p>
         </Container>
         <Container className='md-lg centered people'>
           <div className='person'>

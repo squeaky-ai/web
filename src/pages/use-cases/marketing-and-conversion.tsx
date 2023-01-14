@@ -127,7 +127,7 @@ const UseCasesMarketingAndConversion: SqueakyPage<NextPage> = () => (
       <Container className='centered lg'>
         <Container className='md centered tagline'>
           <h2>Let deep understanding of your audience drive your marketing forward</h2>
-          <p>Squeaky&apos;s full-featured customer experience platform will help you to drive new experiments and validate your ideas faster than ever.</p>
+          <p>Squeaky&apos;s full-featured web and product analytics platform will help you to drive new experiments and validate your ideas faster than ever.</p>
         </Container>
 
         <SideBySide 

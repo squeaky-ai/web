@@ -32,7 +32,7 @@ const BookDemo: SqueakyPage<NextPage> = () => {
     <>
       <PageTitle
         title='Let&apos;s talk'
-        subtitle={<>Wondering how Squeaky&apos;s all-in-one customer experience analytics platform can help your business succeed? Book a product demo below and we&apos;ll tell you everything.</>}
+        subtitle={<>Wondering how Squeaky&apos;s all-in-one analytics platform can help your business succeed? Book a product demo below and we&apos;ll tell you everything.</>}
       />
 
       <ContactForm
@@ -45,7 +45,7 @@ const BookDemo: SqueakyPage<NextPage> = () => {
             <p>Demos last approximately 30 minutes, and here&apos;s what we&apos;ll cover:</p>
             <p>
               <ul>
-                <li><Icon name='check-line' />How customer experience analytics can help your business.</li>
+                <li><Icon name='check-line' />How web and product analytics can help your business.</li>
                 <li><Icon name='check-line' />All of Squeaky&apos;s most important features.</li>
                 <li><Icon name='check-line' />Your business goals, so we can provide a quote tailored to needs.</li>
               </ul>
