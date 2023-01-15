@@ -180,6 +180,8 @@
     }
 
     h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
       margin: 4rem 0 1rem 0;
 
       &:before {
@@ -198,11 +200,18 @@
     }
 
     h3 {
+      font-size: 1.75rem;
+      line-height: 2rem;
       margin: 4rem 0 1rem 0;
     }
 
     h4 {
       margin: 4rem 0 1rem 0;
+    }
+
+    h1, h2, h3, h4, h5 + 
+    h1, h2, h3, h4, h5 {
+      margin-top: 2rem;
     }
 
     ul, ol {
