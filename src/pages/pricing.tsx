@@ -31,8 +31,8 @@ const Pricing: SqueakyPage<NextPage> = () => {
     <>
       <section className='hero'>
         <Container className='centered sm-md'>
-          <h1>Unleash your data</h1>
-          <p>All plans come with access to our entire range of customer experience products, including <b>analytics</b>, <b>recordings</b>, <b>feedback</b>, and <b>heatmap</b> data.</p>
+          <h1>Data to drive your decision making</h1>
+          <p>Get started with Squeaky&apos;s incredible analytics platform today, no credit card required.</p>
           <div className='options'>
             <Currencies selected={currency} setSelected={setCurrency} />
             <Intervals selected={interval} setSelected={setInterval} />
