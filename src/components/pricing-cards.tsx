@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import classnames from 'classnames';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
-import { Tag } from 'components/tag';
 import { Divider } from 'components/divider';
 import { getPricingForCurrencyAndInterval } from 'lib/plans';
 import { getCurrencySymbol, Interval } from 'lib/currency';
@@ -24,20 +23,20 @@ export const PricingCards: FC<Props> = ({ currency, interval, plans }) => {
       {currentPlans.map(data => (
         <Card className={classnames('plan-card', data.name.toLowerCase())} key={data.name}>
           <h4 className='plan-name'>
-            <b>{data.name}</b>
-            {interval === Interval.YEARLY && (
-              <Tag className='discount'>20% OFF</Tag>
-            )}
+            {data.name}
           </h4>
           <p className='description'>
             {data.description}
           </p>
-          <p className='pricing'>
+          <h2 className='pricing'>
             {data.plan
-              ? <><b>{getCurrencySymbol(currency)}{getPricingForCurrencyAndInterval(data.plan, currency, interval)}</b> / {interval}</>
-              : <b>Let&apos;s talk</b>
+              ? <>{getCurrencySymbol(currency)}{getPricingForCurrencyAndInterval(data.plan, currency, interval)} <span>/ {interval}</span></>
+              : <>Let&apos;s talk</>
             }
-          </p>
+            {interval === Interval.YEARLY && (
+              <span className='discount'>Paid yearly (save 20%)</span>
+            )}
+          </h2>
           <Link href='/auth/signup' className='button primary'>
             Get Started Free
           </Link>  
