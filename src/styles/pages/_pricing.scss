@@ -51,6 +51,10 @@
         &:hover {
           background: var(--peach-50);
         }
+
+        @include breakpoint-sm {
+          display: none;
+        }
       }
 
       .options {
@@ -169,7 +173,7 @@
       }
 
       @include breakpoint-sm {
-        padding: 4rem 2rem 6rem 2rem;
+        display: none;
       }
     }
   }
