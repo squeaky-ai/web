@@ -34,10 +34,6 @@
     min-height: 4.5rem;
   }
 
-  .divider {
-    margin: 3rem 0;
-  }
-
   .pricing {
     color: var(--gray-blue-800); 
 
@@ -68,6 +64,14 @@
     text-transform: uppercase;
   }
 
+  .features {
+    @include breakpoint-sm {
+      &:not(.show) {
+        display: none;
+      }
+    }
+  }
+
   .small {
     font-size: 16px;
     line-height: 24px;
@@ -87,23 +91,27 @@
     color: var(--gray-500);
   }
 
-  .deprecation-notice {
-    display: none;
-    margin: 1.5rem 0 0 0;
+  .divider {
+    margin: 3rem 0;
   }
 
-  .col.deprecated {
-    background: var(--gray-100);
+  .show-more {
+    background: var(--peach-100);
+    border: none;
+    border-radius: var(--border-radius-md);
+    color: var(--mauve-700);
+    display: none;
+    font-weight: var(--font-weight-normal);
+    text-decoration: underline;
+  }
 
-    .features {
-      display: none;
+  @include breakpoint-sm {
+    .show-more {
+      display: inline-block;
+      margin: 2rem 0 0 0;
     }
 
-    .deprecation-notice {
-      display: block;
-    }
-
-    .discount {
+    .divider {
       display: none;
     }
   }
