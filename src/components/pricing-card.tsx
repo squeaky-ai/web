@@ -30,7 +30,7 @@ export const PricingCard: FC<Props> = ({ plan, interval, currency }) => {
       </p>
       <h2 className='pricing'>
         {plan.plan
-          ? <>{getCurrencySymbol(currency)}{getPricingForCurrencyAndInterval(plan.plan, currency, interval)} <span>/ {interval}</span></>
+          ? <>{getCurrencySymbol(currency)}{getPricingForCurrencyAndInterval(plan.plan, currency, interval)} <span>/ month</span></>
           : <>Let&apos;s talk</>
         }
         {interval === Interval.YEARLY && (

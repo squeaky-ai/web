@@ -23,7 +23,7 @@ const { publicRuntimeConfig } = getConfig();
 
 const Pricing: SqueakyPage<NextPage> = () => {
   const [currency, setCurrency] = React.useState<Currency>(getUsefulCurrency());
-  const [interval, setInterval] = React.useState<Interval>(Interval.MONTHLY);
+  const [interval, setInterval] = React.useState<Interval>(Interval.YEARLY);
 
   const { plans, loading, error } = usePlans();
 
