@@ -71,7 +71,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                       <span>
                         {post.draft
                           ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                          : toHumanDate(post.updatedAt)
+                          : toHumanDate(post.createdAt)
                         }
                       </span>
                     </p>

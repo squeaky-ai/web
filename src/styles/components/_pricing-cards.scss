@@ -114,6 +114,15 @@
     .divider {
       display: none;
     }
+
+    .description {
+      min-height: 0;
+    }
+
+    .pricing {
+      line-height: 32px;
+      margin: 0 0 2rem 0;
+    }
   }
 
   .plan-card {
@@ -121,6 +130,10 @@
       .pricing {
         .discount {
           visibility: hidden;
+
+          @include breakpoint-sm {
+            display: none;
+          }
         }
       }
     }
