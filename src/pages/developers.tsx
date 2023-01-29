@@ -576,7 +576,8 @@ class SqueakyClient
     body = {
       name:,
       user_id:,
-      data: data.to_json
+      data: data.to_json,
+      timestamp: Time.now * 1000
     }.to_json
 
     self.class.post('/api/events', body:, headers:, timeout:)
@@ -615,6 +616,7 @@ end`}
       name,
       user_id: userId,
       data: JSON.stringify(data),
+      timestamp: new Date().valueOf(),
     };
 
     return fetch(\`\${this.baseUri}/api/events\`, {
@@ -647,6 +649,13 @@ end`}
                 <p>Not everything happens during the users&apos; session and you may want to add events for a user on the server when you no longer have access to the session context.</p>
                 <p>For example, when a user signs up, you may kick off a background process to send a welcome email. This is likely an asynchronous process, and the user is likely no longer on site.</p>
                 <p>Provided you have set up data linking via the <code className='code'>identify</code> method during the users&apos; session, you will be able to post events to Squeaky at any time.</p>
+                <p>The events endpoint accepts four fields within the JSON body:</p>
+                <ul className='code-lists'>
+                  <li><code className='code'>name : string</code> (required) - The name of the event that will show up in the Squeaky events page</li>
+                  <li><code className='code'>user_id : string|number</code> (required) - The id of the user in your database that has been data linked with Squeaky</li>
+                  <li><code className='code'>data : string</code> (required) - Additional JSON meta data to send with the event</li>
+                  <li><code className='code'>timestamp : number</code> (optional) - A millisecond presicion timestamp</li>
+                </ul>
                 <p>For example, to notify when the welcome email was sent, you could use:</p>
                 <Tabs
                   tabs={[
@@ -691,7 +700,7 @@ await client.addEvent('WelcomeEmailSent', user.id, {
                 />
                 <p>Validation will be performed server side, and the error handling responsibility will fall on you.</p>
                 <p>You can expect the following HTTP responses for certain senarios:</p>
-                <ul className='http-statuses'>
+                <ul className='code-lists'>
                   <li>
                     <code className='code'>201 - Created</code>
                     <ul>
