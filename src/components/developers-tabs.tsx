@@ -31,7 +31,15 @@ export const DevelopersTabs: FC<Props> = ({ tab, setTab }) => (
       <Icon name='arrow-drop-right-line' />
     </Button>
 
-    <p>API</p>
+    <p>SDK</p>
+
+    <Button
+      className={classnames({ active: tab === 'sdk' })}
+      onClick={() => setTab('sdk')}
+    >
+      <span>Intro</span>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
 
     <Button 
       className={classnames({ active: tab === 'user-indentification' })}
@@ -73,6 +81,31 @@ export const DevelopersTabs: FC<Props> = ({ tab, setTab }) => (
       onClick={() => setTab('reject-consent')}
     >
       <code className='code'>rejectConsent</code>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
+    <Button 
+      className={classnames({ active: tab === 'add-event' })}
+      onClick={() => setTab('add-event')}
+    >
+      <code className='code'>addEvent</code>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
+
+    <p>API</p>
+
+    <Button
+      className={classnames({ active: tab === 'api' })}
+      onClick={() => setTab('api')}
+    >
+      <span>Intro</span>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
+
+    <Button 
+      className={classnames({ active: tab === 'post-event' })}
+      onClick={() => setTab('post-event')}
+    >
+      <code className='code'>POST /api/events</code>
       <Icon name='arrow-drop-right-line' />
     </Button>
   </aside>

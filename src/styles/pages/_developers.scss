@@ -76,6 +76,20 @@
     }
   }
 
+  .http-statuses {
+    li {
+      margin: 0 0 1rem 0;
+
+      code {
+        margin: 0 0 .5rem 0;
+      }
+
+      li {
+        margin: 0 0 .25rem 0;
+      }
+    }
+  }
+
   .developers-contents {
     width: calc(100% - 12rem);
 

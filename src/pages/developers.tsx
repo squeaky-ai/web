@@ -1,6 +1,5 @@
 import React from 'react';
 import { NextPage } from 'next';
-import { Icon } from 'components/icon';
 import { PageTitle } from 'components/page-title';
 import { Container } from 'components/container';
 import { Code } from 'components/code';
@@ -17,7 +16,7 @@ const Developers: SqueakyPage<NextPage> = () => {
     <>
       <PageTitle
         title='Developers'
-        subtitle={<>Last Updated: <b>August 24th 2022</b></>}
+        subtitle={<>Last Updated: <b>January 29th 2023</b></>}
       />
 
       <Main>
@@ -30,7 +29,8 @@ const Developers: SqueakyPage<NextPage> = () => {
                 <h4>Tracking Code</h4>
                 <p>We recommend that you install the tracking code within the <code className='code'>{'<'}head{'>'}</code> of your page so that it captures as much of the session as possible. Loading the script just before the <code className='code'>{'<'}body{'/>'}</code> could result in the first second or so of a visitors&apos; session being missed.</p>
                 <p>The script is very light and loading is non-blocking, so performance should not be a concern.</p>
-                <p>You can find the correct script with your site id on the settings page of your site. Every site site is different, but here are some suggestions for where best to place the script into your app.</p>
+                <p>If you would prefer to defer the loading of Squeaky until the entire page has loaded, you can load the script with <code className='code'>defer</code> or <code className='code'>async</code>, however you may miss the begninning of the session.</p>
+                <p>You can find the correct script with your site id on the settings page of your site. Every site is different, but here are some suggestions for where best to place the script into your app.</p>
 
                 <Tabs
                   tabs={[
@@ -40,10 +40,6 @@ const Developers: SqueakyPage<NextPage> = () => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/layouts/application.html.erb
-                          </p>
                           <Code lang='html'>
 {`<!DOCTYPE html>
   <html>
@@ -73,10 +69,6 @@ const Developers: SqueakyPage<NextPage> = () => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            pages/_document.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import NextDocument, { 
   Html, 
@@ -151,6 +143,15 @@ export default Document;`}
               </>
             )}
 
+            {tab === 'sdk' && (
+              <>
+                <h4>SDK Intro</h4>
+                <p>When Squeaky loads on your site, it will load and bind a script to <code className='code'>window.squeaky</code> and make several SDK methods available for you to use.</p>
+                <p>These methods require no additional authentication and will integrate with the ongoing session recording.</p>
+                <p>The loading of Squeaky is asynchronous, and you should be careful not to call methods that are not yet available.</p>
+              </>
+            )}
+
             {tab === 'user-indentification' && (
               <>
                 <h4><code className='code'>squeaky.identify();</code></h4>
@@ -177,10 +178,6 @@ export default Document;`}
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/layouts/application.html.erb
-                          </p>
                           <Code lang='html'>
 {`<body>
   <%= yield %>
@@ -206,10 +203,6 @@ export default Document;`}
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            pages/_app.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
@@ -256,10 +249,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/layouts/application.html.erb
-                          </p>
                           <Code lang='html'>
 {`<body>
   <%= yield %>
@@ -280,10 +269,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            pages/_app.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
@@ -320,10 +305,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/partials/_nps_survey_button.html.erb
-                          </p>
                           <Code lang='html'>
 {`<button class="nps-survey" onclick="squeaky.showNpsSurvey();">
   Give your feedback
@@ -338,10 +319,6 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            components/nps-survey-button.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 
@@ -379,10 +356,6 @@ const Button: FC = () => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/partials/_sentiment_survey_button.html.erb
-                          </p>
                           <Code lang='html'>
 {`<button class="sentiment-survey" onclick="squeaky.showSentimentSurvey();">
   Give your feedback
@@ -397,10 +370,6 @@ const Button: FC = () => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            components/sentiment-survey-button.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 
@@ -436,10 +405,6 @@ const Button: FC = () => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/partials/_accept_consent_button.html.erb
-                          </p>
                           <Code lang='html'>
 {`<button class="consent" onclick="squeaky.acceptConsent();">
   Accept Consent
@@ -454,10 +419,6 @@ const Button: FC = () => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            components/accept-consent-button.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 
@@ -493,10 +454,6 @@ const Button: FC = () => {
                       icon: 'vip-diamond-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            app/views/partials/_reject_consent_button.html.erb
-                          </p>
                           <Code lang='html'>
 {`<button class="consent" onclick="squeaky.rejectConsent();">
   Reject Consent
@@ -511,10 +468,6 @@ const Button: FC = () => {
                       icon: 'reactjs-line',
                       body: (
                         <>
-                          <p className='filename'>
-                            <Icon name='file-code-line' />
-                            components/reject-consent-button.tsx
-                          </p>
                           <Code lang='typescript'>
 {`import React, { FC } from 'react';
 
@@ -535,6 +488,241 @@ const Button: FC = () => {
                     }
                   ]}
                 />
+              </>
+            )}
+
+            {tab === 'add-event' && (
+              <>
+                <h4><code className='code'>squeaky.addEvent();</code></h4>
+                <p>You can collect custom event data with Squeaky by using the <code className='code'>addEvent</code> function. Squeaky will automatically create an Event based on the name that you provide.</p>
+                <p>Along with the name, you can pass a key-value object and this data will be displayed in the Event Feed within Squeaky.</p>
+                <p>An example may be that you want to record which currency your users have selected from a dropdown:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <Code lang='html'>
+{`<select class="currency" onchange="squeaky.addEvent('CurrencyChanged', { currency: event.target.value });">
+  <option value="USD">$</option>
+  <option value="EUR">€</option>
+  <option value="GBP">£</option>
+</select>`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'react',
+                      name: 'React (Next.js)',
+                      icon: 'reactjs-line',
+                      body: (
+                        <>
+                          <Code lang='typescript'>
+{`import React, { FC } from 'react';
+
+const CurrencySelect: FC = () => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    squeaky.addEvent('CurrencyChanged', {
+      currency: event.target.value,
+    });
+  };
+
+  return (
+    <select className='currency' onChange={handleChange}>
+      <option value='USD'>$</option>
+      <option value='EUR'>€</option>
+      <option value='GBP'>£</option>
+    </select>
+  );
+};
+`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+
+            {tab === 'api' && (
+              <>
+                <h4>API Intro</h4>
+                <p>Squeaky provides a REST API for you to add data that is not part of a users&apos; session.</p>
+                <p>This API requires an API key that you can generate from within the site settings and must be passed with requests as a <code className='code'>X-SQUEAKY-API-KEY</code> header.</p>
+                <p>Currently Squeaky do not provide libraries for you to use, but you can create a simple client using this as reference:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <Code lang='ruby'>
+{`require 'httpparty'
+
+class SqueakyClient
+  include HTTParty
+
+  base_uri: 'https://squeaky.ai'
+
+  def add_event(name:, user_id:, data:)
+    body = {
+      name:,
+      user_id:,
+      data: event_data.to_json
+    }
+
+    self.class.post('/api/events', body:, headers:, timeout:)
+  end
+
+  private
+
+  def headers
+    {
+      'Content-Type' => 'application/json',
+      'X-SQUEAKY-API-KEY' => ENV.fetch('squeaky-api-key')
+    }
+  end
+
+  def timeout
+    5
+  end
+end`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'typescript',
+                      name: 'Node.js',
+                      icon: 'npmjs-line',
+                      body: (
+                        <>
+                          <Code lang='typescript'>
+{`export class SqueakyClient {
+  private baseUri = 'https://squeaky.ai';
+
+  public async addEvent(name: string, userId: number, data: Record<string, string>) {
+    const body = {
+      name,
+      user_id: userId,
+      data: JSON.stringify(data),
+    };
+
+    return fetch(\`\${this.baseUri}/api/events\`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: this.headers,
+    });
+  }
+
+  private get headers(): HeadersInit {
+    return {
+      'Content-Type': 'application/json',
+      'X-SQUEAKY-API-KEY': process.env['squeaky-api-key'],
+    };
+  }
+}`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+              </>
+            )}
+
+            {tab === 'post-event' && (
+              <>
+                <h4><code className='code'>POST /api/events</code></h4>
+                <p>Not everything happens during the users&apos; session and you may want to add events for a user on the server when you no longer have access to the session context.</p>
+                <p>For example, when a user signs up, you may kick off a background process to send a welcome email. This is likely an asynchronous process, and the user is likely no longer on site.</p>
+                <p>Provided you have set up data linking via the <code className='code'>identify</code> method during the users&apos; session, you will be able to post events to Squeaky at any time.</p>
+                <p>For example, to notify when the welcome email was sent, you could use:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <Code lang='ruby'>
+{`client = SqueakyClient.new
+
+client.add_event(
+  name: 'WelcomeEmailSent',
+  user_id: user.id,
+  data: {
+    sent_at: Time.now.iso8601
+  }
+)`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'typescript',
+                      name: 'Node.js',
+                      icon: 'npmjs-line',
+                      body: (
+                        <>
+                          <Code lang='typescript'>
+{`const client = new SqueakyClient();
+
+await client.addEvent('WelcomeEmailSent', user.id, {
+  sentAt: new Date().toISOString(), 
+});
+`}
+                            </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+                <p>Validation will be performed server side, and the error handling responsibility will fall on you.</p>
+                <p>You can expect the following HTTP responses for certain senarios:</p>
+                <ul className='http-statuses'>
+                  <li>
+                    <code className='code'>201 - Created</code>
+                    <ul>
+                      <li>The event was successfully stored</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>400 - Bad Request</code>
+                    <ul>
+                      <li>The payload did not pass validation</li>
+                      <li>The user_id is not known to Squeaky and there is no linked visitor</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>401 - Unauthorized</code>
+                    <ul>
+                      <li>You have reached your monthly limit</li>
+                      <li>This feature has been disabled for your site by Squeaky</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>403 - Forbidden</code>
+                    <ul>
+                      <li>You did not provide an API key</li>
+                      <li>You provided an invalid API key</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>500 - Internal Server Error</code>
+                    <ul>
+                      <li>There is an issue on Squeaky&apos;s side</li>
+                    </ul>
+                  </li>
+                </ul>
               </>
             )}
           </Container>
