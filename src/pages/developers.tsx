@@ -554,6 +554,7 @@ const CurrencySelect: FC = () => {
                 <h4>API Intro</h4>
                 <p>Squeaky provides a REST API for you to add data that is not part of a users&apos; session.</p>
                 <p>This API requires an API key that you can generate from within the site settings and must be passed with requests as a <code className='code'>X-SQUEAKY-API-KEY</code> header.</p>
+                <p><b>Please note</b>: The data field should be provided as stringified JSON.</p>
                 <p>Currently Squeaky do not provide libraries for you to use, but you can create a simple client using this as reference:</p>
                 <Tabs
                   tabs={[
@@ -564,7 +565,7 @@ const CurrencySelect: FC = () => {
                       body: (
                         <>
                           <Code lang='ruby'>
-{`require 'httpparty'
+{`require 'httparty'
 
 class SqueakyClient
   include HTTParty
@@ -576,7 +577,7 @@ class SqueakyClient
       name:,
       user_id:,
       data: data.to_json
-    }
+    }.to_json
 
     self.class.post('/api/events', body:, headers:, timeout:)
   end
@@ -585,6 +586,7 @@ class SqueakyClient
 
   def headers
     {
+      'Accept' => 'application/json',
       'Content-Type' => 'application/json',
       'X-SQUEAKY-API-KEY' => ENV.fetch('squeaky-api-key')
     }
@@ -624,6 +626,7 @@ end`}
 
   private get headers(): HeadersInit {
     return {
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
       'X-SQUEAKY-API-KEY': process.env['squeaky-api-key'],
     };
