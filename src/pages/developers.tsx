@@ -569,13 +569,13 @@ const CurrencySelect: FC = () => {
 class SqueakyClient
   include HTTParty
 
-  base_uri: 'https://squeaky.ai'
+  base_uri 'https://squeaky.ai'
 
   def add_event(name:, user_id:, data:)
     body = {
       name:,
       user_id:,
-      data: event_data.to_json
+      data: data.to_json
     }
 
     self.class.post('/api/events', body:, headers:, timeout:)
