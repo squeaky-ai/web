@@ -646,15 +646,27 @@ end`}
             {tab === 'post-event' && (
               <>
                 <h4><code className='code'>POST /api/events</code></h4>
-                <p>Not everything happens during the users&apos; session and you may want to add events for a user on the server when you no longer have access to the session context.</p>
+                <p>Not everything happens during the users&apos; session and you may want to add events server-side when you no longer have access to the session context.</p>
                 <p>For example, when a user signs up, you may kick off a background process to send a welcome email. This is likely an asynchronous process, and the user is likely no longer on site.</p>
-                <p>Provided you have set up data linking via the <code className='code'>identify</code> method during the users&apos; session, you will be able to post events to Squeaky at any time.</p>
+                <p>Custom events can be used for general purpose event collection. In addition, you can also include a user_id, and provided you have set up data linking via the <code className='code'>identify</code> method during the users&apos; session, you will be able to attribute events to a particular visitor.</p>
                 <p>The events endpoint accepts four fields within the JSON body:</p>
                 <ul className='code-lists'>
-                  <li><code className='code'>name : string</code> (required) - The name of the event that will show up in the Squeaky events page</li>
-                  <li><code className='code'>user_id : string|number</code> (required) - The id of the user in your database that has been data linked with Squeaky</li>
-                  <li><code className='code'>data : string</code> (required) - Additional JSON meta data to send with the event</li>
-                  <li><code className='code'>timestamp : number</code> (optional) - A millisecond presicion timestamp</li>
+                  <li>
+                    <code className='code'>name: string</code> (required)
+                    <span>The name of the event that will show up in the Squeaky events page.</span>
+                  </li>
+                  <li>
+                    <code className='code'>user_id: string|number</code> (optional)
+                    <span>The id of the user in your database. Squeaky will attempt to find the visitor using the data linking feature. If there is no matching visitor then then the visitor will be empty.</span>
+                  </li>
+                  <li>
+                    <code className='code'>data: string</code> (required)
+                    <span>Additional JSON meta data to send with the event.</span>
+                  </li>
+                  <li>
+                    <code className='code'>timestamp: number</code> (optional)
+                    <span>A millisecond presicion timestamp.</span>
+                  </li>
                 </ul>
                 <p>For example, to notify when the welcome email was sent, you could use:</p>
                 <Tabs
@@ -711,7 +723,6 @@ await client.addEvent('WelcomeEmailSent', user.id, {
                     <code className='code'>400 - Bad Request</code>
                     <ul>
                       <li>The payload did not pass validation</li>
-                      <li>The user_id is not known to Squeaky and there is no linked visitor</li>
                     </ul>
                   </li>
                   <li>
