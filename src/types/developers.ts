@@ -10,4 +10,5 @@ export type DeveloperTab =
   'reject-consent' |
   'add-event' |
   'api' |
-  'post-event';
+  'post-event' |
+  'post-visitors';

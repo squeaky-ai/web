@@ -16,7 +16,7 @@ const Developers: SqueakyPage<NextPage> = () => {
     <>
       <PageTitle
         title='Developers'
-        subtitle={<>Last Updated: <b>January 29th 2023</b></>}
+        subtitle={<>Last Updated: <b>February 1st 2023</b></>}
       />
 
       <Main>
@@ -583,6 +583,15 @@ class SqueakyClient
     self.class.post('/api/events', body:, headers:, timeout:)
   end
 
+  def create_visitor(user_id: data:)
+    body = {
+      user_id:,
+      data: data.to_json
+    }.to_json
+
+    self.class.post('/api/visitors', body:, headers:, timeout:)
+  end
+
   private
 
   def headers
@@ -626,6 +635,19 @@ end`}
     });
   }
 
+  public async createVisitor(userId: number, data: Record<string, string>) {
+    const body = {
+      user_id: userId,
+      data: JSON.stringify(data),
+    };
+
+    return fetch(\`\${this.baseUri}/api/visitors\`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: this.headers,
+    });
+  }
+
   private get headers(): HeadersInit {
     return {
       'Accept': 'application/json',
@@ -640,6 +662,130 @@ end`}
                     }
                   ]}
                 />
+              </>
+            )}
+
+            {tab === 'post-visitors' && (
+              <>
+                <h4><code className='code'>POST /api/visitors</code></h4>
+                <p>Squeaky allows you to link visitors to users in your database by using the <code className='code'>identify</code> function, however there are scenarios where you want to create the visitor ahead of time.</p>
+                <p>Using this endpoint, you can create a blank visitor that is pre-populated with linked data. Provided you are also using data linking during sessions, all sessions made by this visitor will be automatically stored against this visitor.</p>
+                <p><b>Please note</b>: You can only create one visitor per user id.</p>
+                <p>To create a visitor, you must supply the following two fields within the JSON body:</p>
+                <ul className='code-lists'>
+                  <li>
+                    <code className='code'>user_id: string|number</code> (required)
+                    <span>The id of the user in your database.</span>
+                  </li>
+                  <li>
+                    <code className='code'>data: string</code> (required)
+                    <span>Additional JSON meta data to store against the visitor (e.g. email, created_at)</span>
+                  </li>
+                </ul>
+                <p>Using the example client, you can create a visitor like so:</p>
+                <Tabs
+                  tabs={[
+                    {
+                      page: 'ruby',
+                      name: 'Ruby on Rails',
+                      icon: 'vip-diamond-line',
+                      body: (
+                        <>
+                          <Code lang='ruby'>
+{`client = SqueakyClient.new
+
+client.create_visitor(
+  user_id: user.id,
+  data: {
+    email: email@yourwebsite.com,
+    created_at: Time.now.iso8601
+  }
+)`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'typescript',
+                      name: 'Node.js',
+                      icon: 'npmjs-line',
+                      body: (
+                        <>
+                          <Code lang='typescript'>
+{`const client = new SqueakyClient();
+
+await client.createVisitor(user.id, {
+  email: email@yourwebsite.com,
+  createdAt: new Date().toISOString(), 
+});
+`}
+                            </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'curl',
+                      name: 'Curl',
+                      icon: 'terminal-line',
+                      body: (
+                        <>
+                          <Code lang='shell'>
+{`curl -X POST 'https://squeaky.ai/api/visitors' \\
+--header 'X-SQUEAKY-API-KEY: your_api_key' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{
+    "user_id": 1,
+    "data": "{\"email\":\"email@yourwebsite.com\"}"
+}'
+`}
+                          </Code>
+                        </>
+                      )
+                    }
+                  ]}
+                />
+                <p>Validation will be performed server side, and the error handling responsibility will fall on you.</p>
+                <p>You can expect the following HTTP responses for certain senarios:</p>
+                <ul className='code-lists'>
+                  <li>
+                    <code className='code'>201 - Created</code>
+                    <ul>
+                      <li>The visitor was successfully created</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>400 - Bad Request</code>
+                    <ul>
+                      <li>The payload did not pass validation</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>401 - Unauthorized</code>
+                    <ul>
+                      <li>You have reached your monthly limit</li>
+                      <li>This feature has been disabled for your site by Squeaky</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>403 - Forbidden</code>
+                    <ul>
+                      <li>You did not provide an API key</li>
+                      <li>You provided an invalid API key</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>409 - Conflict</code>
+                    <ul>
+                      <li>The visitor already exists</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <code className='code'>500 - Internal Server Error</code>
+                    <ul>
+                      <li>There is an issue on Squeaky&apos;s side</li>
+                    </ul>
+                  </li>
+                </ul>
               </>
             )}
 
@@ -705,6 +851,26 @@ await client.addEvent('WelcomeEmailSent', user.id, {
 });
 `}
                             </Code>
+                        </>
+                      )
+                    },
+                    {
+                      page: 'curl',
+                      name: 'Curl',
+                      icon: 'terminal-line',
+                      body: (
+                        <>
+                          <Code lang='shell'>
+{`curl -X POST 'https://squeaky.ai/api/events' \\
+--header 'X-SQUEAKY-API-KEY: your_api_key' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{
+    "name": "WelcomeEmailSent",
+    "user_id": 1,
+    "data": "{\"sentAt\": 1674838612560}"
+}'
+`}
+                          </Code>
                         </>
                       )
                     }

@@ -102,6 +102,14 @@ export const DevelopersTabs: FC<Props> = ({ tab, setTab }) => (
     </Button>
 
     <Button 
+      className={classnames({ active: tab === 'post-visitors' })}
+      onClick={() => setTab('post-visitors')}
+    >
+      <code className='code'>POST /api/visitors</code>
+      <Icon name='arrow-drop-right-line' />
+    </Button>
+
+    <Button 
       className={classnames({ active: tab === 'post-event' })}
       onClick={() => setTab('post-event')}
     >
