@@ -6,6 +6,7 @@ import { PageTitle } from 'components/page-title';
 import { PressKitNav } from 'components/press-kit-nav';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
+import { Cta } from 'components/cta';
 import type { SqueakyPage } from 'types/page';
 
 import logoDark from '../../public/press-kit/logo-dark.png';
@@ -22,7 +23,7 @@ const PressKit: SqueakyPage<NextPage> = () => (
     />
     <Container className='md centered press-kit-container'>
       <h3 id='name'>Our name</h3>
-      <p className='name'><b>Our company is called Squeaky</b> /&apos;skwi:ki/</p>
+      <p className='name'><b>Our company is called Squeaky</b> /&apos;skwi:ki/ <audio controls><source src='https://cdn.squeaky.ai/press-kit/squeaky-pronounciation.mp3' type='audio/mpeg' /></audio></p>
       <p>We prefer to simply referred to by the single-word Squeaky, but occasionally we are referred to as Squeaky Analytics, and that&apos;s fine too.</p>
       <p>So, why are we called Squeaky? Well, when we first decided we wanted to create a more private, and less-invasive analytics tool, we liked the idea of being &apos;as quiet as a mouse&apos;, having the smallest possible footprint on our customers sites, but likewise allowing users to browse websites and web apps in privacy/secrecy. But we all know mice do make a bit of noise, it&apos;s just a little squeak - hence Squeaky. We also liked that a &apos;mouse&apos; is the tool you use to navigate a website, which is why our logo contains a cursor that is styled as a cheese (AKA &apos;The Big Cheese&apos;).</p>
 
@@ -143,6 +144,14 @@ const PressKit: SqueakyPage<NextPage> = () => (
       <h3 id='contact'>Contact details</h3>
       <p>For any press or media enquiries, please get in touch via <a href='mailto:press@squeaky.ai'>press@squeaky.ai</a>.</p>
     </Container>
+    <section className='get-in-touch'>
+      <Cta
+        type='squiggle' 
+        title={<h3>Want to invite Squeaky on your podcast, or interview us for your publication?</h3>} 
+        buttonText='Get in touch'
+        buttonLink='/contact-us'
+      />
+    </section>
   </>
 );
 

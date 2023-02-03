@@ -32,6 +32,24 @@
     h4 {
       margin: 3rem 0 2rem 0;
     }
+
+    .name {
+      b {
+        margin: 0 .75rem 0 0;
+      }
+
+       audio {
+        margin: 0 0 0 .75rem;
+        vertical-align: middle;
+        width: 200px;
+
+        @include breakpoint-sm {
+          display: block;
+          margin: 1rem 0 0 0;
+          width: 100%;
+        }
+      }
+    }
   }
 
   .collections {
@@ -197,6 +215,24 @@
         .swatch {
           background: var(--blue-500);
         }
+      }
+    }
+  }
+
+  .get-in-touch {
+    background-color: var(--gray-blue-700);
+    margin: 5rem 0 0 0;
+    padding: 6rem 6rem 0 6rem;
+
+    @include breakpoint-sm {
+      display: none;
+    }
+
+    .cta {
+      padding: 6rem 2rem;
+
+      h3 {
+        max-width: 100%;
       }
     }
   }
