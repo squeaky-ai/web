@@ -224,8 +224,12 @@
       line-height: 32px;
     }
 
-    a {
+    a:not(.button) {
       color: var(--mauve-700);
+    }
+
+    a.button {
+      display: inline-block;
     }
 
     hr {
