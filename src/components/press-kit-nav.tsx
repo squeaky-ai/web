@@ -62,7 +62,7 @@ export const PressKitNav: FC = () => {
   }, []);
 
   return (
-    <PageTitleNav>
+    <PageTitleNav tab={tab}>
       {tabs.map(t => (
         <Link key={t.tab} href={`#${t.tab}`} className={classnames('item', { active: t.tab === tab })} onClick={handleTabClick(t.tab)}>
           {t.name}

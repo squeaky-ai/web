@@ -106,7 +106,7 @@ const Privacy: SqueakyPage<NextPage> = () => {
           <h2>Privacy protection in practice</h2>
         </Container>
       </section>
-      <PageTitleNav>
+      <PageTitleNav tab={tab}>
         {tabs.map(t => (
           <Button key={t.tab} className={classnames('item', { active: t.tab === tab })} onClick={handleTabClick(t.tab)}>
             {t.name}

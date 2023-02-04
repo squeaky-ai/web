@@ -96,7 +96,7 @@ const Features: SqueakyPage<NextPage> = () => {
         title='Features'
         subtitle={<>Picking the right tool is vital, which is why we provide a detailed overview of all our core features.</>}
         nav={
-          <PageTitleNav>
+          <PageTitleNav tab={tab}>
             {tabs.map(t => (
               <Button key={t.tab} className={classnames('item', { active: t.tab === tab })} onClick={handleTabClick(t.tab)}>
                 {t.name}

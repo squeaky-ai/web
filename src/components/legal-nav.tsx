@@ -36,7 +36,7 @@ interface Props {
 }
 
 export const LegalNav: FC<Props> = ({ page }) => (
-  <PageTitleNav>
+  <PageTitleNav tab={page}>
     {tabs.map(tab => (
       <Link key={tab.tab} href={`/legal/${tab.tab}`} className={classnames('item', { active: tab.tab === page })}>
         {tab.name}

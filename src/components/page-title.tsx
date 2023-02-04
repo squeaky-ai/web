@@ -1,5 +1,8 @@
 import React from 'react';
 import type { FC } from 'react';
+import classnames from 'classnames';
+import { Button } from './button';
+import { Icon } from './icon';
 
 interface ParentProps {
   title: string;
@@ -9,6 +12,7 @@ interface ParentProps {
 
 interface ChildProps {
   children: React.ReactNode;
+  tab: string;
 }
 
 export const PageTitle: FC<ParentProps> = ({ title, subtitle, nav }) => (
@@ -21,8 +25,24 @@ export const PageTitle: FC<ParentProps> = ({ title, subtitle, nav }) => (
   </>
 );
 
-export const PageTitleNav: FC<ChildProps> = ({ children }) => (
-  <nav className='page-title-nav'>
-    {children}
-  </nav>
-)
+export const PageTitleNav: FC<ChildProps> = ({ children, tab }) => {
+  const [open, setOpen] = React.useState<boolean>(false);
+
+  const toggleOpen = () => setOpen(!open);
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [tab]);
+
+  return (
+    <nav className={classnames('page-title-nav', { open })}>
+      <Button className='link' onClick={toggleOpen}>
+        Menu
+        <Icon name='arrow-down-s-line' />
+      </Button>
+      <div className='menu'>
+        {children}
+      </div>
+    </nav>
+  );
+};
