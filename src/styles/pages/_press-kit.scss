@@ -41,12 +41,7 @@
        audio {
         margin: 0 0 0 .75rem;
         vertical-align: middle;
-        width: 124px;
-
-        &::-webkit-media-controls-timeline,
-        &::-webkit-media-controls-current-time-display {
-          display: none;
-        }
+        width: 260px;
 
         @include breakpoint-sm {
           display: block;
