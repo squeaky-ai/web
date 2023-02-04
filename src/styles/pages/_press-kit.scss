@@ -41,7 +41,12 @@
        audio {
         margin: 0 0 0 .75rem;
         vertical-align: middle;
-        width: 200px;
+        width: 124px;
+
+        &::-webkit-media-controls-timeline,
+        &::-webkit-media-controls-current-time-display {
+          display: none;
+        }
 
         @include breakpoint-sm {
           display: block;
@@ -65,6 +70,10 @@
       border: 1px solid var(--gray-150);
       border-radius: var(--border-radius-md);
       overflow: hidden;
+
+      &:hover {
+        border-color: var(--mauve-800);
+      }
 
       .image {
         height: 12rem;
