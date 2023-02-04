@@ -2,22 +2,4 @@
   background: var(--peach-100);
   display: block;
   padding: 0;
-
-  .container {
-    text-align: left;
-  }
-
-  .error-state {
-    align-items: center;
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    min-height: calc(100vh - 6rem);
-    padding: 6rem 0;
-
-    .container {
-      padding: 0;
-      text-align: center;
-    }
-  }
 }

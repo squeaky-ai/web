@@ -10,19 +10,4 @@
   .footer {
     display: none;
   }
-
-  .error-state {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    height: 100%;
-    margin: 0 auto;
-    padding: 3rem 0 4rem 0;
-    text-align: center;
-
-    .container {
-      padding: 0;
-    }
-  }
 }
