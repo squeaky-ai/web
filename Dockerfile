@@ -4,8 +4,6 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN apk add python3 make
-
 COPY package.json /app
 COPY yarn.lock /app
 
