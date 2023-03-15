@@ -24,13 +24,11 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
   // Extract the content of all of the h2 tags
   // to build a list of links to them. This is used
   // for the "what we'll cover" bit at the top
-  const headings = content
-    .match(/<h2>([^<]+)<\/h2>/g)
-    .map(line => {
-      const text = line.replace('<h2>', '').replace('</h2>', '').trim();
+  const headings = content.match(/<h2>([^<]+)<\/h2>/g)?.map(line => {
+    const text = line.replace('<h2>', '').replace('</h2>', '').trim();
 
-      return { text, slug: toTextSlug(text) };
-    });
+    return { text, slug: toTextSlug(text) };
+  }) || [];
 
   // Add ids to all of the h2 tags so the "what we'll cover"
   // stuff can link properly
@@ -77,22 +75,26 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
       </section>
 
       <Container className='centered blog-body'>
-        {headings.length > 0 && (
-          <div className='covering'>
-            <p>
-              <Icon name='information-line' />
-              <b>What we&apos;ll cover</b>
-            </p>
-            <ul>
-              {headings.map(heading => (
-                <li key={heading.slug}>
-                  <a href={`#${heading.slug}`}>
-                    {heading.text}
-                  </a>  
-                </li>
-              ))}
-            </ul>
-          </div>
+        {post.coveringEnabled && (
+          <>
+            {headings.length > 0 && (
+              <div className='covering'>
+                <p>
+                  <Icon name='information-line' />
+                  <b>What we&apos;ll cover</b>
+                </p>
+                <ul>
+                  {headings.map(heading => (
+                    <li key={heading.slug}>
+                      <a href={`#${heading.slug}`}>
+                        {heading.text}
+                      </a>  
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
         )}
 
         <article dangerouslySetInnerHTML={{ __html: html }} />

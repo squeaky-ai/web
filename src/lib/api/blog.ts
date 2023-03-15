@@ -64,6 +64,7 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
           slug
           body
           scripts
+          coveringEnabled
           createdAt
           updatedAt
         }
