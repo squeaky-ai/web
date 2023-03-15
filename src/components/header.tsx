@@ -63,6 +63,12 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
     setSubMenuOpen(null);
   };
 
+  const truncate = (text: string, size: number) => {
+    return text.length > size
+      ? `${text.slice(0, size)}...`
+      : text;
+  };
+
   React.useEffect(() => {
     window.addEventListener('click', handleClick);
     window.addEventListener('scroll', handleScroll);
@@ -85,7 +91,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
           <Container className='lg centered'>
             {latestBlogPost && (
               <Link href={`/blog${latestBlogPost.slug}`} className={classnames('blog-link', { hidden: isCurrentBlogPost })}>
-                <span>Latest Post</span>: {latestBlogPost.title} <Icon name='arrow-right-line' />
+                <span>Latest Post</span>: {truncate(latestBlogPost.title, 60)} <Icon name='arrow-right-line' />
               </Link>
             )}
             {!latestBlogPost && <span />}
