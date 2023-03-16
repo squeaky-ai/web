@@ -4,9 +4,9 @@ export function middleware(request: NextRequest) {
   console.log(JSON.stringify({
     url: request.url,
     geo: request.geo,
-    ip: request.ip || request.headers.get('x-forwarded-for'),
+    ip: request.headers.get('x-forwarded-for'),
     useragent: request.headers.get('user-agent'),
-  }, null, 4));
+  }));
 }
 
 export const config = {
