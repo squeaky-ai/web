@@ -126,7 +126,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
             <div className='tags'>
               <div className='large'>
                 {tags.map(tag => (
-                  <Link href={buildTagUrl(router, tag)} key={tag} className={classnames('tag', { selected: selectedTags.includes(tag) })}>
+                  <Link href={buildTagUrl(router, tag)} rel='nofollow' key={tag} className={classnames('tag', { selected: selectedTags.includes(tag) })}>
                     {tag}
                   </Link>
                 ))}
