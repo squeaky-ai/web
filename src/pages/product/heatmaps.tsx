@@ -41,7 +41,7 @@ const ProductHeatmaps: SqueakyPage<NextPage> = () => (
             {
               icon: 'vidicon-line',
               title: 'Discover what\'s important',
-              body: 'Clickmaps let you see which elements are being clicked on each page of your site, allowing you to pinpoint the content and interface elements that matter most.',
+              body: 'Click and mouse maps let you see which elements are being clicked or hovered on each page of your site, allowing you to pinpoint the content and interface elements that matter most.',
               image: <Screenshot screen='heatmaps-1' width={738} height={525} />,
               shadowless: true,
             },
