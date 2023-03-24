@@ -12,6 +12,12 @@
         text-align: center;
       }
 
+      .expanding-details {
+        a {
+          color: var(--peach-500);
+        }
+      }
+
       @include breakpoint-md {
         padding: 6rem 3rem;
 

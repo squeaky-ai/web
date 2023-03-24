@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
@@ -59,7 +60,7 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
             {
               icon: 'ghost-line',
               title: 'Put privacy first',
-              body: 'We don\'t use cookies or IP address tracking, and we provide tools that help you avoid collecting any personal data on your users.',
+              body: <>We don&apos;t use cookies or IP address tracking, and we provide tools like our <Link href='/blog/privacy/a-magic-erasure-that-protects-your-visitors-privacy'>Magic Erasure</Link> that help you avoid collecting any personal data on your users.</>,
               image: <Screen screen='privacy-3' width={616} height={391} />,
               shadowless: true
             }
