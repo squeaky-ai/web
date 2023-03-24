@@ -27,9 +27,21 @@
             color: var(--gray-blue-200);
           }
 
+          a {
+            color: var(--yellow-500);
+          }
+
           .button {
             .icon {
               color: var(--gray-blue-50);
+
+              &:first-of-type {
+                color: var(--yellow-500);
+              }
+            }
+
+            span {
+              color: var(--white);
             }
           }
         }

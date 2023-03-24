@@ -98,9 +98,6 @@ export const Footer: FC = () => (
           <Link href='/about-us'>
             About us
           </Link>
-          <Link href='https://www.notion.so/Careers-df031f3f9ede4d85a289f0e68997cc1a' target='_blank' rel='noreferrer'>
-            Careers<span className='new'>NEW</span>
-          </Link>
           <Link href='/press-kit'>
             Press kit
           </Link>
