@@ -28,12 +28,22 @@
       }
 
       .carousel {
+        .controls {
+          .button {
+            border-color: var(--peach-200);
+
+            .icon {
+              color: var(--mauve-700);
+            }
+          }
+        }
+  
         .indicator {
           .button {
-            background: var(--mauve-400);
+            background: var(--peach-200);
   
             &.active {
-              background: var(--peach-200);
+              background: var(--mauve-700);
             }
           }
         }

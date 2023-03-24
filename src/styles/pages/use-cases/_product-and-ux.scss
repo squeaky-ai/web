@@ -20,6 +20,16 @@
       }
 
       .carousel {
+        .controls {
+          .button {
+            border-color: var(--mauve-400);
+
+            .icon {
+              color: var(--peach-200);
+            }
+          }
+        }
+
         .indicator {
           .button {
             background: var(--mauve-400);

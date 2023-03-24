@@ -2,7 +2,8 @@ import React from 'react';
 import type { FC } from 'react';
 import classnames from 'classnames';
 import { Button } from 'components/button';
-import { range, debounce } from 'lib/utils';
+import { Icon } from 'components/icon';
+import { range } from 'lib/utils';
 
 interface Props {
   children: React.ReactNode;
@@ -14,66 +15,29 @@ interface State {
 }
 
 export class Carousel extends React.Component<Props, State> {
-  private timer: NodeJS.Timeout;
-  private initialSwipeX: number;
-  private items: React.ReactNode;
-
   public constructor(props: Props) {
     super(props);
 
     this.state = { index: 0 };
-
-    const kids = React.Children.toArray(this.props.children);
-    // Duplicate the first one and add it to the end so that we
-    // can transition to it, and fake an infinite scroll
-    const firstBorn = { ...(kids[0] as any), key: `0.${this.count + 1}` };
-    this.items = [...kids, firstBorn];
   }
-
-  public componentDidMount(): void {
-    this.start();
-  }
-
-  public componentWillUnmount(): void {
-    clearTimeout(this.timer);
-    this.timer = null;
-  }
-
-  private start = (interval = 5000) => {
-    clearTimeout(this.timer);
-
-    this.timer = setTimeout(() => {
-      const restart = this.state.index === this.count;
-
-      this.setState({ index: restart ? 0 : this.state.index + 1 });
-
-      // Skip the fake step
-      this.start(restart ? 0 : 5000);
-    }, interval);
-  };
-
-  private onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    this.initialSwipeX = event.touches[0].clientX;
-  };
 
   private onChange = (index: number) => {
     this.setState({ index });
-    this.start();
   };
 
-  private onTouchMove = debounce((event: React.TouchEvent<HTMLDivElement>) => {
-    if (this.initialSwipeX === null) {
-      return;
-    }
+  private onNext = () => {
+    const index = this.state.index === this.count -1
+      ? 0
+      : this.state.index + 1;
+    this.setState({ index });
+  };
 
-    const currentSwipeX = event.touches[0].clientX;
-    const diffX = this.initialSwipeX - currentSwipeX;
-    const index = diffX > 0 ? this.state.index + 1 : this.state.index - 1;
-
-    this.onChange(index);
-
-    this.initialSwipeX = null;
-  }, 100)
+  private onPrevious = () => {
+    const index = this.state.index === 0
+      ? this.count - 1
+      : this.state.index - 1;
+    this.setState({ index });
+  };
 
   private get count() {
     return React.Children.count(this.props.children);
@@ -81,27 +45,27 @@ export class Carousel extends React.Component<Props, State> {
  
   public render(): JSX.Element {
     return (
-      <div className='carousel' onTouchStart={this.onTouchStart} onTouchMove={this.onTouchMove}>
-        <div 
-          className='slide'
-          style={{ 
-            transform: `translateX(-${this.state.index * 100}%)`,
-            transition: this.state.index === 0 ? 'none' : 'transform .5s cubic-bezier(.46, .03, .52, .96)',
-          }}
-        >
-          {this.items}
+      <div className='carousel'>
+        <div className='slide' style={{ transform: `translateX(-${this.state.index * 100}%)` }}>
+          {this.props.children}
         </div>
-        <div className='indicator'>
-          {range(this.count).map(i => (
-            <Button 
-              key={i}
-              onClick={() => this.onChange(i)} 
-              // If the index is >= the count then we're in the fake first position 
-              // which is actually the nth+1 position (for the inifite scrolling)
-              className={classnames({ active: i === (this.state.index >= this.count ? 0 : this.state.index) })}
-              aria-label={`Carousel position ${i}`}
-            />
-          ))}
+        <div className='controls'>
+          <Button className='arrow back' onClick={this.onPrevious}>
+            <Icon name='arrow-left-line' />
+          </Button>
+          <div className='indicator'>
+            {range(this.count).map(i => (
+              <Button
+                key={i}
+                onClick={() => this.onChange(i)}
+                className={classnames({ active: i === this.state.index })}
+                aria-label={`Carousel position ${i}`}
+              />
+            ))}
+          </div>
+          <Button className='arrow forward' onClick={this.onNext}>
+            <Icon name='arrow-right-line' />
+          </Button>
         </div>
       </div>
     );

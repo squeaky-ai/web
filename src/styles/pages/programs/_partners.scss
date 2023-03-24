@@ -63,6 +63,16 @@
       }
 
       .carousel {
+        .controls {
+          .button {
+            border-color: var(--white);
+
+            .icon {
+              color: var(--mauve-700);
+            }
+          }
+        }
+
         .indicator {
           .button {
             background: var(--white);
