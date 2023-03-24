@@ -49,7 +49,8 @@ const ProductAnalytics: SqueakyPage<NextPage> = () => (
               icon: 'group-line',
               title: 'Know your audience',
               body: 'Identify where your visitors are coming from, what they\'re interested in, and the context of their visit.',
-              image: <Screenshot screen='analytics-2' width={738} height={525} />
+              image: <Screenshot screen='analytics-2' width={738} height={525} />,
+              shadowless: true,
             },
             {
               icon: 'zoom-in-line',
