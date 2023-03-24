@@ -370,6 +370,16 @@ const Features: SqueakyPage<NextPage> = () => {
               body='Add custom tracking for any user activity you can think of e.g. every time a user updated their shopping cart, or tried out a new feature. Custom events are incredibly powerful, though they&apos;re one of the few areas of Squeaky that require technical expertise.'
             />
             <FeaturesGridItem
+              icon='code-s-slash-line'
+              title='API-based tracking'
+              body={<span>With our API-based event tracking you can send any sever-side or third-party event data directly to Squeaky for monitoring and comparison, read more <Link href='/blog/product-updates/new-feature-event-tracking-via-api'>here</Link>.</span>}
+            />
+            <FeaturesGridItem
+              icon='error-warning-line'
+              title='Javascript error tracking'
+              body='Automatically detect an javascript errors during your visitors sessions, so that you can quickly discover issues with your site and ensure a flawless user experience.'
+            />
+            <FeaturesGridItem
               icon='file-copy-line'
               title='Event groups'
               body='Groups allow you to bundle particular events that are related to one another, making it easy to quickly compare an array of similar events with just a few clicks.'

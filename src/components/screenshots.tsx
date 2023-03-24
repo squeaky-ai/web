@@ -10,6 +10,7 @@ import dashboard1 from '../../public/screenshots/dashboard-1.webp';
 import events1 from '../../public/screenshots/events-1.webp';
 import events2 from '../../public/screenshots/events-2.webp';
 import events3 from '../../public/screenshots/events-3.webp';
+import events4 from '../../public/screenshots/events-4.webp';
 import heatmaps1 from '../../public/screenshots/heatmaps-1.webp';
 import heatmaps2 from '../../public/screenshots/heatmaps-2.webp';
 import heatmaps3 from '../../public/screenshots/heatmaps-3.webp';
@@ -36,6 +37,7 @@ type ScreenshotType =
   'events-1' |
   'events-2' |
   'events-3' |
+  'events-4' |
   'heatmaps-1' |
   'heatmaps-2' |
   'heatmaps-3' |
@@ -75,6 +77,8 @@ const getScreenSrc = (screen: ScreenshotType) => {
       return events2;
     case 'events-3':
       return events3;
+    case 'events-4':
+      return events4;
     case 'heatmaps-1':
       return heatmaps1;
     case 'heatmaps-2':

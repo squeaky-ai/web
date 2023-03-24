@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { ProductHeader } from 'components/product-header';
 import { Container } from 'components/container';
@@ -45,11 +46,17 @@ const ProductEvents: SqueakyPage<NextPage> = () => (
               image: <Screenshot screen='events-1' width={738} height={525} />
             },
             {
+              icon: 'database-2-line',
+              title: 'Capture everything ',
+              body: 'With Squeaky you can easily track all visitor activity on your site, and you can even send offsite activity to Squeaky via API, allowing you to capture and monitor data throughout your business.',
+              image: <Screenshot screen='events-4' width={738} height={525} />,
+              shadowless: true,
+            },
+            {
               icon: 'magic-line',
               title: 'Automatic tracking',
-              body: 'Once your tracking code is installed there\'s no configuration required for all key events, such as page views, text or button clicks, and javascript errors. So you can retrospectively investigate any issue with no configuration required',
+              body: 'Once your tracking code is installed there\'s no configuration required for key events such as page views, text or button clicks, UTM parameters, and javascript errors. So you can retrospectively investigate any issue with no configuration required.',
               image: <Screenshot screen='events-2' width={738} height={525}  />,
-              shadowless: true
             },
             {
               icon: 'error-warning-line',
@@ -86,6 +93,16 @@ const ProductEvents: SqueakyPage<NextPage> = () => (
             icon='settings-3-line'
             title='Custom events'
             body='Add custom tracking for any user activity you can think of e.g. every time a user updated their shopping cart, or tried out a new feature. Custom events are incredibly powerful, though they&apos;re one of the few areas of Squeaky that require technical expertise.'
+          />
+          <FeaturesGridItem
+            icon='code-s-slash-line'
+            title='API-based tracking'
+            body={<span>With our API-based event tracking you can send any sever-side or third-party event data directly to Squeaky for monitoring and comparison, read more <Link href='/blog/product-updates/new-feature-event-tracking-via-api'>here</Link>.</span>}
+          />
+          <FeaturesGridItem
+            icon='error-warning-line'
+            title='Javascript error tracking'
+            body='Automatically detect an javascript errors during your visitors sessions, so that you can quickly discover issues with your site and ensure a flawless user experience.'
           />
           <FeaturesGridItem
             icon='file-copy-line'
