@@ -502,6 +502,16 @@ const Features: SqueakyPage<NextPage> = () => {
               title='Filter by date'
               body='Viewing your data over the right time period is vital, so Squeakily lets you quickly apply pre-defined date ranges.'
             />
+            <FeaturesGridItem
+              icon='pushpin-line'
+              title='Pinning'
+              body='Narrow your focus by using pins to exclude pages from the journey that are not relevant to your analysis.'
+            />
+            <FeaturesGridItem
+              icon='global-line'
+              title='Traffic sources'
+              body='By using traffic source data you can refine the journeys you&apos;re evaluating based on where your visitors are coming from.'
+            />
           </FeaturesGrid>
         </Container>
       </section>
