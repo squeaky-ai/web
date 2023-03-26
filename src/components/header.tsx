@@ -22,6 +22,7 @@ type ThemeOverrides = Record<string, 'blue' | 'mauve' | 'mauve-dark' | 'white'>;
 
 const themeOverrides: ThemeOverrides = {
   '/use-cases/marketing-and-conversion': 'blue',
+  '/use-cases/developers': 'blue',
   '/use-cases/customer-success': 'mauve',
   '/about-us': 'mauve',
   '/blog/[[...category]]': 'mauve',

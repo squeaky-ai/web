@@ -343,7 +343,7 @@
       align-items: flex-start;
       display: grid;
       grid-gap: 3rem;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
 
       .item {
@@ -405,7 +405,7 @@
           background-color: var(--mauve-500);
           background-image: url('../../../public/pricing/customer.svg');
           background-position: top left;
-          border: 2px solid var(--mauve-700);
+          border: 2px solid var(--mauve-700);        
 
           h5 {
             color: var(--white);
@@ -413,6 +413,21 @@
 
           p {
             color: var(--peach-50);
+          }
+        }
+
+        &.developer {
+          background-color: var(--yellow-300);
+          background-image: url('../../../public/pricing/developer.svg');
+          background-position: top left;
+          border: 2px solid var(--yellow-500);
+
+          h5 {
+            color: var(--gray-blue-800);
+          }
+
+          p {
+            color: var(--gray-blue-700);
           }
         }
       }

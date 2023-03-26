@@ -64,6 +64,9 @@ export const HeaderMenuSmall: FC<Props> = ({ user, open, subMenuOpen, setOpen, h
             <Link href='/use-cases/customer-success'>
               Customer Success
             </Link>
+            <Link href='/use-cases/developers'>
+              Developers
+            </Link>
           </HeaderMenuSmallDrawer>
           <div className='header-drawer-item'>
             <Link href='/privacy' className='button'>

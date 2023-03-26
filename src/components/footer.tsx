@@ -41,6 +41,9 @@ export const Footer: FC = () => (
           <Link href='/use-cases/customer-success'>
             Customer Success
           </Link>
+          <Link href='/use-cases/developers'>
+            Developers
+          </Link>
         </FooterLinkGroup>
 
         <FooterLinkGroup title='Product'>

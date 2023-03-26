@@ -162,6 +162,12 @@ export const pages = (args: string[]): PageMeta[] => [
     description: 'See how Squeaky helps product and UX teams to improve their customer experience, using session recordings, analytics, heatmaps, and direct user feedback.',
     index: true,
   },
+  {
+    href: '/use-cases/developers',
+    title: 'Squeaky | Developers',
+    description: 'Learn how Squeaky helps developers to build great products and improve their customer experience, using comprehensive analytics and event tracking.',
+    index: true,
+  },
 ];
 
 export const getPageData = (
