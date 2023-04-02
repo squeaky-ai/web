@@ -56,7 +56,7 @@ const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
               </span>
               <span className='divider' />
               <span>
-                Last updated: <b>{toHumanDate(post.updatedAt)}</b>
+                Last updated: <b>{toHumanDate(post.updatedAt.iso8601)}</b>
               </span>
             </p>
 

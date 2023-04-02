@@ -21,13 +21,17 @@ const QUERY = gql`
       lastName
       email
       superuser
-      createdAt
+      createdAt {
+        iso8601
+      }
     }
     blogPosts {
       posts {
         slug
         title
-        createdAt
+        createdAt {
+          iso8601
+        }
       }
     }
   }
@@ -39,7 +43,7 @@ const getLatestBlogPost = (data: Response): BlogPost | null => {
 
     const posts = data.blogPosts.posts;
 
-    return [...posts].sort((a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf())[0];
+    return [...posts].sort((a, b) => new Date(b.createdAt.iso8601).valueOf() - new Date(a.createdAt.iso8601).valueOf())[0];
   } catch(error) {
     console.error(error);
     return null;

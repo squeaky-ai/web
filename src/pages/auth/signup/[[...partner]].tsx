@@ -146,7 +146,7 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
                               'name': '',
                               'email': user.email,
                               'superuser': 'No',
-                              'created': new Date(user.createdAt).toLocaleDateString(),
+                              'created': new Date(user.createdAt.iso8601).toLocaleDateString(),
                             });
                           }
 

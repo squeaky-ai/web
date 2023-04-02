@@ -58,7 +58,7 @@ export const Page: FC<Props> = ({ children, partner }) => {
       'name': `${firstName} ${lastName}`,
       'email': email,
       'superuser': superuser ? 'Yes' : 'No',
-      'created': new Date(createdAt).toLocaleDateString(),
+      'created': new Date(createdAt.iso8601).toLocaleDateString(),
     });
   }, [user]);
 
