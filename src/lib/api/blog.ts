@@ -25,8 +25,12 @@ export const getBlogPosts = async <T>(cookie: string, category: string | null, t
             metaImage
             metaDescription
             slug
-            createdAt
-            updatedAt
+            createdAt {
+              iso8601
+            }
+            updatedAt {
+              iso8601
+            }
           }
         }
       }
@@ -65,8 +69,12 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
           body
           scripts
           coveringEnabled
-          createdAt
-          updatedAt
+          createdAt {
+            iso8601
+          }
+          updatedAt {
+            iso8601
+          }
         }
         blogPosts {
           posts {
@@ -74,7 +82,9 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
             slug
             title
             metaImage
-            createdAt
+            createdAt {
+              iso8601
+            }
           }
         }
       }

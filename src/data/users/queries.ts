@@ -9,7 +9,9 @@ export const USER_QUERY = gql`
       fullName
       email
       superuser
-      createdAt
+      createdAt {
+        iso8601
+      }
     }
   }
 `;
