@@ -191,7 +191,7 @@ const UseCasesDevelopers: SqueakyPage<NextPage> = () => (
     </section>
 
     <section className='insight'>
-      <Cta type='cross-mauve' title={<h2>GGet started in minutes, your team will thank you</h2>} />
+      <Cta type='cross-mauve' title={<h2>Get started in minutes, your team will thank you</h2>} />
     </section>
   </>
 );
