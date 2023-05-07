@@ -31,10 +31,9 @@ const CmsAnalyticsShopify: SqueakyPage<NextPage> = () => {
   return (
     <>
       <CmsAnalyticsHeader
-        subtitle='Shopify'
         title='Powerful, privacy-first analytics for Shopify'
         body='With Squeaky&apos;s comprehensive analytics suite you&apos;ll quickly surface the insights you need to help grow your business and delight your customers.'
-        image={null}
+        image='shopify'
       />
 
       <section className='glance'>
@@ -251,7 +250,12 @@ const CmsAnalyticsShopify: SqueakyPage<NextPage> = () => {
       </section>
 
       <section className='get-started'>
-        <Cta type='squiggle' title={<h3>Learn more about analytics for your business</h3>} />
+        <Cta
+          type='squiggle'
+          title={<h3>Learn more about analytics for your business</h3>}
+          buttonText='Book Demo' 
+          buttonLink='/book-demo'
+        />
       </section>
     </>
   );

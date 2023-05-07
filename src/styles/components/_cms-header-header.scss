@@ -6,7 +6,7 @@
     background-image: url('../../../public/backgrounds/egg-mauve.svg');
     background-position: top right;
     background-repeat: no-repeat;
-    background-size: 697px 504px;
+    background-size: 553px 358px;
     margin: 0 auto;
     max-width: 94rem;
   }
@@ -20,7 +20,6 @@
   .info {
     flex: 1;
     margin: 0 3rem 0 0;
-    width: calc(50% - 1.5rem);
   }
 
   .subtitle {
@@ -30,9 +29,8 @@
   .image {
     align-items: center;
     display: flex;
-    flex: 1;
     justify-content: center;
-    width: calc(50% - 1.5rem);
+    width: 25rem;
 
     img {
       height: auto;
@@ -43,12 +41,11 @@
   h1 {
     color: var(--white);
     margin: 0 0 2rem 0;
-    max-width: 50rem;
   }
 
   p {
     color: var(--peach-100);
-    max-width: 50rem;
+    max-width: 47.5rem;
   }
 
   ul {
