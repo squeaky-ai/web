@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CmsAnalyticsHeader } from 'components/cms-analytics-header';
 import { Container } from 'components/container';
 import { ExpandingDetails } from 'components/expanding-details';
@@ -10,8 +11,11 @@ import { Accordion } from 'components/accordion';
 import { Illustration } from 'components/illustration';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Cta } from 'components/cta';
+import { Icon } from 'components/icon';
 import { dudaAppStoreLink } from 'data/sites/constants';
 import type { SqueakyPage } from 'types/page';
+
+import dudaPressRelease from '../../../public/cms-analytics/duda-press-release.png';
 
 const CmsAnalyticsDuda: SqueakyPage<NextPage> = () => (
   <>
@@ -23,6 +27,13 @@ const CmsAnalyticsDuda: SqueakyPage<NextPage> = () => (
           <p>Delight your clients with powerful, privacy-friendly analytics that will help them uncover insights, improve their sites, and grow their businesses.</p>
           <Link href={dudaAppStoreLink} className='button primary' target='_blank' rel='noreferrer'>
             Vist The Duda App Store
+          </Link>
+          <Link className='duda-press-release'href='/blog/press-release/squeaky-announces-a-privacy-friendly-analytics-integration-for-dudas-1-million-websites'>
+            <Image src={dudaPressRelease} alt='Duda press release' height={160} width={240} />
+            <div className='details'>
+              <p>Press release <Icon name='arrow-right-line' /></p>
+              <p>Squeaky Announces A Privacy-Friendly Analytics Integration For Duda&apos;s 1+ Million Websites</p>
+            </div>
           </Link>
         </>
       }

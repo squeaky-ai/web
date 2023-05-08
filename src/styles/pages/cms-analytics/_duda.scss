@@ -1,4 +1,53 @@
 .page.duda {
+  .duda-press-release {
+    align-items: center;
+    background: var(--mauve-900);
+    border: 2px solid var(--mauve-500);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    margin: 3rem 0 0 0;
+    overflow: hidden;
+    text-decoration: none;
+
+    img {
+      display: block;
+    }
+
+    .details {
+      padding: 1.5rem;
+    }
+
+    p {
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4rem;
+      margin: 0;
+
+      &:first-of-type {
+        align-items: center;
+        color: var(--peach-500);
+        display: flex;
+        margin: 0 0 1rem 0;
+
+        .icon {
+          margin: 0 0 0 .5rem;
+        }
+      }
+    }
+
+    &:hover {
+      background: var(--mauve-800);
+    }
+
+    @include breakpoint-sm {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
   section {
     &.glance {
       background-color: var(--mauve-700);
