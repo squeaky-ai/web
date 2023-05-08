@@ -7,3 +7,5 @@ export const guideLinks = {
   magento: 'https://squeaky.notion.site/Magento-49302bba0c7a48d3aef93e38e8e79643',
   drupal: 'https://squeaky.notion.site/Drupal-401bce8e455246019e9e429641979c53',
 };
+
+export const dudaAppStoreLink = 'https://apps.duda.co/';

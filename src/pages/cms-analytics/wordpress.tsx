@@ -16,9 +16,10 @@ import { Illustration } from 'components/illustration';
 import { ThreeTextGrid, ThreeTextGridItem } from 'components/three-text-grid';
 import { Cta } from 'components/cta';
 import { Interval, getUsefulCurrency } from 'lib/currency';
-import { guideLinks } from 'data/sites/constants';
 import type { SqueakyPage } from 'types/page';
 import type { Currency } from 'types/graphql';
+import { GetStarted } from 'components/get-started';
+import { Icon } from 'components/icon';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -32,8 +33,17 @@ const CmsAnalyticsWordpress: SqueakyPage<NextPage> = () => {
     <>
       <CmsAnalyticsHeader
         title='Powerful, privacy-first analytics for Wordpress'
-        body='With Squeaky&apos;s comprehensive analytics suite you&apos;ll quickly surface the insights you need to help grow your business and delight your customers.'
         image='wordpress'
+        body={
+          <>
+            <p>With Squeaky&apos;s comprehensive analytics suite you&apos;ll quickly surface the insights you need to help grow your business and delight your customers.</p>
+            <GetStarted />
+            <p className='check'>
+              <Icon name='check-line' />
+              No credit card required
+            </p>
+          </>
+        }
       />
 
       <section className='glance'>
@@ -91,10 +101,7 @@ const CmsAnalyticsWordpress: SqueakyPage<NextPage> = () => {
       </section>
 
       <section className='easy'>
-        <CmsUpAndRunning
-          cmsName='Wordpress'
-          link={guideLinks.wordpress}
-        />
+        <CmsUpAndRunning cms='wordpress' />
       </section>
 
       <section className='plan'>

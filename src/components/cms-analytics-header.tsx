@@ -1,9 +1,7 @@
 import React from 'react';
 import type { FC } from 'react';
 import Image from 'next/image';
-import { Icon } from 'components/icon';
 import { Container } from 'components/container';
-import { GetStarted } from 'components/get-started';
 
 import duda from '../../public/cms-analytics/duda.svg';
 import shopify from '../../public/cms-analytics/shopify.svg';
@@ -13,7 +11,7 @@ import wordpress from '../../public/cms-analytics/wordpress.svg';
 
 interface Props {
   title: string;
-  body: string;
+  body: React.ReactNode;
   image: 'duda' | 'shopify' | 'webflow' | 'wix' | 'wordpress';
 }
 
@@ -38,12 +36,7 @@ export const CmsAnalyticsHeader: FC<Props> = ({ title, body, image }) => (
       <Container className='lg centered'>
         <div className='info'>
           <h1>{title}</h1>
-          <p>{body}</p>
-          <GetStarted />
-          <p className='check'>
-            <Icon name='check-line' />
-            No credit card required
-          </p>
+          {body}
         </div>
         <div className='image'>
           <Image src={imageSrc(image)} width={388} height={304} alt={`Illustration of ${image}`} />
