@@ -26,7 +26,7 @@ const CmsAnalyticsDuda: SqueakyPage<NextPage> = () => (
         <>
           <p>Delight your clients with powerful, privacy-friendly analytics that will help them uncover insights, improve their sites, and grow their businesses.</p>
           <Link href={dudaAppStoreLink} className='button primary' target='_blank' rel='noreferrer'>
-            Vist The Duda App Store
+            Visit The Duda App Store
           </Link>
           <Link className='duda-press-release'href='/blog/press-release/squeaky-announces-a-privacy-friendly-analytics-integration-for-dudas-1-million-websites'>
             <Image src={dudaPressRelease} alt='Duda press release' height={160} width={240} />
