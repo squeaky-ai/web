@@ -95,6 +95,24 @@ export const Footer: FC = () => (
             Developer docs
           </Link>
         </FooterLinkGroup>
+
+        <FooterLinkGroup title='CMS Analytics'>
+          <Link href='/cms-analytics/duda'>
+            Duda
+          </Link>
+          <Link href='/cms-analytics/wordpress'>
+            Wordpress
+          </Link>
+          <Link href='/cms-analytics/webflow'>
+            Webflow
+          </Link>
+          <Link href='/cms-analytics/shopify'>
+            Shopify
+          </Link>
+          <Link href='/cms-analytics/wix'>
+            Wix
+          </Link>
+        </FooterLinkGroup>
       </div>
       <div className='items col-4'>
         <FooterLinkGroup title='Company'>

@@ -12,6 +12,7 @@
 @import './components/card';
 @import './components/carousel';
 @import './components/checkbox';
+@import './components/cms-header-header';
 @import './components/code';
 @import './components/contact-form';
 @import './components/container';
@@ -68,6 +69,11 @@
 @import './pages/auth/signup';
 @import './pages/blog/[category]/[post]';
 @import './pages/blog/index';
+@import './pages/cms-analytics/duda';
+@import './pages/cms-analytics/shopify';
+@import './pages/cms-analytics/webflow';
+@import './pages/cms-analytics/wix';
+@import './pages/cms-analytics/wordpress';
 @import './pages/feedback/consent';
 @import './pages/feedback/nps';
 @import './pages/feedback/sentiment';

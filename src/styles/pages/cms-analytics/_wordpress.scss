@@ -1,0 +1,234 @@
+.page.wordpress {
+  section {
+    &.glance {
+      background-color: var(--mauve-700);
+      background-image: url('../../../../public/backgrounds/cms-analytics-1.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 8rem 4rem;
+
+      h2 {
+        color: var(--peach-50);
+        margin: 0 0 2rem 0;
+        text-align: center;
+      }
+
+      .subheading {
+        color: var(--peach-100);
+        margin: 0 auto 6rem auto;
+        max-width: 34rem;
+        text-align: center;
+      }
+
+      .expanding-details {
+        a {
+          color: var(--peach-500);
+        }
+
+        &:first-of-type {
+          margin-bottom: 5rem;
+        }
+      }
+
+      .item {
+        &.show {
+          background: var(--mauve-800);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 6rem 3rem;
+
+        h2 {
+          margin: 0 0 6rem 0;
+        }
+      }
+
+      @include breakpoint-sm {
+        background-image: none;
+        padding: 4rem 2rem;
+
+        h2 {
+          margin: 0 0 4rem 0;
+        }
+      }
+    }
+
+    &.easy {
+      background-color: var(--mauve-800);
+      background-image: url('../../../../public/backgrounds/cms-analytics-2.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 12rem 5rem;
+
+      .step-item {
+        a {
+          color: var(--peach-500);
+        }
+
+        &:first-of-type {
+          background-image: linear-gradient(90deg, var(--mauve-800) 50%, rgba(116, 42, 64, 0) 50%);
+        }
+
+        &:last-of-type {
+          background-image: linear-gradient(90deg, rgba(116, 42, 64, 0) 50%, var(--mauve-800) 50%);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+      }
+    }
+
+    &.plan {
+      background-color: var(--peach-200);
+      background-image: url('../../../../public/backgrounds/cms-analytics-3.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 12rem 5rem;
+
+      h2 {
+        color: var(--gray-blue-800);
+        margin: 0 0 2rem 0;
+        text-align: center;
+      }
+
+      .subheading {
+        color: var(--gray-blue-700);
+        margin: 0 auto 4rem auto;
+        max-width: 34rem;
+        text-align: center;
+      }
+
+      .options {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 5rem auto;
+
+        @include breakpoint-sm {
+          flex-direction: column;
+
+          .intervals {
+            margin: 1rem 0 0 0;
+          }
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem;
+      }
+    }
+
+    &.faq {
+      background-color: var(--peach-100);
+      padding: 4rem 5rem 6rem 5rem;
+
+      h2 {
+        margin: 0 0 3rem 0;
+        text-align: center;
+      }
+
+      .accordion {
+        background-color: var(--peach-200);
+      }
+
+      @include breakpoint-md {
+        padding: 4rem 3rem 6rem 3rem;
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 6rem 2rem;
+      }
+    }
+
+    &.understanding {
+      background-color: var(--mauve-800);
+      background-image: url('../../../../public/backgrounds/cms-analytics-4.svg');
+      background-position: bottom left;
+      background-repeat: repeat-x;
+      padding: 6rem 5rem 10rem 5rem;
+
+      .understanding-grid {
+        display: grid;
+        grid-gap: 3rem;
+        grid-template-areas: 'title image'
+                             'content image';
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 0 0 4rem 0;
+
+        h2 {
+          color: var(--white);
+          grid-area: title;
+          margin: 0 0 3rem 0;
+        }
+
+        p {
+          color: var(--peach-200);
+          grid-area: content;
+          margin: 0;
+        }
+
+        .image {
+          grid-area: image;
+
+          img {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+
+      .three-text-grid {
+        .button.link {
+          color: var(--peach-500);
+        }
+      }
+
+      @include breakpoint-md {
+        padding: 6rem 3rem 10rem 3rem;
+
+        .understanding-grid {
+          grid-template-areas: 'title image'
+                               'content content';
+        }
+      }
+
+      @include breakpoint-sm {
+        padding: 4rem 2rem 8rem 2rem;
+
+        .understanding-grid {
+          grid-template-areas: 'image'
+                              'title'
+                              'content';
+          grid-template-columns: 1fr;
+
+          h2 {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &.get-started {
+      background-color: var(--gray-blue-700);
+      padding: 6rem 6rem 0 6rem;
+
+      h3 {
+        max-width: 100%;
+      }
+
+      @include breakpoint-md {
+        display: none;
+      }
+    }
+  }
+}

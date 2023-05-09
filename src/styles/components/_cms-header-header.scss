@@ -1,0 +1,111 @@
+.cms-analytics-header {
+  background-color: var(--mauve-800);
+  padding: 8rem 0;
+
+  .egg {
+    background-image: url('../../../public/backgrounds/egg-mauve.svg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 553px 358px;
+    margin: 0 auto;
+    max-width: 94rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .info {
+    flex: 1;
+    margin: 0 3rem 0 0;
+  }
+
+  .subtitle {
+    margin: 0 0 1rem 0;
+  }
+
+  .image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 25rem;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  h1 {
+    color: var(--white);
+    margin: 0 0 2rem 0;
+  }
+
+  p {
+    color: var(--peach-100);
+    max-width: 47.5rem;
+  }
+
+  ul {
+    margin: 1.5rem 0 2rem 0;
+    padding: 0 0 0 1.5rem;
+
+    li {
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  .check {
+    align-items: center;
+    color: var(--peach-100);
+    display: flex;
+
+    .icon {
+      color: var(--yellow-500);
+      margin: 0 .25rem 0 0;
+    }
+  }
+
+  @include breakpoint-lg {
+    .container {
+      padding: 0 3rem;
+    }
+
+    .egg {
+      background-position: top right -100px;
+    }
+  }
+
+  @include breakpoint-md {
+    padding: 6rem 0;
+
+    .container {
+      padding: 0 3rem;
+    }
+  }
+
+  @include breakpoint-sm {
+    padding: 4rem 0;
+
+    .container {
+      flex-direction: column;
+      padding: 0 2rem;
+    }
+
+    .egg {
+      background-position: left bottom;
+      background-size: 100%;
+    }
+
+    .info {
+      margin: 0 0 5rem 0;
+      width: 100%;
+    }
+  
+    .image {
+      width: 100%;
+    }
+  }
+}

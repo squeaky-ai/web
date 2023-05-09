@@ -29,6 +29,11 @@ const themeOverrides: ThemeOverrides = {
   '/blog/[category]/[post]': 'white',
   '/programs/partners': 'mauve-dark',
   '/programs/startups': 'mauve-dark',
+  '/cms-analytics/duda': 'mauve-dark',
+  '/cms-analytics/shopify': 'mauve-dark',
+  '/cms-analytics/webflow': 'mauve-dark',
+  '/cms-analytics/wix': 'mauve-dark',
+  '/cms-analytics/wordpress': 'mauve-dark',
 };
 
 export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
@@ -87,7 +92,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
 
   return (
     <>
-       <div className={classnames('header-strip', themeOverride)}>
+      <div className={classnames('header-strip', themeOverride)}>
         {!loading && (
           <Container className='lg centered'>
             {latestBlogPost && (

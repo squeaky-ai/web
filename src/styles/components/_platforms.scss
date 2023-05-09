@@ -19,15 +19,19 @@
   }
 
   .card {
+    align-items: center;
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     padding: 3rem 6rem;
 
     div {
       align-items: center;
       display: flex;
       justify-content: center;
+      height: 4rem;
+      width: 4rem;
 
       img {
         height: auto;
