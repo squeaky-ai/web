@@ -50,19 +50,19 @@ const CmsAnalyticsDuda: SqueakyPage<NextPage> = () => (
               icon: 'line-chart-line',
               title: 'Analytics',
               body: 'Turn your data into actionable insights to improve your user experience and service your customers best than ever.',
-              image: <Screenshot screen='analytics-1' width={738} height={525} />
+              image: <Screenshot screen='analytics-1' width={738} height={525} />,
             },
             {
               icon: 'vidicon-line',
               title: 'Session recording',
               body: 'It\'s never been easier to understand your users, thanks to our seamless session recording and playback.',
-              image: <Screenshot screen='session-1' width={738} height={525} />
+              image: <Screenshot screen='session-1' width={738} height={525} />,
             },
             {
               icon: 'fire-line',
               title: 'Heatmaps',
               body: 'Discover which content matters most to your visitors, and where your business could be performing better.',
-              image: <Screenshot screen='heatmaps-5' width={738} height={525} />
+              image: <Screenshot screen='heatmaps-5' width={738} height={525} />,
             },
           ]}
         />
@@ -74,19 +74,19 @@ const CmsAnalyticsDuda: SqueakyPage<NextPage> = () => (
               icon: 'flashlight-line',
               title: 'Event and error tracking',
               body: 'Monitor every element of your customer experience by tracking any action taking place on your site.',
-              image: <Screenshot screen='events-1' width={738} height={525} />
+              image: <Screenshot screen='events-1' width={738} height={525} />,
             },
             {
               icon: 'group-line',
               title: 'Feedback widgets',
               body: 'Learn from your customers by including NPS® and Sentiment surveys anywhere in your website or app.',
-              image: <Screenshot screen='nps-1' width={738} height={525} />
+              image: <Screenshot screen='nps-1' width={738} height={525} />,
             },
             {
               icon: 'zoom-in-line',
               title: 'Customer journey maps',
               body: 'Alongside site-wide analytics you can also analyse the performance of individual pages of your site, fine tuning your site for the best possible results.',
-              image: <Screenshot screen='journeys-1' width={738} height={525} />
+              image: <Screenshot screen='journeys-1' width={738} height={525} />,
             },
           ]}
         />
