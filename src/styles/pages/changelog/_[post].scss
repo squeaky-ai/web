@@ -1,0 +1,119 @@
+.page.changelog.post {
+  background: var(--white);
+
+  .changelog-header {
+    background-color: var(--gray-blue-700);
+    background-image: url('../../../../public/backgrounds/changelog-1.svg');
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    padding: 5rem 2rem 12rem 2rem;
+
+    @include breakpoint-sm {
+      background-image: none;
+      padding: 2rem 2rem 5rem 2rem;
+
+      h1 {
+        font-size: 38px;
+        line-height: 48px;
+      }
+    }
+
+    .container {
+      align-items: center;
+      display: flex;
+
+      .title {
+        flex: 1;
+        margin: 0 3rem 0 0;
+      }
+
+      @include breakpoint-sm {
+        flex-direction: column;
+
+        .title {
+          margin: 0;
+        }
+      }
+
+      .breadcrumbs {
+        a {
+          color: var(--white);
+        }
+      }
+
+      .divider {
+        background: var(--gray-blue-300);
+        display: inline-block;
+        height: 1.25rem;
+        margin: 0 1rem;
+        width: 1px;
+      }
+
+      .changelog-author {
+        background: var(--gray-200);
+        border-radius: var(--border-radius-o);
+        display: inline-block;
+        flex-shrink: 0;
+        height: 1.5rem;
+        margin: 0 .5rem 0 0;
+        overflow: hidden;
+        width: 1.5rem;
+      }
+
+      .meta {
+        align-items: center;
+        color: var(--white);
+        display: flex;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 3rem 0;
+        white-space: nowrap;
+
+        span {
+          align-items: center;
+          display: flex;
+        }
+
+        b {
+          margin-left: .25rem;
+        }
+
+        @include breakpoint-sm {
+          align-items: flex-start;
+          flex-direction: column;
+          margin: 0 0 2rem 0;
+          white-space: normal;
+
+          .divider {
+            display: none;
+
+            + span {
+              font-size: 13px;
+              line-height: 20px;
+              margin: 0 0 0 2rem;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      h1 {
+        color: var(--white);
+        margin: 2rem 0;
+      }
+
+      .tags {
+        .tag {
+          background: var(--white);
+          border: 1px solid var(--peach-500);
+          border-radius: var(--border-radius-sm);
+          color: var(--gray-blue-800);
+          font-size: 16px;
+          line-height: 32px;
+          padding: 0 .5rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

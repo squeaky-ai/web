@@ -51,7 +51,7 @@ const Changelog: SqueakyPage<GetPostsProps> = ({ changelog }) => (
 );
 
 Changelog.getMetaData = () => ({
-  title: 'The Squeaky Changelog',
+  title: 'Squeaky Changelog',
   description: 'Regular updates on changes and improvements to the Squeaky product and technology.',
   index: true,
 });

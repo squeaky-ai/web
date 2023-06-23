@@ -59,7 +59,6 @@ export const getChangelogPost = async <T>(cookie: string, slug: string): Promise
           metaDescription
           slug
           body
-          scripts
           createdAt {
             iso8601
           }

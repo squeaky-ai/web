@@ -8,6 +8,7 @@
 
 @import './components/accordion';
 @import './components/based-in-europe';
+@import './components/blog-body';
 @import './components/button';
 @import './components/card';
 @import './components/carousel';
@@ -67,6 +68,7 @@
 @import './pages/auth/reset';
 @import './pages/auth/login';
 @import './pages/auth/signup';
+@import './pages/changelog/[post]';
 @import './pages/changelog/index';
 @import './pages/blog/[category]/[post]';
 @import './pages/blog/index';

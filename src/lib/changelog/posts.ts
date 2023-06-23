@@ -34,7 +34,7 @@ export const getPost: GetServerSideProps = async (context) => {
 
   const changelog = await getChangelogPost<ChangelogPost | null>(
     headers.cookie,
-    context.query.post as string,
+    `/${context.query.post}`,
   );
 
   return {
