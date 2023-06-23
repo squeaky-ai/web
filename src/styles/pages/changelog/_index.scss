@@ -1,0 +1,82 @@
+.page.changelog {
+  background: var(--gray-blue-700);
+
+  .page-title {
+    background-color: var(--gray-blue-700);
+
+    h1 {
+      color: var(--white);
+    }
+
+    p {
+      color: var(--peach-100);
+    }
+  }
+
+  .no-results {
+    color: var(--white);
+    text-align: center;
+  }
+
+  .posts {
+    max-width: 36.5rem;
+  }
+
+  .changelog-entry {
+    color: var(--white);
+    margin: 0 0 1.5rem 0;
+    padding: 0 0 0 5rem;
+    position: relative;
+
+    a {
+      color: var(--white);
+      font-weight: var(--font-weight-bold);
+    }
+
+    p {
+      color: var(--gray-blue-200);
+      margin: 0;
+    }
+
+    .dot {
+      background: var(--yellow-500);
+      border: 1.25rem solid var(--gray-blue-500);
+      border-radius: var(--border-radius-o);
+      height: 3rem;
+      left: 0;
+      position: absolute;
+      top: -.45rem;
+      width: 3rem;
+      z-index: 0;
+    }
+
+    .dashes {
+      border-left: 2px dashed var(--gray-blue-300);
+      height: 4rem;
+      display: block;
+      left: 1.5rem;
+      position: absolute;
+      top: 1.5rem;
+      width: 2px;
+    }
+
+    &:last-of-type {
+      .dashes {
+        display: none;
+      }
+    }
+  }
+
+  .get-started {
+    background-color: var(--gray-blue-700);
+    padding: 6rem 6rem 0 6rem;
+
+    h3 {
+      max-width: 34rem;
+    }
+
+    @include breakpoint-md {
+      display: none;
+    }
+  }
+}
