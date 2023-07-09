@@ -71,9 +71,6 @@ export const Footer: FC = () => (
           <Link href='/pricing'>
             Pricing
           </Link>
-          <Link href='/changelog'>
-            Changelog
-          </Link>
         </FooterLinkGroup>
       </div>
 
@@ -96,6 +93,12 @@ export const Footer: FC = () => (
           </Link>
           <Link href='/developers'>
             Developer docs
+          </Link>
+          <Link href='/changelog'>
+            Changelog
+          </Link>
+          <Link target='_blank' rel='noreferrer' href='https://squeaky.notion.site/24456bd41d144bb0a8c411d129c3f92d?v=b3ec067f9f2c4ff891e46757aad25c68&pvs=4'>
+            Roadmap
           </Link>
         </FooterLinkGroup>
 
