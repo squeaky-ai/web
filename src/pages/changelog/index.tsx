@@ -23,17 +23,21 @@ const Changelog: SqueakyPage<GetPostsProps> = ({ changelog }) => (
             <div className='changelog-entry' key={post.id}>
               <div className='dashes' />
               <div className='dot' />
-              <Link href={`/changelog${post.slug}`}>
-                {post.title}
-              </Link>
-              <p>
-                {counts.map((x, i) => (
-                  <React.Fragment key={i}>
-                    {x}
-                    {i !== counts.length - 1 && ', '}
-                  </React.Fragment>
-                ))}
-              </p>
+              <div>
+                <Link href={`/changelog${post.slug}`}>
+                  {post.title}
+                </Link>
+                {!!counts && (
+                  <p>
+                    {counts.map((x, i) => (
+                      <React.Fragment key={i}>
+                        {x}
+                        {i !== counts.length - 1 && ', '}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                )}
+              </div>
             </div>
           )}
         )}

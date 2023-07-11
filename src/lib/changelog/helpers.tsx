@@ -13,8 +13,7 @@ export const getCategoryCounts = (body: string): React.ReactNode[] => {
     });
 
     return output;
-  } catch(error) {
-    console.error('Failed to build category counts', error);
-    return [<>No Changes</>];
+  } catch {
+    return null;
   }
 };
