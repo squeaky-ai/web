@@ -78,7 +78,7 @@ export const Page: FC<Props> = ({ children, partner }) => {
             a=q.createElement('script');
             a.src=u+s._sqSettings.site_id;
             e.appendChild(a);
-          })(window,document,'https://cdn.squeaky.ai/g/1.0.0/script.js?');
+          })(window,document,'https://cdn.squeaky.ai/g/1.1.0/script.js?');
         `}}
       />
 
