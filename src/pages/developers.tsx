@@ -51,7 +51,7 @@ const Developers: SqueakyPage<NextPage> = () => {
         a=q.createElement('script');
         a.src=u+s._sqSettings.site_id;
         e.appendChild(a);
-      })(window,document,'https://cdn.squeaky.ai/g/1.0.0/script.js?');
+      })(window,document,'https://cdn.squeaky.ai/g/1.1.0/script.js?');
     </script>
   </head>
 
@@ -94,7 +94,7 @@ class Document extends NextDocument {
               a=q.createElement('script');
               a.src=u+s._sqSettings.site_id;
               e.appendChild(a);
-            })(window,document,'https://cdn.squeaky.ai/g/1.0.0/script.js?');
+            })(window,document,'https://cdn.squeaky.ai/g/1.1.0/script.js?');
           \`}} />
         </Head>
         <body>
