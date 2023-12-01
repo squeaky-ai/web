@@ -11,6 +11,9 @@ import { useRouter } from 'next/router';
 import { throttle } from 'lib/utils';
 import type { SubMenu } from 'types/common';
 import type { BlogPost, User } from 'types/graphql';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 interface Props {
   user: User;
@@ -109,7 +112,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
               </Link>
               {user
                 ? (
-                  <a href='/app/sites'><Icon name='account-circle-line' /> Go to account</a>
+                  <a href={`${publicRuntimeConfig.appHost}/sites`}><Icon name='account-circle-line' /> Go to account</a>
                 ) : (
                   <Link href='/auth/login'>
                     <Icon name='account-circle-line' /> Log in

@@ -3,6 +3,9 @@ import type { FC } from 'react';
 import Link from 'next/link';
 import { useResize } from 'hooks/use-resize';
 import type { User } from 'types/graphql';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 interface Props {
   user: User;
@@ -20,14 +23,14 @@ export const HeaderButtons: FC<Props> = ({ user }) => {
               <Link href='/book-demo' className='button primary'>
                 Book a demo
               </Link>
-              <a href='/app/sites' className='button secondary auth'>
+              <a href={`${publicRuntimeConfig.appHost}/sites`} className='button secondary auth'>
                 Go To App
               </a>
             </>
           )
           : (
             <>
-              <a href='/app/sites' className='button primary auth'>
+              <a href={`${publicRuntimeConfig.appHost}/sites`} className='button primary auth'>
                 Go To App
               </a>
             </>

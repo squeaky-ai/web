@@ -19,6 +19,9 @@ import { signout } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
 import { ServerSideProps, getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 const AcceptSchema = Yup.object().shape({
   password: Yup.string().test(passwordTest),
@@ -57,7 +60,7 @@ const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
               toast.add({ type: 'success', body: 'Invitation accepted' });
 
               if (user) {
-                location.pathname = '/app/sites';
+                location.pathname = `${publicRuntimeConfig.appHost}/sites`;
               } else {
                 await router.push('/auth/login');
               }

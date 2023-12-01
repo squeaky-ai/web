@@ -16,6 +16,9 @@ import { useLoginAttemps, MAX_ATTEMPTS } from 'hooks/use-login-attempts';
 import { useToasts } from 'hooks/use-toasts';
 import { authConfirm, authReconfirm } from 'lib/api/graphql';
 import type { SqueakyPage } from 'types/page';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 enum PageView {
   LOGIN,
@@ -125,7 +128,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
                             });
                           }
 
-                          location.href = '/app/sites';
+                          location.href = `${publicRuntimeConfig.appHost}/sites`;
                           return;
                         }
 

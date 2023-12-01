@@ -15,6 +15,9 @@ import { Select, Option } from 'components/select';
 import { MultiSelect } from 'components/multi-select';
 import type { BlogPost } from 'types/graphql';
 import type { SqueakyPage } from 'types/page';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
 
 const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
@@ -24,7 +27,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const onDraftClick = (post: BlogPost) => (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    window.open(`https://squeaky.ai/app/__admin/blog/${post.slug}`, '_blank');
+    window.open(`${publicRuntimeConfig.appHost}/__admin/blog/${post.slug}`, '_blank');
   };
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

@@ -16,6 +16,8 @@ const API_HOST_NAME = API_HOST || 'http://localhost:3333';
 // production!
 const WEB_HOST_NAME = IS_DEV ? 'http://localhost:3333' : 'https://squeaky.ai';
 
+const APP_HOST_NAME = IS_DEV ? 'http://localhost:3000' : 'https://app.squeaky.ai';
+
 module.exports = {
   assetPrefix: ASSET_PREFIX,
   crossOrigin: 'anonymous',
@@ -23,6 +25,7 @@ module.exports = {
     dev: IS_DEV,
     apiHost: API_HOST_NAME,
     webHost: WEB_HOST_NAME,
+    appHost: APP_HOST_NAME,
     helpCenterUrl: 'https://squeaky.notion.site/Squeaky-Help-Centre-fc049a1822b94b7a8df362811c534d4b',
     helpCenterTrackingCodeUrl: 'https://squeaky.notion.site/Install-your-tracking-code-6ab27212bb5c434196f494ac43349b72',
   },
