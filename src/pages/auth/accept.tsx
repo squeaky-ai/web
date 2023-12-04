@@ -60,7 +60,7 @@ const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
               toast.add({ type: 'success', body: 'Invitation accepted' });
 
               if (user) {
-                location.pathname = `${publicRuntimeConfig.appHost}/sites`;
+                location.href = `${publicRuntimeConfig.appHost}/sites/`;
               } else {
                 await router.push('/auth/login');
               }

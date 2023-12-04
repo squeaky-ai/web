@@ -27,7 +27,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const onDraftClick = (post: BlogPost) => (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    window.open(`${publicRuntimeConfig.appHost}/__admin/blog/${post.slug}`, '_blank');
+    window.open(`${publicRuntimeConfig.appHost}/__admin/blog/${post.slug}/`, '_blank');
   };
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

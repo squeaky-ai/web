@@ -39,7 +39,7 @@ const AuthReset: SqueakyPage<NextPage> = () => {
   const [token, setToken] = React.useState<string>(null);
 
   React.useEffect(() => {
-    const search = new URLSearchParams(location.search)
+    const search = new URLSearchParams(location.search);
     const token = search.get('token');
     if (token) {
       setToken(token);

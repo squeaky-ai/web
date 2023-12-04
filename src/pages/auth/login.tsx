@@ -128,7 +128,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
                             });
                           }
 
-                          location.href = `${publicRuntimeConfig.appHost}/sites`;
+                          location.href = `${publicRuntimeConfig.appHost}/sites/`;
                           return;
                         }
 

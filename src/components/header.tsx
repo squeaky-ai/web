@@ -112,7 +112,7 @@ export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
               </Link>
               {user
                 ? (
-                  <a href={`${publicRuntimeConfig.appHost}/sites`}><Icon name='account-circle-line' /> Go to account</a>
+                  <a href={`${publicRuntimeConfig.appHost}/sites/`}><Icon name='account-circle-line' /> Go to account</a>
                 ) : (
                   <Link href='/auth/login'>
                     <Icon name='account-circle-line' /> Log in
