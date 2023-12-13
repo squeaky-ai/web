@@ -21,7 +21,8 @@ export const session = async <T>(cookie: string): Promise<T> => {
       headers: {
         'Accept': 'application/json',
         'Cookie': cookie
-      }
+      },
+      withCredentials: true,
     });
 
     return data.data.user;
@@ -33,7 +34,9 @@ export const session = async <T>(cookie: string): Promise<T> => {
 
 export const signout = async (): Promise<void> => {
   try {
-    await axios.delete(`${publicRuntimeConfig.apiHost}/api/auth/sign_out.json`);
+    await axios.delete(`${publicRuntimeConfig.apiHost}/api/auth/sign_out.json`, {
+      withCredentials: true,
+    });
   } catch(error: any) {
     console.error(error.code, error.response);
     return null;
@@ -42,7 +45,9 @@ export const signout = async (): Promise<void> => {
 
 export const login = async (input: LoginInput): Promise<Response<any>> => {
   try {
-    const response = await axios.post(`${publicRuntimeConfig.apiHost}/api/auth/sign_in.json`, { user: input });
+    const response = await axios.post(`${publicRuntimeConfig.apiHost}/api/auth/sign_in.json`, { user: input }, {
+      withCredentials: true,
+    });
     return { body: response.data };
   } catch(error: any) {
     console.error(error.code, error.response);
@@ -61,7 +66,8 @@ export const getPartnerName = async <T>(slug: string): Promise<T> => {
     const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
-      }
+      },
+      withCredentials: true,
     });
 
     return data.data.partner;

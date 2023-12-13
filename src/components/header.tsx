@@ -37,8 +37,6 @@ const themeOverrides: ThemeOverrides = {
   '/cms-analytics/webflow': 'mauve-dark',
   '/cms-analytics/wix': 'mauve-dark',
   '/cms-analytics/wordpress': 'mauve-dark',
-  '/changelog': 'blue',
-  '/changelog/[post]': 'blue',
 };
 
 export const Header: FC<Props> = ({ user, loading, latestBlogPost }) => {
