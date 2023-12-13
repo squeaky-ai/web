@@ -17,9 +17,9 @@ import { passwordTest } from 'data/users/constants';
 import { userInvitation, teamInviteAccept } from 'lib/api/graphql';
 import { signout } from 'lib/api/auth';
 import { useToasts } from 'hooks/use-toasts';
-import { ServerSideProps, getServerSideProps } from 'lib/auth';
-import type { SqueakyPage } from 'types/page';
 import getConfig from 'next/config';
+import { useUser } from 'hooks/use-user';
+import type { SqueakyPage } from 'types/page';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -28,13 +28,19 @@ const AcceptSchema = Yup.object().shape({
   terms: Yup.boolean().oneOf([true], 'You must agree to the terms')
 });
 
-const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
+const AuthAccept: SqueakyPage = () => {
   const toast = useToasts();
   const router = useRouter();
   const [email, setEmail] = React.useState<string>(null);
   const [loading, setLoading] = React.useState<boolean>(true);
 
+  const { user, loading: userLoading } = useUser();
+
   React.useEffect(() => {
+    if (userLoading || !router.isReady) {
+      return;
+    };
+
     if (router.query.token) {
       (async () => {
         try {
@@ -77,7 +83,7 @@ const AuthAccept: SqueakyPage<ServerSideProps> = ({ user }) => {
       // we can do for them
       setLoading(false);
     }
-  }, []);
+  }, [user, router.isReady]);
 
   return (
     <>
@@ -180,4 +186,3 @@ AuthAccept.getMetaData = () => ({
 });
 
 export default AuthAccept;
-export { getServerSideProps };

@@ -1,15 +1,14 @@
-import { ServerSideProps, getUserFromContext } from 'lib/auth';
 import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
 import { getBlogPosts, getBlogPost } from 'lib/api/blog';
 import type { Posts } from 'types/blog';
 import type { GetServerSideProps } from 'next';
 import type { BlogPost, BlogPosts } from 'types/graphql';
 
-export interface QueryPostsProps extends ServerSideProps {
+export interface QueryPostsProps {
   blog: Posts;
 }
 
-export interface GetPostsProps extends ServerSideProps {
+export interface GetPostsProps {
   blog: { 
     post: BlogPost;
     posts: BlogPost[];
@@ -19,8 +18,6 @@ export interface GetPostsProps extends ServerSideProps {
 export const queryPosts: GetServerSideProps = async (context) => {
   const { headers } = context.req;
   const { tags = [], category } = context.query;
-
-  const user = await getUserFromContext(context);
   
   // Query params will either be:
   // - a string if there's one: ?foo=bar => { foo: 'bar' }
@@ -32,7 +29,6 @@ export const queryPosts: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      user,
       blog: {
         posts: results.posts,
         // include the tags that were used in the filtering process
@@ -50,8 +46,6 @@ export const queryPosts: GetServerSideProps = async (context) => {
 export const getPost: GetServerSideProps = async (context) => {
   const { headers } = context.req;
 
-  const user = await getUserFromContext(context);
-
   const { blogPost, blogPosts } = await getBlogPost<{ 
     blogPost: BlogPost,
     blogPosts: BlogPosts,
@@ -59,7 +53,6 @@ export const getPost: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      user,
       blog: { post: blogPost, posts: blogPosts?.posts || [] },
     },
     // This will trigger the proper 404 page so we don't need

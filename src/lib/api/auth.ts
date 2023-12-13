@@ -54,25 +54,3 @@ export const login = async (input: LoginInput): Promise<Response<any>> => {
     return { error: error.response.data };
   }
 };
-
-export const getPartnerName = async <T>(slug: string): Promise<T> => {
-  try {
-    const query = `
-      query GetPartner {
-        partner(slug: "${slug}")
-      }
-    `;
-
-    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
-      headers: {
-        'Accept': 'application/json',
-      },
-      withCredentials: true,
-    });
-
-    return data.data.partner;
-  } catch(error: any) {
-    console.error(error.code, error.response);
-    return null;
-  }
-};

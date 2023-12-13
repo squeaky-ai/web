@@ -14,17 +14,10 @@ import { Button, DelayedButton } from 'components/button';
 import { Checkbox } from 'components/checkbox';
 import { Message } from 'components/message';
 import { Password } from 'components/password';
-import { PartnerFooter } from 'components/partner-footer';
 import { passwordTest } from 'data/users/constants';
 import { useToasts } from 'hooks/use-toasts';
 import { authSignup, authReconfirm } from 'lib/api/graphql';
-import { getSignupPartnerData as getServerSideProps } from 'lib/auth';
 import type { SqueakyPage } from 'types/page';
-
-interface Props {
-  partner: boolean;
-  partnerName?: string;
-}
 
 enum PageView {
   EMAIL,
@@ -48,7 +41,7 @@ const PasswordSchema = Yup.object().shape({
   password: Yup.string().test(passwordTest),
 });
 
-const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
+const AuthSignup: SqueakyPage = () => {
   const toasts = useToasts();
   const router = useRouter();
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
@@ -225,21 +218,7 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
             </Card>
           </main>
 
-          {partner && (
-            <aside>
-              <h2>Future-proof analytics for customer-obsessed companies</h2>
-              <ol>
-                <li><span>1</span>Unlock and understand your customer experience data</li>
-                <li><span>2</span>Discover opportunities to improve your user journeys</li>
-                <li><span>3</span>Find new ways to optimise conversion and retention</li>
-                <li><span>4</span>Walk in your customers&apos; footsteps</li>
-                <li><span>5</span>Stay compliant and protect the privacy of your visitors</li>
-              </ol>
-            </aside>
-          )}
-
-          {!partner && (
-            <aside>  
+          <aside>  
               <h2>Meaningful insights in minutes</h2>
               <ol>
                 <li><span>1</span>Unlock your customer experience data</li>
@@ -252,17 +231,11 @@ const AuthSignup: SqueakyPage<Props> = ({ partner, partnerName }: Props) => {
                 <p>No credit card or technical skills required</p>
               </div>
             </aside>
-          )}
         </Container>
       </div>
 
       <div className='footer-link'>
-        {partner && (
-          <PartnerFooter partnerName={partnerName} />
-        )}
-        {!partner && (
-          <p>Already have an account? <Link href='/auth/login'>Log in</Link></p>
-        )}
+        <p>Already have an account? <Link href='/auth/login'>Log in</Link></p>
       </div>
     </>
   ); 
@@ -275,4 +248,4 @@ AuthSignup.getMetaData = () => ({
 });
 
 export default AuthSignup;
-export { getServerSideProps };
+
