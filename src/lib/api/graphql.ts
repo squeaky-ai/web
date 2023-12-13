@@ -1,3 +1,4 @@
+import getConfig from 'next/config';
 import { ApolloClient, InMemoryCache, TypedDocumentNode } from '@apollo/client';
 import { UsersInvitation, TeamInviteAcceptInput, Team, NpsCreateInput, AuthSignUpInput, User, AuthConfirmInput, AuthReconfirmInput, AuthPasswordUpdateInput, AuthPasswordResetInput, ContactPartnersInput } from 'types/graphql';
 import { USER_INVITATION_QUERY } from 'data/users/queries';
@@ -7,12 +8,15 @@ import { BOOK_DEMO_MUTATION, CONTACT_MUTATION, CONTACT_STARTUPS_MUTATION, CONTAC
 import { NPS_CREATE_MUTATION, SENTIMENT_CREATE_MUTATION } from 'data/feedback/mutations';
 import { ContactInput, ContactStartupsInput, ContactDemoInput } from 'types/graphql';
 
+const { publicRuntimeConfig } = getConfig();
+
 export const cache = new InMemoryCache();
 
 export const client = new ApolloClient({
   cache,
-  uri: '/api/graphql',
+  uri: `${publicRuntimeConfig.apiHost}/api/graphql`,
   ssrMode: typeof window === 'undefined',
+  credentials: 'include',
 });
 
 export const getGqlString = (document: TypedDocumentNode): string => {

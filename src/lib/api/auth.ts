@@ -33,7 +33,7 @@ export const session = async <T>(cookie: string): Promise<T> => {
 
 export const signout = async (): Promise<void> => {
   try {
-    await axios.delete('/api/auth/sign_out.json');
+    await axios.delete(`${publicRuntimeConfig.apiHost}/api/auth/sign_out.json`);
   } catch(error: any) {
     console.error(error.code, error.response);
     return null;
@@ -42,7 +42,7 @@ export const signout = async (): Promise<void> => {
 
 export const login = async (input: LoginInput): Promise<Response<any>> => {
   try {
-    const response = await axios.post('/api/auth/sign_in.json', { user: input });
+    const response = await axios.post(`${publicRuntimeConfig.apiHost}/api/auth/sign_in.json`, { user: input });
     return { body: response.data };
   } catch(error: any) {
     console.error(error.code, error.response);
