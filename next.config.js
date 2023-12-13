@@ -11,7 +11,7 @@ const WEB_HOST_NAME = IS_DEV ? 'http://localhost:3333' : 'https://squeaky.ai';
 
 const APP_HOST_NAME = IS_DEV ? 'http://localhost:3000' : 'https://app.squeaky.ai';
 
-const API_HOST_NAME = IS_DEV ? 'http://localhost:4000' : 'https://api.squaeky.ai';
+const API_HOST_NAME = IS_DEV ? 'http://localhost:4000' : 'https://api.squeaky.ai';
 
 module.exports = {
   assetPrefix: ASSET_PREFIX,
