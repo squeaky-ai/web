@@ -15,7 +15,7 @@ export interface GetPostsProps {
 }
 
 export const getStaticBlogPaths = (async () => {
-  const results = await getBlogPosts<BlogPosts>('', '', []);
+  const results = await getBlogPosts<BlogPosts>();
 
   return {
     paths: [
@@ -35,7 +35,7 @@ export const getStaticBlogPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 export const getStaticPostPaths = (async () => {
-  const { posts } = await getBlogPosts<BlogPosts>('', '', []);
+  const { posts } = await getBlogPosts<BlogPosts>();
 
 
   return {
@@ -52,7 +52,7 @@ export const getStaticPostPaths = (async () => {
 }) satisfies GetStaticPaths; 
 
 export const getStaticBlogProps = (async (context) => {
-  const { posts, categories, tags } = await getBlogPosts<BlogPosts>('', '', []);
+  const { posts, categories, tags } = await getBlogPosts<BlogPosts>();
 
   const selectedCategory = context.params.category?.[0]?.replace(/-/g, ' ') || '';
 
@@ -74,7 +74,7 @@ export const getStaticPostProps = (async (context) => {
   const { blogPost, blogPosts } = await getBlogPost<{ 
     blogPost: BlogPost,
     blogPosts: BlogPosts,
-  }>('', `/${context.params.category}/${context.params.post}`)
+  }>(`/${context.params.category}/${context.params.post}`)
 
   return {
     props: {
