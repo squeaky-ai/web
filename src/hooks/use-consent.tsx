@@ -1,8 +1,8 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import type { Consent } from 'types/graphql';
 import type { SupportedLanguages } from 'types/translations';
+import { useQueryParams } from './use-query-params';
 
 interface UseConsent {
   loading: boolean;
@@ -29,14 +29,15 @@ const GET_CONSENT_QUERY = gql`
 `;
 
 export const useConsent = (): UseConsent => {
-  const router = useRouter();
+  const [query, skip] = useQueryParams();
 
   const [locale, setLocale] = React.useState<SupportedLanguages>(null);
 
   const { loading, error, data } = useQuery(GET_CONSENT_QUERY, {
     variables: {
-      siteId: router.query.site_id as string,
-    }
+      siteId: query.site_id as string,
+    },
+    skip
   });
 
   const fallback: Consent = {
