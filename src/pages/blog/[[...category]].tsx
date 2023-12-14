@@ -8,27 +8,20 @@ import { Card } from 'components/card';
 import { Container } from 'components/container';
 import { QueryPostsProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
-import { buildCategoryUrl, buildTagUrl, buildTagsUrl } from 'lib/blog/helpers';
+import { buildCategoryUrl } from 'lib/blog/helpers';
 import { Label } from 'components/label';
 import { Select, Option } from 'components/select';
-import { MultiSelect } from 'components/multi-select';
 import type { SqueakyPage } from 'types/page';
 import { getStaticBlogPaths as getStaticPaths, getStaticBlogProps as getStaticProps } from 'lib/blog/posts';
 
 const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
   
-  const { tags, categories, posts, selectedCategory, selectedTags } = blog;
+  const { categories, posts, selectedCategory } = blog;
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const category = event.target.value || null;
     const url = buildCategoryUrl(router, category);
-
-    router.push(url);
-  };
-
-  const handleTagChange = (tags: string[]) => {
-    const url = buildTagsUrl(router, tags);
 
     router.push(url);
   };
@@ -108,28 +101,6 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                     </Option>
                   ))}
                 </Select>
-              </div>
-            </div>
-            
-            <h4>Tags</h4>
-            
-            <div className='tags'>
-              <div className='large'>
-                {tags.map(tag => (
-                  <Link href={buildTagUrl(router, tag)} rel='nofollow' key={tag} className={classnames('tag', { selected: selectedTags.includes(tag) })}>
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-
-              <div className='small'>
-                <Label htmlFor='tags'>Tags</Label>
-                
-                <MultiSelect
-                  options={tags}
-                  defaultSelected={selectedTags}
-                  onUpdate={handleTagChange}
-                />
               </div>
             </div>
           </div>

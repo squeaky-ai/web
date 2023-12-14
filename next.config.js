@@ -8,6 +8,9 @@ const APP_HOST_NAME = IS_DEV ? 'http://app.squeaky.test' : 'https://app.squeaky.
 
 const API_HOST_NAME = IS_DEV ? 'http://api.squeaky.test' : 'https://api.squeaky.ai';
 
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = {
   images: {
     unoptimized: true,

@@ -64,7 +64,6 @@ export const getStaticBlogProps = (async (context) => {
         categories,
         tags,
         selectedCategory,
-        selectedTags: [] as string[], // TODO: Do this on the client?
       },
     },
   };
