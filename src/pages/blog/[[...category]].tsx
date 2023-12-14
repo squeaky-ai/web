@@ -6,29 +6,19 @@ import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
-import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
+import { QueryPostsProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
 import { buildCategoryUrl, buildTagUrl, buildTagsUrl } from 'lib/blog/helpers';
-import { Button } from 'components/button';
 import { Label } from 'components/label';
 import { Select, Option } from 'components/select';
 import { MultiSelect } from 'components/multi-select';
-import type { BlogPost } from 'types/graphql';
 import type { SqueakyPage } from 'types/page';
-import getConfig from 'next/config';
-
-const { publicRuntimeConfig } = getConfig();
+import { getStaticBlogPaths as getStaticPaths, getStaticBlogProps as getStaticProps } from 'lib/blog/posts';
 
 const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
   
   const { tags, categories, posts, selectedCategory, selectedTags } = blog;
-
-  const onDraftClick = (post: BlogPost) => (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
-    window.open(`${publicRuntimeConfig.appHost}/__admin/blog/${post.slug}/`, '_blank');
-  };
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const category = event.target.value || null;
@@ -72,10 +62,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                       </span>
                       <span className='divider' />
                       <span>
-                        {post.draft
-                          ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                          : toHumanDate(post.createdAt.iso8601)
-                        }
+                        {toHumanDate(post.createdAt.iso8601)}
                       </span>
                     </p>
                     <p className='description'>
@@ -98,7 +85,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
 
             <div className='categories'>
               <div className='large'>
-                <Link href={buildCategoryUrl(router, null)} className={classnames('category', { selected: selectedCategory === null })}>
+                <Link href={buildCategoryUrl(router, null)} className={classnames('category', { selected: selectedCategory === '' })}>
                   All
                 </Link>
 
@@ -173,4 +160,6 @@ Blog.getMetaData = (props, router) => {
 };
 
 export default Blog;
-export { getServerSideProps };
+
+export { getStaticPaths };
+export { getStaticProps };

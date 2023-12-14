@@ -45,15 +45,3 @@ export function buildTagsUrl(router: NextRouter, tags: string[]): string {
 
   return `${path}?${params.toString()}`;
 }
-
-export function getCategoryFromPathParam(param: string | string[]): string | null {
-  if (!param) return null;
-
-  return (Array.isArray(param) ? param[0] : param).replace(/-/g, ' ');
-}
-
-export function getTagsFromQueryParam(param: string | string[]): string[] {
-  if (!param) return [];
-
-  return Array.isArray(param) ? param : [param]
-}

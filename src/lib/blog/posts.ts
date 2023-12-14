@@ -1,8 +1,7 @@
-import { getTagsFromQueryParam, getCategoryFromPathParam } from 'lib/blog/helpers';
 import { getBlogPosts, getBlogPost } from 'lib/api/blog';
 import type { Posts } from 'types/blog';
-import type { GetServerSideProps } from 'next';
 import type { BlogPost, BlogPosts } from 'types/graphql';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 
 export interface QueryPostsProps {
   blog: Posts;
@@ -15,49 +14,74 @@ export interface GetPostsProps {
   };
 }
 
-export const queryPosts: GetServerSideProps = async (context) => {
-  const { headers } = context.req;
-  const { tags = [], category } = context.query;
-  
-  // Query params will either be:
-  // - a string if there's one: ?foo=bar => { foo: 'bar' }
-  // - an array of strings if there's more than one: ?foo=bar&foo=baz { foo: ['bar', 'baz'] }
-  const selectedTags = getTagsFromQueryParam(tags);
-  const selectedCategory = getCategoryFromPathParam(category);
+export const getStaticBlogPaths = (async () => {
+  const results = await getBlogPosts<BlogPosts>('', '', []);
 
-  const results = await getBlogPosts<BlogPosts>(headers.cookie, selectedCategory, selectedTags);
+  return {
+    paths: [
+      {
+        params: {
+          category: [''],
+        },
+      },
+      ...results.categories.map(category => ({
+        params: {
+          category: [category.toLowerCase().replace(/ /g, '-')]
+        },
+      })),
+    ],
+    fallback: false,
+  }
+}) satisfies GetStaticPaths;
+
+export const getStaticPostPaths = (async () => {
+  const { posts } = await getBlogPosts<BlogPosts>('', '', []);
+
+
+  return {
+    paths: posts.map(p => {
+      const [, category, post] = p.slug.split('/');
+
+      return {
+        params: { category, post },
+      };
+    }),
+    fallback: false,
+  };
+
+}) satisfies GetStaticPaths; 
+
+export const getStaticBlogProps = (async (context) => {
+  const { posts, categories, tags } = await getBlogPosts<BlogPosts>('', '', []);
+
+  const selectedCategory = context.params.category?.[0]?.replace(/-/g, ' ') || '';
 
   return {
     props: {
       blog: {
-        posts: results.posts,
-        // include the tags that were used in the filtering process
-        // so that the front end can display which are currently
-        // applied in the UI
-        selectedTags,
+        posts,
+        post: null,
+        categories,
+        tags,
         selectedCategory,
-        tags: results.tags,
-        categories: results.categories,
+        selectedTags: [] as string[], // TODO: Do this on the client?
       },
     },
   };
-};
+}) satisfies GetStaticProps<QueryPostsProps>;
 
-export const getPost: GetServerSideProps = async (context) => {
-  const { headers } = context.req;
-
+export const getStaticPostProps = (async (context) => {
   const { blogPost, blogPosts } = await getBlogPost<{ 
     blogPost: BlogPost,
     blogPosts: BlogPosts,
-  }>(headers.cookie, `/${context.query.category}/${context.query.post}`)
+  }>('', `/${context.params.category}/${context.params.post}`)
 
   return {
     props: {
-      blog: { post: blogPost, posts: blogPosts?.posts || [] },
+      blog: {
+        post: blogPost,
+        posts: blogPosts?.posts || [],
+      },
     },
-    // This will trigger the proper 404 page so we don't need
-    // to faff around with status codes or rendering anything
-    // special on the /posts/... page
-    notFound: !blogPost,
-  }
-};
+  };
+}) satisfies GetStaticProps<GetPostsProps>;
