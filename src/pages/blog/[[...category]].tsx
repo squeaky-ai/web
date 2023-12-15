@@ -6,39 +6,22 @@ import { Cta } from 'components/cta';
 import { PageTitle } from 'components/page-title';
 import { Card } from 'components/card';
 import { Container } from 'components/container';
-import { QueryPostsProps, queryPosts as getServerSideProps } from 'lib/blog/posts';
+import { QueryPostsProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
-import { buildCategoryUrl, buildTagUrl, buildTagsUrl } from 'lib/blog/helpers';
-import { Button } from 'components/button';
+import { buildCategoryUrl } from 'lib/blog/helpers';
 import { Label } from 'components/label';
 import { Select, Option } from 'components/select';
-import { MultiSelect } from 'components/multi-select';
-import type { BlogPost } from 'types/graphql';
 import type { SqueakyPage } from 'types/page';
-import getConfig from 'next/config';
-
-const { publicRuntimeConfig } = getConfig();
+import { getStaticBlogPaths as getStaticPaths, getStaticBlogProps as getStaticProps } from 'lib/blog/posts';
 
 const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
   const router = useRouter();
   
-  const { tags, categories, posts, selectedCategory, selectedTags } = blog;
-
-  const onDraftClick = (post: BlogPost) => (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
-    window.open(`${publicRuntimeConfig.appHost}/__admin/blog/${post.slug}/`, '_blank');
-  };
+  const { categories, posts, selectedCategory } = blog;
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const category = event.target.value || null;
     const url = buildCategoryUrl(router, category);
-
-    router.push(url);
-  };
-
-  const handleTagChange = (tags: string[]) => {
-    const url = buildTagsUrl(router, tags);
 
     router.push(url);
   };
@@ -72,10 +55,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                       </span>
                       <span className='divider' />
                       <span>
-                        {post.draft
-                          ? <Button className='draft link' onClick={onDraftClick(post)}>Draft</Button>
-                          : toHumanDate(post.createdAt.iso8601)
-                        }
+                        {toHumanDate(post.createdAt.iso8601)}
                       </span>
                     </p>
                     <p className='description'>
@@ -98,7 +78,7 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
 
             <div className='categories'>
               <div className='large'>
-                <Link href={buildCategoryUrl(router, null)} className={classnames('category', { selected: selectedCategory === null })}>
+                <Link href={buildCategoryUrl(router, null)} className={classnames('category', { selected: selectedCategory === '' })}>
                   All
                 </Link>
 
@@ -121,28 +101,6 @@ const Blog: SqueakyPage<QueryPostsProps> = ({ blog }) => {
                     </Option>
                   ))}
                 </Select>
-              </div>
-            </div>
-            
-            <h4>Tags</h4>
-            
-            <div className='tags'>
-              <div className='large'>
-                {tags.map(tag => (
-                  <Link href={buildTagUrl(router, tag)} rel='nofollow' key={tag} className={classnames('tag', { selected: selectedTags.includes(tag) })}>
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-
-              <div className='small'>
-                <Label htmlFor='tags'>Tags</Label>
-                
-                <MultiSelect
-                  options={tags}
-                  defaultSelected={selectedTags}
-                  onUpdate={handleTagChange}
-                />
               </div>
             </div>
           </div>
@@ -173,4 +131,6 @@ Blog.getMetaData = (props, router) => {
 };
 
 export default Blog;
-export { getServerSideProps };
+
+export { getStaticPaths };
+export { getStaticProps };

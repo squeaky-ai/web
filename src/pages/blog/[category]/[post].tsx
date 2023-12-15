@@ -4,8 +4,8 @@ import Script from 'next/script';
 import { Container } from 'components/container';
 import { Icon } from 'components/icon';
 import { LatestArticles } from 'components/latest-articles';
-import { GetPostsProps, getPost as getServerSideProps } from 'lib/blog/posts';
 import { toHumanDate } from 'lib/dates';
+import { GetPostsProps, getStaticPostPaths as getStaticPaths, getStaticPostProps as getStaticProps } from 'lib/blog/posts';
 import type { SqueakyPage } from 'types/page';
 
 const BlogPost: SqueakyPage<GetPostsProps> = ({ blog }) => {
@@ -118,4 +118,5 @@ BlogPost.getMetaData = (props) => ({
 });
 
 export default BlogPost;
-export { getServerSideProps };
+export { getStaticPaths };
+export { getStaticProps };

@@ -3,14 +3,11 @@ import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
 
-export const getBlogPosts = async <T>(cookie: string, category: string | null, tags: string[]): Promise<T> => {
+export const getBlogPosts = async <T>(category?: string): Promise<T> => {
   try {
     const query = `
       {
-        blogPosts(
-          category: ${category ? `"${category}"` : 'null'},
-          tags: [${tags.map(tag => `"${tag}"`).join(', ') || ''}]
-        ) {
+        blogPosts(category: ${category ? `"${category}"` : 'null'}) {
           categories
           tags
           posts {
@@ -39,7 +36,6 @@ export const getBlogPosts = async <T>(cookie: string, category: string | null, t
     const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
-        'Cookie': cookie || '',
       }
     });
 
@@ -50,7 +46,7 @@ export const getBlogPosts = async <T>(cookie: string, category: string | null, t
   }
 };
 
-export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> => {
+export const getBlogPost = async <T>(slug: string): Promise<T> => {
   try {
     const query = `
       {
@@ -93,7 +89,6 @@ export const getBlogPost = async <T>(cookie: string, slug: string): Promise<T> =
     const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
-        'Cookie': cookie || '',
       }
     });
 

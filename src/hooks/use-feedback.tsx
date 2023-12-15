@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import { gql, useQuery } from '@apollo/client';
 import type { Feedback, SiteSessionSettings } from 'types/graphql';
+import { useQueryParams } from './use-query-params';
 
 interface UsePlans {
   loading: boolean;
@@ -54,18 +54,19 @@ const getThemeOverrides = (overrides?: string): Partial<Feedback> => {
 };
 
 export const useFeedback = (): UsePlans => {
-  const router = useRouter();
+  const [query, skip] = useQueryParams();
 
   const visitor: VisitorParams = {
-    siteId: '' + router.query.site_id,
-    visitorId: '' + router.query.visitor_id,
-    sessionId: '' + router.query.session_id,
+    siteId: '' + query.site_id,
+    visitorId: '' + query.visitor_id,
+    sessionId: '' + query.session_id,
   };
 
   const { data, error, loading } = useQuery<{ siteSessionSettings: SiteSessionSettings }>(QUERY, {
     variables: {
-      siteId: '' + router.query.site_id,
+      siteId: '' + query.site_id,
     },
+    skip,
   });
 
   const fallback: Feedback = {
@@ -84,13 +85,13 @@ export const useFeedback = (): UsePlans => {
   };
 
   const feedback = data?.siteSessionSettings?.feedback || fallback;
-  const overrides = getThemeOverrides(router.query.theme_overrides as string);
+  const overrides = getThemeOverrides(query.theme_overrides as string);
 
   return {
     loading,
     visitor,
     error: !!error,
-    demo: router.query.demo === 'true',
+    demo: query.demo === 'true',
     feedback: { ...feedback, ...overrides },
   };
 };

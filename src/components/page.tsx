@@ -15,8 +15,6 @@ interface Props {
 
 const { publicRuntimeConfig } = getConfig();
 
-const { dev = false } = publicRuntimeConfig;
-
 export const Page: FC<Props> = ({ children }) => {
   const router = useRouter();
 
@@ -45,7 +43,7 @@ export const Page: FC<Props> = ({ children }) => {
   }
 
   React.useEffect(() => {
-    if (!user || !!loaded || dev) return;
+    if (!user || !!loaded) return;
 
     const { id, firstName, lastName, email, superuser, createdAt } = user;
 
@@ -66,14 +64,14 @@ export const Page: FC<Props> = ({ children }) => {
       <Script 
         id='squeaky-script'
         strategy='afterInteractive'
-        dangerouslySetInnerHTML={{ __html: dev ? '' : `
+        dangerouslySetInnerHTML={{ __html: `
           (function(s,q,u,e,a,k,y){
             s._sqSettings={site_id:'2918cf0f-42aa-499d-a4da-d362bd1011ed'};
             e=q.getElementsByTagName('head')[0];
             a=q.createElement('script');
             a.src=u+s._sqSettings.site_id;
             e.appendChild(a);
-          })(window,document,'https://cdn.squeaky.ai/g/1.1.0/script.js?');
+          })(window,document,'${publicRuntimeConfig.scriptUrl}?');
         `}}
       />
 

@@ -196,7 +196,7 @@
         }
 
         .categories {
-          margin: 0 0 2.5rem 0;
+          margin: 0;
 
           a {
             color: var(--mauve-700);
@@ -236,48 +236,6 @@
           @include breakpoint-sm {
             flex-direction: column;
             margin: 0 0;
-          }
-        }
-
-        .tags {
-          .tag {
-            background: var(--white);
-            border: 1px solid var(--white);
-            border-radius: var(--border-radius-sm);
-            color: var(--gray-blue-800);
-            font-size: 16px;
-            line-height: 32px;
-            padding: 0 .5rem;
-            text-decoration: none;
-
-            &:hover {
-              border-color: var(--mauve-700);
-            }
-
-            &.selected {
-              border-color: var(--mauve-700);
-              color: var(--mauve-700);
-            }
-          }
-
-          .large {
-            display: block;
-          }
-
-          .small {
-            display: none;
-          }
-
-          @include breakpoint-md {
-            flex: 1;
-
-            .large {
-              display: none;
-            }
-
-            .small {
-              display: block;
-            }
           }
         }
       }
