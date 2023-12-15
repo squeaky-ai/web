@@ -3,11 +3,11 @@ import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
 
-export const getBlogPosts = async <T>(): Promise<T> => {
+export const getBlogPosts = async <T>(category?: string): Promise<T> => {
   try {
     const query = `
       {
-        blogPosts {
+        blogPosts(category: ${category ? `"${category}"` : 'null'}) {
           categories
           tags
           posts {

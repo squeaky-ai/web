@@ -52,7 +52,10 @@ export const getStaticPostPaths = (async () => {
 }) satisfies GetStaticPaths; 
 
 export const getStaticBlogProps = (async (context) => {
-  const { posts, categories, tags } = await getBlogPosts<BlogPosts>();
+  const param = context.params.category?.[0];
+  const category = (Array.isArray(param) ? param[0] : param)?.replace(/-/g, ' ');
+
+  const { posts, categories, tags } = await getBlogPosts<BlogPosts>(category);
 
   const selectedCategory = context.params.category?.[0]?.replace(/-/g, ' ') || '';
 
