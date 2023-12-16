@@ -17,7 +17,7 @@ const { publicRuntimeConfig } = getConfig();
 
 export const session = async <T>(cookie: string): Promise<T> => {
   try {
-    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query: getGqlString(USER_QUERY) }, {
+    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/graphql`, { query: getGqlString(USER_QUERY) }, {
       headers: {
         'Accept': 'application/json',
         'Cookie': cookie
@@ -34,7 +34,7 @@ export const session = async <T>(cookie: string): Promise<T> => {
 
 export const signout = async (): Promise<void> => {
   try {
-    await axios.delete(`${publicRuntimeConfig.apiHost}/api/auth/sign_out.json`, {
+    await axios.delete(`${publicRuntimeConfig.apiHost}/auth/sign_out.json`, {
       withCredentials: true,
     });
   } catch(error: any) {
@@ -45,7 +45,7 @@ export const signout = async (): Promise<void> => {
 
 export const login = async (input: LoginInput): Promise<Response<any>> => {
   try {
-    const response = await axios.post(`${publicRuntimeConfig.apiHost}/api/auth/sign_in.json`, { user: input }, {
+    const response = await axios.post(`${publicRuntimeConfig.apiHost}/auth/sign_in.json`, { user: input }, {
       withCredentials: true,
     });
     return { body: response.data };

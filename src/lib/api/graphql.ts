@@ -14,7 +14,7 @@ export const cache = new InMemoryCache();
 
 export const client = new ApolloClient({
   cache,
-  uri: `${publicRuntimeConfig.apiHost}/api/graphql`,
+  uri: `${publicRuntimeConfig.apiHost}/graphql`,
   ssrMode: typeof window === 'undefined',
   credentials: 'include',
 });

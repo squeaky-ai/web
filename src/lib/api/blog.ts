@@ -33,7 +33,7 @@ export const getBlogPosts = async <T>(category?: string): Promise<T> => {
       }
     `;
 
-    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
+    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
       }
@@ -86,7 +86,7 @@ export const getBlogPost = async <T>(slug: string): Promise<T> => {
       }
     `;
 
-    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/api/graphql`, { query }, {
+    const { data } = await axios.post(`${publicRuntimeConfig.apiHost}/graphql`, { query }, {
       headers: {
         'Accept': 'application/json',
       }
