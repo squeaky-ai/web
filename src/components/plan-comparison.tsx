@@ -289,21 +289,21 @@ export const PlanComparison: FC<Props> = ({ currency, interval, plans }) => {
         <div className='features'>
           <div className='row'>
             <p>Recordings database <i>Advanced filtering, custom columns, sorting, bulk actions and pagination.</i></p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
           </div>
           <div className='row'>
             <p>Playback controls <i>Scrubber, playback speed controls, fast forward inactivity.</i></p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
           </div>
           <div className='row'>
             <p>Session info and metadata</p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
@@ -317,21 +317,21 @@ export const PlanComparison: FC<Props> = ({ currency, interval, plans }) => {
           </div>
           <div className='row'>
             <p>Tagging</p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
           </div>
           <div className='row'>
             <p>Notes</p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
           </div>
           <div className='row'>
             <p>Bookmarking</p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
@@ -345,7 +345,7 @@ export const PlanComparison: FC<Props> = ({ currency, interval, plans }) => {
           </div>
           <div className='row'>
             <p>User feedback <i>Inline NPS and Sentiment feedback.</i></p>
-            <p><Icon name='check-line' className='check' /></p>
+            <p>-</p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
             <p><Icon name='check-line' className='check' /></p>
