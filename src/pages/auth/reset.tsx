@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import { Formik } from 'formik';
 import { Icon } from 'components/icon';
@@ -33,19 +34,20 @@ enum PageView {
 
 const AuthReset: SqueakyPage<NextPage> = () => {
   const toasts = useToasts();
+  const router = useRouter();
 
   const [pageView, setPageView] = React.useState(PageView.EMAIL);
   const [email, setEmail] = React.useState<string>(null);
   const [token, setToken] = React.useState<string>(null);
 
   React.useEffect(() => {
-    const search = new URLSearchParams(location.search);
-    const token = search.get('token');
+    const token = router.query.token as string;
+    
     if (token) {
       setToken(token);
       setPageView(PageView.CHANGE);
     }
-  }, []);
+  }, [router.isReady]);
 
   return (
     <>

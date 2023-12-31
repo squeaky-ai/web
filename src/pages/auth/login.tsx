@@ -57,8 +57,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
 
   React.useEffect(() => {
     (async () => {
-      const search = new URLSearchParams(location.search)
-      const token = search.get('token');
+      const token = router.query.token as string;
       if (!token) return;
 
       try {
@@ -70,7 +69,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
         toasts.add({ type: 'error', body: 'There was an error with your sign in token' });
       }
     })();
-  }, []);
+  }, [router.isReady]);
 
   return (
     <>
