@@ -73,15 +73,13 @@ export const Page: FC<Props> = ({ children }) => {
             e.appendChild(a);
           })(window,document,'${publicRuntimeConfig.scriptUrl}?');
 
-          <script>
-            (function(s,q,l,b,o,o,k){
-              s._sbSettings={uuid:'50b83d18-591c-44d9-b9f2-eb2312067bff'};
-              e=q.getElementsByTagName('head')[0];
-              a=q.createElement('script');
-              a.src=l+s._sbSettings.uuid;
-              e.appendChild(a);
-            })(window,document,'https://cdn.sqlbook.com/script.js?');
-          </script>
+          (function(s,q,l,b,o,o,k){
+            s._sbSettings={uuid:'50b83d18-591c-44d9-b9f2-eb2312067bff'};
+            e=q.getElementsByTagName('head')[0];
+            a=q.createElement('script');
+            a.src=l+s._sbSettings.uuid;
+            e.appendChild(a);
+          })(window,document,'https://cdn.sqlbook.com/script.js?');
         `}}
       />
 
