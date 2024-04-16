@@ -68,7 +68,7 @@ export const Footer: FC = () => (
           <Link href='/features'>
             All Features
           </Link>
-          <Link href='/pricing'>
+          <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/'>
             Pricing
           </Link>
         </FooterLinkGroup>
