@@ -37,7 +37,7 @@ export const PricingCard: FC<Props> = ({ plan, interval, currency }) => {
           <span className='discount'>Paid yearly (save 20%)</span>
         )}
       </h2>
-      <Link href='/auth/signup' className='button primary'>
+      <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/' className='button primary'>
         Get Started Free
       </Link>
       <Divider />

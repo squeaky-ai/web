@@ -211,7 +211,7 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
       </div>
 
       <div className='footer-link'>
-        <p>New to Squeaky? <Link href='/auth/signup'>Sign up</Link></p>
+        <p>New to Squeaky? <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/'>Sign up</Link></p>
       </div>
     </>
   );

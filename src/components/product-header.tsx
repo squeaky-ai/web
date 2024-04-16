@@ -46,7 +46,7 @@ export const ProductHeader: FC<Props> = ({ title, subtitle, body, image }) => (
             <h1>{title}</h1>
             {body}
             <div className='actions'>
-              <Link href='/auth/signup' className='button primary'>
+              <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/' className='button primary'>
                 Get Started
               </Link>
               <Link href='/book-demo' className='button secondary'>

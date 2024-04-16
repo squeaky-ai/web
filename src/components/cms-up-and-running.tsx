@@ -64,7 +64,7 @@ export const CmsUpAndRunning: FC<Props> = ({ cms }) => {
           body={
             cms === 'duda'
               ? <>Go to the <Link href={dudaAppStoreLink} target='_blank' rel='noreferrer'>Duda App Store</Link>, either on the website or from within the Duda app.</>
-              : <>It&apos;s free to <Link href='/auth/signup'>get started</Link> and adding your site in Squeaky takes just a few clicks.</>
+              : <>It&apos;s free to <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/'>get started</Link> and adding your site in Squeaky takes just a few clicks.</>
           }
           position={1}
         />

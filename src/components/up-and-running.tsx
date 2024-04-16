@@ -14,7 +14,7 @@ export const UpAndRunning: FC = () => (
     <Steps>
       <StepItem
         title='Sign up'
-        body={<>Create your <Link href='/auth/signup'>free account</Link> and add your website or app.</>}
+        body={<>Create your <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/'>free account</Link> and add your website or app.</>}
         position={1}
       />
       <StepItem
@@ -29,7 +29,7 @@ export const UpAndRunning: FC = () => (
       />
     </Steps>
 
-    <Link href='/auth/signup' className='button primary'>
+    <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/' className='button primary'>
       Get Started Free
     </Link>
   </Container>

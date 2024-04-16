@@ -39,7 +39,7 @@ export const HeaderButtons: FC<Props> = ({ user }) => {
 
       {!user && (
         <>
-          <Link href='/auth/signup' className='button primary'>
+          <Link href='/blog/company-news/a-very-important-announcement-from-squeaky/' className='button primary'>
             Get Started Free
           </Link>
 

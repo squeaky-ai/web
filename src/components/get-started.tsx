@@ -18,10 +18,10 @@ export const GetStarted: FC = () => {
       <Formik
         initialValues={{ email: '' }}
         validationSchema={GetStartedSchema}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(_values, { setSubmitting }) => {
           (async () => {
             setSubmitting(false);
-            await router.push(`/auth/signup?email=${values.email}`);
+            await router.push(`/blog/company-news/a-very-important-announcement-from-squeaky/`);
           })();
         }}
       >

@@ -17,7 +17,7 @@ export const Cta: FC<Props> = ({ title, subtitle, type, buttonText, buttonLink }
     <Container className='centered md'>
       {title}
       {subtitle}
-      <Link href={buttonLink || '/auth/signup'} className='button primary'>
+      <Link href={buttonLink || '/blog/company-news/a-very-important-announcement-from-squeaky/'} className='button primary'>
         {buttonText || 'Get Started Free'}
       </Link>
     </Container>
