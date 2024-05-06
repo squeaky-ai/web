@@ -111,22 +111,12 @@ const AuthLogin: SqueakyPage<NextPage> = () => {
                       (async () => {
                         if (exceeded) return;
 
-                        const { body, error } = await login(values);
+                        const { error } = await login(values);
 
                         setSubmitting(false);
 
                         if (!error) {
                           clear();
-
-                          if (window.squeaky) {
-                            window.squeaky.identify(body.id, {
-                              'name': `${body.first_name || ''} ${body.last_name || ''}`,
-                              'email': body.email,
-                              'superuser': body.superuser ? 'Yes' : 'No',
-                              'created': new Date(body.created_at).toLocaleDateString(),
-                            });
-                          }
-
                           location.href = `${publicRuntimeConfig.appHost}/sites/`;
                           return;
                         }
